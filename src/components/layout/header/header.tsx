@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import DesktopNav from './desktop-nav';
 import MainMobileNav from './main-mobile-nav';
-import ThemeToggle from './theme-toggle';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
@@ -49,8 +48,6 @@ export default function Header() {
           <DesktopNav />
 
           <div className="flex items-center gap-3 sm:gap-4 justify-self-end">
-            <ThemeToggle />
-
             <button
               onClick={(e) => {
                 e.stopPropagation();
