@@ -1,14 +1,15 @@
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
-import { Onest } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from './providers/language';
 import { ToasterProvider } from './providers/toaster';
 
 import Script from 'next/script';
 
-const onest = Onest({
+const inter = Inter({
   subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -40,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body
-        className={`bg-gray-50 dark:bg-dark-secondary min-h-screen flex flex-col ${onest.className}`}
+        className={`bg-gray-50 dark:bg-dark-secondary min-h-screen flex flex-col antialiased ${inter.className}`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light" enableSystem={false} disableTransitionOnChange>
           <LanguageProvider>
