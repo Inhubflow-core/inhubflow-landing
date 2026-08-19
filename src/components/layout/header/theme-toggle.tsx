@@ -1,9 +1,21 @@
 "use client";
 
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 const ThemeToggle = () => {
+  const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <div className="size-11 rounded-full bg-[#F2F4F7] dark:bg-white/5 opacity-50" />
+    );
+  }
 
   const isDark = resolvedTheme === 'dark';
 

@@ -32,5 +32,6 @@ export function errorHandler(error: unknown) {
 }
 
 export function getScrollBarWidth() {
+  if (typeof window === 'undefined') return 0;
   return window.innerWidth - document.documentElement.clientWidth;
 }
