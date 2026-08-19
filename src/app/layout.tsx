@@ -38,19 +38,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <head>
-        <Script src="https://cdn.paddle.com/paddle/v2/paddle.js" strategy="lazyOnload" />
-      </head>
       <body
         className={`bg-gray-50 dark:bg-dark-secondary min-h-screen flex flex-col ${onest.className}`}
       >
-        <ThemeProvider disableTransitionOnChange>
-          {/* ToasterProvider must render before the children components */}
-          {/* https://github.com/emilkowalski/sonner/issues/168#issuecomment-1773734618 */}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <ToasterProvider />
 
           <div className="isolate flex flex-col flex-1">{children}</div>
         </ThemeProvider>
+        <Script src="https://cdn.paddle.com/paddle/v2/paddle.js" strategy="afterInteractive" />
       </body>
     </html>
   );
