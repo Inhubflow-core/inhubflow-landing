@@ -1,18 +1,23 @@
-import React from "react";
+'use client';
+
+import React from 'react';
+import { useLanguage } from '@/app/providers/language';
 
 export default function BenefitsGrid() {
+  const { t } = useLanguage();
+
   return (
     <section className="bg-gray-900 py-16 md:py-28 px-4 sm:px-6">
       <div className="wrapper max-w-7xl mx-auto">
         <div className="max-w-3xl mx-auto mb-16 text-center">
           <span className="text-xs font-bold uppercase tracking-widest text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-3 inline-block">
-            Ventajas Competitivas
+            {t.benefits.badge}
           </span>
           <h2 className="mb-4 font-extrabold text-center text-white text-3xl sm:text-4xl tracking-tight">
-            Diseñado para generar reuniones y ventas todos los días
+            {t.benefits.title}
           </h2>
           <p className="max-w-2xl mx-auto text-base font-normal leading-relaxed text-gray-400">
-            Aumenta tu pipeline de ventas sin contratar un equipo masivo de prospección. InHubFlow multiplica la productividad de tu equipo comercial.
+            {t.benefits.subtitle}
           </p>
         </div>
 
@@ -24,15 +29,15 @@ export default function BenefitsGrid() {
                 🎯
               </div>
               <h3 className="font-bold text-white text-xl mb-3">
-                Extracción Precisa de Leads
+                {t.benefits.card1Title}
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed">
-                Obtén contactos verificados con correos corporativos y números de teléfono directo desde LinkedIn Sales Navigator, Apollo.io, miembros de grupos de WhatsApp y negocios de Google Maps.
+                {t.benefits.card1Desc}
               </p>
             </div>
             <div className="mt-8 pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-blue-400 font-semibold">
-              <span>Filtros avanzados por cargo e industria</span>
-              <span>100% Verificado</span>
+              <span>{t.benefits.card1Tag1}</span>
+              <span>{t.benefits.card1Tag2}</span>
             </div>
           </div>
 
@@ -43,15 +48,15 @@ export default function BenefitsGrid() {
                 ⚡
               </div>
               <h3 className="font-bold text-white text-xl mb-3">
-                Secuencias Multicanal con Warm-up
+                {t.benefits.card2Title}
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed">
-                Combina LinkedIn, Cold Email con calentamiento de bandejas para 0% SPAM y WhatsApp masivo con algoritmos inteligentes que emulan comportamiento humano para máxima seguridad.
+                {t.benefits.card2Desc}
               </p>
             </div>
             <div className="mt-8 pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-indigo-400 font-semibold">
-              <span>Protección anti-bloqueo activa</span>
-              <span>Alta entregabilidad</span>
+              <span>{t.benefits.card2Tag1}</span>
+              <span>{t.benefits.card2Tag2}</span>
             </div>
           </div>
 
@@ -62,15 +67,15 @@ export default function BenefitsGrid() {
                 🤖
               </div>
               <h3 className="font-bold text-white text-xl mb-3">
-                Agentes SDR de IA 24/7
+                {t.benefits.card3Title}
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed">
-                Tus prospectos no tienen que esperar. La IA responde en segundos por WhatsApp, Instagram y LinkedIn, resuelve dudas comerciales complejas y agenda citas en Calendly o Google Calendar.
+                {t.benefits.card3Desc}
               </p>
             </div>
             <div className="mt-8 pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-emerald-400 font-semibold">
-              <span>Sincronización de Calendario</span>
-              <span>Respuesta en &lt; 3 seg</span>
+              <span>{t.benefits.card3Tag1}</span>
+              <span>{t.benefits.card3Tag2}</span>
             </div>
           </div>
         </div>

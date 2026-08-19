@@ -1,7 +1,10 @@
+'use client';
+
 import { CheckIcon } from '@/icons/icons';
 import GlowGradient from '@/assets/pricing/glow';
 import type { TBILLING_PLAN } from '@/components/sections/pricing/data';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/app/providers/language';
 
 type Props = {
   plan: TBILLING_PLAN;
@@ -9,6 +12,28 @@ type Props = {
 };
 
 export function PricingCard({ plan, billingPeriod }: Props) {
+  const { locale } = useLanguage();
+
+  const monthSuffix =
+    locale === 'pt-BR'
+      ? billingPeriod === 'yearly'
+        ? '/ mês (cobrado anual)'
+        : '/ mês'
+      : locale === 'en'
+      ? billingPeriod === 'yearly'
+        ? '/ month (billed annually)'
+        : '/ month'
+      : billingPeriod === 'yearly'
+      ? '/ mes (facturado anual)'
+      : '/ mes';
+
+  const badgeText =
+    locale === 'pt-BR'
+      ? '🔥 Mais Popular'
+      : locale === 'en'
+      ? '🔥 Most Popular'
+      : '🔥 Recomendado';
+
   return (
     <div className="relative">
       <div
@@ -23,7 +48,7 @@ export function PricingCard({ plan, billingPeriod }: Props) {
             </h2>
             {plan.popular && (
               <span className="px-3 py-1 text-xs font-bold rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md">
-                🔥 Recomendado
+                {badgeText}
               </span>
             )}
           </div>
@@ -34,7 +59,7 @@ export function PricingCard({ plan, billingPeriod }: Props) {
 
             {!!plan.pricing[billingPeriod].amount && (
               <span className="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-                {billingPeriod === 'yearly' ? '/ mes (facturado anual)' : '/ mes'}
+                {monthSuffix}
               </span>
             )}
           </p>
@@ -43,15 +68,15 @@ export function PricingCard({ plan, billingPeriod }: Props) {
           </p>
 
           <button
+            type="button"
             onClick={() => {
-              // Smooth scroll to contact or open Paddle overlay
               if (typeof window !== 'undefined' && (window as unknown as { Paddle?: { Checkout: { open: (opts: unknown) => void } } }).Paddle) {
                 (window as unknown as { Paddle: { Checkout: { open: (opts: unknown) => void } } }).Paddle.Checkout.open({
                   settings: { displayModeComponent: 'overlay' },
                   items: [{ priceId: plan.pricing[billingPeriod].paddlePriceId, quantity: 1 }]
                 });
               } else {
-                window.location.href = 'https://b2b.inhubflow.online/login';
+                window.location.href = 'https://b2b.inhubflow.online';
               }
             }}
             className={cn(

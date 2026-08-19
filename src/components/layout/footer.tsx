@@ -1,8 +1,13 @@
+'use client';
+
 import { getCurrentYear } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/app/providers/language";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="relative overflow-hidden bg-[#0A0F1D] text-gray-400">
       <span className="absolute top-0 -translate-x-1/2 left-1/2 pointer-events-none">
@@ -56,11 +61,11 @@ export default function Footer() {
                   />
                 </Link>
                 <p className="block text-sm text-gray-400 mb-8 leading-relaxed max-w-sm">
-                  InHubFlow es la plataforma líder de prospección multicanal y cierre de ventas con Inteligencia Artificial. Automatiza LinkedIn, Cold Email, WhatsApp e Instagram desde una sola suite.
+                  {t.footer.desc}
                 </p>
                 <div className="flex items-center gap-3 text-xs text-emerald-400 font-medium">
                   <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>Sistemas operando al 100% de disponibilidad</span>
+                  <span>{t.footer.status}</span>
                 </div>
               </div>
             </div>
@@ -69,7 +74,7 @@ export default function Footer() {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-7">
                 <div>
                   <span className="block mb-5 text-sm font-semibold text-white uppercase tracking-wider">
-                    Plataforma
+                    {t.footer.col1Title}
                   </span>
                   <nav className="flex flex-col space-y-3">
                     <a
@@ -78,7 +83,7 @@ export default function Footer() {
                       rel="noreferrer"
                       className="text-sm text-gray-400 transition hover:text-white"
                     >
-                      Outreach B2B (LinkedIn)
+                      {t.footer.col1Item1}
                     </a>
                     <a
                       href="https://b2c.inhubflow.online"
@@ -86,46 +91,46 @@ export default function Footer() {
                       rel="noreferrer"
                       className="text-sm text-gray-400 transition hover:text-white"
                     >
-                      Omnicanal B2C (WhatsApp)
+                      {t.footer.col1Item2}
                     </a>
                     <a
                       href="#features"
                       className="text-sm text-gray-400 transition hover:text-white"
                     >
-                      Extractor de Leads
+                      {t.footer.col1Item3}
                     </a>
                     <a
                       href="#pricing"
                       className="text-sm text-gray-400 transition hover:text-white"
                     >
-                      Planes & Precios
+                      {t.footer.col1Item4}
                     </a>
                   </nav>
                 </div>
 
                 <div>
                   <span className="block mb-5 text-sm font-semibold text-white uppercase tracking-wider">
-                    Soluciones
+                    {t.footer.col2Title}
                   </span>
                   <nav className="flex flex-col space-y-3">
                     <span className="text-sm text-gray-400">
-                      Cold Email con Warm-up
+                      {t.footer.col2Item1}
                     </span>
                     <span className="text-sm text-gray-400">
-                      SDR de IA 24/7
+                      {t.footer.col2Item2}
                     </span>
                     <span className="text-sm text-gray-400">
-                      Integración Evolution API
+                      {t.footer.col2Item3}
                     </span>
                     <span className="text-sm text-gray-400">
-                      Google Maps Scraper
+                      {t.footer.col2Item4}
                     </span>
                   </nav>
                 </div>
 
                 <div>
                   <span className="block mb-5 text-sm font-semibold text-white uppercase tracking-wider">
-                    Clientes
+                    {t.footer.col3Title}
                   </span>
                   <nav className="flex flex-col space-y-3">
                     <a
@@ -134,7 +139,7 @@ export default function Footer() {
                       rel="noreferrer"
                       className="text-sm text-blue-400 font-semibold transition hover:text-blue-300"
                     >
-                      Acceso B2B ➔
+                      {t.footer.col3Item1}
                     </a>
                     <a
                       href="https://b2c.inhubflow.online"
@@ -142,13 +147,13 @@ export default function Footer() {
                       rel="noreferrer"
                       className="text-sm text-emerald-400 font-semibold transition hover:text-emerald-300"
                     >
-                      Acceso B2C ➔
+                      {t.footer.col3Item2}
                     </a>
                     <a
                       href="#faq"
                       className="text-sm text-gray-400 transition hover:text-white"
                     >
-                      Preguntas Frecuentes
+                      {t.footer.col3Item3}
                     </a>
                   </nav>
                 </div>
@@ -158,16 +163,16 @@ export default function Footer() {
             <div className="lg:col-span-3 xl:col-span-3">
               <div>
                 <span className="block mb-5 text-sm font-semibold text-white uppercase tracking-wider">
-                  Comienza Hoy
+                  {t.footer.col4Title}
                 </span>
                 <p className="block mb-6 text-sm text-gray-400 leading-relaxed">
-                  Escala la adquisición de clientes con prospección inteligente multicanal.
+                  {t.footer.col4Desc}
                 </p>
                 <a
                   href="#pricing"
                   className="w-full inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white transition rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-500/25"
                 >
-                  Ver Planes & Comenzar ⚡
+                  {t.footer.col4Cta}
                 </a>
               </div>
             </div>

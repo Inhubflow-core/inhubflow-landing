@@ -4,32 +4,47 @@ import { ChevronDown2Icon } from '@/icons/icons';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { navItems } from './nav-items';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
+import { useLanguage } from '@/app/providers/language';
 
 export default function DesktopNav() {
   const pathname = usePathname();
+  const { t } = useLanguage();
   const [activeDropdownKey, setActiveDropdownKey] = useState('');
+
+  const items = useMemo(() => [
+    { type: 'link', href: '#features', label: t.nav.features },
+    { type: 'link', href: '#b2b-outreach', label: 'Outreach B2B' },
+    { type: 'link', href: '#b2c-omnichannel', label: 'Omnicanal B2C' },
+    { type: 'link', href: '#pricing', label: t.nav.pricing },
+    {
+      type: 'dropdown',
+      label: t.nav.clientAccess,
+      items: [
+        { href: 'https://b2b.inhubflow.online', label: '🚀 InHub Outreach (B2B)' },
+        { href: 'https://b2c.inhubflow.online', label: '💬 InHub Omnichannel (B2C)' },
+      ],
+    },
+  ], [t]);
 
   function toggleActiveDropdown(key: string) {
     setActiveDropdownKey((prevKey) => (prevKey === key ? '' : key));
   }
 
   useEffect(() => {
-    // Hide dropdown on pathname changes
     setActiveDropdownKey('');
   }, [pathname]);
 
   return (
     <nav className="hidden lg:flex lg:items-center bg-[#F9FAFB] dark:bg-white/3 rounded-full p-1 max-h-fit">
-      {navItems.map((item) => {
+      {items.map((item) => {
         if (item.type === 'link') {
           return (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                'text-gray-500 dark:text-gray-400 text-sm px-4 py-1.5 rounded-full hover:text-primary-500 font-medium',
+                'text-gray-500 dark:text-gray-400 text-sm px-4 py-1.5 rounded-full hover:text-primary-500 font-medium transition-colors',
                 {
                   'bg-white dark:bg-white/5 font-medium text-gray-800 dark:text-white/90 shadow-xs':
                     pathname === item.href,
@@ -51,19 +66,15 @@ export default function DesktopNav() {
           return (
             <div key={item.label} className="relative">
               <button
+                type="button"
                 onClick={toggleThisDropdown}
                 onMouseEnter={toggleThisDropdown}
                 onMouseLeave={toggleThisDropdown}
-                onKeyDown={(e) => {
-                  if (isDropdownActive && e.key === 'Escape') {
-                    toggleThisDropdown();
-                  }
-                }}
                 className={cn(
-                  'text-gray-500 dark:text-gray-400 hover:text-primary-500 group text-sm inline-flex gap-1 items-center px-4 py-1.5 font-medium rounded-full',
+                  'text-gray-500 dark:text-gray-400 hover:text-primary-500 group text-sm inline-flex gap-1 items-center px-4 py-1.5 font-medium rounded-full cursor-pointer transition-colors',
                   {
                     'bg-white dark:bg-white/5 font-medium text-gray-800 dark:text-white/90 shadow-xs':
-                      item.items.some(({ href }) => pathname?.includes(href)),
+                      item.items?.some(({ href }) => pathname?.includes(href)),
                   }
                 )}
               >
@@ -79,22 +90,19 @@ export default function DesktopNav() {
                 <div
                   onMouseEnter={toggleThisDropdown}
                   onMouseLeave={toggleThisDropdown}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Escape') {
-                      toggleThisDropdown();
-                    }
-                  }}
-                  className="absolute right-0 w-[266px] bg-white dark:bg-dark-secondary dark:border-gray-800 rounded-2xl shadow-theme-lg border border-gray-100 p-3 z-50"
+                  className="absolute right-0 w-[266px] bg-white dark:bg-dark-secondary dark:border-gray-800 rounded-2xl shadow-theme-lg border border-gray-100 p-3 z-50 animate-in fade-in duration-150"
                 >
                   <div className="space-y-1">
-                    {item.items.map((subItem) => (
-                      <Link
+                    {item.items?.map((subItem) => (
+                      <a
                         key={subItem.href}
                         href={subItem.href}
-                        className="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center px-4 py-3 text-sm font-medium rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
                       >
                         {subItem.label}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 </div>

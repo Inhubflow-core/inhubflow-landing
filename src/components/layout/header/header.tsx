@@ -5,18 +5,21 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import DesktopNav from './desktop-nav';
 import MainMobileNav from './main-mobile-nav';
+import LanguageSelector from './language-selector';
+import { useLanguage } from '@/app/providers/language';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
 
   return (
-    <header className="bg-white dark:bg-dark-primary border-b dark:border-gray-800 border-gray-100 sticky top-0 z-50 py-2 lg:py-4">
+    <header className="bg-white dark:bg-dark-primary border-b dark:border-gray-800 border-gray-100 sticky top-0 z-50 py-2 lg:py-3.5">
       <div className="px-4 sm:px-6 lg:px-7">
         <div className="grid grid-cols-2 items-center lg:grid-cols-[1fr_auto_1fr]">
           <div className="flex items-center">
@@ -43,7 +46,10 @@ export default function Header() {
 
           <DesktopNav />
 
-          <div className="flex items-center gap-3 sm:gap-4 justify-self-end">
+          <div className="flex items-center gap-2.5 sm:gap-3 justify-self-end">
+            {/* Language Selector matching Linki & Chatwoot */}
+            <LanguageSelector />
+
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -61,14 +67,14 @@ export default function Header() {
               rel="noreferrer"
               className="text-xs sm:text-sm hidden xl:block font-medium text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
             >
-              Acceso Clientes
+              {t.nav.clientAccess}
             </a>
 
             <a
               href="#pricing"
-              className="inline-flex items-center px-4 sm:px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-xs sm:text-sm font-semibold text-white rounded-full shadow-lg shadow-blue-500/25 transition-all duration-200"
+              className="inline-flex items-center px-4 sm:px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-xs sm:text-sm font-semibold text-white rounded-full shadow-md shadow-blue-500/25 transition-all duration-200"
             >
-              Comenzar Ahora ⚡
+              {t.nav.startNow}
             </a>
           </div>
         </div>

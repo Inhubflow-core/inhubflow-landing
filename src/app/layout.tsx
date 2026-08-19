@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { Onest } from 'next/font/google';
 import './globals.css';
+import { LanguageProvider } from './providers/language';
 import { ToasterProvider } from './providers/toaster';
 
 import Script from 'next/script';
@@ -12,11 +13,11 @@ const onest = Onest({
 
 export const metadata: Metadata = {
   title: {
-    default: 'InHubFlow | Plataforma de Prospección Multicanal & Ventas con IA',
+    default: 'InHubFlow | AI-Powered Multichannel Prospecting & Sales Suite',
     template: '%s | InHubFlow AI Suite',
   },
   description:
-    'Automatiza tu prospección en LinkedIn, Cold Email, WhatsApp e Instagram. Extrae leads de grupos, perfiles y Google Maps, y agenda reuniones con Agentes SDR de IA 24/7.',
+    'Automate B2B LinkedIn & Cold Email outreach and 24/7 B2C WhatsApp & Instagram AI SDR sales execution.',
   keywords: [
     'prospección b2b',
     'outreach linkedin',
@@ -42,9 +43,11 @@ export default function RootLayout({
         className={`bg-gray-50 dark:bg-dark-secondary min-h-screen flex flex-col ${onest.className}`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light" enableSystem={false} disableTransitionOnChange>
-          <ToasterProvider />
+          <LanguageProvider>
+            <ToasterProvider />
 
-          <div className="isolate flex flex-col flex-1">{children}</div>
+            <div className="isolate flex flex-col flex-1">{children}</div>
+          </LanguageProvider>
         </ThemeProvider>
         <Script src="https://cdn.paddle.com/paddle/v2/paddle.js" strategy="afterInteractive" />
       </body>
