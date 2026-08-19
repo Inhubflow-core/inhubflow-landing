@@ -6,6 +6,8 @@ import ToolsTab from '@/components/sections/tools-tab';
 import { CoreFeatures } from '@/components/sections/core-features';
 import PricingSection from '@/components/sections/pricing';
 
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
   return (
     <>

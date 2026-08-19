@@ -6,7 +6,9 @@ export const metadata: Metadata = {
   title: 'Pricing',
 };
 
-export default async function PricingPage() {
+export const dynamic = 'force-dynamic';
+
+export default function PricingPage() {
   return (
     <>
       <PricingSection />
