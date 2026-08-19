@@ -98,19 +98,21 @@ export default function MainMobileNav({ isOpen }: MobileMenuProps) {
         </div>
 
         <div className="flex flex-col pt-2 pb-3 space-y-3 px-8">
-          <Link
-            href="/signin"
-            className="text-sm block w-full border h-11 border-gray-200 px-5 py-3 rounded-full text-center font-medium text-gray-700 dark:text-gray-400 hover:text-primary-500"
+          <a
+            href="https://b2b.inhubflow.online"
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm block w-full border h-11 border-gray-200 dark:border-gray-700 px-5 py-3 rounded-full text-center font-medium text-gray-700 dark:text-gray-300 hover:text-primary-500"
           >
-            Sign In
-          </Link>
+            Acceso Clientes
+          </a>
 
-          <Link
-            href="/signup"
-            className="flex items-center px-5 py-3 gradient-btn  justify-center text-sm text-white rounded-full button-bg h-11"
+          <a
+            href="#pricing"
+            className="flex items-center px-5 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 justify-center text-sm font-bold text-white rounded-full h-11 shadow-lg shadow-blue-500/25"
           >
-            Get Started Free
-          </Link>
+            Comenzar Ahora ⚡
+          </a>
         </div>
       </div>
     </div>

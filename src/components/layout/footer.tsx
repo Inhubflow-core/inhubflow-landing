@@ -50,9 +50,9 @@ export default function Footer() {
                   <Image
                     src="/logo-master-dark.png"
                     alt="InHubFlow Logo"
-                    width={180}
-                    height={44}
-                    className="h-10 w-auto object-contain"
+                    width={220}
+                    height={55}
+                    className="h-11 w-auto max-w-[200px] object-contain"
                   />
                 </Link>
                 <p className="block text-sm text-gray-400 mb-9 leading-relaxed">

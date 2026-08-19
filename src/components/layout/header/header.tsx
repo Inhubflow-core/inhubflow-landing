@@ -21,26 +21,26 @@ export default function Header() {
       <div className="px-4 sm:px-6 lg:px-7">
         <div className="grid grid-cols-2 items-center lg:grid-cols-[1fr_auto_1fr]">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2.5">
               <Image
                 src="/logo-master-light.png"
-                className="block dark:hidden h-9 w-auto object-contain"
+                className="block dark:hidden h-10 sm:h-11 w-auto max-w-[200px] object-contain"
                 alt="InHubFlow Logo"
-                width={170}
-                height={40}
+                width={220}
+                height={55}
                 priority
               />
 
               <Image
                 src="/logo-master-dark.png"
-                className="hidden dark:block h-9 w-auto object-contain"
+                className="hidden dark:block h-10 sm:h-11 w-auto max-w-[200px] object-contain"
                 alt="InHubFlow Logo"
-                width={170}
-                height={40}
+                width={220}
+                height={55}
                 priority
               />
 
-              <span className="hidden sm:inline-block px-2 py-0.5 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 text-blue-500 dark:text-blue-400 text-[10px] font-bold uppercase tracking-wider">
+              <span className="hidden sm:inline-block px-2 py-0.5 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-wider">
                 AI Suite
               </span>
             </Link>
