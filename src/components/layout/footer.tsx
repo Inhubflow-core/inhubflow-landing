@@ -46,7 +46,7 @@ export default function Footer() {
           <div className="grid gap-y-8 gap-x-6 lg:grid-cols-12">
             <div className="lg:col-span-4 xl:col-span-4">
               <div>
-                <Link href="/" className="inline-flex items-center gap-2.5 mb-6">
+                <Link href="/" className="inline-flex items-center mb-6">
                   <Image
                     src="/logo-master-dark.png"
                     alt="InHubFlow Logo"
@@ -54,9 +54,6 @@ export default function Footer() {
                     height={55}
                     className="h-10 sm:h-11 w-auto max-w-[200px] object-contain"
                   />
-                  <span className="hidden sm:inline-block px-2 py-0.5 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 text-blue-400 text-[10px] font-bold uppercase tracking-wider">
-                    AI Suite
-                  </span>
                 </Link>
                 <p className="block text-sm text-gray-400 mb-8 leading-relaxed max-w-sm">
                   InHubFlow es la plataforma líder de prospección multicanal y cierre de ventas con Inteligencia Artificial. Automatiza LinkedIn, Cold Email, WhatsApp e Instagram desde una sola suite.
