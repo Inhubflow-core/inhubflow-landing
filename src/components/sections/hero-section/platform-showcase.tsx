@@ -59,15 +59,7 @@ export function PlatformShowcase() {
       </div>
 
       {/* Main Glassmorphic Showcase Window */}
-      <div className="p-3 sm:p-5 rounded-[32px] border border-white/40 dark:border-white/10 bg-white/40 dark:bg-gray-900/60 backdrop-blur-2xl shadow-2xl relative overflow-hidden group">
-        
-        {/* Glow Effect Accent */}
-        <div
-          className={`absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full blur-3xl opacity-30 pointer-events-none transition-colors duration-700 ${
-            activeTab === 'b2b' ? 'bg-blue-500' : 'bg-emerald-500'
-          }`}
-        />
-
+      <div className="p-3 sm:p-5 rounded-[32px] border border-white/60 dark:border-white/10 bg-white/70 dark:bg-gray-900/80 backdrop-blur-xl shadow-xl relative overflow-hidden">
         {/* Browser / App Frame Header */}
         <div className="flex items-center justify-between px-4 py-2.5 mb-3 rounded-2xl bg-white/70 dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/60 text-xs">
           <div className="flex items-center gap-2">
