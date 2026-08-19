@@ -73,11 +73,11 @@ export function PlatformShowcase() {
             </div>
 
             {/* Campaign Sequence Flow Simulation */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-700">
-              <div className="flex items-center justify-between mb-3">
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-700 min-h-[295px] flex flex-col justify-between">
+              <div className="flex items-center justify-between mb-2.5">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-ping" />
-                  <h4 className="text-sm font-bold text-gray-900 dark:text-white">
+                  <h4 className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">
                     Campaña Activa: CEOs & Directores Comerciales (SaaS & Fintech)
                   </h4>
                 </div>
@@ -86,7 +86,7 @@ export function PlatformShowcase() {
                 </span>
               </div>
 
-              <div className="space-y-2.5 text-xs">
+              <div className="space-y-2 text-xs flex-1 flex flex-col justify-between">
                 <div className="flex items-start gap-3 p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800">
                   <div className="h-6 w-6 rounded-full bg-blue-500/20 text-blue-500 flex items-center justify-center font-bold shrink-0">
                     1
@@ -99,7 +99,7 @@ export function PlatformShowcase() {
                       Extrayendo 500 tomadores de decisión de Sales Navigator + enriquecimiento de emails corporativos con Apollo.io.
                     </p>
                   </div>
-                  <span className="text-emerald-500 font-semibold">Completado ✓</span>
+                  <span className="text-emerald-500 font-semibold text-[11px]">Completado ✓</span>
                 </div>
 
                 <div className="flex items-start gap-3 p-2.5 rounded-xl bg-blue-50/60 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/60">
@@ -114,10 +114,10 @@ export function PlatformShowcase() {
                       <em>&quot;Hola [Nombre], vi tu trayectoria escalando [Empresa] en el sector B2B. Te contacto porque ayudamos a directores como tú a automatizar su prospección multicanal...&quot;</em>
                     </p>
                   </div>
-                  <span className="text-blue-500 font-semibold animate-pulse">Enviando (48/día)...</span>
+                  <span className="text-blue-500 font-semibold animate-pulse text-[11px]">Enviando (48/día)...</span>
                 </div>
 
-                <div className="flex items-start gap-3 p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800">
+                <div className="flex items-start gap-3 p-2.5 rounded-xl bg-purple-50/40 dark:bg-purple-900/10 border border-purple-100 dark:border-purple-900/30">
                   <div className="h-6 w-6 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center font-bold shrink-0">
                     3
                   </div>
@@ -129,7 +129,22 @@ export function PlatformShowcase() {
                       Si no responde en LinkedIn en 48h, envía automáticamente correo personalizado de seguimiento. Se detiene al recibir respuesta.
                     </p>
                   </div>
-                  <span className="text-gray-400 font-semibold">Programado</span>
+                  <span className="text-purple-500 font-semibold text-[11px]">Programado</span>
+                </div>
+
+                <div className="flex items-start gap-3 p-2.5 rounded-xl bg-emerald-50/40 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-900/30">
+                  <div className="h-6 w-6 rounded-full bg-emerald-500/20 text-emerald-500 flex items-center justify-center font-bold shrink-0">
+                    4
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-gray-800 dark:text-gray-200">
+                      Paso 4: Auto-Agendamiento de Cita & Sincronización en CRM
+                    </p>
+                    <p className="text-gray-500 dark:text-gray-400 text-[11px]">
+                      Al calificar al prospecto, agenda la videollamada directamente en tu Google Calendar / Calendly y actualiza el estado en el CRM.
+                    </p>
+                  </div>
+                  <span className="text-emerald-500 font-semibold text-[11px]">Confirmado 🎉</span>
                 </div>
               </div>
             </div>
@@ -164,7 +179,7 @@ export function PlatformShowcase() {
             </div>
 
             {/* Live Chatwoot AI Conversation Simulation */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-700">
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-700 min-h-[295px] flex flex-col justify-between">
               <div className="flex items-center justify-between mb-3 border-b border-gray-100 dark:border-gray-700 pb-2.5">
                 <div className="flex items-center gap-3">
                   <div className="relative">
@@ -186,7 +201,7 @@ export function PlatformShowcase() {
               </div>
 
               {/* Chat Messages */}
-              <div className="space-y-3 text-xs">
+              <div className="space-y-3 text-xs flex-1 flex flex-col justify-between">
                 <div className="flex items-start gap-2 max-w-[85%]">
                   <div className="p-3 rounded-2xl rounded-tl-none bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100">
                     <p>Hola, recibí su mensaje. ¿Cómo funciona el sistema para captar clientes para nuestra inmobiliaria en automático?</p>
