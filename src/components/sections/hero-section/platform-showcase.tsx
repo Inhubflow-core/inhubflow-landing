@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 export function PlatformShowcase() {
   const [activeTab, setActiveTab] = useState<'b2b' | 'b2c'>('b2b');

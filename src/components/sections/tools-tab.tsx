@@ -1,15 +1,7 @@
 'use client';
 
 import type React from 'react';
-import { Fragment, useState } from 'react';
-
-import {
-  CodeGeneratorIcon,
-  EmailGeneratorIcon,
-  ImageGeneratorIcon,
-  TextGeneratorIcon,
-  VideoGeneratorIcon,
-} from '@/icons/icons';
+import { useState } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 

@@ -2,8 +2,6 @@ import { CheckIcon } from '@/icons/icons';
 import GlowGradient from '@/assets/pricing/glow';
 import type { TBILLING_PLAN } from '@/components/sections/pricing/data';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
-import { PropsWithChildren } from 'react';
 
 type Props = {
   plan: TBILLING_PLAN;
@@ -90,16 +88,5 @@ export function PricingCard({ plan, billingPeriod }: Props) {
         <GlowGradient className="absolute -left-full -translate-x-20 top-0 max-lg:hidden" />
       )}
     </div>
-  );
-}
-
-function ContactSalesLink({ children }: PropsWithChildren) {
-  return (
-    <Link
-      href="/contact"
-      className="block w-full px-8 py-3.5 mt-7 text-sm font-medium text-center rounded-full transition dark:hover:bg-primary-500 dark:bg-white/[0.03] hover:bg-gray-900 text-white bg-gray-700"
-    >
-      {children}
-    </Link>
   );
 }
