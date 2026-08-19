@@ -10,7 +10,7 @@ export default function HeroSection() {
         <div className="wrapper px-4 sm:px-6 lg:px-8">
           <div className="max-w-[920px] mx-auto">
             <div className="text-center pb-12 sm:pb-16">
-              <Subheading text="⚡ LA SUITE TODO-EN-UNO DE PROSPECCIÓN & CIERRE DE VENTAS CON IA" />
+              <Subheading text="⚡ AI - POWERED PROSPECTING SYSTEM" />
 
               <h1 className="text-gray-900 font-extrabold mb-6 text-4xl sm:text-5xl lg:text-6xl dark:text-white sm:leading-[1.15] tracking-tight">
                 Genera Leads y Cierra Ventas en Piloto Automático con{' '}
