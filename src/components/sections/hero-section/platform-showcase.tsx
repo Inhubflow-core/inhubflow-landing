@@ -21,43 +21,6 @@ export function PlatformShowcase() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Top Interactive Tabs */}
-      <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-        <button
-          onClick={() => setActiveTab('b2b')}
-          className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm ${
-            activeTab === 'b2b'
-              ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-blue-500/30 shadow-lg scale-105 ring-2 ring-blue-400/50'
-              : 'bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/80 backdrop-blur-md border border-gray-200 dark:border-gray-700'
-          }`}
-        >
-          <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-blue-500/20 text-blue-200">
-            🚀
-          </span>
-          <span>Outreach B2B (LinkedIn & Cold Email)</span>
-          <span className="px-2 py-0.5 rounded-full text-[10px] bg-blue-400/20 uppercase tracking-wider font-bold">
-            b2b.inhubflow.online
-          </span>
-        </button>
-
-        <button
-          onClick={() => setActiveTab('b2c')}
-          className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm ${
-            activeTab === 'b2c'
-              ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-emerald-500/30 shadow-lg scale-105 ring-2 ring-emerald-400/50'
-              : 'bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/80 backdrop-blur-md border border-gray-200 dark:border-gray-700'
-          }`}
-        >
-          <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-200">
-            💬
-          </span>
-          <span>Omnicanal B2C (WhatsApp & Instagram)</span>
-          <span className="px-2 py-0.5 rounded-full text-[10px] bg-emerald-400/20 uppercase tracking-wider font-bold">
-            b2c.inhubflow.online
-          </span>
-        </button>
-      </div>
-
       {/* Main Glassmorphic Showcase Window */}
       <div className="p-3 sm:p-5 rounded-[32px] border border-white/60 dark:border-white/10 bg-white/70 dark:bg-gray-900/80 backdrop-blur-xl shadow-xl relative overflow-hidden">
         {/* Browser / App Frame Header */}
@@ -223,7 +186,7 @@ export function PlatformShowcase() {
               </div>
 
               {/* Chat Messages */}
-              <div className="space-y-3 text-xs max-h-56 overflow-y-auto pr-1">
+              <div className="space-y-3 text-xs">
                 <div className="flex items-start gap-2 max-w-[85%]">
                   <div className="p-3 rounded-2xl rounded-tl-none bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100">
                     <p>Hola, recibí su mensaje. ¿Cómo funciona el sistema para captar clientes para nuestra inmobiliaria en automático?</p>
@@ -242,13 +205,6 @@ export function PlatformShowcase() {
                   <div className="p-3 rounded-2xl rounded-tl-none bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100">
                     <p>¡Excelente! ¿Tienen disponibilidad mañana para una videollamada y ver cómo se configura?</p>
                     <span className="text-[9px] text-gray-400 block mt-1">10:15 AM</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-2 max-w-[85%] ml-auto justify-end">
-                  <div className="p-3 rounded-2xl rounded-tr-none bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md">
-                    <p>¡Claro que sí! Te reservé un espacio para mañana a las 16:00 hs. Te acabo de enviar la invitación al calendario con el enlace de Google Meet. ¡Nos vemos allí!</p>
-                    <span className="text-[9px] text-emerald-200 block mt-1">10:15 AM • Evento Creado ✓</span>
                   </div>
                 </div>
               </div>
