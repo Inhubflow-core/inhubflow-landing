@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import Image from 'next/image';
+import HeroLogos from '../hero-logos';
 import { Subheading } from './subheading';
 import { PlatformShowcase } from './platform-showcase';
 
@@ -37,74 +38,76 @@ export default function HeroSection() {
                 </a>
               </div>
             </div>
+          </div>
+
           {/* Interactive Dual-Platform Carousel Showcase */}
           <PlatformShowcase />
         </div>
 
-        <div className="absolute hidden lg:block z-10 -top-20 -translate-y-20 left-1/2 -translate-x-1/2">
-              <svg
-                width="1300"
-                height="1001"
-                viewBox="0 0 1300 1001"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+        {/* Ambient Glow Graphic */}
+        <div className="absolute hidden lg:block z-10 -top-20 -translate-y-20 left-1/2 -translate-x-1/2 pointer-events-none">
+          <svg
+            width="1300"
+            height="1001"
+            viewBox="0 0 1300 1001"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g opacity="0.7" filter="url(#filter0_f_9279_7148)">
+              <circle cx="800" cy="500.03" r="300" fill="#4E6EFF" />
+            </g>
+            <g opacity="0.3" filter="url(#filter1_f_9279_7148)">
+              <circle cx="500" cy="500.03" r="300" fill="#FF58D5" />
+            </g>
+            <defs>
+              <filter
+                id="filter0_f_9279_7148"
+                x="300"
+                y="0.029541"
+                width="1000"
+                height="1000"
+                filterUnits="userSpaceOnUse"
+                colorInterpolationFilters="sRGB"
               >
-                <g opacity="0.7" filter="url(#filter0_f_9279_7148)">
-                  <circle cx="800" cy="500.03" r="300" fill="#4E6EFF" />
-                </g>
-                <g opacity="0.3" filter="url(#filter1_f_9279_7148)">
-                  <circle cx="500" cy="500.03" r="300" fill="#FF58D5" />
-                </g>
-                <defs>
-                  <filter
-                    id="filter0_f_9279_7148"
-                    x="300"
-                    y="0.029541"
-                    width="1000"
-                    height="1000"
-                    filterUnits="userSpaceOnUse"
-                    colorInterpolationFilters="sRGB"
-                  >
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                    <feBlend
-                      mode="normal"
-                      in="SourceGraphic"
-                      in2="BackgroundImageFix"
-                      result="shape"
-                    />
-                    <feGaussianBlur
-                      stdDeviation="100"
-                      result="effect1_foregroundBlur_9279_7148"
-                    />
-                  </filter>
-                  <filter
-                    id="filter1_f_9279_7148"
-                    x="0"
-                    y="0.029541"
-                    width="1000"
-                    height="1000"
-                    filterUnits="userSpaceOnUse"
-                    colorInterpolationFilters="sRGB"
-                  >
-                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                    <feBlend
-                      mode="normal"
-                      in="SourceGraphic"
-                      in2="BackgroundImageFix"
-                      result="shape"
-                    />
-                    <feGaussianBlur
-                      stdDeviation="100"
-                      result="effect1_foregroundBlur_9279_7148"
-                    />
-                  </filter>
-                </defs>
-              </svg>
-            </div>
-          </div>
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feGaussianBlur
+                  stdDeviation="100"
+                  result="effect1_foregroundBlur_9279_7148"
+                />
+              </filter>
+              <filter
+                id="filter1_f_9279_7148"
+                x="0"
+                y="0.029541"
+                width="1000"
+                height="1000"
+                filterUnits="userSpaceOnUse"
+                colorInterpolationFilters="sRGB"
+              >
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="BackgroundImageFix"
+                  result="shape"
+                />
+                <feGaussianBlur
+                  stdDeviation="100"
+                  result="effect1_foregroundBlur_9279_7148"
+                />
+              </filter>
+            </defs>
+          </svg>
         </div>
 
-        <div className="max-[1100px]:hidden">
+        {/* Floating Shapes */}
+        <div className="max-[1100px]:hidden pointer-events-none">
           <Image
             src="/images/hero/shape-left-1.svg"
             className="absolute top-14 left-16 floating-1"
@@ -135,7 +138,6 @@ export default function HeroSection() {
           />
         </div>
       </div>
-      <div className="hero-glow-bg pointer-events-none w-full h-167.5 absolute z-10 bottom-0"></div>
       <HeroLogos />
     </section>
   );

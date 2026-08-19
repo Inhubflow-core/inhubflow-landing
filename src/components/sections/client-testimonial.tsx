@@ -6,98 +6,74 @@ import { useState } from 'react';
   const testimonials = [
     {
       id: 1,
-      name: 'Ralph Edwards',
-      company: 'Big Kahuna Burger Ltd',
+      name: 'Alejandro Morales',
+      company: 'CEO en ScaleB2B Agency',
       image: '/images/users/user-1.png',
       testimonial:
-        'As a Senior Software Developer I found TailAdmin perfect write code that easy can be used in my projects, which some are production already.',
+        'InHubFlow nos permitió triplicar el volumen de reuniones B2B para nuestros clientes. El warm-up de correo y las notas de LinkedIn con IA tienen más del 40% de tasa de respuesta.',
     },
     {
       id: 2,
-      name: 'Albert Flores',
-      company: 'Biffco Enterprises Ltd.',
+      name: 'Camila Rossi',
+      company: 'Directora Comercial en InmoPlus',
       image: '/images/users/user-2.png',
       testimonial:
-        'As a Senior Software Developer I found TailAdmin perfect write code that easy can be used in my projects, which some are production already.',
+        'Extraemos compradores calificados de grupos de WhatsApp del sector inmobiliario y el SDR de IA responde en 3 segundos agendando visitas a propiedades. Es una locura de eficiente.',
     },
     {
       id: 3,
-      name: 'Jenny Wilson',
-      company: 'Acme Co.',
+      name: 'Martín Benítez',
+      company: 'Fundador en SaaS Growth Lab',
       image: '/images/users/user-3.png',
       testimonial:
-        'As a Senior Software Developer I found TailAdmin perfect write code that easy can be used in my projects, which some are production already.',
+        'Dejamos de pagar $350/mes entre Lemlist, Expandi y ManyChat. Tener LinkedIn, Cold Email, WhatsApp e Instagram en una sola suscripción con InHubFlow nos ahorró tiempo y dinero.',
     },
     {
       id: 4,
-      name: 'Esther Howard',
-      company: 'Barone LLC.',
+      name: 'Valeria Sotomayor',
+      company: 'Head of Sales en Finova',
       image: '/images/users/user-4.png',
       testimonial:
-        'As a Senior Software Developer I found TailAdmin perfect write code that easy can be used in my projects, which some are production already.',
+        'La integración con Apollo y Sales Navigator es impecable. El sistema filtra directores financieros, envía secuencias personalizadas y nos llena el Google Calendar todas las semanas.',
     },
     {
       id: 5,
-      name: 'Darlene Robertson',
-      company: 'Abstergo Ltd.',
+      name: 'Diego Riquelme',
+      company: 'Director en EcomExperts',
       image: '/images/users/user-1.png',
       testimonial:
-        'As a Senior Software Developer I found TailAdmin perfect write code that easy can be used in my projects, which some are production already.',
+        'Los disparos masivos en WhatsApp con intervalos de Evolution API no tienen comparación. Cero bloqueos y la bandeja de Chatwoot nos permite atender miles de conversaciones en equipo.',
     },
     {
       id: 6,
-      name: 'Devon Lane',
-      company: 'Binford Ltd.',
+      name: 'Lucía Fernández',
+      company: 'Consultora de Negocios Digitales',
       image: '/images/users/user-2.png',
       testimonial:
-        'As a Senior Software Developer I found TailAdmin perfect write code that easy can be used in my projects, which some are production already.',
-    },
-    {
-      id: 7,
-      name: 'Ralph Edwards',
-      company: 'Big Kahuna Burger Ltd',
-      image: '/images/users/user-1.png',
-      testimonial:
-        'As a Senior Software Developer I found TailAdmin perfect write code that easy can be used in my projects, which some are production already.',
-    },
-    {
-      id: 8,
-      name: 'Darlene Robertson',
-      company: 'Abstergo Ltd.',
-      image: '/images/users/user-2.png',
-      testimonial:
-        'As a Senior Software Developer I found TailAdmin perfect write code that easy can be used in my projects, which some are production already.',
-    },
-    {
-      id: 9,
-      name: 'Devon Lane',
-      company: 'Binford Ltd.',
-      image: '/images/users/user-3.png',
-      testimonial:
-        'As a Senior Software Developer I found TailAdmin perfect write code that easy can be used in my projects, which some are production already.',
+        'Configurar los Agentes SDR de IA fue sumamente sencillo. Responden con tono profesional, resuelven dudas complejas y cierran reuniones en piloto automático mientras duermo.',
     },
   ];
 
   export default function TestimonialsSection() {
     const [showAll, setShowAll] = useState(false);
 
-    // Determine which testimonials to display
     const visibleTestimonials = showAll
       ? testimonials
       : testimonials.slice(0, 6);
 
     return (
-      <section className="md:py-28 py-14 relative">
-        <div className="wrapper">
+      <section className="md:py-28 py-16 relative bg-gray-50/50 dark:bg-[#0c111d]">
+        <div className="wrapper max-w-7xl mx-auto px-4">
           <div>
-            <div className="max-w-2xl mx-auto mb-12 text-center">
-              <h2 className="mb-3 font-bold text-center text-gray-800 text-3xl dark:text-white/90 md:text-title-lg">
-                What our users say
+            <div className="max-w-2xl mx-auto mb-14 text-center">
+              <span className="text-xs font-bold uppercase tracking-widest text-blue-500 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-3 inline-block">
+                Casos de Éxito
+              </span>
+              <h2 className="mb-4 font-extrabold text-center text-gray-900 text-3xl sm:text-4xl dark:text-white tracking-tight">
+                Lo que dicen los equipos que escalan con InHubFlow
               </h2>
-              <p className="max-w-xl mx-auto leading-6 text-gray-500 dark:text-gray-400">
-                Unlock the Potential of Innovation. Discover the Advanced AI
-                Tools Transforming Your Ideas into Reality with Unmatched
-                Precision and Intelligence.
+              <p className="max-w-xl mx-auto text-base text-gray-600 dark:text-gray-400">
+                Empresas, agencias y directores comerciales que automatizan su prospección multicanal y multiplican sus ventas cada mes.
               </p>
             </div>
 
