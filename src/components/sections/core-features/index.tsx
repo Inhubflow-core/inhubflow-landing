@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CORE_FEATURES } from "./data";
 
 export function CoreFeatures() {
@@ -22,22 +21,16 @@ export function CoreFeatures() {
           {CORE_FEATURES.map((feature) => (
             <div
               key={feature.title}
-              className="bg-white p-9 border border-gray-200 dark:bg-white/5 dark:border-white/3 rounded-[20px] shadow-[0px_30px_50px_-32px_rgba(107,110,148,0.04)]"
+              className="bg-white p-9 border border-gray-200 dark:bg-white/5 dark:border-white/3 rounded-[20px] shadow-[0px_30px_50px_-32px_rgba(107,110,148,0.04)] hover:shadow-xl transition-shadow"
             >
-              <div className="core-feature-icon mb-9">
-                <Image
-                  src={feature.iconUrl}
-                  alt={feature.title}
-                  role="presentation"
-                  width={40}
-                  height={40}
-                />
+              <div className="w-12 h-12 rounded-2xl bg-blue-500/10 text-2xl flex items-center justify-center mb-6">
+                {feature.icon}
               </div>
 
               <h3 className="mb-4 text-gray-800 dark:text-white/90 font-bold text-xl md:text-2xl">
                 {feature.title}
               </h3>
-              <p className="text-gray-500 dark:text-gray-400">
+              <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
                 {feature.description}
               </p>
             </div>
