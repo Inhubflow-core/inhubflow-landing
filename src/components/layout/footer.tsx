@@ -170,7 +170,7 @@ export default function Footer() {
                 </p>
                 <a
                   href="#pricing"
-                  className="w-full inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white transition rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-500/25"
+                  className="w-full inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white transition rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500"
                 >
                   {t.footer.col4Cta}
                 </a>

@@ -80,9 +80,9 @@ export function PricingCard({ plan, billingPeriod }: Props) {
               }
             }}
             className={cn(
-              'block w-full px-6 py-3.5 mt-7 text-sm font-bold text-center rounded-full transition-all duration-200 cursor-pointer shadow-md',
+              'block w-full px-6 py-3.5 mt-7 text-sm font-bold text-center rounded-full transition-all duration-200 cursor-pointer',
               {
-                'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-blue-500/25 scale-[1.02]':
+                'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white scale-[1.02]':
                   plan.popular,
                 'bg-gray-900 hover:bg-gray-800 dark:bg-white/10 dark:hover:bg-white/20 text-white':
                   !plan.popular,

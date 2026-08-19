@@ -72,7 +72,7 @@ export default function Header() {
 
             <a
               href="#pricing"
-              className="inline-flex items-center px-4 sm:px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-xs sm:text-sm font-semibold text-white rounded-full shadow-md shadow-blue-500/25 transition-all duration-200"
+              className="inline-flex items-center px-4 sm:px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-xs sm:text-sm font-semibold text-white rounded-full transition-all duration-200"
             >
               {t.nav.startNow}
             </a>

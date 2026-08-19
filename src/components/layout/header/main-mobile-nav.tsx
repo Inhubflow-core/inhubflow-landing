@@ -112,7 +112,7 @@ export default function MainMobileNav({ isOpen }: MobileMenuProps) {
 
           <a
             href="#pricing"
-            className="flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 justify-center text-sm font-bold text-white rounded-full h-11 shadow-lg shadow-blue-500/25"
+            className="flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 justify-center text-sm font-bold text-white rounded-full h-11"
           >
             {t.nav.startNow}
           </a>

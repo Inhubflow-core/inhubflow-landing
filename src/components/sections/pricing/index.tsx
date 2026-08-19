@@ -42,7 +42,7 @@ export default function PricingSection() {
                       ' rounded-full' +
                       ' text-gray-700 dark:text-gray-400',
                     {
-                      'bg-blue-600 text-white shadow-md shadow-blue-500/30':
+                      'bg-blue-600 text-white':
                         period.key === activeBillingPeriodKey,
                       'pr-2': period.saving,
                     }
