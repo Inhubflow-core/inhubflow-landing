@@ -107,14 +107,7 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
       fqdn: subdomainUrl,
       name: `Linki B2B - ${companyName} (${cleanSlug})`,
       description: `Dedicated InHubFlow B2B instance for ${companyName} with ${slotsLimit} slots`,
-      environment_variables: [
-        { key: "INITIAL_ADMIN_EMAIL", value: adminEmail, is_build_time: false },
-        { key: "INITIAL_ADMIN_PASSWORD", value: adminPassword, is_build_time: false },
-        { key: "SLOTS_LIMIT", value: String(slotsLimit), is_build_time: false },
-        { key: "COMPANY_NAME", value: companyName, is_build_time: false },
-        { key: "NEXTAUTH_URL", value: subdomainUrl, is_build_time: false },
-        { key: "NEXTAUTH_SECRET", value: "inhubflow_secret_salt_2026", is_build_time: false },
-      ],
+      instant_deploy: true,
     };
 
     // 1. Create Application
@@ -148,16 +141,38 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
 
     const applicationUuid = data.uuid || data.id;
 
-    // 2. Trigger deployment
+    // 2. Set Environment Variables on the application
     if (applicationUuid) {
+      const envVars = [
+        { key: "INITIAL_ADMIN_EMAIL", value: adminEmail, is_build_time: false },
+        { key: "INITIAL_ADMIN_PASSWORD", value: adminPassword, is_build_time: false },
+        { key: "SLOTS_LIMIT", value: String(slotsLimit), is_build_time: false },
+        { key: "COMPANY_NAME", value: companyName, is_build_time: false },
+        { key: "NEXTAUTH_URL", value: subdomainUrl, is_build_time: false },
+        { key: "NEXTAUTH_SECRET", value: "inhubflow_secret_salt_2026", is_build_time: false },
+      ];
+
+      for (const envItem of envVars) {
+        try {
+          await fetch(`${COOLIFY_API_URL}/applications/${applicationUuid}/envs`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${COOLIFY_API_TOKEN}`,
+            },
+            body: JSON.stringify(envItem),
+          });
+        } catch {}
+      }
+
+      // 3. Trigger deployment
       console.log(`[Coolify Service] 🚀 Triggering deployment for application: ${applicationUuid}`);
-      const deployRes = await fetch(`${COOLIFY_API_URL}/deploy?uuid=${applicationUuid}`, {
+      await fetch(`${COOLIFY_API_URL}/deploy?uuid=${applicationUuid}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${COOLIFY_API_TOKEN}`,
         },
       });
-      console.log(`[Coolify Service] 🚀 Deploy response status: ${deployRes.status}`);
     }
 
     console.log(`[Coolify Service] ✅ Linki instance '${cleanSlug}' created at ${subdomainUrl} (UUID: ${applicationUuid}).`);
