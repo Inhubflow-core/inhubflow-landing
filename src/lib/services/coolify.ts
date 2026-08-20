@@ -136,9 +136,9 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
 
     const applicationUuid = data.uuid || data.id;
 
-    // 2. Set FQDN (Subdomain with SSL) on the newly created application
+    // 2. Set Domain (Subdomain with SSL) on the newly created application
     if (applicationUuid) {
-      console.log(`[Coolify Service] 🌐 Setting FQDN '${subdomainUrl}' for application: ${applicationUuid}`);
+      console.log(`[Coolify Service] 🌐 Setting domain '${subdomainUrl}' for application: ${applicationUuid}`);
       try {
         await fetch(`${COOLIFY_API_URL}/applications/${applicationUuid}`, {
           method: "PATCH",
@@ -147,11 +147,11 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
             Authorization: `Bearer ${COOLIFY_API_TOKEN}`,
           },
           body: JSON.stringify({
-            fqdn: subdomainUrl,
+            domains: subdomainUrl,
           }),
         });
       } catch (patchErr) {
-        console.warn(`[Coolify Service] ⚠️ Could not patch FQDN:`, patchErr);
+        console.warn(`[Coolify Service] ⚠️ Could not patch domain:`, patchErr);
       }
 
       // 3. Inject Environment Variables into the application
@@ -179,7 +179,7 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
 
       // 4. Trigger Build & Deployment
       console.log(`[Coolify Service] 🚀 Triggering deployment for application: ${applicationUuid}`);
-      await fetch(`${COOLIFY_API_URL}/deploy?uuid=${applicationUuid}`, {
+      await fetch(`${COOLIFY_API_URL}/deploy?uuid=${applicationUuid}&force=true`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${COOLIFY_API_TOKEN}`,
