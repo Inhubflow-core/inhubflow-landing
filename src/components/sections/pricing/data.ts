@@ -15,16 +15,22 @@ export const getBillingPeriods = (locale: Locale) => [
 
 const AMOUNTS = {
   b2c: {
-    monthly: 59,
-    yearly: 49,
+    monthly: 49.9,
+    yearly: 39.9,
+    formattedMonthly: '$49,90',
+    formattedYearly: '$39,90',
   },
   b2b: {
-    monthly: 79,
-    yearly: 69,
+    monthly: 69.9,
+    yearly: 59.9,
+    formattedMonthly: '$69,90',
+    formattedYearly: '$59,90',
   },
   allInOne: {
-    monthly: 129,
-    yearly: 99,
+    monthly: 89.9,
+    yearly: 79.9,
+    formattedMonthly: '$89,90',
+    formattedYearly: '$79,90',
   },
 };
 
@@ -39,12 +45,12 @@ export const getBillingPlans = (locale: Locale) => {
         pricing: {
           monthly: {
             amount: AMOUNTS['b2c']['monthly'],
-            formattedPrice: '$' + AMOUNTS['b2c']['monthly'],
+            formattedPrice: AMOUNTS['b2c']['formattedMonthly'],
             paddlePriceId: 'pri_b2c_monthly',
           },
           yearly: {
             amount: AMOUNTS['b2c']['yearly'],
-            formattedPrice: '$' + AMOUNTS['b2c']['yearly'],
+            formattedPrice: AMOUNTS['b2c']['formattedYearly'],
             paddlePriceId: 'pri_b2c_yearly',
           },
         },
@@ -69,12 +75,12 @@ export const getBillingPlans = (locale: Locale) => {
         pricing: {
           monthly: {
             amount: AMOUNTS['b2b']['monthly'],
-            formattedPrice: '$' + AMOUNTS['b2b']['monthly'],
+            formattedPrice: AMOUNTS['b2b']['formattedMonthly'],
             paddlePriceId: 'pri_b2b_monthly',
           },
           yearly: {
             amount: AMOUNTS['b2b']['yearly'],
-            formattedPrice: '$' + AMOUNTS['b2b']['yearly'],
+            formattedPrice: AMOUNTS['b2b']['formattedYearly'],
             paddlePriceId: 'pri_b2b_yearly',
           },
         },
@@ -99,12 +105,12 @@ export const getBillingPlans = (locale: Locale) => {
         pricing: {
           monthly: {
             amount: AMOUNTS['allInOne']['monthly'],
-            formattedPrice: '$' + AMOUNTS['allInOne']['monthly'],
+            formattedPrice: AMOUNTS['allInOne']['formattedMonthly'],
             paddlePriceId: 'pri_allinone_monthly',
           },
           yearly: {
             amount: AMOUNTS['allInOne']['yearly'],
-            formattedPrice: '$' + AMOUNTS['allInOne']['yearly'],
+            formattedPrice: AMOUNTS['allInOne']['formattedYearly'],
             paddlePriceId: 'pri_allinone_yearly',
           },
         },
@@ -134,12 +140,12 @@ export const getBillingPlans = (locale: Locale) => {
         pricing: {
           monthly: {
             amount: AMOUNTS['b2c']['monthly'],
-            formattedPrice: '$' + AMOUNTS['b2c']['monthly'],
+            formattedPrice: AMOUNTS['b2c']['formattedMonthly'],
             paddlePriceId: 'pri_b2c_monthly',
           },
           yearly: {
             amount: AMOUNTS['b2c']['yearly'],
-            formattedPrice: '$' + AMOUNTS['b2c']['yearly'],
+            formattedPrice: AMOUNTS['b2c']['formattedYearly'],
             paddlePriceId: 'pri_b2c_yearly',
           },
         },
@@ -164,12 +170,12 @@ export const getBillingPlans = (locale: Locale) => {
         pricing: {
           monthly: {
             amount: AMOUNTS['b2b']['monthly'],
-            formattedPrice: '$' + AMOUNTS['b2b']['monthly'],
+            formattedPrice: AMOUNTS['b2b']['formattedMonthly'],
             paddlePriceId: 'pri_b2b_monthly',
           },
           yearly: {
             amount: AMOUNTS['b2b']['yearly'],
-            formattedPrice: '$' + AMOUNTS['b2b']['yearly'],
+            formattedPrice: AMOUNTS['b2b']['formattedYearly'],
             paddlePriceId: 'pri_b2b_yearly',
           },
         },
@@ -194,12 +200,12 @@ export const getBillingPlans = (locale: Locale) => {
         pricing: {
           monthly: {
             amount: AMOUNTS['allInOne']['monthly'],
-            formattedPrice: '$' + AMOUNTS['allInOne']['monthly'],
+            formattedPrice: AMOUNTS['allInOne']['formattedMonthly'],
             paddlePriceId: 'pri_allinone_monthly',
           },
           yearly: {
             amount: AMOUNTS['allInOne']['yearly'],
-            formattedPrice: '$' + AMOUNTS['allInOne']['yearly'],
+            formattedPrice: AMOUNTS['allInOne']['formattedYearly'],
             paddlePriceId: 'pri_allinone_yearly',
           },
         },
@@ -229,12 +235,12 @@ export const getBillingPlans = (locale: Locale) => {
       pricing: {
         monthly: {
           amount: AMOUNTS['b2c']['monthly'],
-          formattedPrice: '$' + AMOUNTS['b2c']['monthly'],
+          formattedPrice: AMOUNTS['b2c']['formattedMonthly'],
           paddlePriceId: 'pri_b2c_monthly',
         },
         yearly: {
           amount: AMOUNTS['b2c']['yearly'],
-          formattedPrice: '$' + AMOUNTS['b2c']['yearly'],
+          formattedPrice: AMOUNTS['b2c']['formattedYearly'],
           paddlePriceId: 'pri_b2c_yearly',
         },
       },
@@ -259,12 +265,12 @@ export const getBillingPlans = (locale: Locale) => {
       pricing: {
         monthly: {
           amount: AMOUNTS['b2b']['monthly'],
-          formattedPrice: '$' + AMOUNTS['b2b']['monthly'],
+          formattedPrice: AMOUNTS['b2b']['formattedMonthly'],
           paddlePriceId: 'pri_b2b_monthly',
         },
         yearly: {
           amount: AMOUNTS['b2b']['yearly'],
-          formattedPrice: '$' + AMOUNTS['b2b']['yearly'],
+          formattedPrice: AMOUNTS['b2b']['formattedYearly'],
           paddlePriceId: 'pri_b2b_yearly',
         },
       },
@@ -289,12 +295,12 @@ export const getBillingPlans = (locale: Locale) => {
       pricing: {
         monthly: {
           amount: AMOUNTS['allInOne']['monthly'],
-          formattedPrice: '$' + AMOUNTS['allInOne']['monthly'],
+          formattedPrice: AMOUNTS['allInOne']['formattedMonthly'],
           paddlePriceId: 'pri_allinone_monthly',
         },
         yearly: {
           amount: AMOUNTS['allInOne']['yearly'],
-          formattedPrice: '$' + AMOUNTS['allInOne']['yearly'],
+          formattedPrice: AMOUNTS['allInOne']['formattedYearly'],
           paddlePriceId: 'pri_allinone_yearly',
         },
       },
