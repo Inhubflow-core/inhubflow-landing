@@ -1,10 +1,12 @@
 'use client';
 
+import { useState } from 'react';
 import { CheckIcon } from '@/icons/icons';
 import GlowGradient from '@/assets/pricing/glow';
 import type { TBILLING_PLAN } from '@/components/sections/pricing/data';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/app/providers/language';
+import { CheckoutModal } from './checkout-modal';
 
 type Props = {
   plan: TBILLING_PLAN;
@@ -13,6 +15,7 @@ type Props = {
 
 export function PricingCard({ plan, billingPeriod }: Props) {
   const { locale } = useLanguage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const monthSuffix =
     locale === 'pt-BR'
@@ -69,16 +72,7 @@ export function PricingCard({ plan, billingPeriod }: Props) {
 
           <button
             type="button"
-            onClick={() => {
-              if (typeof window !== 'undefined' && (window as unknown as { Paddle?: { Checkout: { open: (opts: unknown) => void } } }).Paddle) {
-                (window as unknown as { Paddle: { Checkout: { open: (opts: unknown) => void } } }).Paddle.Checkout.open({
-                  settings: { displayModeComponent: 'overlay' },
-                  items: [{ priceId: plan.pricing[billingPeriod].paddlePriceId, quantity: 1 }]
-                });
-              } else {
-                window.location.href = 'https://b2b.inhubflow.online';
-              }
-            }}
+            onClick={() => setIsModalOpen(true)}
             className={cn(
               'block w-full px-6 py-3.5 mt-7 text-sm font-bold text-center rounded-full transition-all duration-200 cursor-pointer',
               {
@@ -112,6 +106,13 @@ export function PricingCard({ plan, billingPeriod }: Props) {
       {plan.popular && (
         <GlowGradient className="absolute -left-full -translate-x-20 top-0 max-lg:hidden" />
       )}
+
+      <CheckoutModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        plan={plan}
+        billingPeriod={billingPeriod}
+      />
     </div>
   );
 }
