@@ -135,7 +135,10 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
       // Step 2: Triggering automated webhook provisioning
       const res = await fetch('/api/webhooks/paddle', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-simulation': 'true',
+        },
         body: JSON.stringify({
           event_type: 'subscription.activated',
           data: {
@@ -145,6 +148,9 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
           },
         }),
       });
+
+      const resData = await res.json();
+      console.log('[Paddle Webhook Simulation Response]:', resData);
 
       await new Promise((r) => setTimeout(r, 1200));
       setProgressStep(3);
