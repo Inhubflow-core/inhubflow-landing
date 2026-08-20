@@ -70,7 +70,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
     }
 
-    const event = JSON.parse(rawBody);
     const eventType = event.event_type || event.type || "";
     const eventData = event.data || {};
 
