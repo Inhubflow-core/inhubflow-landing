@@ -4,8 +4,8 @@
 
 const COOLIFY_API_URL = process.env.COOLIFY_API_URL || "https://panel.inhubflow.online/api/v1";
 const COOLIFY_API_TOKEN = process.env.COOLIFY_API_TOKEN || "";
-const COOLIFY_SERVER_UUID = process.env.COOLIFY_SERVER_UUID || "default";
-const COOLIFY_PROJECT_UUID = process.env.COOLIFY_PROJECT_UUID || "default";
+const COOLIFY_SERVER_UUID = process.env.COOLIFY_SERVER_UUID || "";
+const COOLIFY_PROJECT_UUID = process.env.COOLIFY_PROJECT_UUID || "";
 const COOLIFY_ENVIRONMENT_NAME = process.env.COOLIFY_ENVIRONMENT_NAME || "production";
 
 interface DeployLinkiInstanceParams {
@@ -21,6 +21,59 @@ export interface CoolifyProvisionResult {
   applicationUuid?: string;
   subdomainUrl?: string;
   error?: string;
+  details?: unknown;
+}
+
+/**
+ * Automatically discovers the server_uuid from Coolify API if not hardcoded.
+ */
+async function resolveServerUuid(): Promise<string> {
+  if (COOLIFY_SERVER_UUID && COOLIFY_SERVER_UUID !== "0" && COOLIFY_SERVER_UUID !== "default") {
+    return COOLIFY_SERVER_UUID;
+  }
+  try {
+    const res = await fetch(`${COOLIFY_API_URL}/servers`, {
+      headers: { Authorization: `Bearer ${COOLIFY_API_TOKEN}` },
+    });
+    if (res.ok) {
+      const servers = await res.json();
+      if (Array.isArray(servers) && servers.length > 0) {
+        return servers[0].uuid || servers[0].id || "0";
+      }
+    }
+  } catch (e) {
+    console.error("[Coolify Service] Could not list servers:", e);
+  }
+  return "0";
+}
+
+/**
+ * Automatically discovers project_uuid and environment_name from Coolify API if not hardcoded.
+ */
+async function resolveProjectAndEnv(): Promise<{ projectUuid: string; environmentName: string }> {
+  let projectUuid = COOLIFY_PROJECT_UUID;
+  let environmentName = COOLIFY_ENVIRONMENT_NAME;
+
+  if (!projectUuid || projectUuid === "default") {
+    try {
+      const res = await fetch(`${COOLIFY_API_URL}/projects`, {
+        headers: { Authorization: `Bearer ${COOLIFY_API_TOKEN}` },
+      });
+      if (res.ok) {
+        const projects = await res.json();
+        if (Array.isArray(projects) && projects.length > 0) {
+          projectUuid = projects[0].uuid || projects[0].id;
+          if (projects[0].environments && projects[0].environments.length > 0) {
+            environmentName = projects[0].environments[0].name || environmentName;
+          }
+        }
+      }
+    } catch (e) {
+      console.error("[Coolify Service] Could not list projects:", e);
+    }
+  }
+
+  return { projectUuid, environmentName };
 }
 
 /**
@@ -32,58 +85,82 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
   const subdomainUrl = `https://${cleanSlug}.b2b.inhubflow.online`;
 
   if (!COOLIFY_API_TOKEN) {
-    console.warn("[Coolify Service] ⚠️ COOLIFY_API_TOKEN is not configured in environment.");
+    const msg = "COOLIFY_API_TOKEN no está configurado en las variables de entorno de la Landing.";
+    console.error(`[Coolify Service] ❌ ${msg}`);
+    return { success: false, error: msg, subdomainUrl };
   }
 
   try {
-    // 1. Create Application from Linki Git repository
+    const serverUuid = await resolveServerUuid();
+    const { projectUuid, environmentName } = await resolveProjectAndEnv();
+
+    console.log(`[Coolify Service] 📡 Creating app on server: '${serverUuid}', project: '${projectUuid}', env: '${environmentName}'`);
+
+    const payload = {
+      project_uuid: projectUuid,
+      server_uuid: serverUuid,
+      environment_name: environmentName,
+      git_repository: "https://github.com/Inhubflow-core/inhubflow-linki",
+      git_branch: "main",
+      build_pack: "nixpacks",
+      ports_exposes: "3000",
+      fqdn: subdomainUrl,
+      name: `Linki B2B - ${companyName} (${cleanSlug})`,
+      description: `Dedicated InHubFlow B2B instance for ${companyName} with ${slotsLimit} slots`,
+      environment_variables: [
+        { key: "INITIAL_ADMIN_EMAIL", value: adminEmail, is_build_time: false },
+        { key: "INITIAL_ADMIN_PASSWORD", value: adminPassword, is_build_time: false },
+        { key: "SLOTS_LIMIT", value: String(slotsLimit), is_build_time: false },
+        { key: "COMPANY_NAME", value: companyName, is_build_time: false },
+        { key: "NEXTAUTH_URL", value: subdomainUrl, is_build_time: false },
+        { key: "NEXTAUTH_SECRET", value: "inhubflow_secret_salt_2026", is_build_time: false },
+      ],
+    };
+
+    // 1. Create Application
     const response = await fetch(`${COOLIFY_API_URL}/applications/public`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${COOLIFY_API_TOKEN}`,
       },
-      body: JSON.stringify({
-        project_uuid: COOLIFY_PROJECT_UUID,
-        server_uuid: COOLIFY_SERVER_UUID,
-        environment_name: COOLIFY_ENVIRONMENT_NAME,
-        git_repository: "https://github.com/Inhubflow-core/inhubflow-linki",
-        git_branch: "main",
-        build_pack: "nixpacks",
-        ports_exposes: "3000",
-        fqdn: subdomainUrl,
-        name: `Linki B2B - ${companyName} (${cleanSlug})`,
-        description: `Dedicated InHubFlow B2B instance for ${companyName} with ${slotsLimit} slots`,
-        environment_variables: [
-          { key: "INITIAL_ADMIN_EMAIL", value: adminEmail, is_build_time: false },
-          { key: "INITIAL_ADMIN_PASSWORD", value: adminPassword, is_build_time: false },
-          { key: "SLOTS_LIMIT", value: String(slotsLimit), is_build_time: false },
-          { key: "COMPANY_NAME", value: companyName, is_build_time: false },
-          { key: "NEXTAUTH_URL", value: subdomainUrl, is_build_time: false },
-          { key: "NEXTAUTH_SECRET", value: "inhubflow_secret_salt_2026", is_build_time: false },
-        ],
-      }),
+      body: JSON.stringify(payload),
     });
 
-    if (!response.ok) {
-      const errText = await response.text();
-      throw new Error(`Failed to create Coolify application: ${response.status} - ${errText}`);
+    const respText = await response.text();
+    let data: any = {};
+    try {
+      data = JSON.parse(respText);
+    } catch {
+      data = { raw: respText };
     }
 
-    const data = await response.json();
+    if (!response.ok) {
+      const errorMsg = data.message || data.error || `HTTP ${response.status}: ${respText}`;
+      console.error(`[Coolify Service] ❌ Coolify API rejected application creation:`, errorMsg);
+      return {
+        success: false,
+        error: errorMsg,
+        details: data,
+        subdomainUrl,
+      };
+    }
+
     const applicationUuid = data.uuid || data.id;
 
     // 2. Trigger deployment
     if (applicationUuid) {
-      await fetch(`${COOLIFY_API_URL}/deploy?uuid=${applicationUuid}`, {
+      console.log(`[Coolify Service] 🚀 Triggering deployment for application: ${applicationUuid}`);
+      const deployRes = await fetch(`${COOLIFY_API_URL}/deploy?uuid=${applicationUuid}`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${COOLIFY_API_TOKEN}`,
         },
       });
+      console.log(`[Coolify Service] 🚀 Deploy response status: ${deployRes.status}`);
     }
 
-    console.log(`[Coolify Service] ✅ Linki instance '${cleanSlug}' deployed at ${subdomainUrl} with ${slotsLimit} slots.`);
+    console.log(`[Coolify Service] ✅ Linki instance '${cleanSlug}' created at ${subdomainUrl} (UUID: ${applicationUuid}).`);
 
     return {
       success: true,

@@ -277,8 +277,11 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
               )}
             </div>
 
-            <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-xl text-xs text-gray-500 dark:text-gray-400">
-              📧 <strong>Tus credenciales:</strong> Email: <code>{email}</code> | Contraseña: <code>••••••••</code>
+            <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-xl text-xs text-gray-500 dark:text-gray-400 space-y-1">
+              <p>📧 <strong>Tus credenciales:</strong> Email: <code>{email}</code> | Contraseña: <code>••••••••</code></p>
+              <p className="text-[11px] text-indigo-600 dark:text-indigo-400">
+                ⏳ <em>Al crearse por primera vez, el servidor tarda de 30 a 60 segundos en compilar el contenedor y emitir el certificado SSL.</em>
+              </p>
             </div>
 
             <button
