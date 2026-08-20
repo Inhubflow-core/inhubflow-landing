@@ -73,27 +73,39 @@ export async function POST(req: NextRequest) {
         const rawSlug = customData.company_slug || companyName.toLowerCase().replace(/[^a-z0-9]/g, "");
         const companySlug = rawSlug.substring(0, 24) || `empresa-${Date.now().toString().slice(-4)}`;
 
-        console.log(`[Paddle Webhook] 🚀 Provisioning suite for: ${companyName} (${adminEmail})`);
+        const planId = (customData.plan_id || "").toLowerCase();
+        const shouldProvisionB2C = planId === "b2c" || planId === "allinone" || !planId;
+        const shouldProvisionB2B = planId === "b2b" || planId === "allinone" || !planId;
 
-        // 1. Provision B2C Chatwoot Account (Max 4 Agents)
-        const chatwootResult = await createChatwootAccount({
-          companyName,
-          adminEmail,
-          adminPassword,
-          maxAgents: 4,
-        });
+        console.log(`[Paddle Webhook] 🚀 Provisioning plan '${planId}' for: ${companyName} (${adminEmail})`);
 
-        // 2. Provision B2B Linki Dedicated Instance (4 Slots)
-        const coolifyResult = await deployLinkiInstance({
-          companySlug,
-          companyName,
-          adminEmail,
-          adminPassword,
-          slotsLimit: 4,
-        });
+        let chatwootResult = null;
+        let coolifyResult = null;
+
+        // 1. Provision B2C Chatwoot Account (Max 4 Agents) if included in plan
+        if (shouldProvisionB2C) {
+          chatwootResult = await createChatwootAccount({
+            companyName,
+            adminEmail,
+            adminPassword,
+            maxAgents: 4,
+          });
+        }
+
+        // 2. Provision B2B Linki Dedicated Instance (4 Slots) if included in plan
+        if (shouldProvisionB2B) {
+          coolifyResult = await deployLinkiInstance({
+            companySlug,
+            companyName,
+            adminEmail,
+            adminPassword,
+            slotsLimit: 4,
+          });
+        }
 
         return NextResponse.json({
           received: true,
+          plan_id: planId,
           provisioned: {
             b2c_chatwoot: chatwootResult,
             b2b_linki: coolifyResult,

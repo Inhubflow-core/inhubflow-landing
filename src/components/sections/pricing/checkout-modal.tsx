@@ -218,58 +218,63 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
               </p>
             </div>
 
+            {/* Cards container */}
             <div className="space-y-3">
-              {/* B2B Access */}
-              <div className="p-4 bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800 rounded-2xl flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#465fff] text-white flex items-center justify-center shadow-md shrink-0">
-                    <RiSendPlaneLine size={20} />
+              {/* B2B Access Card (Only if plan includes B2B) */}
+              {(plan.id === 'b2b' || plan.id === 'allinone') && (
+                <div className="p-4 bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800 rounded-2xl flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#465fff] text-white flex items-center justify-center shadow-md shrink-0">
+                      <RiSendPlaneLine size={20} />
+                    </div>
+                    <div>
+                      <h5 className="text-xs font-bold text-gray-900 dark:text-white">
+                        B2B Outreach Suite (4 Slots)
+                      </h5>
+                      <p className="text-[11px] font-mono text-indigo-600 dark:text-indigo-400 font-semibold truncate max-w-[200px]">
+                        https://{previewSlug}.b2b.inhubflow.online
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-gray-900 dark:text-white">
-                      B2B Outreach Suite (4 Slots)
-                    </h5>
-                    <p className="text-[11px] font-mono text-indigo-600 dark:text-indigo-400 font-semibold truncate max-w-[200px]">
-                      https://{previewSlug}.b2b.inhubflow.online
-                    </p>
-                  </div>
+                  <a
+                    href={`https://${previewSlug}.b2b.inhubflow.online`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-1.5 px-4 py-2 bg-[#465fff] hover:bg-[#3641f5] text-white text-xs font-bold rounded-xl transition-all shadow-md shrink-0"
+                  >
+                    <span>Entrar</span>
+                    <RiExternalLinkLine size={13} />
+                  </a>
                 </div>
-                <a
-                  href={`https://${previewSlug}.b2b.inhubflow.online`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-1.5 px-4 py-2 bg-[#465fff] hover:bg-[#3641f5] text-white text-xs font-bold rounded-xl transition-all shadow-md shrink-0"
-                >
-                  <span>Entrar</span>
-                  <RiExternalLinkLine size={13} />
-                </a>
-              </div>
+              )}
 
-              {/* B2C Access */}
-              <div className="p-4 bg-blue-500/5 dark:bg-blue-500/10 border border-blue-500/20 rounded-2xl flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md">
-                    <RiMessage3Line size={20} />
+              {/* B2C Access Card (Only if plan includes B2C) */}
+              {(plan.id === 'b2c' || plan.id === 'allinone') && (
+                <div className="p-4 bg-blue-500/5 dark:bg-blue-500/10 border border-blue-500/20 rounded-2xl flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md">
+                      <RiMessage3Line size={20} />
+                    </div>
+                    <div>
+                      <h5 className="text-xs font-bold text-gray-900 dark:text-white">
+                        B2C Omnicanal Chatwoot (4 Agentes)
+                      </h5>
+                      <p className="text-[11px] font-mono text-blue-600 dark:text-blue-400">
+                        https://b2c.inhubflow.online
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-gray-900 dark:text-white">
-                      B2C Omnicanal Chatwoot (4 Agentes)
-                    </h5>
-                    <p className="text-[11px] font-mono text-blue-600 dark:text-blue-400">
-                      https://b2c.inhubflow.online
-                    </p>
-                  </div>
+                  <a
+                    href="https://b2c.inhubflow.online"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-1 px-3 py-2 bg-blue-600 text-white text-xs font-bold rounded-xl hover:bg-blue-700 transition-colors shrink-0"
+                  >
+                    <span>Entrar</span>
+                    <RiExternalLinkLine size={13} />
+                  </a>
                 </div>
-                <a
-                  href="https://b2c.inhubflow.online"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-1 px-3 py-2 bg-blue-600 text-white text-xs font-bold rounded-xl hover:bg-blue-700 transition-colors shrink-0"
-                >
-                  <span>Entrar</span>
-                  <RiExternalLinkLine size={13} />
-                </a>
-              </div>
+              )}
             </div>
 
             <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-xl text-xs text-gray-500 dark:text-gray-400">
