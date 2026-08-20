@@ -25,12 +25,9 @@ export interface CoolifyProvisionResult {
 }
 
 /**
- * Automatically discovers the server_uuid from Coolify API if not hardcoded.
+ * Dynamically queries Coolify API to get the active server UUID.
  */
 async function resolveServerUuid(): Promise<string> {
-  if (COOLIFY_SERVER_UUID && COOLIFY_SERVER_UUID !== "0" && COOLIFY_SERVER_UUID !== "default") {
-    return COOLIFY_SERVER_UUID;
-  }
   try {
     const res = await fetch(`${COOLIFY_API_URL}/servers`, {
       headers: { Authorization: `Bearer ${COOLIFY_API_TOKEN}` },
@@ -38,42 +35,42 @@ async function resolveServerUuid(): Promise<string> {
     if (res.ok) {
       const servers = await res.json();
       if (Array.isArray(servers) && servers.length > 0) {
-        return servers[0].uuid || servers[0].id || "kkiircnr8oycyecz4jopnmeu";
+        const foundUuid = servers[0].uuid || servers[0].id;
+        if (foundUuid) return foundUuid;
       }
     }
   } catch (e) {
-    console.error("[Coolify Service] Could not list servers:", e);
+    console.error("[Coolify Service] Could not fetch servers:", e);
   }
   return "kkiircnr8oycyecz4jopnmeu";
 }
 
 /**
- * Automatically discovers project_uuid and environment_name from Coolify API if not hardcoded.
+ * Dynamically queries Coolify API to get the active project UUID and environment name.
  */
 async function resolveProjectAndEnv(): Promise<{ projectUuid: string; environmentName: string }> {
-  let projectUuid = COOLIFY_PROJECT_UUID;
-  let environmentName = COOLIFY_ENVIRONMENT_NAME;
-
-  if (!projectUuid || projectUuid === "default") {
-    try {
-      const res = await fetch(`${COOLIFY_API_URL}/projects`, {
-        headers: { Authorization: `Bearer ${COOLIFY_API_TOKEN}` },
-      });
-      if (res.ok) {
-        const projects = await res.json();
-        if (Array.isArray(projects) && projects.length > 0) {
-          projectUuid = projects[0].uuid || projects[0].id;
-          if (projects[0].environments && projects[0].environments.length > 0) {
-            environmentName = projects[0].environments[0].name || environmentName;
-          }
+  try {
+    const res = await fetch(`${COOLIFY_API_URL}/projects`, {
+      headers: { Authorization: `Bearer ${COOLIFY_API_TOKEN}` },
+    });
+    if (res.ok) {
+      const projects = await res.json();
+      if (Array.isArray(projects) && projects.length > 0) {
+        const pUuid = projects[0].uuid || projects[0].id;
+        const envName = projects[0].environments?.[0]?.name || "production";
+        if (pUuid) {
+          return { projectUuid: pUuid, environmentName: envName };
         }
       }
-    } catch (e) {
-      console.error("[Coolify Service] Could not list projects:", e);
     }
+  } catch (e) {
+    console.error("[Coolify Service] Could not fetch projects:", e);
   }
 
-  return { projectUuid, environmentName };
+  return { 
+    projectUuid: "obaptxnn3pias032gd7zuqjm", 
+    environmentName: "production" 
+  };
 }
 
 /**
