@@ -220,16 +220,16 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
 
             <div className="space-y-3">
               {/* B2B Access */}
-              <div className="p-4 bg-brand-500/5 dark:bg-brand-500/10 border border-brand-500/20 rounded-2xl flex items-center justify-between">
+              <div className="p-4 bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800 rounded-2xl flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-brand-500 text-white flex items-center justify-center shadow-md">
+                  <div className="w-10 h-10 rounded-xl bg-[#465fff] text-white flex items-center justify-center shadow-md shrink-0">
                     <RiSendPlaneLine size={20} />
                   </div>
                   <div>
                     <h5 className="text-xs font-bold text-gray-900 dark:text-white">
                       B2B Outreach Suite (4 Slots)
                     </h5>
-                    <p className="text-[11px] font-mono text-brand-600 dark:text-brand-400">
+                    <p className="text-[11px] font-mono text-indigo-600 dark:text-indigo-400 font-semibold truncate max-w-[200px]">
                       https://{previewSlug}.b2b.inhubflow.online
                     </p>
                   </div>
@@ -238,7 +238,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
                   href={`https://${previewSlug}.b2b.inhubflow.online`}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-1 px-3 py-2 bg-brand-500 text-white text-xs font-bold rounded-xl hover:bg-brand-600 transition-colors shrink-0"
+                  className="flex items-center gap-1.5 px-4 py-2 bg-[#465fff] hover:bg-[#3641f5] text-white text-xs font-bold rounded-xl transition-all shadow-md shrink-0"
                 >
                   <span>Entrar</span>
                   <RiExternalLinkLine size={13} />
