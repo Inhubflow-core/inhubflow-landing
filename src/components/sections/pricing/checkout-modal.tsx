@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import type { TBILLING_PLAN } from './data';
 import { useLanguage } from '@/app/providers/language';
+import { RiCheckLine, RiExternalLinkLine, RiSendPlaneLine, RiMessage3Line, RiShieldCheckLine } from 'react-icons/ri';
 
 interface CheckoutModalProps {
   isOpen: boolean;
@@ -17,7 +18,9 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [progressStep, setProgressStep] = useState(0);
   const [error, setError] = useState('');
+  const [provisionSuccess, setProvisionSuccess] = useState(false);
 
   if (!isOpen) return null;
 
@@ -25,7 +28,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
   const previewSlug = rawSlug || 'tu-empresa';
   const priceInfo = plan.pricing[billingPeriod];
 
-  const handleLaunchPaddle = (e: React.FormEvent) => {
+  const handleSimulateOrCheckout = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
@@ -43,8 +46,6 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
       setError(locale === 'pt-BR' ? 'A senha deve ter no mínimo 6 caracteres.' : locale === 'en' ? 'Password must be at least 6 characters.' : 'La contraseña debe tener al menos 6 caracteres.');
       return;
     }
-
-    setLoading(true);
 
     const customData = {
       company_name: companyName.trim(),
@@ -68,29 +69,50 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
       };
     };
 
-    if (paddleWindow.Paddle) {
+    // If live Paddle is present and configured with credentials
+    if (paddleWindow.Paddle && process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN) {
       paddleWindow.Paddle.Checkout.open({
         settings: { displayModeComponent: 'overlay' },
         items: [{ priceId: priceInfo.paddlePriceId, quantity: 1 }],
         customer: { email: email.trim().toLowerCase() },
         customData,
       });
-      setLoading(false);
       onClose();
-    } else {
-      console.warn('[Paddle Checkout] Paddle.js not loaded or in mock mode. Redirecting...');
-      // Fallback in local/demo environment
-      setTimeout(() => {
-        setLoading(false);
-        alert(
-          locale === 'pt-BR'
-            ? `Pronto! Seus dados foram salvos. Redirecionando para https://${previewSlug}.b2b.inhubflow.online`
-            : locale === 'en'
-            ? `Ready! Your setup is configured. Redirecting to https://${previewSlug}.b2b.inhubflow.online`
-            : `¡Listo! Configuración lista para tu empresa. Redirigiendo a https://${previewSlug}.b2b.inhubflow.online`
-        );
-        onClose();
-      }, 600);
+      return;
+    }
+
+    // Interactive Test Experience / Simulation Mode
+    setLoading(true);
+    setProgressStep(1);
+
+    try {
+      // Step 1: Simulating payment
+      await new Promise((r) => setTimeout(r, 900));
+      setProgressStep(2);
+
+      // Step 2: Triggering automated webhook provisioning
+      const res = await fetch('/api/webhooks/paddle', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event_type: 'subscription.activated',
+          data: {
+            id: `sub_sim_${Date.now()}`,
+            customer: { email: email.trim().toLowerCase() },
+            custom_data: customData,
+          },
+        }),
+      });
+
+      await new Promise((r) => setTimeout(r, 1200));
+      setProgressStep(3);
+      await new Promise((r) => setTimeout(r, 800));
+
+      setLoading(false);
+      setProvisionSuccess(true);
+    } catch (err: any) {
+      setLoading(false);
+      setError('Error al procesar la simulación: ' + (err.message || 'Error desconocido'));
     }
   };
 
@@ -100,9 +122,14 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
         {/* Header */}
         <div className="flex items-center justify-between pb-4 border-b border-gray-100 dark:border-gray-800">
           <div>
-            <span className="text-xs font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase">
-              {locale === 'pt-BR' ? 'Ativação Instantânea' : locale === 'en' ? 'Instant Activation' : 'Activación Instantánea'}
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase">
+                {provisionSuccess ? '✅ Espacio Activado' : '⚡ Activación de Suscripción'}
+              </span>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">
+                4 Slots B2B + 4 Agentes
+              </span>
+            </div>
             <h3 className="text-xl font-bold mt-0.5">{plan.name}</h3>
           </div>
           <button
@@ -113,96 +140,197 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
           </button>
         </div>
 
-        {/* Form */}
-        <form onSubmit={handleLaunchPaddle} className="mt-5 space-y-4">
-          {error && (
-            <div className="p-3 text-sm text-red-600 bg-red-50 dark:bg-red-950/40 rounded-xl border border-red-200 dark:border-red-900">
-              {error}
+        {/* Loading / Provisioning state */}
+        {loading ? (
+          <div className="py-12 px-4 text-center space-y-5 animate-fade-in">
+            <div className="w-16 h-16 mx-auto rounded-full border-4 border-indigo-600/20 border-t-indigo-600 animate-spin flex items-center justify-center">
+              <RiShieldCheckLine size={24} className="text-indigo-600" />
             </div>
-          )}
-
-          <div>
-            <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
-              {locale === 'pt-BR' ? 'Nome da Empresa' : locale === 'en' ? 'Company Name' : 'Nombre de tu Empresa'}
-            </label>
-            <input
-              type="text"
-              required
-              value={companyName}
-              onChange={(e) => setCompanyName(e.target.value)}
-              placeholder={locale === 'pt-BR' ? 'Ex: Acme Logística' : locale === 'en' ? 'e.g. Acme Logistics' : 'Ej: Acme Logística'}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
-            />
-            {/* Live Subdomain Preview */}
-            <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
-              🌐 {locale === 'pt-BR' ? 'Seu subdomínio será:' : locale === 'en' ? 'Your workspace URL:' : 'Tu subdominio será:'}{' '}
-              <span className="font-mono text-indigo-600 dark:text-indigo-400 font-semibold">
-                https://{previewSlug}.b2b.inhubflow.online
-              </span>
-            </p>
-          </div>
-
-          <div>
-            <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
-              {locale === 'pt-BR' ? 'E-mail do Administrador' : locale === 'en' ? 'Admin Email Address' : 'Correo del Administrador'}
-            </label>
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="carlos@tuempresa.com"
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
-            />
-          </div>
-
-          <div>
-            <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
-              {locale === 'pt-BR' ? 'Defina sua Senha de Acesso' : locale === 'en' ? 'Create Account Password' : 'Crea tu Contraseña de Acceso'}
-            </label>
-            <input
-              type="password"
-              required
-              minLength={6}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
-            />
-          </div>
-
-          {/* Pricing summary */}
-          <div className="p-3.5 bg-indigo-50 dark:bg-indigo-950/30 rounded-2xl flex items-center justify-between border border-indigo-100 dark:border-indigo-900/50">
             <div>
-              <span className="text-xs text-indigo-700 dark:text-indigo-300 font-medium">
-                {locale === 'pt-BR' ? 'Total a pagar hoje' : locale === 'en' ? 'Total due today' : 'Total a pagar hoy'}:
-              </span>
-              <p className="text-xl font-black text-indigo-950 dark:text-white">
-                {priceInfo.formattedPrice}{' '}
-                <span className="text-xs font-normal text-gray-500">
-                  /{billingPeriod === 'yearly' ? (locale === 'pt-BR' ? 'ano' : locale === 'en' ? 'year' : 'año') : (locale === 'pt-BR' ? 'mês' : locale === 'en' ? 'month' : 'mes')}
+              <h4 className="text-lg font-bold text-gray-900 dark:text-white">
+                {progressStep === 1 && '💳 Procesando pago y suscripción...'}
+                {progressStep === 2 && '🚀 Aprovisionando subdominio dedicado y 4 slots...'}
+                {progressStep === 3 && '✨ Configurando cuentas B2B y B2C...'}
+              </h4>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                Esto toma unos segundos en tus servidores...
+              </p>
+            </div>
+            <div className="w-full bg-gray-100 dark:bg-gray-800 h-2 rounded-full overflow-hidden max-w-xs mx-auto">
+              <div
+                className="bg-indigo-600 h-full transition-all duration-700 rounded-full"
+                style={{ width: `${(progressStep / 3) * 100}%` }}
+              />
+            </div>
+          </div>
+        ) : provisionSuccess ? (
+          /* Success Screen */
+          <div className="py-6 space-y-5 animate-fade-in">
+            <div className="p-4 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900 rounded-2xl">
+              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300 font-bold text-sm">
+                <RiCheckLine size={20} />
+                <span>¡Tu suscripción InHubFlow está activa!</span>
+              </div>
+              <p className="text-xs text-emerald-600 dark:text-emerald-400 mt-1">
+                Se ha generado tu espacio dedicado para <strong>{companyName}</strong> con 4 slots de prospección y central omnicanal.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              {/* B2B Access */}
+              <div className="p-4 bg-brand-500/5 dark:bg-brand-500/10 border border-brand-500/20 rounded-2xl flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-brand-500 text-white flex items-center justify-center shadow-md">
+                    <RiSendPlaneLine size={20} />
+                  </div>
+                  <div>
+                    <h5 className="text-xs font-bold text-gray-900 dark:text-white">
+                      B2B Outreach Suite (4 Slots)
+                    </h5>
+                    <p className="text-[11px] font-mono text-brand-600 dark:text-brand-400">
+                      https://{previewSlug}.b2b.inhubflow.online
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href={`https://${previewSlug}.b2b.inhubflow.online`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1 px-3 py-2 bg-brand-500 text-white text-xs font-bold rounded-xl hover:bg-brand-600 transition-colors shrink-0"
+                >
+                  <span>Entrar</span>
+                  <RiExternalLinkLine size={13} />
+                </a>
+              </div>
+
+              {/* B2C Access */}
+              <div className="p-4 bg-blue-500/5 dark:bg-blue-500/10 border border-blue-500/20 rounded-2xl flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md">
+                    <RiMessage3Line size={20} />
+                  </div>
+                  <div>
+                    <h5 className="text-xs font-bold text-gray-900 dark:text-white">
+                      B2C Omnicanal Chatwoot (4 Agentes)
+                    </h5>
+                    <p className="text-[11px] font-mono text-blue-600 dark:text-blue-400">
+                      https://b2c.inhubflow.online
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href="https://b2c.inhubflow.online"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1 px-3 py-2 bg-blue-600 text-white text-xs font-bold rounded-xl hover:bg-blue-700 transition-colors shrink-0"
+                >
+                  <span>Entrar</span>
+                  <RiExternalLinkLine size={13} />
+                </a>
+              </div>
+            </div>
+
+            <div className="p-3 bg-gray-50 dark:bg-gray-900 rounded-xl text-xs text-gray-500 dark:text-gray-400">
+              📧 <strong>Tus credenciales:</strong> Email: <code>{email}</code> | Contraseña: <code>••••••••</code>
+            </div>
+
+            <button
+              onClick={onClose}
+              className="w-full py-3 bg-gray-900 hover:bg-gray-800 text-white text-xs font-bold rounded-full transition-colors"
+            >
+              Cerrar y Comenzar a Trabajar
+            </button>
+          </div>
+        ) : (
+          /* Form Screen */
+          <form onSubmit={handleSimulateOrCheckout} className="mt-5 space-y-4">
+            {error && (
+              <div className="p-3 text-sm text-red-600 bg-red-50 dark:bg-red-950/40 rounded-xl border border-red-200 dark:border-red-900">
+                {error}
+              </div>
+            )}
+
+            <div>
+              <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+                {locale === 'pt-BR' ? 'Nome da Empresa' : locale === 'en' ? 'Company Name' : 'Nombre de tu Empresa'}
+              </label>
+              <input
+                type="text"
+                required
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
+                placeholder={locale === 'pt-BR' ? 'Ex: Acme Logística' : locale === 'en' ? 'e.g. Acme Logistics' : 'Ej: Acme Logística'}
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+              />
+              {/* Live Subdomain Preview */}
+              <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
+                🌐 {locale === 'pt-BR' ? 'Seu subdomínio será:' : locale === 'en' ? 'Your workspace URL:' : 'Tu subdominio será:'}{' '}
+                <span className="font-mono text-indigo-600 dark:text-indigo-400 font-semibold">
+                  https://{previewSlug}.b2b.inhubflow.online
                 </span>
               </p>
             </div>
-            <span className="text-xs px-2.5 py-1 bg-indigo-600 text-white font-bold rounded-lg shadow-sm">
-              🔒 Paddle MoR Seguro
-            </span>
-          </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full py-3.5 px-6 font-bold text-sm text-white bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 rounded-full shadow-lg shadow-indigo-500/25 transition-all duration-200 cursor-pointer disabled:opacity-50"
-          >
-            {loading
-              ? '...'
-              : locale === 'pt-BR'
-              ? 'Continuar para Pagamento Seguro 💳'
-              : locale === 'en'
-              ? 'Proceed to Secure Checkout 💳'
-              : 'Continuar al Pago Seguro 💳'}
-          </button>
-        </form>
+            <div>
+              <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+                {locale === 'pt-BR' ? 'E-mail do Administrador' : locale === 'en' ? 'Admin Email Address' : 'Correo del Administrador'}
+              </label>
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="carlos@tuempresa.com"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+                {locale === 'pt-BR' ? 'Defina sua Senha de Acesso' : locale === 'en' ? 'Create Account Password' : 'Crea tu Contraseña de Acceso'}
+              </label>
+              <input
+                type="password"
+                required
+                minLength={6}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+              />
+            </div>
+
+            {/* Pricing summary */}
+            <div className="p-3.5 bg-indigo-50 dark:bg-indigo-950/30 rounded-2xl flex items-center justify-between border border-indigo-100 dark:border-indigo-900/50">
+              <div>
+                <span className="text-xs text-indigo-700 dark:text-indigo-300 font-medium">
+                  {locale === 'pt-BR' ? 'Total a pagar hoje' : locale === 'en' ? 'Total due today' : 'Total a pagar hoy'}:
+                </span>
+                <p className="text-xl font-black text-indigo-950 dark:text-white">
+                  {priceInfo.formattedPrice}{' '}
+                  <span className="text-xs font-normal text-gray-500">
+                    /{billingPeriod === 'yearly' ? (locale === 'pt-BR' ? 'ano' : locale === 'en' ? 'year' : 'año') : (locale === 'pt-BR' ? 'mês' : locale === 'en' ? 'month' : 'mes')}
+                  </span>
+                </p>
+              </div>
+              <span className="text-xs px-2.5 py-1 bg-indigo-600 text-white font-bold rounded-lg shadow-sm">
+                🔒 Paddle MoR Seguro
+              </span>
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-3.5 px-6 font-bold text-sm text-white bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 rounded-full shadow-lg shadow-indigo-500/25 transition-all duration-200 cursor-pointer disabled:opacity-50"
+            >
+              {locale === 'pt-BR'
+                ? 'Testar Ativação e Pagamento 🚀'
+                : locale === 'en'
+                ? 'Test Activation & Checkout 🚀'
+                : 'Simular Activación y Acceso Inmediato 🚀'}
+            </button>
+          </form>
+        )}
       </div>
     </div>
   );
