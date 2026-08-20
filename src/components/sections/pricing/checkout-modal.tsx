@@ -152,6 +152,12 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
       const resData = await res.json();
       console.log('[Paddle Webhook Simulation Response]:', resData);
 
+      if (resData.provisioned?.b2b_linki && !resData.provisioned.b2b_linki.success) {
+        setLoading(false);
+        setError(`Error del servidor Coolify: ${resData.provisioned.b2b_linki.error || 'Error desconocido'}`);
+        return;
+      }
+
       await new Promise((r) => setTimeout(r, 1200));
       setProgressStep(3);
       await new Promise((r) => setTimeout(r, 800));
