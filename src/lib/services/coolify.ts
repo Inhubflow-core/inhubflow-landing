@@ -4,8 +4,8 @@
 
 const COOLIFY_API_URL = process.env.COOLIFY_API_URL || "https://panel.inhubflow.online/api/v1";
 const COOLIFY_API_TOKEN = process.env.COOLIFY_API_TOKEN || "";
-const COOLIFY_SERVER_UUID = process.env.COOLIFY_SERVER_UUID || "";
-const COOLIFY_PROJECT_UUID = process.env.COOLIFY_PROJECT_UUID || "";
+const COOLIFY_SERVER_UUID = process.env.COOLIFY_SERVER_UUID || "kkiircnr8oycyecz4jopnmeu";
+const COOLIFY_PROJECT_UUID = process.env.COOLIFY_PROJECT_UUID || "obaptxnn3pias032gd7zuqjm";
 const COOLIFY_ENVIRONMENT_NAME = process.env.COOLIFY_ENVIRONMENT_NAME || "production";
 
 interface DeployLinkiInstanceParams {
@@ -38,13 +38,13 @@ async function resolveServerUuid(): Promise<string> {
     if (res.ok) {
       const servers = await res.json();
       if (Array.isArray(servers) && servers.length > 0) {
-        return servers[0].uuid || servers[0].id || "0";
+        return servers[0].uuid || servers[0].id || "kkiircnr8oycyecz4jopnmeu";
       }
     }
   } catch (e) {
     console.error("[Coolify Service] Could not list servers:", e);
   }
-  return "0";
+  return "kkiircnr8oycyecz4jopnmeu";
 }
 
 /**
@@ -96,7 +96,8 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
 
     console.log(`[Coolify Service] 📡 Creating app on server: '${serverUuid}', project: '${projectUuid}', env: '${environmentName}'`);
 
-    const payload = {
+    // 1. Create Public Application (Coolify v4 rejects fqdn in POST /applications/public)
+    const createPayload = {
       project_uuid: projectUuid,
       server_uuid: serverUuid,
       environment_name: environmentName,
@@ -104,20 +105,17 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
       git_branch: "main",
       build_pack: "nixpacks",
       ports_exposes: "3000",
-      fqdn: subdomainUrl,
       name: `Linki B2B - ${companyName} (${cleanSlug})`,
       description: `Dedicated InHubFlow B2B instance for ${companyName} with ${slotsLimit} slots`,
-      instant_deploy: true,
     };
 
-    // 1. Create Application
     const response = await fetch(`${COOLIFY_API_URL}/applications/public`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${COOLIFY_API_TOKEN}`,
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(createPayload),
     });
 
     const respText = await response.text();
@@ -141,8 +139,25 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
 
     const applicationUuid = data.uuid || data.id;
 
-    // 2. Set Environment Variables on the application
+    // 2. Set FQDN (Subdomain with SSL) on the newly created application
     if (applicationUuid) {
+      console.log(`[Coolify Service] 🌐 Setting FQDN '${subdomainUrl}' for application: ${applicationUuid}`);
+      try {
+        await fetch(`${COOLIFY_API_URL}/applications/${applicationUuid}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${COOLIFY_API_TOKEN}`,
+          },
+          body: JSON.stringify({
+            fqdn: subdomainUrl,
+          }),
+        });
+      } catch (patchErr) {
+        console.warn(`[Coolify Service] ⚠️ Could not patch FQDN:`, patchErr);
+      }
+
+      // 3. Inject Environment Variables into the application
       const envVars = [
         { key: "INITIAL_ADMIN_EMAIL", value: adminEmail, is_build_time: false },
         { key: "INITIAL_ADMIN_PASSWORD", value: adminPassword, is_build_time: false },
@@ -165,7 +180,7 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
         } catch {}
       }
 
-      // 3. Trigger deployment
+      // 4. Trigger Build & Deployment
       console.log(`[Coolify Service] 🚀 Triggering deployment for application: ${applicationUuid}`);
       await fetch(`${COOLIFY_API_URL}/deploy?uuid=${applicationUuid}`, {
         method: "POST",
