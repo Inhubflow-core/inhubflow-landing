@@ -86,7 +86,7 @@ export const getBillingPlans = (locale: Locale) => {
         },
         features: [
           '👑 Até 4 Slots/Instâncias de Prospecção Dedicadas',
-          'Subdomínio Exclusivo (ex: suaempresa.b2b.inhubflow.online)',
+          'Subdomínio Exclusivo (ex: suaempresa-b2b.inhubflow.online)',
           'Integração com Sales Navigator & Apollo.io',
           'Extrator de Empresas no Google Maps',
           'Sequências automáticas (Conectar, Visitar, DMs)',
@@ -181,7 +181,7 @@ export const getBillingPlans = (locale: Locale) => {
         },
         features: [
           '👑 Up to 4 Dedicated Outreach Slots / Workspaces',
-          'Dedicated Subdomain (e.g., yourcompany.b2b.inhubflow.online)',
+          'Dedicated Subdomain (e.g., yourcompany-b2b.inhubflow.online)',
           'Sales Navigator & Apollo.io Integration',
           'Google Maps Business Extractor',
           'Automated Sequences (Connect, Visit, DM)',
@@ -276,7 +276,7 @@ export const getBillingPlans = (locale: Locale) => {
       },
       features: [
         '👑 Hasta 4 Slots/Instancias de Prospección Dedicadas',
-        'Subdominio Exclusivo (ej: tuempresa.b2b.inhubflow.online)',
+        'Subdominio Exclusivo (ej: tuempresa-b2b.inhubflow.online)',
         'Integración con Sales Navigator & Apollo.io',
         'Extractor de Empresas en Google Maps',
         'Secuencias automáticas (Conectar, Visitar, DMs)',

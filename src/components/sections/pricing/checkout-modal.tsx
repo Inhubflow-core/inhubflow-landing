@@ -244,12 +244,12 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
                         B2B Outreach Suite (4 Slots)
                       </h5>
                       <p className="text-[11px] font-mono text-indigo-600 dark:text-indigo-400 font-semibold truncate max-w-[200px]">
-                        https://{previewSlug}.b2b.inhubflow.online
+                        https://{previewSlug}-b2b.inhubflow.online
                       </p>
                     </div>
                   </div>
                   <a
-                    href={`https://${previewSlug}.b2b.inhubflow.online`}
+                    href={`https://${previewSlug}-b2b.inhubflow.online`}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-1.5 px-4 py-2 bg-[#465fff] hover:bg-[#3641f5] text-white text-xs font-bold rounded-xl transition-all shadow-md shrink-0"
@@ -328,7 +328,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
               <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
                 🌐 {locale === 'pt-BR' ? 'Seu subdomínio será:' : locale === 'en' ? 'Your workspace URL:' : 'Tu subdominio será:'}{' '}
                 <span className="font-mono text-indigo-600 dark:text-indigo-400 font-semibold">
-                  https://{previewSlug}.b2b.inhubflow.online
+                  https://{previewSlug}-b2b.inhubflow.online
                 </span>
               </p>
             </div>

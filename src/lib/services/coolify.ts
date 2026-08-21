@@ -79,7 +79,7 @@ async function resolveProjectAndEnv(): Promise<{ projectUuid: string; environmen
 export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Promise<CoolifyProvisionResult> {
   const { companySlug, companyName, adminEmail, adminPassword = "", slotsLimit = 4 } = params;
   const cleanSlug = companySlug.toLowerCase().replace(/[^a-z0-9-]/g, "");
-  const subdomainUrl = `https://${cleanSlug}.b2b.inhubflow.online`;
+  const subdomainUrl = `https://${cleanSlug}-b2b.inhubflow.online`;
 
   if (!COOLIFY_API_TOKEN) {
     const msg = "COOLIFY_API_TOKEN no está configurado en las variables de entorno de la Landing.";
