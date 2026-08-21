@@ -147,6 +147,7 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
             Authorization: `Bearer ${COOLIFY_API_TOKEN}`,
           },
           body: JSON.stringify({
+            fqdn: subdomainUrl,
             domains: subdomainUrl,
           }),
         });
