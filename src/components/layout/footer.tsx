@@ -86,15 +86,13 @@ export default function Footer() {
                       {t.footer.col1Item1}
                     </a>
                     <a
-                      href="https://b2c.inhubflow.online"
-                      target="_blank"
-                      rel="noreferrer"
+                      href="#features"
                       className="text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item2}
                     </a>
                     <a
-                      href="#features"
+                      href="#benefits"
                       className="text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item3}
@@ -142,10 +140,8 @@ export default function Footer() {
                       {t.footer.col3Item1}
                     </a>
                     <a
-                      href="https://b2c.inhubflow.online"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-sm text-emerald-400 font-semibold transition hover:text-emerald-300"
+                      href="#testimonials"
+                      className="text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col3Item2}
                     </a>

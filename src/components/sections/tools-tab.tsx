@@ -31,34 +31,24 @@ export default function AIToolsTabs() {
         'Conecta con tomadores de decisión mediante secuencias inteligentes: visitas de perfil, notas personalizadas por IA y correos fríos multietapa con calentamiento de bandejas.',
     },
     {
-      id: 'b2c',
-      label: 'WhatsApp & Instagram Omnicanal',
-      icon: <span className="text-xl">💬</span>,
-      lightImage: '/images/tab-image/tab-image-2.jpg',
-      darkImage: '/images/tab-image/tab-image-2-dark.jpg',
-      title: 'Atención, Disparos y Cierre de Ventas en WhatsApp e Instagram',
-      description:
-        'Centraliza todos tus canales en una bandeja colaborativa. Realiza campañas masivas con intervalos seguros y deja que tus Agentes de IA atiendan 24/7.',
-    },
-    {
       id: 'scraper',
-      label: 'Extracción de Leads con IA',
+      label: 'Lead Finder & Sales Navigator',
       icon: <span className="text-xl">🎯</span>,
       lightImage: '/images/tab-image/tab-image-3.jpg',
       darkImage: '/images/tab-image/tab-image-3-dark.jpg',
-      title: 'Extracción de Miembros de Grupos, Seguidores y Google Maps',
+      title: 'Extracción Inteligente de Decisores y Enriquecimiento de Emails',
       description:
-        'Obtén miles de prospectos en minutos: extrae participantes de grupos de WhatsApp, seguidores de cuentas de Instagram de tu competencia y negocios de Google Maps.',
+        'Encuentra y extrae cientos de prospectos calificados filtrando por cargo exacto, industria, empresa y ubicación geográfica, con correos corporativos 100% verificados.',
     },
     {
       id: 'sdr',
-      label: 'Agentes SDR IA 24/7',
+      label: 'Agentes SDR de IA 24/7',
       icon: <span className="text-xl">🤖</span>,
       lightImage: '/images/tab-image/tab-image-4.jpg',
       darkImage: '/images/tab-image/tab-image-4-dark.jpg',
       title: 'Calificación Automática y Agendamiento en Google Calendar',
       description:
-        'Tu SDR de Inteligencia Artificial mantiene conversaciones naturales, responde objeciones, valida si el cliente tiene presupuesto y agenda la cita directamente en tu calendario.',
+        'Tu SDR de Inteligencia Artificial mantiene conversaciones naturales, responde objeciones comerciales, valida el interés del prospecto y agenda la cita directamente en tu calendario.',
     },
   ];
 

@@ -10,47 +10,47 @@ import { useState } from 'react';
       company: 'CEO en ScaleB2B Agency',
       image: '/images/users/user-1.png',
       testimonial:
-        'InHubFlow nos permitió triplicar el volumen de reuniones B2B para nuestros clientes. El warm-up de correo y las notas de LinkedIn con IA tienen más del 40% de tasa de respuesta.',
+        'InHubFlow nos permitió triplicar el volumen de reuniones B2B para nuestros clientes. El warm-up de correo y las notas de conexión en LinkedIn con IA tienen más del 45% de tasa de respuesta.',
     },
     {
       id: 2,
-      name: 'Camila Rossi',
-      company: 'Directora Comercial en InmoPlus',
+      name: 'Sofia Castiglione',
+      company: 'VP of Growth en SaaS Venture',
       image: '/images/users/user-2.png',
       testimonial:
-        'Extraemos compradores calificados de grupos de WhatsApp del sector inmobiliario y el SDR de IA responde en 3 segundos agendando visitas a propiedades. Es una locura de eficiente.',
+        'Reemplazamos Waalaxy y Lemlist. El buscador nativo de tomadores de decisión y el Agente SDR en LinkedIn nos llenan la agenda de demostraciones comerciales todas las semanas.',
     },
     {
       id: 3,
       name: 'Martín Benítez',
-      company: 'Fundador en SaaS Growth Lab',
+      company: 'Fundador en B2B Growth Lab',
       image: '/images/users/user-3.png',
       testimonial:
-        'Dejamos de pagar $350/mes entre Lemlist, Expandi y ManyChat. Tener LinkedIn, Cold Email, WhatsApp e Instagram en una sola suscripción con InHubFlow nos ahorró tiempo y dinero.',
+        'La seguridad anti-bloqueo y la emulación de comportamiento humano son impecables. Gestionamos múltiples cuentas corporativas en LinkedIn con total tranquilidad.',
     },
     {
       id: 4,
       name: 'Valeria Sotomayor',
-      company: 'Head of Sales en Finova',
+      company: 'Head of Sales en Finova Enterprise',
       image: '/images/users/user-4.png',
       testimonial:
-        'La integración con Apollo y Sales Navigator es impecable. El sistema filtra directores financieros, envía secuencias personalizadas y nos llena el Google Calendar todas las semanas.',
+        'La extracción directa desde Sales Navigator y la combinación con Cold Email multietapa nos generó 38 reuniones con Directores Financieros en nuestro primer mes.',
     },
     {
       id: 5,
-      name: 'Diego Riquelme',
-      company: 'Director en EcomExperts',
+      name: 'Carlos Da Silva',
+      company: 'Director de Expansión en EnterpriseTech',
       image: '/images/users/user-1.png',
       testimonial:
-        'Los disparos masivos en WhatsApp con intervalos de Evolution API no tienen comparación. Cero bloqueos y la bandeja de Chatwoot nos permite atender miles de conversaciones en equipo.',
+        'El Agente SDR de IA responde en segundos a las dudas comerciales de los prospectos en LinkedIn y les comparte nuestro enlace de Google Calendar en piloto automático.',
     },
     {
       id: 6,
       name: 'Lucía Fernández',
-      company: 'Consultora de Negocios Digitales',
+      company: 'Consultora de Negocios & Ventas B2B',
       image: '/images/users/user-2.png',
       testimonial:
-        'Configurar los Agentes SDR de IA fue sumamente sencillo. Responden con tono profesional, resuelven dudas complejas y cierran reuniones en piloto automático mientras duermo.',
+        'Generé 14 llamadas calificadas en mi primera semana sin gastar horas buscando prospectos a mano. La interfaz es intuitiva y el flujo de automatización funciona a la perfección.',
     },
   ];
 
@@ -62,7 +62,7 @@ import { useState } from 'react';
       : testimonials.slice(0, 6);
 
     return (
-      <section className="md:py-28 py-16 relative bg-gray-50/50 dark:bg-[#0c111d]">
+      <section id="testimonials" className="md:py-28 py-16 relative bg-gray-50/50 dark:bg-[#0c111d]">
         <div className="wrapper max-w-7xl mx-auto px-4">
           <div>
             <div className="max-w-2xl mx-auto mb-14 text-center">

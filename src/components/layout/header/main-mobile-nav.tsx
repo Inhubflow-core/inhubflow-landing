@@ -17,17 +17,10 @@ export default function MainMobileNav({ isOpen }: MobileMenuProps) {
 
   const items = useMemo(() => [
     { type: 'link', href: '#features', label: t.nav.features },
-    { type: 'link', href: '#b2b-outreach', label: 'Outreach B2B' },
-    { type: 'link', href: '#b2c-omnichannel', label: 'Omnicanal B2C' },
+    { type: 'link', href: '#benefits', label: t.nav.benefits },
     { type: 'link', href: '#pricing', label: t.nav.pricing },
-    {
-      type: 'dropdown',
-      label: t.nav.clientAccess,
-      items: [
-        { href: 'https://b2b.inhubflow.online', label: '🚀 InHub Outreach (B2B)' },
-        { href: 'https://b2c.inhubflow.online', label: '💬 InHub Omnichannel (B2C)' },
-      ],
-    },
+    { type: 'link', href: '#faq', label: t.nav.faq },
+    { type: 'link', href: 'https://b2b.inhubflow.online', label: `${t.nav.clientAccess} ➔` },
   ], [t]);
 
   const toggleDropdown = (key: string) => {

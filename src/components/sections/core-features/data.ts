@@ -1,38 +1,38 @@
 export const CORE_FEATURES = [
   {
-    title: "Extracción Multicanal de Leads",
+    title: "Extracción Inteligente de Leads B2B",
     description:
-      "Extrae leads cualificados de LinkedIn Sales Navigator, Apollo.io, miembros de grupos de WhatsApp, seguidores de Instagram y Google Maps.",
+      "Encuentra y extrae cientos de tomadores de decisión directamente desde LinkedIn y Sales Navigator, con emails corporativos verificados y enriquecimiento de datos.",
     icon: "🎯",
   },
   {
-    title: "Automatización B2B en LinkedIn",
+    title: "Secuencias Automatizadas en LinkedIn",
     description:
-      "Automatiza visitas de perfil, solicitudes de conexión con notas personalizadas con IA y secuencias de DMs que generan reuniones.",
+      "Automatiza visitas de perfil, solicitudes de conexión con notas personalizadas con IA y secuencias de DMs inteligentes que multiplican tu tasa de respuesta.",
     icon: "💼",
   },
   {
     title: "Cold Email Multicuenta & Warm-up",
     description:
-      "Secuencias de correo frío multietapa con calentamiento automático de bandejas, máxima entregabilidad y 0% en la carpeta de SPAM.",
+      "Secuencias de correo frío multietapa con calentamiento automático de bandejas integrado, máxima entregabilidad y 0% en la carpeta de SPAM.",
     icon: "✉️",
   },
   {
-    title: "Disparos Inteligentes en WhatsApp",
+    title: "Protección Anti-Ban (Playwright Stealth)",
     description:
-      "Lanza campañas masivas de WhatsApp con personalización dinámica e intervalos anti-bloqueo impulsados por Evolution API.",
-    icon: "📱",
+      "Emulación avanzada de comportamiento humano, pausas aleatorias y límites diarios de seguridad para mantener tus cuentas de LinkedIn 100% protegidas.",
+    icon: "🛡️",
   },
   {
     title: "Agentes SDR de IA 24/7",
     description:
-      "Inteligencia Artificial que responde en segundos por WhatsApp e Instagram, califica al prospecto y agenda reuniones automáticamente.",
+      "Inteligencia Artificial conversacional entrenada con tu base de conocimiento que responde en segundos, resuelve objeciones y agenda citas en Calendly.",
     icon: "🤖",
   },
   {
-    title: "Bandeja Unificada Omnicanal",
+    title: "Bandeja Unificada & Sincronización CRM",
     description:
-      "Centraliza WhatsApp, Instagram Direct, Webchat y Email en una sola pantalla colaborativa para todo tu equipo de ventas.",
+      "Gestiona todas las respuestas y conversaciones en una sola interfaz centralizada, con auditoría completa de IA y sincronización de calendario.",
     icon: "💬",
   },
 ];
