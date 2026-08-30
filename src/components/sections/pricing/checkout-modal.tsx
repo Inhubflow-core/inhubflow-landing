@@ -181,7 +181,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
                 {provisionSuccess ? 'Espacio Activado' : 'Activación de Suscripción'}
               </span>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">
-                4 Slots B2B + 4 Agentes
+                {plan.id.includes('20') ? '20 Slots Dedicados' : plan.id.includes('10') ? '10 Slots Dedicados' : '5 Slots Dedicados'}
               </span>
             </div>
             <h3 className="text-xl font-bold mt-0.5">{plan.name}</h3>

@@ -90,40 +90,26 @@ export async function POST(req: NextRequest) {
         const companySlug = rawSlug.substring(0, 24) || `empresa-${Date.now().toString().slice(-4)}`;
 
         const planId = (customData.plan_id || "").toLowerCase();
-        const shouldProvisionB2C = planId === "b2c" || planId === "allinone" || !planId;
-        const shouldProvisionB2B = planId === "b2b" || planId === "allinone" || !planId;
+        const slotsLimit = planId.includes("20") ? 20 : planId.includes("10") ? 10 : 5;
 
-        console.log(`[Paddle Webhook] 🚀 Provisioning plan '${planId}' for: ${companyName} (${adminEmail})`);
+        console.log(`[Paddle Webhook] Provisioning plan '${planId}' (${slotsLimit} slots) for: ${companyName} (${adminEmail})`);
 
-        let chatwootResult = null;
         let coolifyResult = null;
 
-        // 1. Provision B2C Chatwoot Account (Max 4 Agents) if included in plan
-        if (shouldProvisionB2C) {
-          chatwootResult = await createChatwootAccount({
-            companyName,
-            adminEmail,
-            adminPassword,
-            maxAgents: 4,
-          });
-        }
-
-        // 2. Provision B2B Linki Dedicated Instance (4 Slots) if included in plan
-        if (shouldProvisionB2B) {
-          coolifyResult = await deployLinkiInstance({
-            companySlug,
-            companyName,
-            adminEmail,
-            adminPassword,
-            slotsLimit: 4,
-          });
-        }
+        // Provision B2B Linki Dedicated Instance with exact slotsLimit (5, 10, or 20)
+        coolifyResult = await deployLinkiInstance({
+          companySlug,
+          companyName,
+          adminEmail,
+          adminPassword,
+          slotsLimit,
+        });
 
         return NextResponse.json({
           received: true,
           plan_id: planId,
+          slots_limit: slotsLimit,
           provisioned: {
-            b2c_chatwoot: chatwootResult,
             b2b_linki: coolifyResult,
           },
         });
