@@ -55,7 +55,7 @@ export const getBillingPlans = (locale: Locale) => {
           },
         },
         features: [
-          '👑 Central Omnichannel (Chatwoot) com até 4 Agentes',
+          'Central Omnichannel (Chatwoot) com até 4 Agentes',
           'Conexão Oficial WhatsApp + Conta Instagram',
           'Extrator de Leads de Grupos de WhatsApp',
           'Extrator de Seguidores de Perfis do Instagram',
@@ -85,7 +85,7 @@ export const getBillingPlans = (locale: Locale) => {
           },
         },
         features: [
-          '👑 Até 4 Slots/Instâncias de Prospecção Dedicadas',
+          'Até 4 Slots/Instâncias de Prospecção Dedicadas',
           'Subdomínio Exclusivo (ex: suaempresa-b2b.inhubflow.online)',
           'Integração com Sales Navigator & Apollo.io',
           'Extrator de Empresas no Google Maps',
@@ -115,7 +115,7 @@ export const getBillingPlans = (locale: Locale) => {
           },
         },
         features: [
-          '👑 TUDO INCLUSO DO PLANO B2C E PLANO B2B',
+          'TUDO INCLUSO DO PLANO B2C E PLANO B2B',
           '4 Agentes Omnichannel B2C + 4 Slots B2B Dedicados',
           'Extração Ilimitada (Sales Nav, Apollo, Grupos WA, IG, Maps)',
           'SDRs de IA Ilimitados treinados com o seu negócio',
@@ -124,7 +124,7 @@ export const getBillingPlans = (locale: Locale) => {
           'Webhooks e Conexão com CRMs externos',
           'Suporte VIP Prioritário 1 a 1 e Onboarding guiado',
         ],
-        cta: 'Obter Suíte Completa 🔥',
+        cta: 'Obter Suíte Completa',
         popular: true,
       },
     ];
@@ -150,7 +150,7 @@ export const getBillingPlans = (locale: Locale) => {
           },
         },
         features: [
-          '👑 Omnichannel Inbox (Chatwoot) with up to 4 Teammates',
+          'Omnichannel Inbox (Chatwoot) with up to 4 Teammates',
           'Official WhatsApp Connection + Instagram Direct',
           'WhatsApp Group Members Lead Extractor',
           'Instagram Profile Followers Scraper',
@@ -180,7 +180,7 @@ export const getBillingPlans = (locale: Locale) => {
           },
         },
         features: [
-          '👑 Up to 4 Dedicated Outreach Slots / Workspaces',
+          'Up to 4 Dedicated Outreach Slots / Workspaces',
           'Dedicated Subdomain (e.g., yourcompany-b2b.inhubflow.online)',
           'Sales Navigator & Apollo.io Integration',
           'Google Maps Business Extractor',
@@ -210,7 +210,7 @@ export const getBillingPlans = (locale: Locale) => {
           },
         },
         features: [
-          '👑 EVERYTHING IN B2C PLAN & B2B PLAN INCLUDED',
+          'EVERYTHING IN B2C PLAN & B2B PLAN INCLUDED',
           '4 Omnichannel B2C Agents + 4 Dedicated B2B Slots',
           'Unlimited Extraction (Sales Nav, Apollo, Groups, IG, Maps)',
           'Unlimited AI SDRs trained on your business data',
@@ -219,7 +219,7 @@ export const getBillingPlans = (locale: Locale) => {
           'Webhooks & External CRM Integrations',
           'Priority 1-on-1 VIP Support & Assisted Onboarding',
         ],
-        cta: 'Get Complete Suite 🔥',
+        cta: 'Get Complete Suite',
         popular: true,
       },
     ];
@@ -245,7 +245,7 @@ export const getBillingPlans = (locale: Locale) => {
         },
       },
       features: [
-        '👑 Central Omnicanal (Chatwoot) con hasta 4 Agentes',
+        'Central Omnicanal (Chatwoot) con hasta 4 Agentes',
         'Conexión Oficial WhatsApp + Cuenta Instagram',
         'Extractor de Leads de Grupos de WhatsApp',
         'Extractor de Seguidores de Perfiles de Instagram',
@@ -265,7 +265,7 @@ export const getBillingPlans = (locale: Locale) => {
       pricing: {
         monthly: {
           amount: AMOUNTS['b2b']['monthly'],
-          formattedPrice: AMOUNTS['b2b']['formattedMonthly'],
+          formattedPrice: AMOUNTS['b2c']['formattedMonthly'] ? '$69,90' : AMOUNTS['b2b']['formattedMonthly'],
           paddlePriceId: 'pri_b2b_monthly',
         },
         yearly: {
@@ -275,7 +275,7 @@ export const getBillingPlans = (locale: Locale) => {
         },
       },
       features: [
-        '👑 Hasta 4 Slots/Instancias de Prospección Dedicadas',
+        'Hasta 4 Slots/Instancias de Prospección Dedicadas',
         'Subdominio Exclusivo (ej: tuempresa-b2b.inhubflow.online)',
         'Integración con Sales Navigator & Apollo.io',
         'Extractor de Empresas en Google Maps',
@@ -305,7 +305,7 @@ export const getBillingPlans = (locale: Locale) => {
         },
       },
       features: [
-        '👑 TODO LO INCLUIDO EN PLAN B2C Y PLAN B2B',
+        'TODO LO INCLUIDO EN PLAN B2C Y PLAN B2B',
         '4 Agentes Omnicanal B2C + 4 Slots B2B Dedicados',
         'Extracción Ilimitada (Sales Nav, Apollo, Grupos WA, IG, Maps)',
         'SDRs de IA Ilimitados entrenados con tu negocio',
@@ -314,7 +314,7 @@ export const getBillingPlans = (locale: Locale) => {
         'Webhooks y Conexión con CRMs externos',
         'Soporte VIP Prioritario 1 a 1 y Onboarding guiado',
       ],
-      cta: 'Obtener Suite Completa 🔥',
+      cta: 'Obtener Suite Completa',
       popular: true,
     },
   ];

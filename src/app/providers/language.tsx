@@ -27,7 +27,7 @@ const dictionaries = {
       pricing: 'Precios',
       faq: 'FAQ',
       clientAccess: 'Acceso Clientes',
-      startNow: 'Comenzar Ahora ⚡',
+      startNow: 'Comenzar Ahora',
     },
     hero: {
       subheading: 'AI-POWERED LINKEDIN & B2B OUTREACH ENGINE',
@@ -35,8 +35,8 @@ const dictionaries = {
       titleHighlight: 'Agentes SDR de IA para LinkedIn',
       description:
         'Extrae tomadores de decisión de LinkedIn Sales Navigator, automatiza visitas y solicitudes de conexión con notas hiperpersonalizadas con IA, y agenda videollamadas comerciales 24/7 sin riesgo de bloqueo.',
-      ctaPrimary: 'Comenzar Prueba Gratis ⚡',
-      ctaSecondary: 'Ver Cómo Funciona ➔',
+      ctaPrimary: 'Comenzar Prueba Gratis',
+      ctaSecondary: 'Ver Cómo Funciona',
       guarantee: 'Sin tarjeta obligatoria para demo • Compatible con LinkedIn Free, Premium y Sales Nav • Configuración en 2 minutos',
       badge1: 'Visitar Perfil',
       badge2: 'Solicitar Conexión',
@@ -59,37 +59,37 @@ const dictionaries = {
           title: 'Extracción Inteligente de Leads B2B',
           description:
             'Encuentra y extrae cientos de tomadores de decisión directamente desde LinkedIn y Sales Navigator, con emails corporativos verificados y enriquecimiento de datos.',
-          icon: '🎯',
+          icon: 'target',
         },
         {
           title: 'Secuencias Automatizadas en LinkedIn',
           description:
-            'Automatiza visitas de perfil, solicitudes de conexión con notas personalizadas con IA y secuencias de DMs inteligentes que multiplican tu tasa de respuesta.',
-          icon: '💼',
+            'Automatize visitas de perfil, solicitudes de conexión con notas personalizadas con IA y secuencias de DMs inteligentes que multiplican tu tasa de respuesta.',
+          icon: 'briefcase',
         },
         {
           title: 'Cold Email Multicuenta & Warm-up',
           description:
             'Secuencias de correo frío multietapa con calentamiento automático de bandejas integrado, máxima entregabilidad y 0% en la carpeta de SPAM.',
-          icon: '✉️',
+          icon: 'mail',
         },
         {
           title: 'Protección Anti-Ban (Playwright Stealth)',
           description:
             'Emulación avanzada de comportamiento humano, pausas aleatorias y límites diarios de seguridad para mantener tus cuentas de LinkedIn 100% protegidas.',
-          icon: '🛡️',
+          icon: 'shield',
         },
         {
           title: 'Agentes SDR de IA 24/7',
           description:
             'Inteligencia Artificial conversacional entrenada con tu base de conocimiento que responde en segundos, resuelve objeciones y agenda citas en Calendly.',
-          icon: '🤖',
+          icon: 'bot',
         },
         {
           title: 'Bandeja Unificada & Sincronización CRM',
           description:
             'Gestiona todas las respuestas y conversaciones en una sola interfaz centralizada, con auditoría completa de IA y sincronización de calendario.',
-          icon: '💬',
+          icon: 'message',
         },
       ],
     },
@@ -124,7 +124,7 @@ const dictionaries = {
       save20: 'Ahorra 20%',
       ctaB2B: 'Comenzar con B2B Outreach',
       ctaB2C: 'Comenzar Plan Pro',
-      ctaAllInOne: 'Obtener Suite Completa ⚡',
+      ctaAllInOne: 'Obtener Suite Completa',
       popularBadge: 'MÁS POPULAR',
     },
     faq: {
@@ -177,12 +177,12 @@ const dictionaries = {
       col2Item3: 'Sincronización de Calendario',
       col2Item4: 'Enriquecimiento de Emails',
       col3Title: 'Clientes',
-      col3Item1: 'Acceso a la Plataforma ➔',
+      col3Item1: 'Acceso a la Plataforma',
       col3Item2: 'Casos de Éxito',
       col3Item3: 'Preguntas Frecuentes',
       col4Title: 'Comienza Hoy',
       col4Desc: 'Escala la adquisición de clientes corporativos con prospección inteligente en LinkedIn.',
-      col4Cta: 'Ver Planes & Comenzar ⚡',
+      col4Cta: 'Ver Planes & Comenzar',
       copyright: '© 2026 InHubFlow | AI-Powered B2B Outreach Engine - All Rights Reserved.',
     },
   },
@@ -196,7 +196,7 @@ const dictionaries = {
       pricing: 'Preços',
       faq: 'FAQ',
       clientAccess: 'Área do Cliente',
-      startNow: 'Começar Agora ⚡',
+      startNow: 'Começar Agora',
     },
     hero: {
       subheading: 'AI-POWERED LINKEDIN & B2B OUTREACH ENGINE',
@@ -204,8 +204,8 @@ const dictionaries = {
       titleHighlight: 'Agentes SDR de IA para LinkedIn',
       description:
         'Extraia tomadores de decisão do LinkedIn Sales Navigator, automatize visitas e pedidos de conexão com notas hiperpersonalizadas por IA, e agende reuniões comerciais 24/7 sem risco de bloqueio.',
-      ctaPrimary: 'Começar Teste Grátis ⚡',
-      ctaSecondary: 'Ver Como Funciona ➔',
+      ctaPrimary: 'Começar Teste Grátis',
+      ctaSecondary: 'Ver Como Funciona',
       guarantee: 'Sem cartão obrigatório para demo • Compatível com LinkedIn Free, Premium e Sales Nav • Configuração em 2 minutos',
       badge1: 'Visitar Perfil',
       badge2: 'Solicitar Conexão',
@@ -228,37 +228,37 @@ const dictionaries = {
           title: 'Extração Inteligente de Leads B2B',
           description:
             'Encontre e extraia centenas de tomadores de decisão diretamente do LinkedIn e Sales Navigator, com e-mails corporativos verificados e enriquecimento de dados.',
-          icon: '🎯',
+          icon: 'target',
         },
         {
           title: 'Automação de Sequências no LinkedIn',
           description:
             'Automatize visitas de perfil, solicitações de conexão com notas personalizadas por IA e sequências de DMs inteligentes que multiplicam suas respostas.',
-          icon: '💼',
+          icon: 'briefcase',
         },
         {
           title: 'Cold Email Multicontas & Warm-up',
           description:
             'Sequências de e-mail frio em várias etapas com aquecimento automático de caixas de entrada integrado, máxima entregabilidade e 0% na caixa de SPAM.',
-          icon: '✉️',
+          icon: 'mail',
         },
         {
           title: 'Proteção Anti-Bloqueio (Playwright Stealth)',
           description:
             'Emulação avançada de comportamento humano, pausas aleatórias e limites diários de segurança para manter suas contas do LinkedIn 100% protegidas.',
-          icon: '🛡️',
+          icon: 'shield',
         },
         {
           title: 'Agentes SDR de IA 24/7',
           description:
             'Inteligência Artificial conversacional treinada com sua base de conhecimento que responde em segundos, resolve objeções e agenda reuniões no Calendly.',
-          icon: '🤖',
+          icon: 'bot',
         },
         {
           title: 'Caixa Unificada & Sincronização CRM',
           description:
             'Gerencie todas as respostas e conversas em uma única interface centralizada, com auditoria completa de IA e sincronização de calendário.',
-          icon: '💬',
+          icon: 'message',
         },
       ],
     },
@@ -293,7 +293,7 @@ const dictionaries = {
       save20: 'Economize 20%',
       ctaB2B: 'Começar com B2B Outreach',
       ctaB2C: 'Começar Plano Pro',
-      ctaAllInOne: 'Obter Suíte Completa ⚡',
+      ctaAllInOne: 'Obter Suíte Completa',
       popularBadge: 'MAIS POPULAR',
     },
     faq: {
@@ -346,12 +346,12 @@ const dictionaries = {
       col2Item3: 'Sincronização de Calendário',
       col2Item4: 'Enriquecimento de E-mails',
       col3Title: 'Clientes',
-      col3Item1: 'Acesso à Plataforma ➔',
+      col3Item1: 'Acesso à Plataforma',
       col3Item2: 'Casos de Sucesso',
       col3Item3: 'Perguntas Frequentes',
       col4Title: 'Comece Hoje',
       col4Desc: 'Escale a aquisição de clientes corporativos com prospecção inteligente no LinkedIn.',
-      col4Cta: 'Ver Planos & Começar ⚡',
+      col4Cta: 'Ver Planos & Começar',
       copyright: '© 2026 InHubFlow | AI-Powered B2B Outreach Engine - All Rights Reserved.',
     },
   },
@@ -365,7 +365,7 @@ const dictionaries = {
       pricing: 'Pricing',
       faq: 'FAQ',
       clientAccess: 'Client Login',
-      startNow: 'Get Started ⚡',
+      startNow: 'Get Started',
     },
     hero: {
       subheading: 'AI-POWERED LINKEDIN & B2B OUTREACH ENGINE',
@@ -373,8 +373,8 @@ const dictionaries = {
       titleHighlight: 'AI SDR Agents for LinkedIn',
       description:
         'Extract verified decision-makers from LinkedIn Sales Navigator, automate profile visits and connection requests with AI-personalized notes, and book sales calls 24/7 with zero ban risk.',
-      ctaPrimary: 'Start Free Trial ⚡',
-      ctaSecondary: 'See How It Works ➔',
+      ctaPrimary: 'Start Free Trial',
+      ctaSecondary: 'See How It Works',
       guarantee: 'No credit card required for demo • Compatible with Free, Premium & Sales Nav • 2-minute setup',
       badge1: 'Visit Profile',
       badge2: 'Request Connection',
@@ -397,37 +397,37 @@ const dictionaries = {
           title: 'Smart B2B Lead Extraction',
           description:
             'Find and extract hundreds of verified decision-makers directly from LinkedIn and Sales Navigator, with corporate email enrichment and real-time validation.',
-          icon: '🎯',
+          icon: 'target',
         },
         {
           title: 'Automated LinkedIn Sequences',
           description:
             'Automate profile visits, connection requests with AI-personalized notes, and follow-up DM sequences that significantly increase response rates.',
-          icon: '💼',
+          icon: 'briefcase',
         },
         {
           title: 'Multi-Inbox Cold Email & Warm-up',
           description:
             'Multi-step cold email campaigns with built-in mailbox warm-up, maximum deliverability, and guaranteed 0% spam placement.',
-          icon: '✉️',
+          icon: 'mail',
         },
         {
           title: 'Anti-Ban Safety (Playwright Stealth)',
           description:
             'Advanced human-like behavioral emulation, randomized delays, and intelligent daily quota limits to keep your LinkedIn accounts 100% secure.',
-          icon: '🛡️',
+          icon: 'shield',
         },
         {
           title: '24/7 AI SDR Agents',
           description:
             'Conversational AI trained on your knowledge base that replies in seconds on LinkedIn, overcomes objections, qualifies buyers, and schedules meetings.',
-          icon: '🤖',
+          icon: 'bot',
         },
         {
           title: 'Unified B2B Inbox & CRM Sync',
           description:
             'Manage all conversations, replies, and follow-ups in a single centralized dashboard with complete AI audit trails and calendar synchronization.',
-          icon: '💬',
+          icon: 'message',
         },
       ],
     },
@@ -462,7 +462,7 @@ const dictionaries = {
       save20: 'Save 20%',
       ctaB2B: 'Get Started with B2B Outreach',
       ctaB2C: 'Get Started with Pro Plan',
-      ctaAllInOne: 'Get All-In-One Suite ⚡',
+      ctaAllInOne: 'Get All-In-One Suite',
       popularBadge: 'MOST POPULAR',
     },
     faq: {
@@ -515,12 +515,12 @@ const dictionaries = {
       col2Item3: 'Calendar Sync',
       col2Item4: 'Email Enrichment',
       col3Title: 'Clients',
-      col3Item1: 'Platform Login ➔',
+      col3Item1: 'Platform Login',
       col3Item2: 'Testimonials',
       col3Item3: 'Frequently Asked Questions',
       col4Title: 'Get Started',
       col4Desc: 'Scale client acquisition with smart B2B AI LinkedIn prospecting.',
-      col4Cta: 'View Plans & Start ⚡',
+      col4Cta: 'View Plans & Start',
       copyright: '© 2026 InHubFlow | AI-Powered B2B Outreach Engine - All Rights Reserved.',
     },
   },

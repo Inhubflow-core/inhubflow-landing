@@ -178,7 +178,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase">
-                {provisionSuccess ? '✅ Espacio Activado' : '⚡ Activación de Suscripción'}
+                {provisionSuccess ? 'Espacio Activado' : 'Activación de Suscripción'}
               </span>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300">
                 4 Slots B2B + 4 Agentes
@@ -202,9 +202,9 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
             </div>
             <div>
               <h4 className="text-lg font-bold text-gray-900 dark:text-white">
-                {progressStep === 1 && '💳 Procesando pago y suscripción...'}
-                {progressStep === 2 && '🚀 Aprovisionando subdominio dedicado y 4 slots...'}
-                {progressStep === 3 && '✨ Configurando cuentas B2B y B2C...'}
+                {progressStep === 1 && 'Procesando pago y suscripción...'}
+                {progressStep === 2 && 'Aprovisionando subdominio dedicado y slots...'}
+                {progressStep === 3 && 'Configurando cuentas y accesos...'}
               </h4>
               <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                 Esto toma unos segundos en tus servidores...
@@ -375,8 +375,9 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
                   </span>
                 </p>
               </div>
-              <span className="text-xs px-2.5 py-1 bg-indigo-600 text-white font-bold rounded-lg shadow-sm">
-                🔒 Paddle MoR Seguro
+              <span className="text-xs px-2.5 py-1 bg-indigo-600 text-white font-bold rounded-lg shadow-sm flex items-center gap-1">
+                <RiShieldCheckLine size={14} />
+                <span>Paddle MoR Seguro</span>
               </span>
             </div>
 
@@ -386,10 +387,10 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
               className="w-full py-3.5 px-6 font-bold text-sm text-white bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 rounded-full shadow-lg shadow-indigo-500/25 transition-all duration-200 cursor-pointer disabled:opacity-50"
             >
               {locale === 'pt-BR'
-                ? 'Testar Ativação e Pagamento 🚀'
+                ? 'Confirmar Ativação e Pagamento'
                 : locale === 'en'
-                ? 'Test Activation & Checkout 🚀'
-                : 'Simular Activación y Acceso Inmediato 🚀'}
+                ? 'Confirm Activation & Checkout'
+                : 'Confirmar Activación y Acceso Inmediato'}
             </button>
           </form>
         )}

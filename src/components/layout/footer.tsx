@@ -46,60 +46,63 @@ export default function Footer() {
           </defs>
         </svg>
       </span>
-      <div className="relative z-10 py-16 xl:py-24">
-        <div className="container px-5 mx-auto sm:px-7">
-          <div className="grid gap-y-8 gap-x-6 lg:grid-cols-12">
+
+      <div className="relative z-10 py-12 sm:py-16 xl:py-20">
+        <div className="container px-5 mx-auto sm:px-7 max-w-7xl">
+          <div className="grid gap-y-8 sm:gap-y-10 gap-x-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-12">
+            {/* Brand & Description */}
             <div className="lg:col-span-4 xl:col-span-4">
               <div>
-                <Link href="/" className="inline-flex items-center mb-6">
+                <Link href="/" className="inline-flex items-center mb-4 sm:mb-6">
                   <Image
                     src="/logo-master-dark.png"
                     alt="InHubFlow Logo"
                     width={220}
                     height={55}
-                    className="h-10 sm:h-11 w-auto max-w-[200px] object-contain"
+                    className="h-9 sm:h-11 w-auto max-w-[170px] sm:max-w-[200px] object-contain"
                   />
                 </Link>
-                <p className="block text-sm text-gray-400 mb-8 leading-relaxed max-w-sm">
+                <p className="block text-xs sm:text-sm text-gray-400 mb-6 leading-relaxed max-w-sm">
                   {t.footer.desc}
                 </p>
-                <div className="flex items-center gap-3 text-xs text-emerald-400 font-medium">
+                <div className="flex items-center gap-2.5 text-xs text-emerald-400 font-medium">
                   <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span>{t.footer.status}</span>
                 </div>
               </div>
             </div>
 
+            {/* Navigation Columns */}
             <div className="lg:col-span-5 xl:col-span-5">
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-7">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-7">
                 <div>
-                  <span className="block mb-5 text-sm font-semibold text-white uppercase tracking-wider">
+                  <span className="block mb-3 sm:mb-4 text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
                     {t.footer.col1Title}
                   </span>
-                  <nav className="flex flex-col space-y-3">
+                  <nav className="flex flex-col space-y-2.5 sm:space-y-3">
                     <a
                       href="https://b2b.inhubflow.online"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-sm text-gray-400 transition hover:text-white"
+                      className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item1}
                     </a>
                     <a
                       href="#features"
-                      className="text-sm text-gray-400 transition hover:text-white"
+                      className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item2}
                     </a>
                     <a
                       href="#benefits"
-                      className="text-sm text-gray-400 transition hover:text-white"
+                      className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item3}
                     </a>
                     <a
                       href="#pricing"
-                      className="text-sm text-gray-400 transition hover:text-white"
+                      className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item4}
                     </a>
@@ -107,47 +110,59 @@ export default function Footer() {
                 </div>
 
                 <div>
-                  <span className="block mb-5 text-sm font-semibold text-white uppercase tracking-wider">
+                  <span className="block mb-3 sm:mb-4 text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
                     {t.footer.col2Title}
                   </span>
-                  <nav className="flex flex-col space-y-3">
-                    <span className="text-sm text-gray-400">
+                  <nav className="flex flex-col space-y-2.5 sm:space-y-3">
+                    <a
+                      href="#features"
+                      className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
+                    >
                       {t.footer.col2Item1}
-                    </span>
-                    <span className="text-sm text-gray-400">
+                    </a>
+                    <a
+                      href="#features"
+                      className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
+                    >
                       {t.footer.col2Item2}
-                    </span>
-                    <span className="text-sm text-gray-400">
+                    </a>
+                    <a
+                      href="#features"
+                      className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
+                    >
                       {t.footer.col2Item3}
-                    </span>
-                    <span className="text-sm text-gray-400">
+                    </a>
+                    <a
+                      href="#features"
+                      className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
+                    >
                       {t.footer.col2Item4}
-                    </span>
+                    </a>
                   </nav>
                 </div>
 
-                <div>
-                  <span className="block mb-5 text-sm font-semibold text-white uppercase tracking-wider">
+                <div className="col-span-2 sm:col-span-1">
+                  <span className="block mb-3 sm:mb-4 text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
                     {t.footer.col3Title}
                   </span>
-                  <nav className="flex flex-col space-y-3">
+                  <nav className="flex flex-col space-y-2.5 sm:space-y-3">
                     <a
                       href="https://b2b.inhubflow.online"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-sm text-blue-400 font-semibold transition hover:text-blue-300"
+                      className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col3Item1}
                     </a>
                     <a
                       href="#testimonials"
-                      className="text-sm text-gray-400 transition hover:text-white"
+                      className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col3Item2}
                     </a>
                     <a
                       href="#faq"
-                      className="text-sm text-gray-400 transition hover:text-white"
+                      className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col3Item3}
                     </a>
@@ -156,17 +171,18 @@ export default function Footer() {
               </div>
             </div>
 
+            {/* Quick CTA Box */}
             <div className="lg:col-span-3 xl:col-span-3">
-              <div>
-                <span className="block mb-5 text-sm font-semibold text-white uppercase tracking-wider">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10">
+                <span className="block mb-2 text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
                   {t.footer.col4Title}
                 </span>
-                <p className="block mb-6 text-sm text-gray-400 leading-relaxed">
+                <p className="block mb-4 text-xs sm:text-sm text-gray-400 leading-relaxed">
                   {t.footer.col4Desc}
                 </p>
                 <a
                   href="#pricing"
-                  className="w-full inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white transition rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500"
+                  className="w-full inline-flex items-center justify-center px-5 py-3 text-xs sm:text-sm font-bold text-white transition rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-md active:scale-98"
                 >
                   {t.footer.col4Cta}
                 </a>
@@ -175,11 +191,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Copyright */}
       <div className="border-t border-gray-800/80">
         <div className="container relative z-10 px-5 mx-auto sm:px-7">
-          <div className="py-6 text-center">
-            <p className="text-sm text-gray-400 font-medium">
-              &copy; {getCurrentYear()} InHubFlow | AI-Powered Prospecting System - All Rights Reserved.
+          <div className="py-5 sm:py-6 text-center">
+            <p className="text-xs sm:text-sm text-gray-500 font-medium">
+              &copy; {getCurrentYear()} InHubFlow | AI-Powered B2B Outreach Engine - All Rights Reserved.
             </p>
           </div>
         </div>
