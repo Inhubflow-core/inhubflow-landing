@@ -48,7 +48,7 @@ export default function Footer() {
       </span>
 
       <div className="relative z-10 py-12 sm:py-16 xl:py-20">
-        <div className="container px-5 mx-auto sm:px-7 max-w-7xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-y-8 sm:gap-y-10 gap-x-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-12">
             {/* Brand & Description */}
             <div className="lg:col-span-4 xl:col-span-4">
@@ -194,7 +194,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="border-t border-gray-800/80">
-        <div className="container relative z-10 px-5 mx-auto sm:px-7">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-5 sm:py-6 text-center">
             <p className="text-xs sm:text-sm text-gray-500 font-medium">
               &copy; {getCurrentYear()} InHubFlow | AI-Powered B2B Outreach Engine - All Rights Reserved.

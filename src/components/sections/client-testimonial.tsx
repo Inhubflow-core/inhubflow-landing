@@ -62,8 +62,8 @@ export default function TestimonialsSection() {
     : testimonials.slice(0, 6);
 
   return (
-    <section id="testimonials" className="py-16 sm:py-24 lg:py-28 relative bg-gray-50/50 dark:bg-[#0c111d] px-4 sm:px-6">
-      <div className="wrapper max-w-7xl mx-auto">
+    <section id="testimonials" className="py-16 sm:py-24 lg:py-28 relative bg-gray-50/50 dark:bg-[#0c111d]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div>
           <div className="max-w-2xl mx-auto mb-10 sm:mb-14 text-center">
             <span className="text-xs font-bold uppercase tracking-widest text-blue-500 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-3 inline-block">
@@ -78,7 +78,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-3 max-w-[72rem] mx-auto">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-3 w-full">
             {visibleTestimonials.map((testimonial) => (
               <TestimonialCard
                 key={testimonial.id}

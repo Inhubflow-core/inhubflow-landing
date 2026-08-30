@@ -11,8 +11,8 @@ export default function HeroSection() {
 
   return (
     <section className="pt-8 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 relative overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F6F4FE] to-[#ECE7FE] dark:from-[#0F172A] dark:via-[#171F2E] dark:to-[#1E293B]">
-      <div className="max-w-[120rem] mx-auto relative">
-        <div className="wrapper px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div>
           <div className="max-w-[920px] mx-auto">
             <div className="text-center pb-8 sm:pb-12 lg:pb-16">
               <Subheading text={t.hero.subheading} />

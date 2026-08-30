@@ -7,8 +7,8 @@ export default function BenefitsGrid() {
   const { t } = useLanguage();
 
   return (
-    <section id="benefits" className="bg-gray-900 py-16 sm:py-24 lg:py-28 px-4 sm:px-6">
-      <div className="wrapper max-w-7xl mx-auto">
+    <section id="benefits" className="bg-gray-900 py-16 sm:py-24 lg:py-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto mb-10 sm:mb-16 text-center">
           <span className="text-xs font-bold uppercase tracking-widest text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-3 inline-block">
             {t.benefits.badge}

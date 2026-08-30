@@ -64,8 +64,8 @@ export function CoreFeatures() {
   const { t } = useLanguage();
 
   return (
-    <section id="features" className="py-16 sm:py-24 lg:py-30 bg-gray-50 dark:bg-[#0f1523] px-4 sm:px-6">
-      <div className="max-w-[76rem] mx-auto">
+    <section id="features" className="py-16 sm:py-24 lg:py-30 bg-gray-50 dark:bg-[#0f1523]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-14 text-center">
           <span className="text-xs font-bold uppercase tracking-widest text-blue-500 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-3 inline-block">
             {t.features.badge}

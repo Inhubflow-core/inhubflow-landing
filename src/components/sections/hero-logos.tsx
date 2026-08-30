@@ -13,12 +13,12 @@ export default function HeroLogos() {
   ];
 
   return (
-    <div className="wrapper">
-      <div className="max-w-[1016px] relative z-30 mx-auto pt-14 pb-16">
-        <p className="text-center text-gray-600 dark:text-white/60 text-sm sm:text-base font-semibold tracking-wide">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full relative z-30 mx-auto pt-12 sm:pt-14 pb-14 sm:pb-16 border-t border-gray-100 dark:border-gray-800/80 mt-12 sm:mt-16">
+        <p className="text-center text-gray-500 dark:text-white/60 text-xs sm:text-sm font-semibold tracking-wide uppercase">
           Impulsando la prospección de equipos comerciales en toda Iberoamérica
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14 mt-8">
+        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 md:gap-14 mt-6 sm:mt-8">
           {logos.map((logo, index) => (
             <Image
               key={index}
@@ -26,7 +26,7 @@ export default function HeroLogos() {
               alt={logo.alt}
               width={logo.width}
               height={logo.height}
-              className="brightness-0 opacity-70 hover:opacity-100 dark:brightness-100 dark:opacity-40 transition-all duration-200"
+              className="brightness-0 opacity-60 hover:opacity-100 dark:brightness-100 dark:opacity-40 transition-all duration-200"
             />
           ))}
         </div>
