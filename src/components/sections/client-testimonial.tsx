@@ -8,7 +8,7 @@ const testimonials = [
     id: 1,
     name: 'Alejandro Morales',
     company: 'CEO en ScaleB2B Agency',
-    image: '/images/users/user-1.png',
+    image: '/images/users/user-1.jpg',
     testimonial:
       'InHubFlow nos permitió triplicar el volumen de reuniones B2B para nuestros clientes. El warm-up de correo y las notas de conexión en LinkedIn con IA tienen más del 45% de tasa de respuesta.',
   },
@@ -16,7 +16,7 @@ const testimonials = [
     id: 2,
     name: 'Sofia Castiglione',
     company: 'VP of Growth en SaaS Venture',
-    image: '/images/users/user-2.png',
+    image: '/images/users/user-2.jpg',
     testimonial:
       'Reemplazamos Waalaxy y Lemlist. El buscador nativo de tomadores de decisión y el Agente SDR en LinkedIn nos llenan la agenda de demostraciones comerciales todas las semanas.',
   },
@@ -24,7 +24,7 @@ const testimonials = [
     id: 3,
     name: 'Martín Benítez',
     company: 'Fundador en B2B Growth Lab',
-    image: '/images/users/user-3.png',
+    image: '/images/users/user-3.jpg',
     testimonial:
       'La seguridad anti-bloqueo y la emulación de comportamiento humano son impecables. Gestionamos múltiples cuentas corporativas en LinkedIn con total tranquilidad.',
   },
@@ -32,7 +32,7 @@ const testimonials = [
     id: 4,
     name: 'Valeria Sotomayor',
     company: 'Head of Sales en Finova Enterprise',
-    image: '/images/users/user-4.png',
+    image: '/images/users/user-4.jpg',
     testimonial:
       'La extracción directa desde Sales Navigator y la combinación con Cold Email multietapa nos generó 38 reuniones con Directores Financieros en nuestro primer mes.',
   },
@@ -40,7 +40,7 @@ const testimonials = [
     id: 5,
     name: 'Carlos Da Silva',
     company: 'Director de Expansión en EnterpriseTech',
-    image: '/images/users/user-1.png',
+    image: '/images/users/user-5.jpg',
     testimonial:
       'El Agente SDR de IA responde en segundos a las dudas comerciales de los prospectos en LinkedIn y les comparte nuestro enlace de Google Calendar en piloto automático.',
   },
@@ -48,7 +48,7 @@ const testimonials = [
     id: 6,
     name: 'Lucía Fernández',
     company: 'Consultora de Negocios & Ventas B2B',
-    image: '/images/users/user-2.png',
+    image: '/images/users/user-6.jpg',
     testimonial:
       'Generé 14 llamadas calificadas en mi primera semana sin gastar horas buscando prospectos a mano. La interfaz es intuitiva y el flujo de automatización funciona a la perfección.',
   },
