@@ -15,22 +15,22 @@ export const getBillingPeriods = (locale: Locale) => [
 
 const AMOUNTS = {
   starter: {
-    monthly: 37,
-    yearly: 27,
-    formattedMonthly: '$37',
-    formattedYearly: '$27',
+    monthly: 49,
+    yearly: 39,
+    formattedMonthly: '$49',
+    formattedYearly: '$39',
   },
   growth: {
-    monthly: 67,
-    yearly: 57,
-    formattedMonthly: '$67',
-    formattedYearly: '$57',
+    monthly: 199,
+    yearly: 159,
+    formattedMonthly: '$199',
+    formattedYearly: '$159',
   },
   scale: {
-    monthly: 97,
-    yearly: 87,
-    formattedMonthly: '$97',
-    formattedYearly: '$87',
+    monthly: 349,
+    yearly: 279,
+    formattedMonthly: '$349',
+    formattedYearly: '$279',
   },
 };
 
