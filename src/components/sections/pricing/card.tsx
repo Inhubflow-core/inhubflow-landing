@@ -44,16 +44,16 @@ export function PricingCard({ plan, billingPeriod }: Props) {
           plan.popular ? 'border-2 border-primary-500 shadow-xl' : 'border border-gray-200 dark:border-gray-800'
         }`}
       >
+        {plan.popular && (
+          <span className="absolute top-0 left-6 -translate-y-1/2 px-3 py-1 text-[10px] sm:text-xs font-bold rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-sm z-20">
+            {badgeText}
+          </span>
+        )}
         <div className="p-6 sm:p-8">
           <div className="flex items-center justify-between gap-2">
             <h2 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">
               {plan.name}
             </h2>
-            {plan.popular && (
-              <span className="px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-bold rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-sm shrink-0">
-                {badgeText}
-              </span>
-            )}
           </div>
           <p className="flex items-baseline mt-3 sm:mt-4">
             <span className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
