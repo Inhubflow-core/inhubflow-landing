@@ -26,6 +26,13 @@ const AMOUNTS = {
     formattedMonthly: '$199',
     formattedYearly: '$159',
   },
+  business: {
+    monthly: 349,
+    yearly: 279,
+    formattedMonthly: '$349',
+    formattedYearly: '$279',
+  },
+  // Alias for backwards compatibility
   scale: {
     monthly: 349,
     yearly: 279,
@@ -42,8 +49,8 @@ export const getBillingPlans = (locale: Locale) => {
         name: 'Plano Starter (1 Conta)',
         description: 'Ideal para iniciar a prospecção B2B de forma automatizada e constante.',
         pricing: {
-          monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, paddlePriceId: 'pri_starter_monthly' },
-          yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, paddlePriceId: 'pri_starter_yearly' },
+          monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
+          yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
         },
         features: [
           '1 Conta do LinkedIn Conectada (1 Slot Dedicado)',
@@ -66,8 +73,8 @@ export const getBillingPlans = (locale: Locale) => {
         name: 'Plano Growth (5 Contas)',
         description: 'Perfeito para equipes comerciais que precisam escalar seu pipeline de vendas.',
         pricing: {
-          monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, paddlePriceId: 'pri_growth_monthly' },
-          yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, paddlePriceId: 'pri_growth_yearly' },
+          monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
+          yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
         },
         features: [
           '5 Contas do LinkedIn Conectadas (5 Slots Dedicados)',
@@ -87,11 +94,11 @@ export const getBillingPlans = (locale: Locale) => {
       },
       {
         id: 'slots-10',
-        name: 'Plano Scale (10 Contas)',
+        name: 'Plano Business (10 Contas)',
         description: 'A potência máxima para agências de prospecção e empresas B2B de alto volume.',
         pricing: {
-          monthly: { amount: AMOUNTS.scale.monthly, formattedPrice: AMOUNTS.scale.formattedMonthly, paddlePriceId: 'pri_scale_monthly' },
-          yearly: { amount: AMOUNTS.scale.yearly, formattedPrice: AMOUNTS.scale.formattedYearly, paddlePriceId: 'pri_scale_yearly' },
+          monthly: { amount: AMOUNTS.business.monthly, formattedPrice: AMOUNTS.business.formattedMonthly, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
+          yearly: { amount: AMOUNTS.business.yearly, formattedPrice: AMOUNTS.business.formattedYearly, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
         },
         features: [
           '10 Contas do LinkedIn Conectadas (10 Slots Dedicados)',
@@ -119,8 +126,8 @@ export const getBillingPlans = (locale: Locale) => {
         name: 'Starter Plan (1 Account)',
         description: 'Ideal to start automating your B2B outreach consistently.',
         pricing: {
-          monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, paddlePriceId: 'pri_starter_monthly' },
-          yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, paddlePriceId: 'pri_starter_yearly' },
+          monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
+          yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
         },
         features: [
           '1 Connected LinkedIn Account (1 Dedicated Slot)',
@@ -143,8 +150,8 @@ export const getBillingPlans = (locale: Locale) => {
         name: 'Growth Plan (5 Accounts)',
         description: 'Perfect for sales teams that need to scale their sales pipeline.',
         pricing: {
-          monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, paddlePriceId: 'pri_growth_monthly' },
-          yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, paddlePriceId: 'pri_growth_yearly' },
+          monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
+          yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
         },
         features: [
           '5 Connected LinkedIn Accounts (5 Dedicated Slots)',
@@ -164,11 +171,11 @@ export const getBillingPlans = (locale: Locale) => {
       },
       {
         id: 'slots-10',
-        name: 'Scale Plan (10 Accounts)',
+        name: 'Business Plan (10 Accounts)',
         description: 'Maximum outreach capacity for agencies and high-volume B2B companies.',
         pricing: {
-          monthly: { amount: AMOUNTS.scale.monthly, formattedPrice: AMOUNTS.scale.formattedMonthly, paddlePriceId: 'pri_scale_monthly' },
-          yearly: { amount: AMOUNTS.scale.yearly, formattedPrice: AMOUNTS.scale.formattedYearly, paddlePriceId: 'pri_scale_yearly' },
+          monthly: { amount: AMOUNTS.business.monthly, formattedPrice: AMOUNTS.business.formattedMonthly, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
+          yearly: { amount: AMOUNTS.business.yearly, formattedPrice: AMOUNTS.business.formattedYearly, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
         },
         features: [
           '10 Connected LinkedIn Accounts (10 Dedicated Slots)',
@@ -196,8 +203,8 @@ export const getBillingPlans = (locale: Locale) => {
       name: 'Plan Starter (1 Cuenta)',
       description: 'Ideal para comenzar a automatizar tu prospección B2B de forma constante.',
       pricing: {
-        monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, paddlePriceId: 'pri_starter_monthly' },
-        yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, paddlePriceId: 'pri_starter_yearly' },
+        monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
+        yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
       },
       features: [
         '1 Cuenta de LinkedIn Conectada (1 Slot Dedicado)',
@@ -220,8 +227,8 @@ export const getBillingPlans = (locale: Locale) => {
       name: 'Plan Growth (5 Cuentas)',
       description: 'Perfecto para equipos de ventas que necesitan escalar su pipeline rápidamente.',
       pricing: {
-        monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, paddlePriceId: 'pri_growth_monthly' },
-        yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, paddlePriceId: 'pri_growth_yearly' },
+        monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
+        yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
       },
       features: [
         '5 Cuentas de LinkedIn Conectadas (5 Slots Dedicados)',
@@ -241,11 +248,11 @@ export const getBillingPlans = (locale: Locale) => {
     },
     {
       id: 'slots-10',
-      name: 'Plan Scale (10 Cuentas)',
+      name: 'Plan Business (10 Cuentas)',
       description: 'La máxima capacidad de prospección para agencias y empresas B2B de alto volumen.',
       pricing: {
-        monthly: { amount: AMOUNTS.scale.monthly, formattedPrice: AMOUNTS.scale.formattedMonthly, paddlePriceId: 'pri_scale_monthly' },
-        yearly: { amount: AMOUNTS.scale.yearly, formattedPrice: AMOUNTS.scale.formattedYearly, paddlePriceId: 'pri_scale_yearly' },
+        monthly: { amount: AMOUNTS.business.monthly, formattedPrice: AMOUNTS.business.formattedMonthly, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
+        yearly: { amount: AMOUNTS.business.yearly, formattedPrice: AMOUNTS.business.formattedYearly, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
       },
       features: [
         '10 Cuentas de LinkedIn Conectadas (10 Slots Dedicados)',

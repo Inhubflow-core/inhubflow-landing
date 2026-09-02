@@ -100,6 +100,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
 
     const paddleWindow = window as unknown as {
       Paddle?: {
+        Initialize?: (options: { token: string; environment?: 'sandbox' | 'production' }) => void;
         Checkout: {
           open: (options: {
             settings?: { displayModeComponent?: string };
@@ -113,6 +114,18 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
 
     // If live Paddle is present and configured with credentials
     if (paddleWindow.Paddle && process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN) {
+      try {
+        const token = process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN;
+        if (typeof paddleWindow.Paddle.Initialize === 'function') {
+          paddleWindow.Paddle.Initialize({
+            token,
+            environment: token.startsWith('test_') ? 'sandbox' : 'production',
+          });
+        }
+      } catch (e) {
+        console.warn('[Paddle Init Warning]:', e);
+      }
+
       paddleWindow.Paddle.Checkout.open({
         settings: { displayModeComponent: 'overlay' },
         items: [{ priceId: priceInfo.paddlePriceId, quantity: 1 }],

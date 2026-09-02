@@ -7,12 +7,16 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState, useMemo } from 'react';
 import { useLanguage } from '@/app/providers/language';
 
+type NavItem =
+  | { type: 'link'; href: string; label: string }
+  | { type: 'dropdown'; label: string; items: Array<{ href: string; label: string }> };
+
 export default function DesktopNav() {
   const pathname = usePathname();
   const { t } = useLanguage();
   const [activeDropdownKey, setActiveDropdownKey] = useState('');
 
-  const items = useMemo(() => [
+  const items: NavItem[] = useMemo(() => [
     { type: 'link', href: '#features', label: t.nav.features },
     { type: 'link', href: '#benefits', label: t.nav.benefits },
     { type: 'link', href: '#pricing', label: t.nav.pricing },
