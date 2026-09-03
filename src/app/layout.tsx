@@ -51,10 +51,6 @@ export default function RootLayout({
             <div className="isolate flex flex-col flex-1">{children}</div>
           </LanguageProvider>
         </ThemeProvider>
-        <Script id="lemon-affiliate-config" strategy="afterInteractive">
-          {`window.lemonSqueezyAffiliateConfig = { store: "inhubflow" };`}
-        </Script>
-        <Script src="https://lmsqueezy.com/affiliate.js" strategy="afterInteractive" />
         <Script src="https://assets.lemonsqueezy.com/lemon.js" strategy="afterInteractive" />
       </body>
     </html>
