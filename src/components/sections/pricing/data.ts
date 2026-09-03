@@ -15,29 +15,29 @@ export const getBillingPeriods = (locale: Locale) => [
 
 const AMOUNTS = {
   starter: {
-    monthly: 49,
-    yearly: 39,
-    formattedMonthly: '$49',
-    formattedYearly: '$39',
+    monthly: 24.9,
+    yearly: 19.9,
+    formattedMonthly: '$24.90',
+    formattedYearly: '$19.90',
   },
   growth: {
-    monthly: 199,
-    yearly: 159,
-    formattedMonthly: '$199',
-    formattedYearly: '$159',
+    monthly: 99.9,
+    yearly: 79.9,
+    formattedMonthly: '$99.90',
+    formattedYearly: '$79.90',
   },
   business: {
-    monthly: 349,
-    yearly: 279,
-    formattedMonthly: '$349',
-    formattedYearly: '$279',
+    monthly: 149.9,
+    yearly: 119.9,
+    formattedMonthly: '$149.90',
+    formattedYearly: '$119.90',
   },
   // Alias for backwards compatibility
   scale: {
-    monthly: 349,
-    yearly: 279,
-    formattedMonthly: '$349',
-    formattedYearly: '$279',
+    monthly: 149.9,
+    yearly: 119.9,
+    formattedMonthly: '$149.90',
+    formattedYearly: '$119.90',
   },
 };
 
