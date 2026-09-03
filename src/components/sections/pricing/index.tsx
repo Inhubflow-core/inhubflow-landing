@@ -67,6 +67,13 @@ export default function PricingSection() {
               />
             ))}
           </div>
+
+          {/* Footnote below cards */}
+          <div className="mt-6 sm:mt-8 text-center z-30 relative">
+            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium">
+              {t.pricing.limitsNote}
+            </p>
+          </div>
         </div>
       </div>
     </section>

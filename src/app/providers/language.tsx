@@ -127,6 +127,7 @@ const dictionaries = {
       ctaB2C: 'Comenzar Plan Growth',
       ctaAllInOne: 'Obtener Plan Business',
       popularBadge: 'MÁS POPULAR',
+      limitsNote: '* Límites de LinkedIn por día/cuenta',
     },
     faq: {
       title: 'Preguntas Frecuentes',
@@ -297,6 +298,7 @@ const dictionaries = {
       ctaB2C: 'Começar Plano Growth',
       ctaAllInOne: 'Obter Plano Business',
       popularBadge: 'MAIS POPULAR',
+      limitsNote: '* Limites do LinkedIn por dia/conta',
     },
     faq: {
       title: 'Perguntas Frequentes',
@@ -467,6 +469,7 @@ const dictionaries = {
       ctaB2C: 'Get Started with Growth Plan',
       ctaAllInOne: 'Get Business Plan',
       popularBadge: 'MOST POPULAR',
+      limitsNote: '* LinkedIn limits per day/account',
     },
     faq: {
       title: 'Frequently Asked Questions',
