@@ -1,8 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useLanguage } from '@/app/providers/language';
 
 export function PlatformShowcase() {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<'sequences' | 'sdr'>('sequences');
   const [isPaused, setIsPaused] = useState(false);
 
@@ -21,18 +23,11 @@ export function PlatformShowcase() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Workflow Feature Label */}
-      <div className="flex justify-center mb-4">
-        <div className="inline-flex items-center justify-center gap-2.5 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-200/80 dark:border-gray-700/80 backdrop-blur-md shadow-sm text-xs sm:text-sm font-bold text-gray-900 dark:text-white text-center">
-          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xs">
-            <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
-            </svg>
-          </span>
-          <span className="tracking-tight">
-            Asistente LinkedIn / Email + Agente SDR de IA &amp; Agenda Reunión
-          </span>
-        </div>
+      {/* Section Title */}
+      <div className="text-center mb-6 sm:mb-8">
+        <h2 className="font-extrabold text-gray-900 text-2xl sm:text-3xl md:text-4xl dark:text-white max-w-3xl mx-auto tracking-tight leading-snug">
+          {t.hero.showcaseTitle}
+        </h2>
       </div>
 
       {/* Main Glassmorphic Showcase Window */}
