@@ -51,7 +51,7 @@ export default function RootLayout({
             <div className="isolate flex flex-col flex-1">{children}</div>
           </LanguageProvider>
         </ThemeProvider>
-        <Script src="https://cdn.paddle.com/paddle/v2/paddle.js" strategy="afterInteractive" />
+        <Script src="https://assets.lemonsqueezy.com/lemon.js" strategy="afterInteractive" />
       </body>
     </html>
   );

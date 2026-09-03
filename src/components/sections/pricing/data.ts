@@ -41,6 +41,21 @@ const AMOUNTS = {
   },
 };
 
+export const LEMON_CHECKOUTS = {
+  starter: {
+    url: 'https://inhubflow.lemonsqueezy.com/checkout/buy/1c4e9363-186e-40e7-a74e-f9d89117ba3a',
+    variantId: '2088572',
+  },
+  growth: {
+    url: 'https://inhubflow.lemonsqueezy.com/checkout/buy/46fd950f-5631-4e6c-bd2e-a15da16d97cc',
+    variantId: '2088578',
+  },
+  business: {
+    url: 'https://inhubflow.lemonsqueezy.com/checkout/buy/3ea48412-43ed-4330-97c5-c06073d1d00d',
+    variantId: '2088581',
+  },
+};
+
 export const getBillingPlans = (locale: Locale) => {
   if (locale === 'pt-BR') {
     return [
@@ -49,8 +64,8 @@ export const getBillingPlans = (locale: Locale) => {
         name: 'Plano Starter (1 Conta)',
         description: 'Ideal para gerenciar e automatizar o relacionamento comercial B2B.',
         pricing: {
-          monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
-          yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
+          monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.starter.url, lemonVariantId: LEMON_CHECKOUTS.starter.variantId, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
+          yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.starter.url, lemonVariantId: LEMON_CHECKOUTS.starter.variantId, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
         },
         features: [
           '1 Conta do LinkedIn Conectada (1 Slot Dedicado)',
@@ -72,8 +87,8 @@ export const getBillingPlans = (locale: Locale) => {
         name: 'Plano Growth (5 Contas)',
         description: 'Perfeito para equipes comerciais que precisam escalar seu pipeline de vendas.',
         pricing: {
-          monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
-          yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
+          monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.growth.url, lemonVariantId: LEMON_CHECKOUTS.growth.variantId, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
+          yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.growth.url, lemonVariantId: LEMON_CHECKOUTS.growth.variantId, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
         },
         features: [
           '5 Contas do LinkedIn Conectadas (5 Slots Dedicados)',
@@ -95,8 +110,8 @@ export const getBillingPlans = (locale: Locale) => {
         name: 'Plano Business (10 Contas)',
         description: 'A potência máxima para equipes comerciais e empresas B2B de alto volume.',
         pricing: {
-          monthly: { amount: AMOUNTS.business.monthly, formattedPrice: AMOUNTS.business.formattedMonthly, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
-          yearly: { amount: AMOUNTS.business.yearly, formattedPrice: AMOUNTS.business.formattedYearly, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
+          monthly: { amount: AMOUNTS.business.monthly, formattedPrice: AMOUNTS.business.formattedMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.business.url, lemonVariantId: LEMON_CHECKOUTS.business.variantId, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
+          yearly: { amount: AMOUNTS.business.yearly, formattedPrice: AMOUNTS.business.formattedYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.business.url, lemonVariantId: LEMON_CHECKOUTS.business.variantId, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
         },
         features: [
           '10 Contas do LinkedIn Conectadas (10 Slots Dedicados)',
@@ -123,8 +138,8 @@ export const getBillingPlans = (locale: Locale) => {
         name: 'Starter Plan (1 Account)',
         description: 'Ideal to start managing and automating your B2B sales pipeline.',
         pricing: {
-          monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
-          yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
+          monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.starter.url, lemonVariantId: LEMON_CHECKOUTS.starter.variantId, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
+          yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.starter.url, lemonVariantId: LEMON_CHECKOUTS.starter.variantId, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
         },
         features: [
           '1 Connected LinkedIn Account (1 Dedicated Slot)',
@@ -146,8 +161,8 @@ export const getBillingPlans = (locale: Locale) => {
         name: 'Growth Plan (5 Accounts)',
         description: 'Perfect for sales teams that need to scale their sales pipeline.',
         pricing: {
-          monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
-          yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
+          monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.growth.url, lemonVariantId: LEMON_CHECKOUTS.growth.variantId, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
+          yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.growth.url, lemonVariantId: LEMON_CHECKOUTS.growth.variantId, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
         },
         features: [
           '5 Connected LinkedIn Accounts (5 Dedicated Slots)',
@@ -169,8 +184,8 @@ export const getBillingPlans = (locale: Locale) => {
         name: 'Business Plan (10 Accounts)',
         description: 'Maximum capacity for enterprise sales teams and high-volume B2B companies.',
         pricing: {
-          monthly: { amount: AMOUNTS.business.monthly, formattedPrice: AMOUNTS.business.formattedMonthly, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
-          yearly: { amount: AMOUNTS.business.yearly, formattedPrice: AMOUNTS.business.formattedYearly, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
+          monthly: { amount: AMOUNTS.business.monthly, formattedPrice: AMOUNTS.business.formattedMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.business.url, lemonVariantId: LEMON_CHECKOUTS.business.variantId, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
+          yearly: { amount: AMOUNTS.business.yearly, formattedPrice: AMOUNTS.business.formattedYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.business.url, lemonVariantId: LEMON_CHECKOUTS.business.variantId, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
         },
         features: [
           '10 Connected LinkedIn Accounts (10 Dedicated Slots)',
@@ -197,8 +212,8 @@ export const getBillingPlans = (locale: Locale) => {
       name: 'Plan Starter (1 Cuenta)',
       description: 'Ideal para comenzar a gestionar y automatizar tus relaciones comerciales B2B.',
       pricing: {
-        monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
-        yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
+        monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.starter.url, lemonVariantId: LEMON_CHECKOUTS.starter.variantId, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
+        yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.starter.url, lemonVariantId: LEMON_CHECKOUTS.starter.variantId, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
       },
       features: [
         '1 Cuenta de LinkedIn Conectada (1 Slot Dedicado)',
@@ -220,8 +235,8 @@ export const getBillingPlans = (locale: Locale) => {
       name: 'Plan Growth (5 Cuentas)',
       description: 'Perfecto para equipos de ventas que necesitan escalar su pipeline rápidamente.',
       pricing: {
-        monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
-        yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
+        monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.growth.url, lemonVariantId: LEMON_CHECKOUTS.growth.variantId, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
+        yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.growth.url, lemonVariantId: LEMON_CHECKOUTS.growth.variantId, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
       },
       features: [
         '5 Cuentas de LinkedIn Conectadas (5 Slots Dedicados)',
@@ -243,8 +258,8 @@ export const getBillingPlans = (locale: Locale) => {
       name: 'Plan Business (10 Cuentas)',
       description: 'La máxima capacidad para equipos comerciales y empresas B2B de alto volumen.',
       pricing: {
-        monthly: { amount: AMOUNTS.business.monthly, formattedPrice: AMOUNTS.business.formattedMonthly, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
-        yearly: { amount: AMOUNTS.business.yearly, formattedPrice: AMOUNTS.business.formattedYearly, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
+        monthly: { amount: AMOUNTS.business.monthly, formattedPrice: AMOUNTS.business.formattedMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.business.url, lemonVariantId: LEMON_CHECKOUTS.business.variantId, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
+        yearly: { amount: AMOUNTS.business.yearly, formattedPrice: AMOUNTS.business.formattedYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.business.url, lemonVariantId: LEMON_CHECKOUTS.business.variantId, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
       },
       features: [
         '10 Cuentas de LinkedIn Conectadas (10 Slots Dedicados)',

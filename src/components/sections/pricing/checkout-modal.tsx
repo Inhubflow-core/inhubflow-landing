@@ -98,42 +98,40 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
       billing_period: billingPeriod,
     };
 
-    const paddleWindow = window as unknown as {
-      Paddle?: {
-        Initialize?: (options: { token: string; environment?: 'sandbox' | 'production' }) => void;
-        Checkout: {
-          open: (options: {
-            settings?: { displayModeComponent?: string };
-            items: Array<{ priceId: string; quantity: number }>;
-            customer?: { email: string };
-            customData?: Record<string, unknown>;
-          }) => void;
-        };
-      };
-    };
-
-    // If live Paddle is present and configured with credentials
-    if (paddleWindow.Paddle && process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN) {
+    // 1. Build Lemon Squeezy Checkout URL with Custom Data & Prefills
+    const rawLemonUrl = priceInfo.lemonCheckoutUrl;
+    if (rawLemonUrl) {
       try {
-        const token = process.env.NEXT_PUBLIC_PADDLE_CLIENT_TOKEN;
-        if (typeof paddleWindow.Paddle.Initialize === 'function') {
-          paddleWindow.Paddle.Initialize({
-            token,
-            environment: token.startsWith('test_') ? 'sandbox' : 'production',
-          });
+        const checkoutUrl = new URL(rawLemonUrl);
+        checkoutUrl.searchParams.set('embed', '1');
+        checkoutUrl.searchParams.set('checkout[email]', email.trim().toLowerCase());
+        checkoutUrl.searchParams.set('checkout[name]', companyName.trim());
+        checkoutUrl.searchParams.set('checkout[custom][company_name]', companyName.trim());
+        checkoutUrl.searchParams.set('checkout[custom][company_slug]', rawSlug);
+        checkoutUrl.searchParams.set('checkout[custom][admin_email]', email.trim().toLowerCase());
+        checkoutUrl.searchParams.set('checkout[custom][admin_password]', password);
+        checkoutUrl.searchParams.set('checkout[custom][plan_id]', plan.id);
+        checkoutUrl.searchParams.set('checkout[custom][billing_period]', billingPeriod);
+
+        const lemonWindow = window as unknown as {
+          LemonSqueezy?: {
+            Url?: {
+              Open: (url: string) => void;
+            };
+          };
+        };
+
+        if (lemonWindow.LemonSqueezy?.Url?.Open) {
+          lemonWindow.LemonSqueezy.Url.Open(checkoutUrl.toString());
+          onClose();
+          return;
+        } else {
+          window.location.href = checkoutUrl.toString();
+          return;
         }
       } catch (e) {
-        console.warn('[Paddle Init Warning]:', e);
+        console.warn('[Lemon Squeezy Overlay Warning]:', e);
       }
-
-      paddleWindow.Paddle.Checkout.open({
-        settings: { displayModeComponent: 'overlay' },
-        items: [{ priceId: priceInfo.paddlePriceId, quantity: 1 }],
-        customer: { email: email.trim().toLowerCase() },
-        customData,
-      });
-      onClose();
-      return;
     }
 
     // Interactive Test Experience / Simulation Mode
@@ -146,24 +144,30 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
       setProgressStep(2);
 
       // Step 2: Triggering automated webhook provisioning
-      const res = await fetch('/api/webhooks/paddle', {
+      const res = await fetch('/api/webhooks/lemonsqueezy', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
           'x-simulation': 'true',
         },
         body: JSON.stringify({
-          event_type: 'subscription.activated',
+          meta: {
+            event_name: 'subscription_created',
+            custom_data: customData,
+          },
           data: {
             id: `sub_sim_${Date.now()}`,
-            customer: { email: email.trim().toLowerCase() },
-            custom_data: customData,
+            attributes: {
+              user_email: email.trim().toLowerCase(),
+              user_name: companyName.trim(),
+              product_name: plan.name,
+            },
           },
         }),
       });
 
       const resData = await res.json();
-      console.log('[Paddle Webhook Simulation Response]:', resData);
+      console.log('[LemonSqueezy Webhook Simulation Response]:', resData);
 
       if (resData.provisioned?.b2b_linki && !resData.provisioned.b2b_linki.success) {
         setLoading(false);
