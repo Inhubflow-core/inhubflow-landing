@@ -392,9 +392,9 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
                   </span>
                 </p>
               </div>
-              <span className="text-xs px-2.5 py-1 bg-indigo-600 text-white font-bold rounded-lg shadow-sm flex items-center gap-1">
+              <span className="text-xs px-2.5 py-1 bg-amber-500 text-slate-950 font-bold rounded-lg shadow-sm flex items-center gap-1">
                 <RiShieldCheckLine size={14} />
-                <span>Paddle MoR Seguro</span>
+                <span>Lemon Squeezy by Stripe</span>
               </span>
             </div>
 

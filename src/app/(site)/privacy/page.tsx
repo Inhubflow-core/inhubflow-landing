@@ -28,8 +28,8 @@ export default function PrivacyPage() {
             </p>
             <p className="text-gray-500 dark:text-gray-400 font-normal leading-6">
               Also, We do not store any credit card information in server, all
-              payments are processed by world leading payment gateway PayPal and
-              Paddle and our site is secured by SSL encryption.
+              payments are processed by world leading payment gateways (PayPal and
+              Lemon Squeezy by Stripe) and our site is secured by SSL encryption.
             </p>
           </div>
           <div className="mb-6">

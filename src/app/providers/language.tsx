@@ -116,10 +116,10 @@ const dictionaries = {
       card3Tag2: 'Respuesta en < 3 seg',
     },
     pricing: {
-      badge: 'Precios Transparentes & Facturación Global (Paddle)',
+      badge: 'Precios Transparentes & Facturación Global (Lemon Squeezy by Stripe)',
       title: 'Elige el plan perfecto para escalar tus ventas B2B',
       subtitle:
-        'Sin contratos forzosos. Cancela en cualquier momento. Pagos procesados de forma 100% segura con facturación fiscal internacional vía Paddle.',
+        'Sin contratos forzosos. Cancela en cualquier momento. Pagos procesados de forma 100% segura con facturación fiscal internacional vía Lemon Squeezy by Stripe.',
       monthly: 'Facturación Mensual',
       annual: 'Facturación Anual',
       save20: 'Ahorra 20%',
@@ -156,12 +156,12 @@ const dictionaries = {
         {
           question: '¿Cómo se procesan los pagos y suscripciones?',
           answer:
-            'Todos los pagos se procesan de forma segura a través de Paddle (Merchant of Record), compatible con tarjetas de crédito/débito internacionales y PayPal. Paddle genera facturas fiscales válidas para empresas en todo el mundo y puedes cancelar o cambiar de plan en cualquier momento.',
+            'Todos los pagos se procesan de forma segura a través de Lemon Squeezy by Stripe (Merchant of Record), compatible con tarjetas de crédito/débito internacionales, Apple Pay, Google Pay y PayPal. Lemon Squeezy genera facturas fiscales válidas para empresas en todo el mundo y puedes cancelar o cambiar de plan en cualquier momento.',
         },
         {
           question: '¿Cómo recibo mis accesos tras suscribirme?',
           answer:
-            'Inmediatamente después de completar el pago en Paddle, nuestro sistema crea automáticamente tus credenciales de acceso para la plataforma de gestión B2B (b2b.inhubflow.online) y te envía un correo de bienvenida con tu enlace directo de ingreso.',
+            'Inmediatamente después de completar el pago en Lemon Squeezy by Stripe, nuestro sistema crea automáticamente tus credenciales de acceso para la plataforma de gestión B2B (b2b.inhubflow.online) y te envía un correo de bienvenida con tu enlace directo de ingreso.',
         },
       ],
     },
@@ -287,10 +287,10 @@ const dictionaries = {
       card3Tag2: 'Resposta em < 3 seg',
     },
     pricing: {
-      badge: 'Preços Transparentes & Faturamento Global (Paddle)',
+      badge: 'Preços Transparentes & Faturamento Global (Lemon Squeezy by Stripe)',
       title: 'Escolha o plano perfeito para escalar suas vendas B2B',
       subtitle:
-        'Sem contratos de fidelidade. Cancele a qualquer momento. Pagamentos 100% seguros com nota fiscal internacional via Paddle.',
+        'Sem contratos de fidelidade. Cancele a qualquer momento. Pagamentos 100% seguros com nota fiscal internacional via Lemon Squeezy by Stripe.',
       monthly: 'Faturamento Mensal',
       annual: 'Faturamento Anual',
       save20: 'Economize 20%',
@@ -327,12 +327,12 @@ const dictionaries = {
         {
           question: 'Como são processados os pagamentos?',
           answer:
-            'Todos os pagamentos são processados com segurança pelo Paddle (Merchant of Record), compatível com cartões internacionais e PayPal, emitindo notas fiscais válidas globalmente.',
+            'Todos os pagamentos são processados com segurança pelo Lemon Squeezy by Stripe (Merchant of Record), compatível com cartões internacionais, Apple Pay, Google Pay e PayPal, emitindo notas fiscais válidas globalmente.',
         },
         {
           question: 'Como recebo meus acessos após a assinatura?',
           answer:
-            'Imediatamente após a confirmação no Paddle, nosso sistema cria automaticamente suas credenciais de acesso para a plataforma de gestão B2B (b2b.inhubflow.online) e envia um e-mail de boas-vindas com seu link direto.',
+            'Imediatamente após a confirmação no Lemon Squeezy by Stripe, nosso sistema cria automaticamente suas credenciais de acesso para a plataforma de gestão B2B (b2b.inhubflow.online) e envia um e-mail de boas-vindas com seu link direto.',
         },
       ],
     },
@@ -458,10 +458,10 @@ const dictionaries = {
       card3Tag2: 'Response in < 3 sec',
     },
     pricing: {
-      badge: 'Transparent Pricing & Global Billing (Paddle)',
+      badge: 'Transparent Pricing & Global Billing (Lemon Squeezy by Stripe)',
       title: 'Choose the perfect plan to scale your B2B revenue',
       subtitle:
-        'No lock-in contracts. Cancel anytime. 100% secure payments with compliant worldwide invoicing powered by Paddle.',
+        'No lock-in contracts. Cancel anytime. 100% secure payments with compliant worldwide invoicing powered by Lemon Squeezy by Stripe.',
       monthly: 'Monthly Billing',
       annual: 'Annual Billing',
       save20: 'Save 20%',
@@ -498,12 +498,12 @@ const dictionaries = {
         {
           question: 'How are payments and subscriptions handled?',
           answer:
-            'All payments are securely handled by Paddle (Merchant of Record), accepting international credit/debit cards and PayPal with tax-compliant global invoices.',
+            'All payments are securely handled by Lemon Squeezy by Stripe (Merchant of Record), accepting international credit/debit cards, Apple Pay, Google Pay, and PayPal with tax-compliant global invoices.',
         },
         {
           question: 'How do I receive access after subscribing?',
           answer:
-            'Immediately after completing checkout with Paddle, your account credentials for the B2B platform (b2b.inhubflow.online) are automatically generated and emailed to you with direct access.',
+            'Immediately after completing checkout with Lemon Squeezy by Stripe, your account credentials for the B2B platform (b2b.inhubflow.online) are automatically generated and emailed to you with direct access.',
         },
       ],
     },
