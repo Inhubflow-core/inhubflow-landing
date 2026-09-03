@@ -16,7 +16,7 @@ export default function HeroLogos() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="w-full relative z-30 mx-auto pt-12 sm:pt-14 pb-14 sm:pb-16 border-t border-gray-100 dark:border-gray-800/80 mt-12 sm:mt-16">
         <p className="text-center text-gray-500 dark:text-white/60 text-xs sm:text-sm font-semibold tracking-wide uppercase">
-          Impulsando la prospección de equipos comerciales en toda Iberoamérica
+          Optimizando las relaciones y ventas de equipos comerciales en toda Iberoamérica
         </p>
         <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 md:gap-14 mt-6 sm:mt-8">
           {logos.map((logo, index) => (

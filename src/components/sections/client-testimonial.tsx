@@ -42,7 +42,7 @@ const testimonials = [
     company: 'Director de Expansión en EnterpriseTech',
     image: '/images/users/user-5.jpg',
     testimonial:
-      'El Agente SDR de IA responde en segundos a las dudas comerciales de los prospectos en LinkedIn y les comparte nuestro enlace de Google Calendar en piloto automático.',
+      'El Agente SDR de IA responde en segundos a las dudas comerciales de los clientes en LinkedIn y les comparte nuestro enlace de Google Calendar en piloto automático.',
   },
   {
     id: 6,
@@ -50,7 +50,7 @@ const testimonials = [
     company: 'Consultora de Negocios & Ventas B2B',
     image: '/images/users/user-6.jpg',
     testimonial:
-      'Generé 14 llamadas calificadas en mi primera semana sin gastar horas buscando prospectos a mano. La interfaz es intuitiva y el flujo de automatización funciona a la perfección.',
+      'Generé 14 llamadas calificadas en mi primera semana sin gastar horas en tareas manuales de venta. La interfaz es intuitiva y el flujo de automatización funciona a la perfección.',
   },
 ];
 
@@ -73,7 +73,7 @@ export default function TestimonialsSection() {
               Lo que dicen los equipos que escalan con InHubFlow
             </h2>
             <p className="max-w-xl mx-auto text-sm sm:text-base text-gray-600 dark:text-gray-400 px-2">
-              Empresas, agencias y directores comerciales que automatizan su prospección multicanal y multiplican sus ventas cada mes.
+              Empresas, agencias y directores comerciales que optimizan su comunicación comercial multicanal y multiplican sus ventas cada mes.
             </p>
           </div>
 

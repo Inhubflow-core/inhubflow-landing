@@ -36,9 +36,9 @@ export default function AIToolsTabs() {
       icon: <span className="text-xl">🎯</span>,
       lightImage: '/images/tab-image/tab-image-3.jpg',
       darkImage: '/images/tab-image/tab-image-3-dark.jpg',
-      title: 'Segmentación Inteligente y Verificación de Contactos',
+      title: 'Segmentación Inteligente y Organización de Contactos',
       description:
-        'Organiza y califica prospectos empresariales filtrando por cargo, industria, empresa y ubicación geográfica, con correos corporativos 100% verificados.',
+        'Organiza y califica cuentas y contactos empresariales filtrando por cargo, industria, empresa y ubicación geográfica, manteniendo sincronizada tu base de datos.',
     },
     {
       id: 'sdr',
@@ -48,7 +48,7 @@ export default function AIToolsTabs() {
       darkImage: '/images/tab-image/tab-image-4-dark.jpg',
       title: 'Calificación Automática y Agendamiento en Google Calendar',
       description:
-        'Tu SDR de Inteligencia Artificial mantiene conversaciones naturales, responde objeciones comerciales, valida el interés del prospecto y agenda la cita directamente en tu calendario.',
+        'Tu SDR de Inteligencia Artificial mantiene conversaciones naturales, responde objeciones comerciales, valida el interés del cliente y agenda la cita directamente en tu calendario.',
     },
   ];
 
@@ -56,7 +56,7 @@ export default function AIToolsTabs() {
   const currentTab = tabs.find((tab) => tab.id === activeTab) || tabs[0];
 
   return (
-    <section id="b2b-outreach" className="py-16 md:py-28 dark:bg-[#0c111d]">
+    <section id="b2b-solutions" className="py-16 md:py-28 dark:bg-[#0c111d]">
       <div className="wrapper max-w-[76rem] mx-auto px-4">
         <div className="max-w-2xl mx-auto mb-12 text-center">
           <span className="text-xs font-bold uppercase tracking-widest text-blue-500 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-3 inline-block">
@@ -66,7 +66,7 @@ export default function AIToolsTabs() {
             Cada herramienta diseñada para acelerar tu embudo de ventas
           </h2>
           <p className="max-w-2xl mx-auto text-base text-gray-600 dark:text-gray-400">
-            Descubre cómo InHubFlow combina el poder de la prospección activa con el cierre conversacional automatizado.
+            Descubre cómo InHubFlow combina la gestión comercial inteligente con el agendamiento y cierre conversacional automatizado.
           </p>
         </div>
 

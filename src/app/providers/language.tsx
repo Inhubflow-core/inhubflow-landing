@@ -34,7 +34,7 @@ const dictionaries = {
       title1: 'Atrae Clientes B2B y Llena tu Agenda en Piloto Automático con',
       titleHighlight: 'Agentes SDR de IA y CRM Comercial',
       description:
-        'Gestiona y califica contactos comerciales B2B, automatiza mensajes de seguimiento personalizados con IA, y agenda videollamadas con prospectos 24/7 con total seguridad empresarial.',
+        'Gestiona y califica contactos comerciales B2B, automatiza mensajes de seguimiento personalizados con IA, y agenda videollamadas comerciales 24/7 con total seguridad empresarial.',
       ctaPrimary: 'Comenzar Prueba Gratis',
       ctaSecondary: 'Ver Cómo Funciona',
       guarantee: 'Sin tarjeta obligatoria para demo • Compatible con LinkedIn Free, Premium y Sales Nav • Configuración en 2 minutos',
@@ -54,12 +54,12 @@ const dictionaries = {
       badge: 'Capacidades de Alto Rendimiento',
       title: 'Todo lo que necesitas para optimizar tus ventas y relaciones B2B',
       subtitle:
-        'Reemplaza herramientas desconectadas. InHubFlow unifica la gestión de prospectos, secuencias de comunicación multicanal, emails de seguimiento y Agentes SDR de IA en un solo lugar.',
+        'Reemplaza herramientas desconectadas. InHubFlow unifica la gestión de contactos y cuentas, secuencias de comunicación multicanal, emails de seguimiento y Agentes SDR de IA en un solo lugar.',
       items: [
         {
           title: 'Gestión Inteligente de Contactos B2B',
           description:
-            'Organiza y segmenta prospectos calificados para tu equipo comercial, con validación de emails corporativos y enriquecimiento de datos.',
+            'Organiza y segmenta cuentas y contactos comerciales para tu equipo de ventas, con sincronización CRM y gestión centralizada de clientes.',
           icon: 'target',
         },
         {
@@ -111,7 +111,7 @@ const dictionaries = {
       card2Tag2: 'Alta Entregabilidad',
       card3Title: 'Agentes SDR de IA para Cierre 24/7',
       card3Desc:
-        'Tus prospectos no tienen que esperar. La IA responde en segundos en LinkedIn, resuelve dudas comerciales complejas y agenda la cita en tu calendario.',
+        'Tus clientes no tienen que esperar. La IA responde en segundos en LinkedIn, resuelve dudas comerciales complejas y agenda la cita en tu calendario.',
       card3Tag1: 'Sincronización Calendly / Google',
       card3Tag2: 'Respuesta en < 3 seg',
     },
@@ -145,7 +145,7 @@ const dictionaries = {
         {
           question: '¿Cómo funciona el Agente SDR con Inteligencia Artificial?',
           answer:
-            'El Agente SDR se entrena con la información de tu empresa, servicios y preguntas frecuentes. Cuando un prospecto responde a tu mensaje en LinkedIn, la IA analiza la intención, redacta respuestas contextuales con lenguaje natural, supera objeciones y envía tu enlace de Calendly o Google Calendar para agendar la videollamada.',
+            'El Agente SDR se entrena con la información de tu empresa, servicios y preguntas frecuentes. Cuando un contacto responde a tu mensaje en LinkedIn, la IA analiza la intención, redacta respuestas contextuales con lenguaje natural, supera objeciones y envía tu enlace de Calendly o Google Calendar para agendar la videollamada.',
         },
         {
           question: '¿Necesito contratar Sales Navigator u otras herramientas externas?',
@@ -229,7 +229,7 @@ const dictionaries = {
         {
           title: 'Gestão Inteligente de Contatos B2B',
           description:
-            'Organize e segmente prospectos qualificados para sua equipe comercial, com validação de e-mails corporativos e enriquecimento de dados.',
+            'Organize e segmente contas e contatos comerciais para sua equipe de vendas, com sincronização CRM e gestão centralizada de clientes.',
           icon: 'target',
         },
         {
@@ -281,7 +281,7 @@ const dictionaries = {
       card2Tag2: 'Alta Entregabilidade',
       card3Title: 'Agentes SDR de IA para Fechamento 24/7',
       card3Desc:
-        'Seus leads não precisam esperar. A IA responde em segundos no LinkedIn, soluciona dúvidas complexas e agenda a reunião no seu calendário.',
+        'Seus clientes não precisam esperar. A IA responde em segundos no LinkedIn, soluciona dúvidas complexas e agenda a reunião no seu calendário.',
       card3Tag1: 'Sincronização Calendly / Google',
       card3Tag2: 'Resposta em < 3 seg',
     },
@@ -315,7 +315,7 @@ const dictionaries = {
         {
           question: 'Como funciona o Agente SDR com Inteligência Artificial?',
           answer:
-            'O SDR de IA é treinado com as informações da sua empresa, serviços e perguntas frequentes. Quando um prospect responde no LinkedIn, a IA analisa a intenção, redige respostas naturais, supera objeções e envia seu link do Calendly ou Google Calendar.',
+            'O SDR de IA é treinado com as informações da sua empresa, serviços e perguntas frequentes. Quando um contato responde no LinkedIn, a IA analisa a intenção, redige respostas naturais, supera objeções e envia seu link do Calendly ou Google Calendar.',
         },
         {
           question: 'Preciso assinar o Sales Navigator ou ferramentas externas?',
@@ -386,7 +386,7 @@ const dictionaries = {
       chatTime: '10:42 AM',
       chatMsg1: 'Hi! I saw your message. How does your platform optimize B2B client follow-up and meeting scheduling?',
       chatAgent: 'InHubFlow AI SDR',
-      chatMsg2: 'Hi Mark! Our platform manages your B2B contacts and runs AI-personalized follow-up workflows. When a prospect replies, our AI SDR qualifies buyer intent and schedules the call on your Calendly automatically.',
+      chatMsg2: 'Hi Mark! Our platform manages your B2B contacts and runs AI-personalized follow-up workflows. When a contact replies, our AI SDR qualifies buyer intent and schedules the call on your Calendly automatically.',
       chatMsg3: 'Awesome! We are 5 sales reps and need this. Is there a demo available tomorrow?',
       showcaseTitle: 'LinkedIn / Email Assistant + AI SDR Agent & Meeting Scheduler',
     },
@@ -399,7 +399,7 @@ const dictionaries = {
         {
           title: 'Smart B2B Contact Management',
           description:
-            'Organize and segment qualified prospects for your sales team, with corporate email validation and contact enrichment.',
+            'Organize and segment commercial accounts and business contacts for your sales team, with CRM synchronization and key account management.',
           icon: 'target',
         },
         {
@@ -446,7 +446,7 @@ const dictionaries = {
       card1Tag2: '100% Verified',
       card2Title: 'Smart Multichannel Sequences',
       card2Desc:
-        'Combine LinkedIn touchpoints and conditioned follow-up emails that automatically pause upon receiving a prospect reply.',
+        'Combine LinkedIn touchpoints and conditioned follow-up emails that automatically pause upon receiving a client reply.',
       card2Tag1: 'Enterprise Security',
       card2Tag2: 'High Deliverability',
       card3Title: '24/7 Meeting-Booking AI SDRs',
@@ -475,7 +475,7 @@ const dictionaries = {
         {
           question: 'What is InHubFlow and how does it accelerate B2B sales?',
           answer:
-            'InHubFlow is a comprehensive AI-powered B2B sales CRM and productivity suite. It allows you to organize qualified contacts, run automated multichannel communication and email follow-up sequences, and deploy 24/7 AI SDR Agents to qualify leads and book meetings directly into your calendar.',
+            'InHubFlow is a comprehensive AI-powered B2B sales CRM and productivity suite. It allows you to organize qualified contacts, run automated multichannel communication and email follow-up sequences, and deploy 24/7 AI SDR Agents to qualify potential clients and book meetings directly into your calendar.',
         },
         {
           question: 'Is it 100% safe for my LinkedIn accounts?',
@@ -485,12 +485,12 @@ const dictionaries = {
         {
           question: 'How does the AI SDR Agent work?',
           answer:
-            'The AI SDR is trained on your company knowledge, products, and sales FAQs. When a lead replies, the AI analyzes intent, crafts contextual natural language responses, handles objections, and shares your Calendly or Google Calendar booking link.',
+            'The AI SDR is trained on your company knowledge, products, and sales FAQs. When a contact replies, the AI analyzes intent, crafts contextual natural language responses, handles objections, and shares your Calendly or Google Calendar booking link.',
         },
         {
           question: 'Do I need Sales Navigator or expensive third-party tools?',
           answer:
-            'No, it is not required. InHubFlow includes built-in contact management and segmentation tools to organize prospects by job title, city, and company. If you already have CSV lists or existing contact databases, you can import them seamlessly.',
+            'No, it is not required. InHubFlow includes built-in contact management and segmentation tools to organize business contacts by job title, city, and company. If you already have CSV lists or existing contact databases, you can import them seamlessly.',
         },
         {
           question: 'How are payments and subscriptions handled?',

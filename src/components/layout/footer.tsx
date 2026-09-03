@@ -197,7 +197,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-5 sm:py-6 text-center">
             <p className="text-xs sm:text-sm text-gray-500 font-medium">
-              &copy; {getCurrentYear()} InHubFlow | AI-Powered B2B Outreach Engine - All Rights Reserved.
+              &copy; {getCurrentYear()} InHubFlow | AI-Powered B2B Sales Suite - All Rights Reserved.
             </p>
           </div>
         </div>

@@ -239,7 +239,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
                 <span>¡Tu suscripción InHubFlow está activa!</span>
               </div>
               <p className="text-xs text-emerald-600 dark:text-emerald-400 mt-1">
-                Se ha generado tu espacio dedicado para <strong>{companyName}</strong> con 4 slots de prospección y central omnicanal.
+                Se ha generado tu espacio dedicado para <strong>{companyName}</strong> con 4 slots comerciales y central omnicanal.
               </p>
             </div>
 
@@ -254,7 +254,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
                     </div>
                     <div>
                       <h5 className="text-xs font-bold text-gray-900 dark:text-white">
-                        B2B Outreach Suite (4 Slots)
+                        B2B Sales Suite (4 Slots)
                       </h5>
                       <p className="text-[11px] font-mono text-indigo-600 dark:text-indigo-400 font-semibold truncate max-w-[200px]">
                         https://{previewSlug}-b2b.inhubflow.online

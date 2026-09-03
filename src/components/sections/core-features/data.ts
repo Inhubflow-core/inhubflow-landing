@@ -2,7 +2,7 @@ export const CORE_FEATURES = [
   {
     title: "Gestión Inteligente de Contactos B2B",
     description:
-      "Organiza y segmenta prospectos calificados para tu equipo comercial, con validación de emails corporativos y enriquecimiento de datos.",
+      "Organiza y segmenta cuentas y contactos comerciales para tu equipo de ventas, con sincronización CRM y gestión centralizada de clientes.",
     icon: "target",
   },
   {

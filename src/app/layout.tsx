@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     template: '%s | InHubFlow Sales CRM',
   },
   description:
-    'Manage B2B relationships, automate personalized follow-up sequences, and empower your sales team with 24/7 AI SDR agents to qualify leads and schedule client meetings on autopilot.',
+    'Manage B2B relationships, automate personalized follow-up sequences, and empower your sales team with 24/7 AI SDR agents to qualify clients and schedule meetings on autopilot.',
   keywords: [
     'b2b crm',
     'sales productivity',
     'ai sdr assistant',
     'meeting scheduling',
     'client communication',
-    'lead management',
+    'contact management',
     'crm automation',
     'sales intelligence'
   ],

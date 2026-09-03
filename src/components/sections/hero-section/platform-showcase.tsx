@@ -60,7 +60,7 @@ export function PlatformShowcase() {
             {/* Realtime KPI Bar */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
               <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
-                <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Decisores Extraídos</p>
+                <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Contactos Gestionados</p>
                 <p className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mt-0.5">3,420</p>
                 <span className="text-[9px] sm:text-[10px] text-emerald-500 font-semibold">+18.4% semana</span>
               </div>
@@ -102,10 +102,10 @@ export function PlatformShowcase() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-gray-800 dark:text-gray-200 text-xs">
-                      Paso 1: Segmentación & Verificación de Contactos
+                      Paso 1: Segmentación y Sincronización de Cuentas
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight">
-                      500 contactos calificados con emails corporativos verificados.
+                      500 cuentas comerciales organizadas y sincronizadas desde tu CRM.
                     </p>
                   </div>
                   <span className="text-emerald-500 font-semibold text-[10px] sm:text-[11px] shrink-0">Completado</span>
@@ -120,7 +120,7 @@ export function PlatformShowcase() {
                       Paso 2: Solicitud de Conexión con IA
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 text-[10px] sm:text-[11px] leading-tight">
-                      <em>&quot;Hola [Nombre], vi tu rol en [Empresa]... te contacto para automatizar tu captación B2B.&quot;</em>
+                      <em>&quot;Hola [Nombre], vi tu rol en [Empresa]... te contacto para coordinar una breve reunión comercial sobre nuestras soluciones.&quot;</em>
                     </p>
                   </div>
                   <span className="text-blue-500 font-semibold animate-pulse text-[10px] sm:text-[11px] shrink-0">Enviando...</span>
@@ -213,7 +213,7 @@ export function PlatformShowcase() {
               <div className="space-y-2 sm:space-y-3 text-xs flex-1 flex flex-col justify-between">
                 <div className="flex items-start gap-2 max-w-[92%] sm:max-w-[85%]">
                   <div className="p-2.5 sm:p-3 rounded-2xl rounded-tl-none bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 text-[11px] sm:text-xs">
-                    <p>Hola, vi tu solicitud. ¿Cómo funciona su sistema para automatizar la prospección en LinkedIn?</p>
+                    <p>Hola, vi tu mensaje. ¿Cómo funciona su sistema para optimizar el seguimiento y agendamiento comercial?</p>
                     <span className="text-[8px] sm:text-[9px] text-gray-400 block mt-1">10:14 AM</span>
                   </div>
                 </div>
