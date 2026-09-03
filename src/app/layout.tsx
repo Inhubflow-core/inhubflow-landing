@@ -5,6 +5,7 @@ import './globals.css';
 import { LanguageProvider } from './providers/language';
 import { ToasterProvider } from './providers/toaster';
 
+import { PartnerTracker } from '@/components/partner-tracker';
 import Script from 'next/script';
 
 const inter = Inter({
@@ -49,6 +50,7 @@ export default function RootLayout({
             <ToasterProvider />
 
             <div className="isolate flex flex-col flex-1">{children}</div>
+            <PartnerTracker />
           </LanguageProvider>
         </ThemeProvider>
         <Script src="https://assets.lemonsqueezy.com/lemon.js" strategy="afterInteractive" />

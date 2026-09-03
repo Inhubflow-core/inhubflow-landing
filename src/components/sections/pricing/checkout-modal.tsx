@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import type { TBILLING_PLAN } from './data';
+import { getStoredPartnerCode } from '@/components/partner-tracker';
 import { useLanguage } from '@/app/providers/language';
 function RiCheckLine({ size = 16, className = "" }: { size?: number; className?: string }) {
   return (
@@ -89,13 +90,16 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
       return;
     }
 
-    const customData = {
+    const partnerCode = getStoredPartnerCode();
+
+    const customData: Record<string, unknown> = {
       company_name: companyName.trim(),
       company_slug: rawSlug,
       admin_email: email.trim().toLowerCase(),
       admin_password: password,
       plan_id: plan.id,
       billing_period: billingPeriod,
+      ...(partnerCode ? { partner_code: partnerCode } : {}),
     };
 
     // 1. Build Lemon Squeezy Checkout URL with Custom Data & Prefills
@@ -112,6 +116,9 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
         checkoutUrl.searchParams.set('checkout[custom][admin_password]', password);
         checkoutUrl.searchParams.set('checkout[custom][plan_id]', plan.id);
         checkoutUrl.searchParams.set('checkout[custom][billing_period]', billingPeriod);
+        if (partnerCode) {
+          checkoutUrl.searchParams.set('checkout[custom][partner_code]', partnerCode);
+        }
 
         const lemonWindow = window as unknown as {
           LemonSqueezy?: {

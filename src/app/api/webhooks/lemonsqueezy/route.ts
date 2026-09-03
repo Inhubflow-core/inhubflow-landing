@@ -91,6 +91,17 @@ export async function POST(req: NextRequest) {
           slotsLimit,
         });
 
+        // Forward to central InHubFlow Linki platform for Partner commission attribution
+        try {
+          await fetch("https://b2b.inhubflow.online/api/webhooks/lemonsqueezy", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: rawBody,
+          });
+        } catch (fwdErr) {
+          console.warn("[LemonSqueezy Webhook] Forwarding to b2b.inhubflow.online skipped:", fwdErr);
+        }
+
         return NextResponse.json({
           received: true,
           plan_id: planId,
@@ -108,8 +119,30 @@ export async function POST(req: NextRequest) {
           await stopLinkiInstance(coolifyAppUuid);
         }
 
+        try {
+          await fetch("https://b2b.inhubflow.online/api/webhooks/lemonsqueezy", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: rawBody,
+          });
+        } catch {}
+
         console.log(`[LemonSqueezy Webhook] ⏸️ Suspended services for cancelled subscription: ${event.data?.id}`);
         return NextResponse.json({ received: true, status: "suspended" });
+      }
+
+      case "subscription_payment_success":
+      case "subscription_updated": {
+        try {
+          await fetch("https://b2b.inhubflow.online/api/webhooks/lemonsqueezy", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: rawBody,
+          });
+        } catch {}
+
+        console.log(`[LemonSqueezy Webhook] 🔄 Renewal event forwarded for partner accounting: ${eventName}`);
+        return NextResponse.json({ received: true, status: "renewal_forwarded" });
       }
 
       default:
