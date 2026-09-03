@@ -55,17 +55,29 @@ export function PricingCard({ plan, billingPeriod }: Props) {
               {plan.name}
             </h2>
           </div>
-          <p className="flex items-baseline mt-3 sm:mt-4">
-            <span className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
-              {plan.pricing[billingPeriod].formattedPrice}
-            </span>
-
-            {!!plan.pricing[billingPeriod].amount && (
-              <span className="ml-2 text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400">
-                {monthSuffix}
-              </span>
+          <div className="mt-3 sm:mt-4">
+            {(plan.pricing[billingPeriod] as any).originalPrice && (
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-base font-semibold line-through text-gray-400 dark:text-gray-500">
+                  {(plan.pricing[billingPeriod] as any).originalPrice}
+                </span>
+                <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                  20% OFF PARTNER
+                </span>
+              </div>
             )}
-          </p>
+            <p className="flex items-baseline">
+              <span className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white">
+                {plan.pricing[billingPeriod].formattedPrice}
+              </span>
+
+              {!!plan.pricing[billingPeriod].amount && (
+                <span className="ml-2 text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400">
+                  {monthSuffix}
+                </span>
+              )}
+            </p>
+          </div>
           <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400 min-h-[36px] sm:min-h-[40px] leading-relaxed">
             {plan.description}
           </p>

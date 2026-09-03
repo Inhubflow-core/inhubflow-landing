@@ -118,6 +118,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
         checkoutUrl.searchParams.set('checkout[custom][billing_period]', billingPeriod);
         if (partnerCode) {
           checkoutUrl.searchParams.set('checkout[custom][partner_code]', partnerCode);
+          checkoutUrl.searchParams.set('checkout[discount_code]', 'PARTNER20FF');
         }
 
         const lemonWindow = window as unknown as {

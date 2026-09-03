@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, Suspense } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 export const PARTNER_COOKIE_NAME = 'inhubflow_partner_code';
@@ -26,17 +26,34 @@ export function getStoredPartnerCode(): string | null {
   return null;
 }
 
+export function usePartnerDiscount() {
+  const [partnerCode, setPartnerCode] = useState<string | null>(null);
+
+  useEffect(() => {
+    const code = getStoredPartnerCode();
+    setPartnerCode(code);
+  }, []);
+
+  return {
+    hasPartnerDiscount: !!partnerCode,
+    partnerCode,
+  };
+}
+
 function PartnerTrackerInner() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
     if (!searchParams) return;
 
-    // Detect format ?25-OFF=SE7GH or ?25-off=SE7GH or ?partner=SE7GH
+    // Detect format ?20-OFF=SE7GH or ?25-OFF=SE7GH or ?partner=SE7GH
     const rawCode =
+      searchParams.get('20-OFF') ||
+      searchParams.get('20-off') ||
       searchParams.get('25-OFF') ||
       searchParams.get('25-off') ||
-      searchParams.get('partner');
+      searchParams.get('partner') ||
+      searchParams.get('ref');
 
     if (rawCode && rawCode.trim()) {
       const code = rawCode.trim().toUpperCase();
