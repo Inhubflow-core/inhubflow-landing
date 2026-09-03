@@ -21,42 +21,17 @@ export function PlatformShowcase() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Tab Switcher */}
+      {/* Workflow Feature Label */}
       <div className="flex justify-center mb-4">
-        <div className="w-full sm:w-auto inline-flex flex-col sm:flex-row p-1 sm:p-1.5 rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/80 dark:border-gray-700/80 backdrop-blur-md shadow-sm gap-1">
-          <button
-            type="button"
-            onClick={() => setActiveTab('sequences')}
-            className={`flex items-center justify-center gap-2 px-3 sm:px-6 py-2.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
-              activeTab === 'sequences'
-                ? 'bg-blue-600 text-white shadow-md'
-                : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-            }`}
-          >
-            <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <div className="inline-flex items-center justify-center gap-2.5 px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-200/80 dark:border-gray-700/80 backdrop-blur-md shadow-sm text-xs sm:text-sm font-bold text-gray-900 dark:text-white text-center">
+          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xs">
+            <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
             </svg>
-            <span className="truncate">Secuencias de LinkedIn & Email</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab('sdr')}
-            className={`flex items-center justify-center gap-2 px-3 sm:px-6 py-2.5 sm:py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
-              activeTab === 'sdr'
-                ? 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-md'
-                : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
-            }`}
-          >
-            <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 8V4H8" />
-              <rect width="16" height="12" x="4" y="8" rx="2" />
-              <path d="M2 14h2" />
-              <path d="M20 14h2" />
-              <path d="M15 13v2" />
-              <path d="M9 13v2" />
-            </svg>
-            <span className="truncate">Agente SDR de IA & Cierre de Citas</span>
-          </button>
+          </span>
+          <span className="tracking-tight">
+            Secuencias de LinkedIn &amp; Email + Agente SDR de IA &amp; Agenda Reunión
+          </span>
         </div>
       </div>
 
