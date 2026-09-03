@@ -75,9 +75,9 @@ export function PlatformShowcase() {
                 <span className="text-[9px] sm:text-[10px] text-blue-500 font-semibold">Notas con IA</span>
               </div>
               <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
-                <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Apertura Cold Email</p>
+                <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Apertura de Email</p>
                 <p className="text-lg sm:text-xl font-bold text-indigo-600 dark:text-indigo-400 mt-0.5">71.4%</p>
-                <span className="text-[9px] sm:text-[10px] text-indigo-500 font-semibold">Warm-up activo</span>
+                <span className="text-[9px] sm:text-[10px] text-indigo-500 font-semibold">Alta entrega</span>
               </div>
               <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Citas Agendadas</p>
@@ -107,10 +107,10 @@ export function PlatformShowcase() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-gray-800 dark:text-gray-200 text-xs">
-                      Paso 1: Extracción & Verificación de Decisores
+                      Paso 1: Segmentación & Verificación de Contactos
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight">
-                      500 prospectos de Sales Navigator + emails corporativos verificados.
+                      500 contactos calificados con emails corporativos verificados.
                     </p>
                   </div>
                   <span className="text-emerald-500 font-semibold text-[10px] sm:text-[11px] shrink-0">Completado</span>
@@ -152,10 +152,10 @@ export function PlatformShowcase() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-gray-800 dark:text-gray-200 text-xs">
-                      Paso 4: Cold Email de Respaldo & Cita
+                      Paso 4: Email de Seguimiento & Cita
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight">
-                      Correo si no responde en 48h con link a Google Calendar.
+                      Correo de seguimiento en 48h con link a Google Calendar.
                     </p>
                   </div>
                   <span className="text-emerald-500 font-semibold text-[10px] sm:text-[11px] shrink-0">Confirmado</span>
@@ -225,7 +225,7 @@ export function PlatformShowcase() {
 
                 <div className="flex items-start gap-2 max-w-[92%] sm:max-w-[85%] ml-auto justify-end">
                   <div className="p-2.5 sm:p-3 rounded-2xl rounded-tr-none bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md text-[11px] sm:text-xs">
-                    <p>¡Hola Esteban! Nuestro motor utiliza Playwright Stealth para emular navegación humana segura. Yo como SDR de IA analizo respuestas y agendo videollamadas en tu calendario.</p>
+                    <p>¡Hola Esteban! Nuestra suite aplica ritmos de trabajo humanizados y privacidad corporativa de nivel empresarial. Como SDR de IA respondo dudas y agendo videollamadas en tu calendario.</p>
                     <span className="text-[8px] sm:text-[9px] text-blue-200 block mt-1">10:14 AM • InHubFlow AI SDR</span>
                   </div>
                 </div>
@@ -252,7 +252,7 @@ export function PlatformShowcase() {
         <div className="mt-3 sm:mt-4 pt-3 border-t border-gray-100 dark:border-gray-800/80 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-3 text-xs">
           <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-center sm:text-left">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500 shrink-0" />
-            <span className="text-[11px] sm:text-xs">Seguridad anti-bloqueo activa con Playwright Stealth y pausas humanas.</span>
+            <span className="text-[11px] sm:text-xs">Seguridad empresarial activa con intervalos humanizados y cumplimiento normativo.</span>
           </div>
 
           <div className="w-full sm:w-auto">

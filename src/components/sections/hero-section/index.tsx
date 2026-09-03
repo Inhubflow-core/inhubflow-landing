@@ -135,7 +135,7 @@ export default function HeroSection() {
           <span className="absolute -bottom-1.5 left-6 w-2.5 h-2.5 bg-[#0A66C2] rotate-45 rounded-[2px]" />
         </div>
 
-        {/* Badge 4: Cold E-mail (Outer Far Right) */}
+        {/* Badge 4: Email de Seguimiento (Outer Far Right) */}
         <div className="absolute top-[350px] right-4 xl:right-8 2xl:right-16 floating-4 w-[205px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-indigo-200/80 dark:border-indigo-800/60 shadow-[0_8px_25px_rgba(99,102,241,0.18)] backdrop-blur-md">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-sm shadow-indigo-500/40">
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

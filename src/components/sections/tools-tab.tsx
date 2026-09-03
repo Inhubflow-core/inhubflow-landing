@@ -22,23 +22,23 @@ export default function AIToolsTabs() {
   const tabs: Tab[] = [
     {
       id: 'b2b',
-      label: 'Outreach B2B (LinkedIn & Email)',
+      label: 'Automatización Comercial B2B',
       icon: <span className="text-xl">🚀</span>,
       lightImage: '/images/tab-image/tab-image-1.jpg',
       darkImage: '/images/tab-image/tab-image-1-dark.jpg',
-      title: 'Prospección B2B Automatizada en LinkedIn y Cold Email',
+      title: 'Workflows Comerciales y Seguimiento Multicanal',
       description:
-        'Conecta con tomadores de decisión mediante secuencias inteligentes: visitas de perfil, notas personalizadas por IA y correos fríos multietapa con calentamiento de bandejas.',
+        'Conecta con decisores clave mediante secuencias inteligentes: visitas profesionales, notas personalizadas por IA y correos comerciales de seguimiento con alta entregabilidad.',
     },
     {
-      id: 'scraper',
-      label: 'Lead Finder & Sales Navigator',
+      id: 'contacts',
+      label: 'Gestión y Segmentación B2B',
       icon: <span className="text-xl">🎯</span>,
       lightImage: '/images/tab-image/tab-image-3.jpg',
       darkImage: '/images/tab-image/tab-image-3-dark.jpg',
-      title: 'Extracción Inteligente de Decisores y Enriquecimiento de Emails',
+      title: 'Segmentación Inteligente y Verificación de Contactos',
       description:
-        'Encuentra y extrae cientos de prospectos calificados filtrando por cargo exacto, industria, empresa y ubicación geográfica, con correos corporativos 100% verificados.',
+        'Organiza y califica prospectos empresariales filtrando por cargo, industria, empresa y ubicación geográfica, con correos corporativos 100% verificados.',
     },
     {
       id: 'sdr',

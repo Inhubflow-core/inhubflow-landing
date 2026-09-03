@@ -10,7 +10,7 @@ const testimonials = [
     company: 'CEO en ScaleB2B Agency',
     image: '/images/users/user-1.jpg',
     testimonial:
-      'InHubFlow nos permitió triplicar el volumen de reuniones B2B para nuestros clientes. El warm-up de correo y las notas de conexión en LinkedIn con IA tienen más del 45% de tasa de respuesta.',
+      'InHubFlow nos permitió triplicar el volumen de reuniones B2B para nuestros clientes. Las secuencias de seguimiento y las notas asistidas por IA tienen más del 45% de tasa de respuesta.',
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const testimonials = [
     company: 'VP of Growth en SaaS Venture',
     image: '/images/users/user-2.jpg',
     testimonial:
-      'Reemplazamos Waalaxy y Lemlist. El buscador nativo de tomadores de decisión y el Agente SDR en LinkedIn nos llenan la agenda de demostraciones comerciales todas las semanas.',
+      'InHubFlow unificó todo nuestro pipeline de ventas. La gestión inteligente de contactos y el Agente SDR nos llenan la agenda de demostraciones comerciales todas las semanas.',
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const testimonials = [
     company: 'Fundador en B2B Growth Lab',
     image: '/images/users/user-3.jpg',
     testimonial:
-      'La seguridad anti-bloqueo y la emulación de comportamiento humano son impecables. Gestionamos múltiples cuentas corporativas en LinkedIn con total tranquilidad.',
+      'La seguridad empresarial y los ritmos de actividad humanizados son impecables. Gestionamos múltiples cuentas corporativas con total tranquilidad y cumplimiento.',
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const testimonials = [
     company: 'Head of Sales en Finova Enterprise',
     image: '/images/users/user-4.jpg',
     testimonial:
-      'La extracción directa desde Sales Navigator y la combinación con Cold Email multietapa nos generó 38 reuniones con Directores Financieros en nuestro primer mes.',
+      'La importación y segmentación de contactos junto con las secuencias de email multietapa nos generaron 38 reuniones con Directores Financieros en nuestro primer mes.',
   },
   {
     id: 5,

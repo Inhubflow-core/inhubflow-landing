@@ -14,22 +14,20 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'InHubFlow | AI-Powered LinkedIn Lead Generation & B2B Outreach Suite',
-    template: '%s | InHubFlow B2B Outreach',
+    default: 'InHubFlow | AI-Powered B2B Sales CRM & Intelligent Meeting Scheduler',
+    template: '%s | InHubFlow Sales CRM',
   },
   description:
-    'Extract decision-makers from LinkedIn Sales Navigator, automate high-converting connection sequences with AI, warm up cold emails, and let 24/7 AI SDR agents book qualified sales meetings on autopilot.',
+    'Manage B2B relationships, automate personalized follow-up sequences, and empower your sales team with 24/7 AI SDR agents to qualify leads and schedule client meetings on autopilot.',
   keywords: [
-    'linkedin automation',
-    'prospección b2b',
-    'outreach linkedin',
-    'sales navigator scraper',
-    'cold email warmup',
-    'sdr inteligencia artificial',
-    'waalaxy alternative',
-    'expandi alternative',
-    'lead generation b2b',
-    'b2b email enrichment'
+    'b2b crm',
+    'sales productivity',
+    'ai sdr assistant',
+    'meeting scheduling',
+    'client communication',
+    'lead management',
+    'crm automation',
+    'sales intelligence'
   ],
   icons: {
     icon: '/logo-icon.png',

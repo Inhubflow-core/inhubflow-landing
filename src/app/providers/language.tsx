@@ -30,59 +30,59 @@ const dictionaries = {
       startNow: 'Comenzar Ahora',
     },
     hero: {
-      subheading: 'AI-POWERED LINKEDIN & B2B OUTREACH ENGINE',
+      subheading: 'AI-POWERED B2B SALES CRM & SDR AGENT SUITE',
       title1: 'Atrae Clientes B2B y Llena tu Agenda en Piloto Automático con',
-      titleHighlight: 'Agentes SDR de IA para LinkedIn',
+      titleHighlight: 'Agentes SDR de IA y CRM Comercial',
       description:
-        'Extrae tomadores de decisión de LinkedIn Sales Navigator, automatiza visitas y solicitudes de conexión con notas hiperpersonalizadas con IA, y agenda videollamadas comerciales 24/7 sin riesgo de bloqueo.',
+        'Gestiona y califica contactos comerciales B2B, automatiza mensajes de seguimiento personalizados con IA, y agenda videollamadas con prospectos 24/7 con total seguridad empresarial.',
       ctaPrimary: 'Comenzar Prueba Gratis',
       ctaSecondary: 'Ver Cómo Funciona',
       guarantee: 'Sin tarjeta obligatoria para demo • Compatible con LinkedIn Free, Premium y Sales Nav • Configuración en 2 minutos',
       badge1: 'Visitar Perfil',
       badge2: 'Solicitar Conexión',
       badge3: 'Enviar Mensaje',
-      badge4: 'Cold E-mail',
+      badge4: 'Email de Seguimiento',
       chatSender: 'Director Comercial (LinkedIn)',
       chatTime: '10:42 AM',
-      chatMsg1: 'Hola, vi tu solicitud de conexión. ¿Cómo ayuda su sistema a automatizar la prospección B2B en LinkedIn?',
+      chatMsg1: 'Hola, vi tu mensaje. ¿Cómo ayuda su sistema a optimizar el seguimiento y agendamiento con clientes B2B?',
       chatAgent: 'InHubFlow SDR IA',
-      chatMsg2: '¡Hola Marcos! Nuestro sistema extrae decisores en LinkedIn y ejecuta secuencias personalizadas con IA. Cuando un prospecto responde, nuestro SDR califica el interés y agenda la llamada en tu Calendly sin intervención manual.',
+      chatMsg2: '¡Hola Marcos! Nuestra plataforma gestiona tus contactos B2B y ejecuta flujos de seguimiento con IA. Cuando un cliente muestra interés, nuestro SDR califica sus necesidades y agenda la videollamada en tu Calendly automáticamente.',
       chatMsg3: '¡Excelente! Nos interesa para nuestro equipo comercial. ¿Tienen demo disponible mañana?',
     },
     features: {
       badge: 'Capacidades de Alto Rendimiento',
-      title: 'Todo lo que necesitas para dominar la prospección B2B en LinkedIn',
+      title: 'Todo lo que necesitas para optimizar tus ventas y relaciones B2B',
       subtitle:
-        'Reemplaza 5 herramientas desconectadas. InHubFlow unifica la extracción de prospectos, secuencias de LinkedIn, Cold Email con warm-up y Agentes SDR de IA en un solo lugar.',
+        'Reemplaza herramientas desconectadas. InHubFlow unifica la gestión de prospectos, secuencias de comunicación multicanal, emails de seguimiento y Agentes SDR de IA en un solo lugar.',
       items: [
         {
-          title: 'Extracción Inteligente de Leads B2B',
+          title: 'Gestión Inteligente de Contactos B2B',
           description:
-            'Encuentra y extrae cientos de tomadores de decisión directamente desde LinkedIn y Sales Navigator, con emails corporativos verificados y enriquecimiento de datos.',
+            'Organiza y segmenta prospectos calificados para tu equipo comercial, con validación de emails corporativos y enriquecimiento de datos.',
           icon: 'target',
         },
         {
-          title: 'Secuencias Automatizadas en LinkedIn',
+          title: 'Secuencias Automatizadas de Relación',
           description:
-            'Automatize visitas de perfil, solicitudes de conexión con notas personalizadas con IA y secuencias de DMs inteligentes que multiplican tu tasa de respuesta.',
+            'Automatiza visitas de cortesía, notas de conexión personalizadas con IA y mensajes de seguimiento inteligentes que multiplican tu tasa de respuesta.',
           icon: 'briefcase',
         },
         {
-          title: 'Cold Email Multicuenta & Warm-up',
+          title: 'Email Comercial Multicuenta & Entregabilidad',
           description:
-            'Secuencias de correo frío multietapa con calentamiento automático de bandejas integrado, máxima entregabilidad y 0% en la carpeta de SPAM.',
+            'Secuencias de correo comercial multietapa con sincronización de bandejas corporativas, alta entregabilidad y seguimiento de aperturas y respuestas.',
           icon: 'mail',
         },
         {
-          title: 'Protección Anti-Ban (Playwright Stealth)',
+          title: 'Seguridad Empresarial & Ritmos Humanizados',
           description:
-            'Emulación avanzada de comportamiento humano, pausas aleatorias y límites diarios de seguridad para mantener tus cuentas de LinkedIn 100% protegidas.',
+            'Intervalos inteligentes de actividad, pausas de navegación natural y límites de seguridad para mantener una presencia corporativa 100% protegida.',
           icon: 'shield',
         },
         {
           title: 'Agentes SDR de IA 24/7',
           description:
-            'Inteligencia Artificial conversacional entrenada con tu base de conocimiento que responde en segundos, resuelve objeciones y agenda citas en Calendly.',
+            'Inteligencia Artificial conversacional entrenada con tu base de conocimiento que responde en segundos, resuelve dudas comerciales y agenda citas en Calendly.',
           icon: 'bot',
         },
         {
@@ -97,16 +97,16 @@ const dictionaries = {
       badge: 'Ventajas Competitivas',
       title: 'Diseñado para generar reuniones y cerrar clientes corporativos',
       subtitle:
-        'Multiplica el pipeline de ventas de tu empresa sin contratar un costoso equipo de prospección manual.',
-      card1Title: 'Prospección B2B de Alta Precisión',
+        'Multiplica el pipeline de ventas de tu empresa optimizando la productividad de tu equipo comercial.',
+      card1Title: 'Segmentación B2B de Alta Precisión',
       card1Desc:
         'Segmenta y contacta a CEOs, Directores y decisores clave según su cargo exacto, industria, tamaño de empresa y ubicación geográfica.',
       card1Tag1: 'Filtros Avanzados B2B',
       card1Tag2: '100% Verificado',
       card2Title: 'Secuencias Multicanal Inteligentes',
       card2Desc:
-        'Combina visitas de LinkedIn, notas de conexión y cold emails condicionados que se detienen automáticamente al recibir una respuesta.',
-      card2Tag1: 'Protección Anti-Bloqueo',
+        'Combina mensajes de LinkedIn y correos de seguimiento condicionados que se detienen automáticamente al recibir una respuesta.',
+      card2Tag1: 'Seguridad Empresarial',
       card2Tag2: 'Alta Entregabilidad',
       card3Title: 'Agentes SDR de IA para Cierre 24/7',
       card3Desc:
@@ -122,9 +122,9 @@ const dictionaries = {
       monthly: 'Facturación Mensual',
       annual: 'Facturación Anual',
       save20: 'Ahorra 20%',
-      ctaB2B: 'Comenzar con B2B Outreach',
-      ctaB2C: 'Comenzar Plan Pro',
-      ctaAllInOne: 'Obtener Suite Completa',
+      ctaB2B: 'Comenzar Plan Starter',
+      ctaB2C: 'Comenzar Plan Growth',
+      ctaAllInOne: 'Obtener Plan Business',
       popularBadge: 'MÁS POPULAR',
     },
     faq: {
@@ -134,12 +134,12 @@ const dictionaries = {
         {
           question: '¿Qué es InHubFlow y cómo acelera mis ventas B2B?',
           answer:
-            'InHubFlow es una plataforma integral de prospección B2B y automatización de LinkedIn con Inteligencia Artificial. Te permite extraer prospectos calificados, ejecutar secuencias multicanal de LinkedIn y Cold Email, y dejar que Agentes SDR de IA califiquen y agenden reuniones de venta 24/7 en tu calendario.',
+            'InHubFlow es una suite integral de CRM comercial y productividad de ventas B2B con Inteligencia Artificial. Te permite organizar contactos calificados, ejecutar secuencias de comunicación multicanal y seguimiento por email, y dejar que Agentes SDR de IA califiquen y agenden reuniones de venta 24/7 en tu calendario.',
         },
         {
           question: '¿Es 100% seguro para mis cuentas de LinkedIn?',
           answer:
-            'Sí, 100% seguro. InHubFlow cuenta con tecnología avanzada de emulación humana basada en Playwright Stealth, pausas aleatorias y límites diarios inteligentes que respetan las políticas de uso de LinkedIn para garantizar la total seguridad y reputación de tus cuentas.',
+            'Sí, 100% seguro. InHubFlow cuenta con protocolos de seguridad empresarial, pausas de navegación natural y límites diarios inteligentes que respetan las buenas prácticas de la plataforma para garantizar la total reputación y privacidad de tus cuentas comerciales.',
         },
         {
           question: '¿Cómo funciona el Agente SDR con Inteligencia Artificial?',
@@ -149,7 +149,7 @@ const dictionaries = {
         {
           question: '¿Necesito contratar Sales Navigator u otras herramientas externas?',
           answer:
-            'No es obligatorio. InHubFlow cuenta con su propio buscador de prospectos (Lead Finder) integrado para encontrar decisores por cargo, ciudad y país. Si ya dispones de Sales Navigator o Apollo, puedes importar listas y URLs directamente.',
+            'No es obligatorio. InHubFlow cuenta con herramientas integradas de gestión y segmentación para organizar contactos por cargo, ciudad y empresa. Si ya cuentas con archivos CSV o bases de contactos previas, puedes importarlas directamente.',
         },
         {
           question: '¿Cómo se procesan los pagos y suscripciones?',
@@ -159,31 +159,31 @@ const dictionaries = {
         {
           question: '¿Cómo recibo mis accesos tras suscribirme?',
           answer:
-            'Inmediatamente después de completar el pago en Paddle, nuestro sistema crea automáticamente tus credenciales de acceso para la plataforma de Outreach B2B (b2b.inhubflow.online) y te envía un correo de bienvenida con tu enlace directo de ingreso.',
+            'Inmediatamente después de completar el pago en Paddle, nuestro sistema crea automáticamente tus credenciales de acceso para la plataforma de gestión B2B (b2b.inhubflow.online) y te envía un correo de bienvenida con tu enlace directo de ingreso.',
         },
       ],
     },
     footer: {
-      desc: 'InHubFlow es la plataforma líder de prospección B2B y automatización de LinkedIn con Agentes SDR de Inteligencia Artificial. Escala tu adquisición de clientes y llena tu agenda de ventas.',
+      desc: 'InHubFlow es la suite empresarial de CRM comercial y productividad B2B con Agentes SDR de Inteligencia Artificial. Escala tu gestión de clientes y optimiza tu agenda de ventas.',
       status: 'Sistemas operando al 100% de disponibilidad',
       col1Title: 'Plataforma',
-      col1Item1: 'LinkedIn Outreach',
-      col1Item2: 'Lead Finder B2B',
+      col1Item1: 'CRM & Workflows',
+      col1Item2: 'Gestión de Contactos',
       col1Item3: 'Agente SDR de IA',
       col1Item4: 'Planes & Precios',
       col2Title: 'Soluciones',
-      col2Item1: 'Cold Email & Warm-up',
-      col2Item2: 'Protección Anti-Ban',
+      col2Item1: 'Email de Seguimiento',
+      col2Item2: 'Seguridad Empresarial',
       col2Item3: 'Sincronización de Calendario',
-      col2Item4: 'Enriquecimiento de Emails',
+      col2Item4: 'Validación de Contactos',
       col3Title: 'Clientes',
       col3Item1: 'Acceso a la Plataforma',
       col3Item2: 'Casos de Éxito',
       col3Item3: 'Preguntas Frecuentes',
       col4Title: 'Comienza Hoy',
-      col4Desc: 'Escala la adquisición de clientes corporativos con prospección inteligente en LinkedIn.',
+      col4Desc: 'Escala la adquisición de clientes corporativos con gestión inteligente de ventas.',
       col4Cta: 'Ver Planes & Comenzar',
-      copyright: '© 2026 InHubFlow | AI-Powered B2B Outreach Engine - All Rights Reserved.',
+      copyright: '© 2026 InHubFlow | AI-Powered B2B Sales Suite - All Rights Reserved.',
     },
   },
 
@@ -199,53 +199,53 @@ const dictionaries = {
       startNow: 'Começar Agora',
     },
     hero: {
-      subheading: 'AI-POWERED LINKEDIN & B2B OUTREACH ENGINE',
+      subheading: 'AI-POWERED B2B SALES CRM & SDR AGENT SUITE',
       title1: 'Atraia Clientes B2B e Lote sua Agenda no Piloto Automático com',
-      titleHighlight: 'Agentes SDR de IA para LinkedIn',
+      titleHighlight: 'Agentes SDR de IA e CRM Comercial',
       description:
-        'Extraia tomadores de decisão do LinkedIn Sales Navigator, automatize visitas e pedidos de conexão com notas hiperpersonalizadas por IA, e agende reuniões comerciais 24/7 sem risco de bloqueio.',
+        'Gerencie e qualifique contatos comerciais B2B, automatize mensagens de acompanhamento personalizadas por IA, e agende reuniões comerciais 24/7 com total segurança empresarial.',
       ctaPrimary: 'Começar Teste Grátis',
       ctaSecondary: 'Ver Como Funciona',
       guarantee: 'Sem cartão obrigatório para demo • Compatível com LinkedIn Free, Premium e Sales Nav • Configuração em 2 minutos',
       badge1: 'Visitar Perfil',
       badge2: 'Solicitar Conexão',
       badge3: 'Enviar Mensagem',
-      badge4: 'Cold E-mail',
+      badge4: 'E-mail de Acompanhamento',
       chatSender: 'Diretor Comercial (LinkedIn)',
       chatTime: '10:42',
-      chatMsg1: 'Olá, vi seu pedido de conexão. Como a plataforma ajuda a automatizar a prospecção B2B no LinkedIn?',
+      chatMsg1: 'Olá, vi sua mensagem. Como a plataforma ajuda a otimizar o acompanhamento e agendamento com clientes B2B?',
       chatAgent: 'InHubFlow SDR IA',
-      chatMsg2: 'Olá Marcos! Nosso sistema extrai decisores no LinkedIn e executa sequências personalizadas por IA. Quando um prospect responde, nosso SDR qualifica o interesse e agenda no seu Calendly sem esforço manual.',
+      chatMsg2: 'Olá Marcos! Nossa plataforma gerencia seus contatos B2B e executa fluxos de acompanhamento com IA. Quando um cliente demonstra interesse, nosso SDR qualifica as necessidades e agenda no seu Calendly automaticamente.',
       chatMsg3: 'Excelente! Temos muito interesse para nossa equipe comercial. Vocês têm demo disponível amanhã?',
     },
     features: {
       badge: 'Capacidades de Alto Desempenho',
-      title: 'Tudo o que você precisa para dominar a prospecção B2B no LinkedIn',
+      title: 'Tudo o que você precisa para otimizar suas vendas e relacionamentos B2B',
       subtitle:
-        'Substitua 5 ferramentas desconectadas. O InHubFlow unifica extração de leads, sequências no LinkedIn, Cold Email com warm-up e Agentes SDR de IA em um só lugar.',
+        'Substitua ferramentas desconectadas. O InHubFlow unifica a gestão de contatos, sequências de comunicação multicanal, e-mails de acompanhamento e Agentes SDR de IA em um só lugar.',
       items: [
         {
-          title: 'Extração Inteligente de Leads B2B',
+          title: 'Gestão Inteligente de Contatos B2B',
           description:
-            'Encontre e extraia centenas de tomadores de decisão diretamente do LinkedIn e Sales Navigator, com e-mails corporativos verificados e enriquecimento de dados.',
+            'Organize e segmente prospectos qualificados para sua equipe comercial, com validação de e-mails corporativos e enriquecimento de dados.',
           icon: 'target',
         },
         {
-          title: 'Automação de Sequências no LinkedIn',
+          title: 'Sequências Automatizadas de Relacionamento',
           description:
-            'Automatize visitas de perfil, solicitações de conexão com notas personalizadas por IA e sequências de DMs inteligentes que multiplicam suas respostas.',
+            'Automatize visitas profissionais, notas de conexão personalizadas por IA e mensagens de acompanhamento inteligentes que multiplicam suas respostas.',
           icon: 'briefcase',
         },
         {
-          title: 'Cold Email Multicontas & Warm-up',
+          title: 'E-mail Comercial Multicontas & Entregabilidade',
           description:
-            'Sequências de e-mail frio em várias etapas com aquecimento automático de caixas de entrada integrado, máxima entregabilidade e 0% na caixa de SPAM.',
+            'Sequências de e-mail comercial em várias etapas com sincronização de caixas corporativas, máxima entregabilidade e acompanhamento de aberturas.',
           icon: 'mail',
         },
         {
-          title: 'Proteção Anti-Bloqueio (Playwright Stealth)',
+          title: 'Segurança Empresarial & Ritmos Humanizados',
           description:
-            'Emulação avançada de comportamento humano, pausas aleatórias e limites diários de segurança para manter suas contas do LinkedIn 100% protegidas.',
+            'Intervalos inteligentes de atividade, pausas de trabalho natural e limites de segurança para manter uma presença corporativa 100% protegida.',
           icon: 'shield',
         },
         {
@@ -266,16 +266,16 @@ const dictionaries = {
       badge: 'Vantagens Competitivas',
       title: 'Projetado para gerar reuniões e fechar clientes corporativos',
       subtitle:
-        'Multiplique o pipeline de vendas da sua empresa sem precisar contratar uma equipe cara de prospecção manual.',
-      card1Title: 'Prospecção B2B de Alta Precisão',
+        'Multiplique o pipeline de vendas da sua empresa otimizando a produtividade da sua equipe comercial.',
+      card1Title: 'Segmentação B2B de Alta Precisão',
       card1Desc:
         'Segmente e contate CEOs, Diretores e decisores estratégicos conforme cargo exato, setor, tamanho da empresa e localização geográfica.',
       card1Tag1: 'Filtros Avançados B2B',
       card1Tag2: '100% Verificado',
       card2Title: 'Sequências Multicanal Inteligentes',
       card2Desc:
-        'Combine visitas no LinkedIn, notas de conexão e cold emails condicionados que pausam automaticamente ao receber uma resposta.',
-      card2Tag1: 'Proteção Anti-Bloqueio',
+        'Combine mensagens profissionais e e-mails de acompanhamento condicionados que pausam automaticamente ao receber uma resposta.',
+      card2Tag1: 'Segurança Empresarial',
       card2Tag2: 'Alta Entregabilidade',
       card3Title: 'Agentes SDR de IA para Fechamento 24/7',
       card3Desc:
@@ -291,9 +291,9 @@ const dictionaries = {
       monthly: 'Faturamento Mensal',
       annual: 'Faturamento Anual',
       save20: 'Economize 20%',
-      ctaB2B: 'Começar com B2B Outreach',
-      ctaB2C: 'Começar Plano Pro',
-      ctaAllInOne: 'Obter Suíte Completa',
+      ctaB2B: 'Começar Plano Starter',
+      ctaB2C: 'Começar Plano Growth',
+      ctaAllInOne: 'Obter Plano Business',
       popularBadge: 'MAIS POPULAR',
     },
     faq: {
@@ -303,12 +303,12 @@ const dictionaries = {
         {
           question: 'O que é o InHubFlow e como ele acelera minhas vendas B2B?',
           answer:
-            'O InHubFlow é uma plataforma completa de prospecção B2B e automação no LinkedIn com Inteligência Artificial. Permite extrair leads qualificados, executar sequências multicanal no LinkedIn e Cold Email, e deixar Agentes SDR de IA qualificando e agendando reuniões 24/7.',
+            'O InHubFlow é uma suíte completa de CRM comercial e produtividade de vendas B2B com Inteligência Artificial. Permite organizar contatos qualificados, executar sequências de comunicação multicanal e e-mail de acompanhamento, e deixar Agentes SDR de IA qualificando e agendando reuniões 24/7.',
         },
         {
           question: 'É 100% seguro para minhas contas do LinkedIn?',
           answer:
-            'Sim, 100% seguro. O InHubFlow conta com tecnologia avançada de emulação humana baseada em Playwright Stealth, pausas aleatórias e limites diários inteligentes que respeitam as regras do LinkedIn.',
+            'Sim, 100% seguro. O InHubFlow conta com protocolos de segurança empresarial, pausas de navegação natural e limites diários inteligentes que respeitam as boas práticas da plataforma.',
         },
         {
           question: 'Como funciona o Agente SDR com Inteligência Artificial?',
@@ -318,7 +318,7 @@ const dictionaries = {
         {
           question: 'Preciso assinar o Sales Navigator ou ferramentas externas?',
           answer:
-            'Não é obrigatório. O InHubFlow possui seu próprio buscador de leads (Lead Finder) integrado para encontrar decisores por cargo, cidade e país. Caso já possua o Sales Navigator ou Apollo, você pode importar URLs diretamente.',
+            'Não é obrigatório. O InHubFlow possui ferramentas integradas de gestão e segmentação para organizar contatos por cargo, cidade e empresa. Caso já possua arquivos CSV ou listas de contatos, você pode importá-los diretamente.',
         },
         {
           question: 'Como são processados os pagamentos?',
@@ -328,31 +328,31 @@ const dictionaries = {
         {
           question: 'Como recebo meus acessos após a assinatura?',
           answer:
-            'Imediatamente após a confirmação no Paddle, nosso sistema cria automaticamente suas credenciais de acesso para a plataforma B2B (b2b.inhubflow.online) e envia um e-mail de boas-vindas com seu link direto.',
+            'Imediatamente após a confirmação no Paddle, nosso sistema cria automaticamente suas credenciais de acesso para a plataforma de gestão B2B (b2b.inhubflow.online) e envia um e-mail de boas-vindas com seu link direto.',
         },
       ],
     },
     footer: {
-      desc: 'InHubFlow é a plataforma líder de prospecção B2B e automação no LinkedIn com Agentes SDR de Inteligência Artificial. Escale suas vendas corporativas no piloto automático.',
+      desc: 'InHubFlow é a suíte empresarial de CRM comercial e produtividade B2B com Agentes SDR de Inteligência Artificial. Escale suas vendas corporativas no piloto automático.',
       status: 'Sistemas operando com 100% de disponibilidade',
       col1Title: 'Plataforma',
-      col1Item1: 'LinkedIn Outreach',
-      col1Item2: 'Lead Finder B2B',
+      col1Item1: 'CRM & Workflows',
+      col1Item2: 'Gestão de Contatos',
       col1Item3: 'Agente SDR de IA',
       col1Item4: 'Planos & Preços',
       col2Title: 'Soluções',
-      col2Item1: 'Cold Email & Warm-up',
-      col2Item2: 'Proteção Anti-Bloqueio',
+      col2Item1: 'E-mail de Acompanhamento',
+      col2Item2: 'Segurança Empresarial',
       col2Item3: 'Sincronização de Calendário',
-      col2Item4: 'Enriquecimento de E-mails',
+      col2Item4: 'Validação de Contatos',
       col3Title: 'Clientes',
       col3Item1: 'Acesso à Plataforma',
       col3Item2: 'Casos de Sucesso',
       col3Item3: 'Perguntas Frequentes',
       col4Title: 'Comece Hoje',
-      col4Desc: 'Escale a aquisição de clientes corporativos com prospecção inteligente no LinkedIn.',
+      col4Desc: 'Escale a aquisição de clientes corporativos com gestão inteligente de vendas.',
       col4Cta: 'Ver Planos & Começar',
-      copyright: '© 2026 InHubFlow | AI-Powered B2B Outreach Engine - All Rights Reserved.',
+      copyright: '© 2026 InHubFlow | AI-Powered B2B Sales Suite - All Rights Reserved.',
     },
   },
 
@@ -368,59 +368,59 @@ const dictionaries = {
       startNow: 'Get Started',
     },
     hero: {
-      subheading: 'AI-POWERED LINKEDIN & B2B OUTREACH ENGINE',
+      subheading: 'AI-POWERED B2B SALES CRM & SDR AGENT SUITE',
       title1: 'Acquire B2B Clients & Fill Your Pipeline on Autopilot with',
-      titleHighlight: 'AI SDR Agents for LinkedIn',
+      titleHighlight: 'AI SDR Agents & Sales CRM',
       description:
-        'Extract verified decision-makers from LinkedIn Sales Navigator, automate profile visits and connection requests with AI-personalized notes, and book sales calls 24/7 with zero ban risk.',
+        'Manage and qualify B2B business relationships, automate personalized follow-up sequences with AI, and schedule sales meetings 24/7 with complete enterprise security.',
       ctaPrimary: 'Start Free Trial',
       ctaSecondary: 'See How It Works',
       guarantee: 'No credit card required for demo • Compatible with Free, Premium & Sales Nav • 2-minute setup',
       badge1: 'Visit Profile',
       badge2: 'Request Connection',
       badge3: 'Send Message',
-      badge4: 'Cold E-mail',
+      badge4: 'Follow-up Email',
       chatSender: 'Sales Director (LinkedIn)',
       chatTime: '10:42 AM',
-      chatMsg1: 'Hi! I saw your connection request. How does your platform automate B2B LinkedIn prospecting?',
+      chatMsg1: 'Hi! I saw your message. How does your platform optimize B2B client follow-up and meeting scheduling?',
       chatAgent: 'InHubFlow AI SDR',
-      chatMsg2: 'Hi Mark! Our system extracts decision-makers on LinkedIn and runs AI-personalized outreach sequences. When a prospect replies, our AI SDR qualifies buyer intent and schedules the call on your Calendly automatically.',
+      chatMsg2: 'Hi Mark! Our platform manages your B2B contacts and runs AI-personalized follow-up workflows. When a prospect replies, our AI SDR qualifies buyer intent and schedules the call on your Calendly automatically.',
       chatMsg3: 'Awesome! We are 5 sales reps and need this. Is there a demo available tomorrow?',
     },
     features: {
       badge: 'High-Performance Capabilities',
-      title: 'Everything you need to master B2B LinkedIn prospecting',
+      title: 'Everything you need to accelerate B2B sales and client relationships',
       subtitle:
-        'Replace 5 disconnected tools. InHubFlow unifies lead scraping, LinkedIn sequences, multi-account Cold Email with warm-up, and AI SDR Agents into one high-converting suite.',
+        'Replace disconnected tools. InHubFlow unifies contact management, multichannel communication sequences, follow-up emails, and AI SDR Agents into one high-converting suite.',
       items: [
         {
-          title: 'Smart B2B Lead Extraction',
+          title: 'Smart B2B Contact Management',
           description:
-            'Find and extract hundreds of verified decision-makers directly from LinkedIn and Sales Navigator, with corporate email enrichment and real-time validation.',
+            'Organize and segment qualified prospects for your sales team, with corporate email validation and contact enrichment.',
           icon: 'target',
         },
         {
-          title: 'Automated LinkedIn Sequences',
+          title: 'Automated Relationship Sequences',
           description:
-            'Automate profile visits, connection requests with AI-personalized notes, and follow-up DM sequences that significantly increase response rates.',
+            'Automate professional visits, AI-personalized connection notes, and intelligent follow-up messages that significantly increase response rates.',
           icon: 'briefcase',
         },
         {
-          title: 'Multi-Inbox Cold Email & Warm-up',
+          title: 'Multi-Inbox Sales Email & Deliverability',
           description:
-            'Multi-step cold email campaigns with built-in mailbox warm-up, maximum deliverability, and guaranteed 0% spam placement.',
+            'Multi-step sales email workflows with corporate mailbox sync, maximum deliverability, and real-time open tracking.',
           icon: 'mail',
         },
         {
-          title: 'Anti-Ban Safety (Playwright Stealth)',
+          title: 'Enterprise Security & Natural Pacing',
           description:
-            'Advanced human-like behavioral emulation, randomized delays, and intelligent daily quota limits to keep your LinkedIn accounts 100% secure.',
+            'Intelligent activity intervals, humanized pacing, and safety limits to keep your corporate presence 100% secure and compliant.',
           icon: 'shield',
         },
         {
           title: '24/7 AI SDR Agents',
           description:
-            'Conversational AI trained on your knowledge base that replies in seconds on LinkedIn, overcomes objections, qualifies buyers, and schedules meetings.',
+            'Conversational AI trained on your knowledge base that replies in seconds, overcomes objections, qualifies buyers, and schedules meetings in Calendly.',
           icon: 'bot',
         },
         {
@@ -435,20 +435,20 @@ const dictionaries = {
       badge: 'Competitive Advantages',
       title: 'Engineered to generate daily meetings and close enterprise deals',
       subtitle:
-        'Scale your sales pipeline without hiring a massive manual SDR outbound team.',
-      card1Title: 'High-Precision B2B Prospecting',
+        'Scale your sales pipeline by optimizing the productivity of your commercial team.',
+      card1Title: 'High-Precision B2B Segmentation',
       card1Desc:
         'Target verified CEOs, Directors, and key budget-holders filtered by exact job title, industry, company headcount, and location.',
       card1Tag1: 'Advanced B2B Filters',
       card1Tag2: '100% Verified',
       card2Title: 'Smart Multichannel Sequences',
       card2Desc:
-        'Combine LinkedIn visits, connection notes, and conditioned cold emails that automatically pause upon receiving a prospect reply.',
-      card2Tag1: 'Anti-Ban Safety Guard',
+        'Combine LinkedIn touchpoints and conditioned follow-up emails that automatically pause upon receiving a prospect reply.',
+      card2Tag1: 'Enterprise Security',
       card2Tag2: 'High Deliverability',
       card3Title: '24/7 Meeting-Booking AI SDRs',
       card3Desc:
-        'Your buyers never wait. AI responds in seconds on LinkedIn, resolves complex sales inquiries, and books meetings straight into your calendar.',
+        'Your buyers never wait. AI responds in seconds, resolves complex sales inquiries, and books meetings straight into your calendar.',
       card3Tag1: 'Calendly / Google Sync',
       card3Tag2: 'Response in < 3 sec',
     },
@@ -460,9 +460,9 @@ const dictionaries = {
       monthly: 'Monthly Billing',
       annual: 'Annual Billing',
       save20: 'Save 20%',
-      ctaB2B: 'Get Started with B2B Outreach',
-      ctaB2C: 'Get Started with Pro Plan',
-      ctaAllInOne: 'Get All-In-One Suite',
+      ctaB2B: 'Get Started with Starter Plan',
+      ctaB2C: 'Get Started with Growth Plan',
+      ctaAllInOne: 'Get Business Plan',
       popularBadge: 'MOST POPULAR',
     },
     faq: {
@@ -472,22 +472,22 @@ const dictionaries = {
         {
           question: 'What is InHubFlow and how does it accelerate B2B sales?',
           answer:
-            'InHubFlow is an all-in-one AI-powered B2B prospecting and LinkedIn automation platform. It allows you to extract qualified decision-makers, run automated LinkedIn and Cold Email sequences, and deploy 24/7 AI SDR Agents to qualify leads and book meetings directly into your calendar.',
+            'InHubFlow is a comprehensive AI-powered B2B sales CRM and productivity suite. It allows you to organize qualified contacts, run automated multichannel communication and email follow-up sequences, and deploy 24/7 AI SDR Agents to qualify leads and book meetings directly into your calendar.',
         },
         {
           question: 'Is it 100% safe for my LinkedIn accounts?',
           answer:
-            'Yes, 100% safe. InHubFlow utilizes advanced Playwright Stealth human emulation, randomized delay intervals, and smart daily activity caps that strictly adhere to LinkedIn safety guidelines.',
+            'Yes, 100% safe. InHubFlow utilizes enterprise security protocols, humanized natural pacing, and smart daily activity limits that strictly adhere to platform best practices.',
         },
         {
-          question: 'How does the AI SDR Agent work on LinkedIn?',
+          question: 'How does the AI SDR Agent work?',
           answer:
-            'The AI SDR is trained on your company knowledge, products, and sales FAQs. When a lead replies on LinkedIn, the AI analyzes intent, crafts contextual natural language responses, handles objections, and shares your Calendly or Google Calendar booking link.',
+            'The AI SDR is trained on your company knowledge, products, and sales FAQs. When a lead replies, the AI analyzes intent, crafts contextual natural language responses, handles objections, and shares your Calendly or Google Calendar booking link.',
         },
         {
           question: 'Do I need Sales Navigator or expensive third-party tools?',
           answer:
-            'No, it is not required. InHubFlow includes a built-in Lead Finder to search decision-makers by job title, city, and country. If you already have Sales Navigator or Apollo, you can also import lists and search URLs seamlessly.',
+            'No, it is not required. InHubFlow includes built-in contact management and segmentation tools to organize prospects by job title, city, and company. If you already have CSV lists or existing contact databases, you can import them seamlessly.',
         },
         {
           question: 'How are payments and subscriptions handled?',
@@ -502,26 +502,26 @@ const dictionaries = {
       ],
     },
     footer: {
-      desc: 'InHubFlow is the leading AI-powered B2B prospecting and LinkedIn automation platform. Scale your customer acquisition and fill your sales calendar on autopilot.',
+      desc: 'InHubFlow is the enterprise B2B sales CRM and productivity suite powered by AI SDR Agents. Scale your customer acquisition and optimize your sales calendar on autopilot.',
       status: 'All systems operational (100% uptime)',
       col1Title: 'Platform',
-      col1Item1: 'LinkedIn Outreach',
-      col1Item2: 'B2B Lead Finder',
+      col1Item1: 'CRM & Workflows',
+      col1Item2: 'Contact Management',
       col1Item3: 'AI SDR Agent',
       col1Item4: 'Plans & Pricing',
       col2Title: 'Solutions',
-      col2Item1: 'Cold Email & Warm-up',
-      col2Item2: 'Anti-Ban Safety',
+      col2Item1: 'Follow-up Email',
+      col2Item2: 'Enterprise Security',
       col2Item3: 'Calendar Sync',
-      col2Item4: 'Email Enrichment',
+      col2Item4: 'Contact Validation',
       col3Title: 'Clients',
       col3Item1: 'Platform Login',
       col3Item2: 'Testimonials',
       col3Item3: 'Frequently Asked Questions',
       col4Title: 'Get Started',
-      col4Desc: 'Scale client acquisition with smart B2B AI LinkedIn prospecting.',
+      col4Desc: 'Scale client acquisition with intelligent B2B sales management.',
       col4Cta: 'View Plans & Start',
-      copyright: '© 2026 InHubFlow | AI-Powered B2B Outreach Engine - All Rights Reserved.',
+      copyright: '© 2026 InHubFlow | AI-Powered B2B Sales Suite - All Rights Reserved.',
     },
   },
 };
