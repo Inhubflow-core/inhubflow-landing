@@ -87,7 +87,7 @@ export function PlatformShowcase() {
                 <div className="flex items-center gap-2">
                   <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-blue-500 animate-ping shrink-0" />
                   <h4 className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white truncate">
-                    Campaña Activa: CEOs & Directores Comerciales
+                    Pipeline Activo: Seguimiento y Cierre de Cuentas B2B
                   </h4>
                 </div>
                 <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 shrink-0">
@@ -117,10 +117,10 @@ export function PlatformShowcase() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-blue-900 dark:text-blue-200 text-xs">
-                      Paso 2: Solicitud de Conexión con IA
+                      Paso 2: Calificación y Respuesta Comercial con IA
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 text-[10px] sm:text-[11px] leading-tight">
-                      <em>&quot;Hola [Nombre], vi tu rol en [Empresa]... te contacto para coordinar una breve reunión comercial sobre nuestras soluciones.&quot;</em>
+                      <em>&quot;Hola [Nombre], gracias por contactarnos. Tu asesor comercial está disponible... ¿agendamos una breve videollamada?&quot;</em>
                     </p>
                   </div>
                   <span className="text-blue-500 font-semibold animate-pulse text-[10px] sm:text-[11px] shrink-0">Enviando...</span>
@@ -132,10 +132,10 @@ export function PlatformShowcase() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-gray-800 dark:text-gray-200 text-xs">
-                      Paso 3: Mensaje de Seguimiento Condicionado
+                      Paso 3: Notificación & Seguimiento Inteligente
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight">
-                      Envío automático al aceptar conexión. Se pausa si responde.
+                      Seguimiento automático de propuestas y recordatorios comerciales para clientes en proceso.
                     </p>
                   </div>
                   <span className="text-purple-500 font-semibold text-[10px] sm:text-[11px] shrink-0">Condicionado</span>
@@ -147,10 +147,10 @@ export function PlatformShowcase() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-gray-800 dark:text-gray-200 text-xs">
-                      Paso 4: Email de Seguimiento & Cita
+                      Paso 4: Agendamiento Automático de Reunión
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight">
-                      Correo de seguimiento en 48h con link a Google Calendar.
+                      Sincronización directa con Google Calendar y confirmación de la cita.
                     </p>
                   </div>
                   <span className="text-emerald-500 font-semibold text-[10px] sm:text-[11px] shrink-0">Confirmado</span>

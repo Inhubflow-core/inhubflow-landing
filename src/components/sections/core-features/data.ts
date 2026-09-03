@@ -6,9 +6,9 @@ export const CORE_FEATURES = [
     icon: "target",
   },
   {
-    title: "Secuencias Automatizadas de Relación",
+    title: "Flujos Automatizados de Relación Comercial",
     description:
-      "Automatiza visitas de cortesía, notas de conexión personalizadas con IA y mensajes de seguimiento inteligentes que multiplican tu tasa de respuesta.",
+      "Automatiza respuestas comerciales, mensajes personalizados con IA y flujos de seguimiento inteligente que multiplican el agendamiento de reuniones.",
     icon: "briefcase",
   },
   {
