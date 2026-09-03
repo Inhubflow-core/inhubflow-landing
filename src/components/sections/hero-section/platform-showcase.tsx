@@ -30,7 +30,7 @@ export function PlatformShowcase() {
             </svg>
           </span>
           <span className="tracking-tight">
-            Secuencias de LinkedIn &amp; Email + Agente SDR de IA &amp; Agenda Reunión
+            Asistente LinkedIn / Email + Agente SDR de IA &amp; Agenda Reunión
           </span>
         </div>
       </div>
