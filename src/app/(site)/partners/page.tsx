@@ -1,0 +1,711 @@
+'use client';
+
+import React, { useState, useMemo } from 'react';
+import Link from 'next/link';
+import { useLanguage } from '@/app/providers/language';
+import { toast } from 'sonner';
+
+export default function PartnersPage() {
+  const { t, locale } = useLanguage();
+  const p = t.partnersPage;
+
+  // Calculator state
+  const [clientCount, setClientCount] = useState<number>(5);
+  const [selectedPlanPrice, setSelectedPlanPrice] = useState<number>(99.90); // Default: Growth plan $99.90
+
+  // Calculation: 50% recurring commission
+  const monthlyCommission = useMemo(() => {
+    return (clientCount * selectedPlanPrice * 0.50).toFixed(2);
+  }, [clientCount, selectedPlanPrice]);
+
+  // FAQ accordion state
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  // Application Modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formName, setFormName] = useState('');
+  const [formEmail, setFormEmail] = useState('');
+  const [formPhone, setFormPhone] = useState('');
+  const [formChannel, setFormChannel] = useState('agency');
+  const [formNotes, setFormNotes] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+
+  const handleApply = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formName.trim() || (!formEmail.trim() && !formPhone.trim())) {
+      toast.error(locale === 'pt-BR' ? 'Preencha seu nome e contato.' : locale === 'en' ? 'Please provide your name and contact.' : 'Por favor ingresa tu nombre y al menos un método de contacto.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/api/partners/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formName,
+          email: formEmail,
+          phone: formPhone,
+          channel: formChannel,
+          notes: formNotes,
+        }),
+      });
+
+      if (res.ok) {
+        setIsSubmitted(true);
+        toast.success(p.successTitle);
+      } else {
+        toast.error('Error al enviar la solicitud. Por favor intenta de nuevo.');
+      }
+    } catch {
+      toast.error('Error de conexión. Puedes contactarnos directamente por WhatsApp.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const whatsAppHref = `https://wa.me/34600000000?text=${encodeURIComponent(
+    `Hola equipo de InHubFlow! Me gustaría postularme como Partner Oficial (50% comisión recurrente). Mi nombre es ${formName || 'un nuevo embajador'}.`
+  )}`;
+
+  return (
+    <div className="relative min-h-screen bg-[#070B14] text-white overflow-hidden selection:bg-indigo-500 selection:text-white">
+      {/* Background Ambient Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] pointer-events-none overflow-hidden z-0">
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[450px] bg-gradient-to-b from-blue-600/30 via-indigo-600/20 to-transparent blur-[120px] rounded-full" />
+        <div className="absolute top-40 -left-20 w-96 h-96 bg-indigo-500/15 blur-[100px] rounded-full" />
+        <div className="absolute top-60 -right-20 w-96 h-96 bg-violet-500/15 blur-[100px] rounded-full" />
+      </div>
+
+      {/* ========================================================================= */}
+      {/* 1. HERO SECTION (Waalaxy Style) */}
+      {/* ========================================================================= */}
+      <section className="relative z-10 pt-32 sm:pt-40 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+        {/* Rating Stars Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-xs sm:text-sm font-medium text-amber-300 mb-6 shadow-sm">
+          <span>{p.rating}</span>
+        </div>
+
+        {/* Big Bold Headline */}
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] sm:leading-[1.15] mb-6 max-w-4xl mx-auto">
+          {p.heroTitle1}
+          <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
+            {p.heroTitleHighlight}
+          </span>
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          {p.heroSubtitle}
+        </p>
+
+        {/* CTA Button with Ambient Glow */}
+        <div className="relative inline-flex flex-col items-center">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            type="button"
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-4.5 rounded-full text-base sm:text-lg font-bold text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 hover:from-blue-500 hover:via-indigo-500 hover:to-violet-500 shadow-xl shadow-indigo-600/35 transition-all duration-300 active:scale-98 cursor-pointer hover:shadow-indigo-500/50"
+          >
+            <span>{p.heroCta}</span>
+            <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </button>
+
+          {/* Sub Guarantee Note */}
+          <span className="mt-3 text-xs sm:text-sm text-gray-400">
+            {p.heroSubNote}
+          </span>
+
+          {/* Playful Hand-drawn style note (Waalaxy signature) */}
+          <div className="hidden md:flex items-center gap-2 mt-4 text-xs font-handwriting text-indigo-300 italic">
+            <svg className="w-6 h-6 text-indigo-400 -rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M7 17l9.2-9.2M17 17V7H7" />
+            </svg>
+            <span>{p.arrowNote}</span>
+          </div>
+        </div>
+
+        {/* Logos / Social Proof Bar */}
+        <div className="mt-16 sm:mt-24 pt-8 border-t border-white/[0.08]">
+          <p className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-8">
+            {p.socialProofTitle}
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+            {['HubSpot', 'ClickUp', 'Asana', 'Intercom', 'Notion', 'Figma'].map((brand) => (
+              <span key={brand} className="text-sm sm:text-base font-bold tracking-wider text-gray-400 hover:text-white transition-colors">
+                {brand}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 2. REVENUE CALCULATOR SECTION (Waalaxy Style) */}
+      {/* ========================================================================= */}
+      <section className="relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+            {p.calcTitle}
+          </h2>
+          <p className="text-sm sm:text-base text-gray-400">
+            {p.calcSubtitle}
+          </p>
+        </div>
+
+        {/* Interactive Calculator Box */}
+        <div className="relative p-6 sm:p-10 rounded-3xl bg-white/[0.04] border border-white/10 shadow-2xl backdrop-blur-xl">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            {/* Controls */}
+            <div className="w-full md:w-1/2 space-y-6">
+              <div>
+                <label className="block text-sm font-semibold text-gray-300 mb-2">
+                  {p.calcHello}
+                </label>
+                <div className="flex items-center gap-3">
+                  <select
+                    value={clientCount}
+                    onChange={(e) => setClientCount(Number(e.target.value))}
+                    className="bg-gray-800/90 border border-gray-700 text-white font-bold text-lg rounded-xl px-4 py-3 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 cursor-pointer w-28"
+                  >
+                    {[1, 2, 3, 5, 10, 15, 20, 30, 50, 100].map((num) => (
+                      <option key={num} value={num}>
+                        {num}
+                      </option>
+                    ))}
+                  </select>
+                  <span className="text-base sm:text-lg font-bold text-gray-200">
+                    {p.calcClientsSuffix}
+                  </span>
+                </div>
+              </div>
+
+              {/* Subscription Plan Selector */}
+              <div>
+                <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+                  {p.calcPlanLabel}
+                </label>
+                <div className="grid grid-cols-3 gap-2">
+                  {[
+                    { name: 'Starter', price: 24.90 },
+                    { name: 'Growth', price: 99.90, popular: true },
+                    { name: 'Business', price: 149.90 },
+                  ].map((plan) => (
+                    <button
+                      key={plan.name}
+                      type="button"
+                      onClick={() => setSelectedPlanPrice(plan.price)}
+                      className={`px-3 py-2 rounded-xl text-xs font-semibold border transition-all text-center ${
+                        selectedPlanPrice === plan.price
+                          ? 'bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/30'
+                          : 'bg-white/5 text-gray-400 border-white/10 hover:border-white/20 hover:text-white'
+                      }`}
+                    >
+                      <div>{plan.name}</div>
+                      <div className="text-[11px] opacity-80">${plan.price}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Big Highlighted Output Box (Matching Waalaxy Blue Highlight Pill) */}
+            <div className="w-full md:w-1/2 flex flex-col items-center text-center">
+              <div className="w-full p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 shadow-xl shadow-blue-600/30 flex flex-col items-center justify-center">
+                <span className="text-xs sm:text-sm font-semibold text-blue-100 uppercase tracking-wider mb-1">
+                  {p.calcResultPrefix}
+                </span>
+                <div className="text-3xl sm:text-5xl font-black text-white tracking-tight my-1">
+                  ${monthlyCommission} <span className="text-sm sm:text-lg font-bold">USD</span>
+                </div>
+                <span className="text-xs sm:text-sm font-bold text-blue-200 uppercase tracking-wider">
+                  {p.calcResultSuffix}
+                </span>
+              </div>
+
+              <p className="mt-4 text-xs text-gray-400 max-w-xs text-center leading-relaxed">
+                {p.calcPassiveNote}
+              </p>
+
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-indigo-400 hover:text-indigo-300 transition-colors"
+              >
+                <span>{p.calcCta}</span>
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 3. THREE PILLARS (Lo dimos todo para que quedara genial) */}
+      {/* ========================================================================= */}
+      <section className="relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div className="text-center mb-16 sm:mb-20">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+            {p.pillarsSuperTitle}
+          </h2>
+        </div>
+
+        <div className="space-y-20 sm:space-y-28">
+          {/* Pillar 1: All-in-one Platform */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+            <div className="lg:col-span-6 space-y-6">
+              <div className="flex items-center gap-4">
+                <span className="flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-600 text-white font-extrabold text-xl shadow-lg shadow-blue-600/30">
+                  {p.pillar1Number}
+                </span>
+                <h3 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  {p.pillar1Title}
+                </h3>
+              </div>
+
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                {p.pillar1Desc}
+              </p>
+
+              <div className="space-y-3 pt-2">
+                {[p.pillar1Check1, p.pillar1Check2, p.pillar1Check3].map((check, i) => (
+                  <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs sm:text-sm font-semibold text-gray-200">
+                    <span className="flex items-center justify-center w-5 h-5 rounded-md bg-blue-600/30 text-blue-400 shrink-0">
+                      ✓
+                    </span>
+                    <span>{check}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mockup Graphic 1: Affiliate Dashboard */}
+            <div className="lg:col-span-6">
+              <div className="p-5 sm:p-6 rounded-3xl bg-gray-900/80 border border-gray-800 shadow-2xl backdrop-blur-xl">
+                {/* Header of Mockup */}
+                <div className="flex items-center justify-between pb-4 border-b border-gray-800 mb-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                    <span className="text-[11px] text-gray-400 font-mono ml-2">partner.inhubflow.online</span>
+                  </div>
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
+                    50% Active
+                  </span>
+                </div>
+
+                {/* Metrics row */}
+                <div className="grid grid-cols-3 gap-3 mb-4">
+                  <div className="p-3 rounded-xl bg-gray-800/60 border border-gray-700/50">
+                    <div className="text-[10px] uppercase tracking-wider text-gray-400">Clics</div>
+                    <div className="text-base sm:text-lg font-bold text-white mt-1">1,248</div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-blue-950/40 border border-blue-800/40">
+                    <div className="text-[10px] uppercase tracking-wider text-blue-300">Clientes</div>
+                    <div className="text-base sm:text-lg font-bold text-blue-400 mt-1">18</div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-emerald-950/40 border border-emerald-800/40">
+                    <div className="text-[10px] uppercase tracking-wider text-emerald-300">Comisión</div>
+                    <div className="text-base sm:text-lg font-bold text-emerald-400 mt-1">$899 USD</div>
+                  </div>
+                </div>
+
+                {/* Link Box */}
+                <div className="p-3.5 rounded-xl bg-gray-800/40 border border-gray-700/40 flex items-center justify-between">
+                  <span className="font-mono text-xs text-indigo-300 truncate">
+                    inhubflow.online/?20-OFF=TUCODIGO
+                  </span>
+                  <span className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-indigo-600 text-white shrink-0 ml-2">
+                    Copiar
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Pillar 2: Lifetime Commissions */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+            {/* Mockup Graphic 2: Referral List */}
+            <div className="lg:col-span-6 order-2 lg:order-1">
+              <div className="p-5 sm:p-6 rounded-3xl bg-gray-900/80 border border-gray-800 shadow-2xl backdrop-blur-xl space-y-3">
+                <div className="flex items-center justify-between pb-3 border-b border-gray-800">
+                  <span className="text-xs font-bold text-white uppercase tracking-wider">Historial de Clientes Referidos</span>
+                  <span className="text-[11px] text-emerald-400 font-semibold">100% Recurrente</span>
+                </div>
+
+                {[
+                  { name: 'Agencia Nexus B2B', plan: 'Plan Business ($149.90)', comm: '+$74.95 / mes', date: 'Activo' },
+                  { name: 'SaaS Growth Latam', plan: 'Plan Growth ($99.90)', comm: '+$49.95 / mes', date: 'Activo' },
+                  { name: 'Consultora Ventas 360', plan: 'Plan Growth ($99.90)', comm: '+$49.95 / mes', date: 'Activo' },
+                  { name: 'Outbound Digital SL', plan: 'Plan Starter ($24.90)', comm: '+$12.45 / mes', date: 'Activo' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-gray-800/40 border border-gray-700/30">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-600 to-blue-500 flex items-center justify-center font-bold text-xs text-white">
+                        {item.name[0]}
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-white">{item.name}</div>
+                        <div className="text-[11px] text-gray-400">{item.plan}</div>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-xs font-bold text-emerald-400">{item.comm}</div>
+                      <span className="inline-block px-1.5 py-0.5 rounded text-[9px] font-semibold bg-emerald-500/10 text-emerald-400">
+                        {item.date}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="lg:col-span-6 space-y-6 order-1 lg:order-2">
+              <div className="flex items-center gap-4">
+                <span className="flex items-center justify-center w-12 h-12 rounded-2xl bg-indigo-600 text-white font-extrabold text-xl shadow-lg shadow-indigo-600/30">
+                  {p.pillar2Number}
+                </span>
+                <h3 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  {p.pillar2Title}
+                </h3>
+              </div>
+
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                {p.pillar2Desc}
+              </p>
+
+              <div className="space-y-3 pt-2">
+                {[p.pillar2Check1, p.pillar2Check2, p.pillar2Check3].map((check, i) => (
+                  <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs sm:text-sm font-semibold text-gray-200">
+                    <span className="flex items-center justify-center w-5 h-5 rounded-md bg-indigo-600/30 text-indigo-400 shrink-0">
+                      ✓
+                    </span>
+                    <span>{check}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Pillar 3: Support & Resources */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+            <div className="lg:col-span-6 space-y-6">
+              <div className="flex items-center gap-4">
+                <span className="flex items-center justify-center w-12 h-12 rounded-2xl bg-violet-600 text-white font-extrabold text-xl shadow-lg shadow-violet-600/30">
+                  {p.pillar3Number}
+                </span>
+                <h3 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  {p.pillar3Title}
+                </h3>
+              </div>
+
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+                {p.pillar3Desc}
+              </p>
+
+              <div className="space-y-3 pt-2">
+                {[p.pillar3Check1, p.pillar3Check2, p.pillar3Check3].map((check, i) => (
+                  <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white/[0.03] border border-white/10 text-xs sm:text-sm font-semibold text-gray-200">
+                    <span className="flex items-center justify-center w-5 h-5 rounded-md bg-violet-600/30 text-violet-400 shrink-0">
+                      ✓
+                    </span>
+                    <span>{check}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mockup Graphic 3: Partner Support Chat */}
+            <div className="lg:col-span-6">
+              <div className="p-6 rounded-3xl bg-gray-900/80 border border-gray-800 shadow-2xl backdrop-blur-xl space-y-4">
+                <div className="flex items-center gap-3 pb-3 border-b border-gray-800">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center font-bold text-sm text-white">
+                    IH
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-white">Customer Success InHubFlow</div>
+                    <div className="text-[11px] text-emerald-400 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      Tiempo de respuesta: &lt; 15 min
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-3 text-xs">
+                  <div className="p-3 rounded-2xl bg-gray-800/70 text-gray-300 max-w-[85%]">
+                    ¡Hola! Acabo de enviarte los copys de prospección B2B y las grabaciones demo de InHubFlow para tus clientes. ¿Tienes alguna duda técnica?
+                  </div>
+                  <div className="p-3 rounded-2xl bg-indigo-600/30 border border-indigo-500/30 text-indigo-100 ml-auto max-w-[85%] text-right">
+                    ¡Genial! Con este material acabo de agendar 3 demos para mi agencia. ¡Gracias por el soporte tan rápido!
+                  </div>
+                </div>
+
+                <a
+                  href={whatsAppHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors"
+                >
+                  <span>Hablar con Soporte de Partners</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 4. FAQ ACCORDION SECTION (Waalaxy Style) */}
+      {/* ========================================================================= */}
+      <section className="relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+          <div className="max-w-xl">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
+              {p.faqTitle}
+            </h2>
+            <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
+              {p.faqSubtitle}
+            </p>
+          </div>
+
+          <a
+            href={whatsAppHref}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm shadow-md transition-all self-start sm:self-auto shrink-0"
+          >
+            <span>{p.faqChatBtn}</span>
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        {/* 2-Column Accordion */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {p.faqs.map((faq, i) => {
+            const isOpen = openFaqIndex === i;
+            return (
+              <div
+                key={i}
+                className="rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-colors overflow-hidden"
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleFaq(i)}
+                  className="w-full text-left p-5 flex items-center justify-between gap-3 font-bold text-xs sm:text-sm text-white focus:outline-none"
+                >
+                  <span>{faq.q}</span>
+                  <svg
+                    className={`w-4 h-4 text-indigo-400 shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180' : ''
+                    }`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </button>
+
+                {isOpen && (
+                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-300 leading-relaxed border-t border-white/[0.05]">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 5. BOTTOM HERO CALL-TO-ACTION */}
+      {/* ========================================================================= */}
+      <section className="relative z-10 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
+        <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-b from-indigo-950/60 to-gray-950/80 border border-indigo-500/30 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none" />
+          
+          <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
+            ¿Listo para generar ingresos recurrentes con InHubFlow?
+          </h2>
+          <p className="text-sm sm:text-base text-gray-300 max-w-xl mx-auto mb-8">
+            Únete hoy como Partner Oficial. Te entregamos tu link con 20% de descuento y empiezas a cobrar el 50% de cada mensualidad.
+          </p>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            type="button"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-xl shadow-indigo-600/40 transition-all cursor-pointer active:scale-98"
+          >
+            <span>{p.heroCta}</span>
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* APPLICATION MODAL */}
+      {/* ========================================================================= */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
+          <div
+            className="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity"
+            onClick={() => setIsModalOpen(false)}
+          />
+
+          <div className="relative w-full max-w-lg rounded-3xl bg-gray-900 border border-gray-800 p-6 sm:p-8 shadow-2xl text-left z-10">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-5 right-5 text-gray-400 hover:text-white transition-colors"
+            >
+              ✕
+            </button>
+
+            {!isSubmitted ? (
+              <>
+                <div className="mb-6">
+                  <span className="inline-block px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 mb-2">
+                    50% Comisión Recurrente
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white">
+                    {p.modalTitle}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1 leading-relaxed">
+                    {p.modalSubtitle}
+                  </p>
+                </div>
+
+                <form onSubmit={handleApply} className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-300 mb-1">
+                      {p.fieldName} *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formName}
+                      onChange={(e) => setFormName(e.target.value)}
+                      placeholder="Roberto Silva"
+                      className="w-full px-4 py-2.5 rounded-xl bg-gray-800/80 border border-gray-700 text-white text-sm focus:outline-none focus:border-indigo-500"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-300 mb-1">
+                        {p.fieldEmail} *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={formEmail}
+                        onChange={(e) => setFormEmail(e.target.value)}
+                        placeholder="tu@empresa.com"
+                        className="w-full px-4 py-2.5 rounded-xl bg-gray-800/80 border border-gray-700 text-white text-sm focus:outline-none focus:border-indigo-500"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-300 mb-1">
+                        {p.fieldPhone} *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        value={formPhone}
+                        onChange={(e) => setFormPhone(e.target.value)}
+                        placeholder="+34 600..."
+                        className="w-full px-4 py-2.5 rounded-xl bg-gray-800/80 border border-gray-700 text-white text-sm focus:outline-none focus:border-indigo-500"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-300 mb-1">
+                      {p.fieldChannel}
+                    </label>
+                    <select
+                      value={formChannel}
+                      onChange={(e) => setFormChannel(e.target.value)}
+                      className="w-full px-4 py-2.5 rounded-xl bg-gray-800/80 border border-gray-700 text-white text-sm focus:outline-none focus:border-indigo-500 cursor-pointer"
+                    >
+                      <option value="agency">{p.channel1}</option>
+                      <option value="consultant">{p.channel2}</option>
+                      <option value="creator">{p.channel3}</option>
+                      <option value="network">{p.channel4}</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-300 mb-1">
+                      {p.fieldNotes}
+                    </label>
+                    <textarea
+                      rows={2}
+                      value={formNotes}
+                      onChange={(e) => setFormNotes(e.target.value)}
+                      placeholder="Ej. Gestiono una agencia B2B con 15 clientes de prospección..."
+                      className="w-full px-4 py-2 rounded-xl bg-gray-800/80 border border-gray-700 text-white text-xs focus:outline-none focus:border-indigo-500"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-3.5 rounded-full font-bold text-sm text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-indigo-600/30 transition-all cursor-pointer disabled:opacity-50"
+                  >
+                    {isSubmitting ? p.submitting : p.submitBtn}
+                  </button>
+                </form>
+              </>
+            ) : (
+              <div className="text-center py-6 space-y-4">
+                <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-3xl mx-auto">
+                  ✓
+                </div>
+                <h3 className="text-xl font-extrabold text-white">{p.successTitle}</h3>
+                <p className="text-xs sm:text-sm text-gray-300 max-w-sm mx-auto leading-relaxed">
+                  {p.successDesc}
+                </p>
+
+                <div className="pt-4 border-t border-gray-800 space-y-3">
+                  <p className="text-xs text-gray-400 font-semibold">{p.instantActionTitle}</p>
+                  <a
+                    href={whatsAppHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors"
+                  >
+                    <span>{p.instantWhatsApp}</span>
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsSubmitted(false);
+                      setIsModalOpen(false);
+                    }}
+                    className="text-xs text-gray-400 hover:text-white"
+                  >
+                    {p.closeBtn}
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

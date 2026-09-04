@@ -15,11 +15,12 @@ export default function MainMobileNav({ isOpen, onClose }: MobileMenuProps) {
   const { t } = useLanguage();
 
   const items = useMemo(() => [
-    { href: '#features', label: t.nav.features },
-    { href: '#benefits', label: t.nav.benefits },
-    { href: '#pricing', label: t.nav.pricing },
-    { href: '#faq', label: t.nav.faq },
-  ], [t]);
+    { href: pathname === '/' ? '#features' : '/#features', label: t.nav.features },
+    { href: pathname === '/' ? '#benefits' : '/#benefits', label: t.nav.benefits },
+    { href: pathname === '/' ? '#pricing' : '/#pricing', label: t.nav.pricing },
+    { href: pathname === '/' ? '#faq' : '/#faq', label: t.nav.faq },
+    { href: '/partners', label: t.nav.partners || 'Partners 50%' },
+  ], [t, pathname]);
 
   if (!isOpen) return null;
 

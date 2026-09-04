@@ -171,21 +171,49 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Quick CTA Box */}
+            {/* Partner Oficial CTA Box */}
             <div className="lg:col-span-3 xl:col-span-3">
-              <div className="p-5 sm:p-6 rounded-2xl bg-white/5 border border-white/10">
-                <span className="block mb-2 text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
-                  {t.footer.col4Title}
-                </span>
-                <p className="block mb-4 text-xs sm:text-sm text-gray-400 leading-relaxed">
+              <div className="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-indigo-950/50 via-gray-900/40 to-white/[0.03] border border-indigo-500/30 hover:border-indigo-400/60 shadow-xl shadow-indigo-950/40 transition-all duration-300 group overflow-hidden">
+                {/* Subtle ambient spotlight */}
+                <div className="absolute -top-12 -right-12 w-28 h-28 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none group-hover:bg-indigo-500/30 transition-all" />
+
+                {/* Sparkling Badge */}
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gradient-to-r from-amber-500/15 to-indigo-500/15 border border-amber-500/30 text-[10px] sm:text-[11px] font-bold text-amber-300 mb-3 tracking-wide shadow-xs">
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
+                  <span>{t.footer.col4Badge}</span>
+                </div>
+
+                {/* Title */}
+                <h4 className="text-sm sm:text-base font-bold text-white tracking-tight mb-2 flex items-center gap-1.5">
+                  <span>{t.footer.col4Title}</span>
+                  <span className="text-indigo-400 text-xs font-semibold">InHubFlow</span>
+                </h4>
+
+                {/* Description */}
+                <p className="text-xs sm:text-sm text-gray-300/90 leading-relaxed mb-4">
                   {t.footer.col4Desc}
                 </p>
-                <a
-                  href="#pricing"
-                  className="w-full inline-flex items-center justify-center px-5 py-3 text-xs sm:text-sm font-bold text-white transition rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-md active:scale-98"
+
+                {/* CTA Link to /partners */}
+                <Link
+                  href="/partners"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 text-xs sm:text-sm font-bold text-white transition rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 hover:from-blue-500 hover:via-indigo-500 hover:to-violet-500 shadow-lg shadow-indigo-600/30 active:scale-98 cursor-pointer"
                 >
-                  {t.footer.col4Cta}
-                </a>
+                  <span>{t.footer.col4Cta}</span>
+                  <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </Link>
+
+                {/* Micro trust perks */}
+                <p className="mt-2.5 text-[11px] text-gray-400 text-center flex items-center justify-center gap-1 font-medium">
+                  <svg className="w-3.5 h-3.5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <polyline points="9 12 11 14 15 10" />
+                  </svg>
+                  <span>{t.footer.partnerPerks}</span>
+                </p>
               </div>
             </div>
           </div>
