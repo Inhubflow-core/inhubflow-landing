@@ -197,6 +197,9 @@ export default function PartnersPage() {
               {/* Controls */}
               <div className="w-full md:w-1/2 space-y-6">
                 <div>
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-gray-900 tracking-tight mb-4">
+                    {p.calcCardTitle}
+                  </h3>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     {p.calcHello}
                   </label>
