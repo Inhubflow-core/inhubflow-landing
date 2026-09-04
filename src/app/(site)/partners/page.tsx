@@ -304,7 +304,7 @@ export default function PartnersPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
               <div className="lg:col-span-6 space-y-6">
                 <div className="flex items-center gap-4">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-600 text-white font-extrabold text-xl shadow-lg shadow-blue-600/30">
+                  <span className="flex items-center justify-center w-12 h-12 min-w-[48px] min-h-[48px] max-w-[48px] max-h-[48px] shrink-0 aspect-square rounded-2xl bg-blue-600 text-white font-extrabold text-xl shadow-lg shadow-blue-600/30 leading-none">
                     {p.pillar1Number}
                   </span>
                   <h3 className="text-xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
@@ -412,7 +412,7 @@ export default function PartnersPage() {
 
               <div className="lg:col-span-6 space-y-6 order-1 lg:order-2">
                 <div className="flex items-center gap-4">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-2xl bg-indigo-600 text-white font-extrabold text-xl shadow-lg shadow-indigo-600/30">
+                  <span className="flex items-center justify-center w-12 h-12 min-w-[48px] min-h-[48px] max-w-[48px] max-h-[48px] shrink-0 aspect-square rounded-2xl bg-indigo-600 text-white font-extrabold text-xl shadow-lg shadow-indigo-600/30 leading-none">
                     {p.pillar2Number}
                   </span>
                   <h3 className="text-xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
@@ -441,7 +441,7 @@ export default function PartnersPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
               <div className="lg:col-span-6 space-y-6">
                 <div className="flex items-center gap-4">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-2xl bg-violet-600 text-white font-extrabold text-xl shadow-lg shadow-violet-600/30">
+                  <span className="flex items-center justify-center w-12 h-12 min-w-[48px] min-h-[48px] max-w-[48px] max-h-[48px] shrink-0 aspect-square rounded-2xl bg-violet-600 text-white font-extrabold text-xl shadow-lg shadow-violet-600/30 leading-none">
                     {p.pillar3Number}
                   </span>
                   <h3 className="text-xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
@@ -467,7 +467,7 @@ export default function PartnersPage() {
 
               {/* Mockup Graphic 3: Partner Support Chat */}
               <div className="lg:col-span-6">
-                <div className="p-6 rounded-3xl bg-white border border-gray-200 shadow-xl shadow-gray-200/60 space-y-4">
+                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-200 shadow-xl shadow-gray-200/60 space-y-4">
                   <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-sm text-white shadow-xs">
                       IH
@@ -582,10 +582,12 @@ export default function PartnersPage() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
             
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
-              ¿Listo para generar ingresos recurrentes con InHubFlow?
+              {p.bottomCtaTitle1}
+              <br />
+              {p.bottomCtaTitle2}
             </h2>
             <p className="text-sm sm:text-base text-blue-100 max-w-xl mx-auto mb-8">
-              Únete hoy como Partner Oficial. Te entregamos tu link con 20% de descuento y empiezas a cobrar el 50% de cada mensualidad.
+              {p.bottomCtaDesc}
             </p>
             <button
               onClick={() => setIsModalOpen(true)}

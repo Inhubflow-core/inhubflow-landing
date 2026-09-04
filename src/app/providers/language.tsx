@@ -289,6 +289,9 @@ const dictionaries = {
       instantActionTitle: '¿Quieres activación prioritaria en menos de 15 minutos?',
       instantWhatsApp: 'Escribir por WhatsApp a Partners',
       closeBtn: 'Cerrar',
+      bottomCtaTitle1: '¿Listo para generar ingresos',
+      bottomCtaTitle2: 'recurrentes con InHubFlow?',
+      bottomCtaDesc: 'Únete hoy como Partner Oficial. Te entregamos tu link con 20% de descuento y empiezas a cobrar el 50% de cada mensualidad.',
     },
   },
 
@@ -563,6 +566,9 @@ const dictionaries = {
       instantActionTitle: 'Deseja ativação imediata em menos de 15 minutos?',
       instantWhatsApp: 'Falar no WhatsApp com Equipe de Parceiros',
       closeBtn: 'Fechar',
+      bottomCtaTitle1: 'Pronto para gerar renda',
+      bottomCtaTitle2: 'recorrente com o InHubFlow?',
+      bottomCtaDesc: 'Junte-se hoje como Parceiro Oficial. Entregamos seu link com 20% de desconto e você começa a receber 50% de cada mensalidade.',
     },
   },
 
@@ -837,6 +843,9 @@ const dictionaries = {
       instantActionTitle: 'Need express activation in under 15 minutes?',
       instantWhatsApp: 'Chat with Partner Support on WhatsApp',
       closeBtn: 'Close',
+      bottomCtaTitle1: 'Ready to generate recurring',
+      bottomCtaTitle2: 'income with InHubFlow?',
+      bottomCtaDesc: 'Join today as an Official Partner. Get your 20% discount link and start earning 50% of every monthly subscription.',
     },
   },
 };
