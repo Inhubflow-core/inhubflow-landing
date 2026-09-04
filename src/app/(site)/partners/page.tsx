@@ -117,27 +117,36 @@ export default function PartnersPage() {
               {p.heroSubtitle}
             </p>
 
-            {/* CTA Button with Ambient Glow */}
-            <div className="relative inline-flex flex-col items-center">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                type="button"
-                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-4.5 rounded-full text-base sm:text-lg font-bold text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 hover:from-blue-500 hover:via-indigo-500 hover:to-violet-500 shadow-xl shadow-indigo-600/30 transition-all duration-300 active:scale-98 cursor-pointer hover:shadow-indigo-500/40"
-              >
-                <span>{p.heroCta}</span>
-                <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </button>
+            {/* CTAs */}
+            <div className="flex flex-col items-center">
+              <div className="mt-6 sm:mt-8 flex sm:flex-row flex-col gap-3 sm:gap-4 relative z-30 items-center justify-center w-full sm:w-auto">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  type="button"
+                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 h-12 inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-base font-bold scale-100 hover:scale-105 active:scale-98 cursor-pointer shadow-md shadow-blue-600/20"
+                >
+                  {p.heroCta}
+                </button>
+
+                <a
+                  href="#calculator"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="w-full sm:w-auto bg-white hover:bg-gray-50 transition border border-gray-200 h-12 inline-flex items-center justify-center px-6 py-3 rounded-full text-gray-800 text-sm font-semibold cursor-pointer shadow-xs active:scale-98"
+                >
+                  {p.heroSecondaryCta}
+                </a>
+              </div>
 
               {/* Sub Guarantee Note */}
-              <span className="mt-3 text-xs sm:text-sm text-gray-500">
+              <span className="mt-4 text-xs sm:text-sm text-gray-500 text-center">
                 {p.heroSubNote}
               </span>
 
               {/* Playful Hand-drawn style note (Waalaxy signature) */}
-              <div className="hidden md:flex items-center gap-2 mt-4 text-xs font-handwriting text-indigo-600 italic font-medium">
+              <div className="hidden md:flex items-center gap-2 mt-3 text-xs font-handwriting text-indigo-600 italic font-medium">
                 <svg className="w-6 h-6 text-indigo-600 -rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M7 17l9.2-9.2M17 17V7H7" />
                 </svg>
@@ -170,7 +179,7 @@ export default function PartnersPage() {
       {/* ========================================================================= */}
       {/* 2. REVENUE CALCULATOR SECTION (Full max-w-7xl width) */}
       {/* ========================================================================= */}
-      <section className="w-full py-16 sm:py-24 bg-white border-b border-gray-100">
+      <section id="calculator" className="w-full py-16 sm:py-24 bg-white border-b border-gray-100 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-3">

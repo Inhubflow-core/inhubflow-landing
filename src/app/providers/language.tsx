@@ -202,6 +202,7 @@ const dictionaries = {
       heroSubtitle:
         'Conviértete en Partner Oficial de InHubFlow, la mejor suite de prospección B2B y ventas con IA del mercado. Gana el 50% de las compras de tus referidos de forma recurrente. Empieza ya.',
       heroCta: 'Hazte Partner Oficial',
+      heroSecondaryCta: 'Cómo Ganar Dinero',
       heroSubNote: 'Ofrece 20% de Descuento para tus clientes con tu link',
       arrowNote: 'La magia está aquí',
       socialProofTitle: 'Más de 200.000 comerciales, agencias y fundadores confían en la tecnología InHubFlow',
@@ -475,6 +476,7 @@ const dictionaries = {
       heroSubtitle:
         'Torne-se Parceiro Oficial do InHubFlow, a melhor suíte de prospecção B2B e vendas com IA do mercado. Ganhe 50% das compras dos seus indicados de forma recorrente. Comece já.',
       heroCta: 'Seja Parceiro Oficial',
+      heroSecondaryCta: 'Como Ganhar Dinheiro',
       heroSubNote: 'Ofereça 20% de Desconto para seus clientes com seu link',
       arrowNote: 'A mágica está aqui',
       socialProofTitle: 'Mais de 200.000 vendedores, agências e fundadores confiam na tecnologia InHubFlow',
@@ -748,6 +750,7 @@ const dictionaries = {
       heroSubtitle:
         'Become an Official InHubFlow Partner, the most powerful AI B2B sales and prospecting suite on the market. Earn 50% of your referrals purchases recurring every month. Get started now.',
       heroCta: 'Become an Official Partner',
+      heroSecondaryCta: 'How to Earn Money',
       heroSubNote: 'Offer a 20% discount to your clients with your link',
       arrowNote: 'The magic happens here',
       socialProofTitle: 'Over 200,000 sales professionals, agencies, and founders rely on InHubFlow',
