@@ -33,7 +33,7 @@ export default function DesktopNav() {
   }, [pathname]);
 
   return (
-    <nav className="hidden lg:flex lg:items-center bg-[#F9FAFB] dark:bg-white/3 rounded-full p-1 max-h-fit">
+    <nav className="hidden lg:flex lg:items-center bg-[#F9FAFB] dark:bg-white/3 rounded-full p-1 max-h-fit shrink-0">
       {items.map((item) => {
         if (item.type === 'link') {
           return (
@@ -41,7 +41,7 @@ export default function DesktopNav() {
               key={item.href}
               href={item.href}
               className={cn(
-                'text-gray-500 dark:text-gray-400 text-sm px-4 py-1.5 rounded-full hover:text-primary-500 font-medium transition-colors',
+                'text-gray-500 dark:text-gray-400 text-xs xl:text-sm px-3 xl:px-4 py-1.5 rounded-full hover:text-primary-500 font-medium transition-colors whitespace-nowrap shrink-0',
                 {
                   'bg-white dark:bg-white/5 font-medium text-gray-800 dark:text-white/90 shadow-xs':
                     pathname === item.href,

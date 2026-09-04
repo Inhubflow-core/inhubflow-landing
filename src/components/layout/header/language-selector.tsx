@@ -26,18 +26,18 @@ export default function LanguageSelector() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex h-10 items-center gap-2 rounded-xl border border-gray-200 bg-white px-3 text-xs font-semibold text-gray-700 transition-colors hover:bg-gray-50 shadow-xs cursor-pointer focus:outline-none"
+        className="flex h-9 sm:h-10 items-center gap-1.5 sm:gap-2 rounded-xl border border-gray-200 bg-white px-2.5 sm:px-3 text-xs font-semibold text-gray-700 transition-colors hover:bg-gray-50 shadow-xs cursor-pointer focus:outline-none whitespace-nowrap shrink-0"
         title="Seleccionar Idioma / Select Language"
       >
-        <span className="text-[10px] font-extrabold text-gray-500 tracking-wider">
+        <span className="text-[10px] font-extrabold text-gray-500 tracking-wider shrink-0">
           {currentOption.badge}
         </span>
-        <span className="font-bold text-xs text-gray-800 uppercase">
+        <span className="font-bold text-xs text-gray-800 uppercase whitespace-nowrap shrink-0">
           {currentOption.label.includes('Português') ? 'PT-BR' : currentOption.code.toUpperCase()}
         </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 ${
+          className={`w-3.5 h-3.5 text-gray-400 transition-transform duration-200 shrink-0 ${
             isOpen ? 'rotate-180' : ''
           }`}
           fill="none"
