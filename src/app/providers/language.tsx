@@ -50,6 +50,7 @@ const dictionaries = {
       chatMsg2: '¡Hola Marcos! Nuestra plataforma gestiona tus contactos B2B y ejecuta flujos de seguimiento con IA. Cuando un cliente muestra interés, nuestro SDR califica sus necesidades y agenda la videollamada en tu Calendly automáticamente.',
       chatMsg3: '¡Excelente! Nos interesa para nuestro equipo comercial. ¿Tienen demo disponible mañana?',
       showcaseTitle: 'Asistente LinkedIn / Email + Agente SDR de IA & Agenda Reunión',
+      logosTitle: 'Optimizando las relaciones y ventas de equipos comerciales en toda Iberoamérica',
     },
     features: {
       badge: 'Capacidades de Alto Rendimiento',
@@ -320,6 +321,7 @@ const dictionaries = {
       chatMsg2: 'Olá Marcos! Nossa plataforma gerencia seus contatos B2B e executa fluxos de acompanhamento com IA. Quando um cliente demonstra interesse, nosso SDR qualifica as necessidades e agenda no seu Calendly automaticamente.',
       chatMsg3: 'Excelente! Temos muito interesse para nossa equipe comercial. Vocês têm demo disponível amanhã?',
       showcaseTitle: 'Assistente LinkedIn / E-mail + Agente SDR de IA & Agenda Reunião',
+      logosTitle: 'Otimizando as relações e vendas de equipes comerciais em toda a Ibero-América',
     },
     features: {
       badge: 'Capacidades de Alto Desempenho',
@@ -590,6 +592,7 @@ const dictionaries = {
       chatMsg2: 'Hi Mark! Our platform manages your B2B contacts and runs AI-personalized follow-up workflows. When a contact replies, our AI SDR qualifies buyer intent and schedules the call on your Calendly automatically.',
       chatMsg3: 'Awesome! We are 5 sales reps and need this. Is there a demo available tomorrow?',
       showcaseTitle: 'LinkedIn / Email Assistant + AI SDR Agent & Meeting Scheduler',
+      logosTitle: 'Powering commercial relationships and sales teams worldwide',
     },
     features: {
       badge: 'High-Performance Capabilities',

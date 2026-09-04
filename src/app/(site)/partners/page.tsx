@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import { useLanguage } from '@/app/providers/language';
 import { toast } from 'sonner';
+import { BrandLogosRow } from '@/components/ui/brand-logos';
 
 export default function PartnersPage() {
   const { t, locale } = useLanguage();
@@ -136,13 +137,7 @@ export default function PartnersPage() {
           <p className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-8">
             {p.socialProofTitle}
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            {['HubSpot', 'ClickUp', 'Asana', 'Intercom', 'Notion', 'Figma'].map((brand) => (
-              <span key={brand} className="text-sm sm:text-base font-bold tracking-wider text-gray-500 hover:text-gray-900 transition-colors">
-                {brand}
-              </span>
-            ))}
-          </div>
+          <BrandLogosRow gapClass="gap-6 sm:gap-10 md:gap-12 lg:gap-14" />
         </div>
       </section>
 

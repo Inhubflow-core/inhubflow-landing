@@ -1,35 +1,19 @@
-import Image from "next/image";
-import React from "react";
+'use client';
+
+import React from 'react';
+import { useLanguage } from '@/app/providers/language';
+import { BrandLogosRow } from '@/components/ui/brand-logos';
 
 export default function HeroLogos() {
-  const logos = [
-    { src: "/images/brands/br-1.svg", alt: "Brand 1", width: 80, height: 32 },
-    { src: "/images/brands/br-2.svg", alt: "Brand 2", width: 80, height: 32 },
-    { src: "/images/brands/br-3.svg", alt: "Brand 3", width: 80, height: 32 },
-    { src: "/images/brands/br-4.svg", alt: "Brand 4", width: 80, height: 32 },
-    { src: "/images/brands/br-5.svg", alt: "Brand 5", width: 80, height: 32 },
-    { src: "/images/brands/br-6.svg", alt: "Brand 6", width: 80, height: 32 },
-    { src: "/images/brands/br-7.svg", alt: "Brand 7", width: 80, height: 32 },
-  ];
+  const { t } = useLanguage();
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="w-full relative z-30 mx-auto pt-12 sm:pt-14 pb-14 sm:pb-16 border-t border-gray-100 dark:border-gray-800/80 mt-12 sm:mt-16">
-        <p className="text-center text-gray-500 dark:text-white/60 text-xs sm:text-sm font-semibold tracking-wide uppercase">
-          Optimizando las relaciones y ventas de equipos comerciales en toda Iberoamérica
+      <div className="w-full relative z-30 mx-auto pt-10 sm:pt-14 pb-12 sm:pb-16 border-t border-gray-200/70 dark:border-gray-800/80 mt-10 sm:mt-14">
+        <p className="text-center text-gray-500 dark:text-gray-400 text-xs sm:text-sm font-bold tracking-wider uppercase mb-8 sm:mb-10 max-w-2xl mx-auto px-4">
+          {t.hero.logosTitle}
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 md:gap-14 mt-6 sm:mt-8">
-          {logos.map((logo, index) => (
-            <Image
-              key={index}
-              src={logo.src}
-              alt={logo.alt}
-              width={logo.width}
-              height={logo.height}
-              className="brightness-0 opacity-60 hover:opacity-100 dark:brightness-100 dark:opacity-40 transition-all duration-200"
-            />
-          ))}
-        </div>
+        <BrandLogosRow gapClass="gap-7 sm:gap-10 md:gap-12 lg:gap-14" />
       </div>
     </div>
   );
