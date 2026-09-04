@@ -40,14 +40,6 @@ export const getAmounts = (hasPartnerDiscount: boolean = false) => {
         originalMonthly: '$240',
         originalYearly: '$192',
       },
-      scale: {
-        monthly: 192,
-        yearly: 153.6,
-        formattedMonthly: '$192',
-        formattedYearly: '$153.60',
-        originalMonthly: '$240',
-        originalYearly: '$192',
-      },
     };
   }
 
@@ -69,14 +61,6 @@ export const getAmounts = (hasPartnerDiscount: boolean = false) => {
       originalYearly: null as string | null,
     },
     business: {
-      monthly: 240,
-      yearly: 192,
-      formattedMonthly: '$240',
-      formattedYearly: '$192',
-      originalMonthly: null as string | null,
-      originalYearly: null as string | null,
-    },
-    scale: {
       monthly: 240,
       yearly: 192,
       formattedMonthly: '$240',
