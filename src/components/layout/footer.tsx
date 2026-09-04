@@ -88,23 +88,29 @@ export default function Footer() {
                       {t.footer.col1Item1}
                     </a>
                     <a
-                      href="#features"
+                      href="/privacy#terms"
                       className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item2}
                     </a>
                     <a
-                      href="#benefits"
+                      href="/privacy"
                       className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item3}
                     </a>
                     <a
-                      href="#pricing"
+                      href="/contact"
                       className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item4}
                     </a>
+                    <Link
+                      href="/partners"
+                      className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
+                    >
+                      {t.footer.col1Item5}
+                    </Link>
                   </nav>
                 </div>
 
