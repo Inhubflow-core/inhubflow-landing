@@ -20,11 +20,14 @@ export default function PartnersPage() {
     { src: '/images/brands/br-7.svg', alt: 'Brand 7', width: 80, height: 32 },
   ];
 
-  // Calculator state
+  // Calculator state: Real InHubFlow plans with 20% Partner Discount applied:
+  // Starter: $40.00 -> $32.00
+  // Growth: $160.00 -> $128.00
+  // Business: $240.00 -> $192.00
   const [clientCount, setClientCount] = useState<number>(5);
-  const [selectedPlanPrice, setSelectedPlanPrice] = useState<number>(99.90); // Default: Growth plan $99.90
+  const [selectedPlanPrice, setSelectedPlanPrice] = useState<number>(128.00); // Default: Growth plan with 20% OFF ($128.00)
 
-  // Calculation: 50% recurring commission
+  // Calculation: 50% recurring commission on net discounted price
   const monthlyCommission = useMemo(() => {
     return (clientCount * selectedPlanPrice * 0.50).toFixed(2);
   }, [clientCount, selectedPlanPrice]);
@@ -205,16 +208,21 @@ export default function PartnersPage() {
                 </div>
               </div>
 
-              {/* Subscription Plan Selector */}
+              {/* Subscription Plan Selector with 20% Partner Discount applied */}
               <div>
-                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-                  {p.calcPlanLabel}
-                </label>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    {p.calcPlanLabel}
+                  </label>
+                  <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                    -20% Descuento Aplicado
+                  </span>
+                </div>
                 <div className="grid grid-cols-3 gap-2 sm:gap-3">
                   {[
-                    { name: 'Starter', price: 24.90 },
-                    { name: 'Growth', price: 99.90, popular: true },
-                    { name: 'Business', price: 149.90 },
+                    { name: 'Starter', originalPrice: 40.00, price: 32.00 },
+                    { name: 'Growth', originalPrice: 160.00, price: 128.00, popular: true },
+                    { name: 'Business', originalPrice: 240.00, price: 192.00 },
                   ].map((plan) => (
                     <button
                       key={plan.name}
@@ -226,8 +234,11 @@ export default function PartnersPage() {
                           : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-gray-300 hover:bg-gray-100'
                       }`}
                     >
-                      <div>{plan.name}</div>
-                      <div className="text-[11px] opacity-80">${plan.price}</div>
+                      <div className="font-bold">{plan.name}</div>
+                      <div className="text-[12px] font-extrabold mt-0.5">${plan.price.toFixed(2)}</div>
+                      <div className={`text-[10px] line-through ${selectedPlanPrice === plan.price ? 'text-indigo-200' : 'text-gray-400'}`}>
+                        ${plan.originalPrice.toFixed(2)}
+                      </div>
                     </button>
                   ))}
                 </div>
@@ -334,7 +345,7 @@ export default function PartnersPage() {
                   </div>
                   <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200/60">
                     <div className="text-[10px] uppercase tracking-wider text-emerald-600 font-medium">Comisión</div>
-                    <div className="text-base sm:text-lg font-bold text-emerald-700 mt-1">$899 USD</div>
+                    <div className="text-base sm:text-lg font-bold text-emerald-700 mt-1">$1,152 USD</div>
                   </div>
                 </div>
 
@@ -362,10 +373,10 @@ export default function PartnersPage() {
                 </div>
 
                 {[
-                  { name: 'Agencia Nexus B2B', plan: 'Plan Business ($149.90)', comm: '+$74.95 / mes', date: 'Activo' },
-                  { name: 'SaaS Growth Latam', plan: 'Plan Growth ($99.90)', comm: '+$49.95 / mes', date: 'Activo' },
-                  { name: 'Consultora Ventas 360', plan: 'Plan Growth ($99.90)', comm: '+$49.95 / mes', date: 'Activo' },
-                  { name: 'Outbound Digital SL', plan: 'Plan Starter ($24.90)', comm: '+$12.45 / mes', date: 'Activo' },
+                  { name: 'Agencia Nexus B2B', plan: 'Plan Business ($192.00 con 20% OFF)', comm: '+$96.00 / mes', date: 'Activo' },
+                  { name: 'SaaS Growth Latam', plan: 'Plan Growth ($128.00 con 20% OFF)', comm: '+$64.00 / mes', date: 'Activo' },
+                  { name: 'Consultora Ventas 360', plan: 'Plan Growth ($128.00 con 20% OFF)', comm: '+$64.00 / mes', date: 'Activo' },
+                  { name: 'Outbound Digital SL', plan: 'Plan Starter ($32.00 con 20% OFF)', comm: '+$16.00 / mes', date: 'Activo' },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-gray-50/70 border border-gray-200/60">
                     <div className="flex items-center gap-3">
