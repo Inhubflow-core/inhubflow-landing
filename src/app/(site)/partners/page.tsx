@@ -200,14 +200,14 @@ export default function PartnersPage() {
                   <h3 className="text-xl sm:text-2xl font-extrabold text-gray-900 tracking-tight mb-4">
                     {p.calcCardTitle}
                   </h3>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    {p.calcHello}
-                  </label>
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+                    <span className="text-base sm:text-lg font-bold text-gray-800">
+                      {p.calcHello}
+                    </span>
                     <select
                       value={clientCount}
                       onChange={(e) => setClientCount(Number(e.target.value))}
-                      className="bg-white border border-gray-300 text-gray-900 font-bold text-lg rounded-xl px-4 py-3 focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-600/20 cursor-pointer w-28 shadow-xs"
+                      className="bg-white border border-gray-300 text-gray-900 font-bold text-base sm:text-lg rounded-xl px-3 py-2 sm:px-4 sm:py-2.5 focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-600/20 cursor-pointer w-24 sm:w-28 shadow-xs"
                     >
                       {[1, 2, 3, 5, 10, 15, 20, 30, 50, 100].map((num) => (
                         <option key={num} value={num}>
