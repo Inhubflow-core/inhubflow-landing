@@ -1,13 +1,24 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import Image from 'next/image';
 import { useLanguage } from '@/app/providers/language';
 import { toast } from 'sonner';
-import { BrandLogosRow } from '@/components/ui/brand-logos';
 
 export default function PartnersPage() {
   const { t, locale } = useLanguage();
   const p = t.partnersPage;
+
+  // The exact same brand logos as the landing page
+  const brandLogos = [
+    { src: '/images/brands/br-1.svg', alt: 'Brand 1', width: 80, height: 32 },
+    { src: '/images/brands/br-2.svg', alt: 'Brand 2', width: 80, height: 32 },
+    { src: '/images/brands/br-3.svg', alt: 'Brand 3', width: 80, height: 32 },
+    { src: '/images/brands/br-4.svg', alt: 'Brand 4', width: 80, height: 32 },
+    { src: '/images/brands/br-5.svg', alt: 'Brand 5', width: 80, height: 32 },
+    { src: '/images/brands/br-6.svg', alt: 'Brand 6', width: 80, height: 32 },
+    { src: '/images/brands/br-7.svg', alt: 'Brand 7', width: 80, height: 32 },
+  ];
 
   // Calculator state
   const [clientCount, setClientCount] = useState<number>(5);
@@ -83,80 +94,93 @@ export default function PartnersPage() {
       </div>
 
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION (Waalaxy Style Light) */}
+      {/* 1. HERO SECTION (Full max-w-7xl width matching landing page) */}
       {/* ========================================================================= */}
-      <section className="relative z-10 pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
-        {/* Rating Stars Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-xs sm:text-sm font-semibold text-amber-900 mb-6 shadow-xs">
-          <span>{p.rating}</span>
-        </div>
+      <section className="relative z-10 pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
+          {/* Rating Stars Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-xs sm:text-sm font-semibold text-amber-900 mb-6 shadow-xs">
+            <span>{p.rating}</span>
+          </div>
 
-        {/* Big Bold Headline */}
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] sm:leading-[1.15] mb-6 max-w-4xl mx-auto text-gray-900">
-          {p.heroTitle1}
-          <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-            {p.heroTitleHighlight}
-          </span>
-        </h1>
+          {/* Big Bold Headline */}
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] sm:leading-[1.15] mb-6 text-gray-900">
+            {p.heroTitle1}
+            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              {p.heroTitleHighlight}
+            </span>
+          </h1>
 
-        {/* Subtitle */}
-        <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-          {p.heroSubtitle}
-        </p>
+          {/* Subtitle */}
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+            {p.heroSubtitle}
+          </p>
 
-        {/* CTA Button with Ambient Glow */}
-        <div className="relative inline-flex flex-col items-center">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            type="button"
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-4.5 rounded-full text-base sm:text-lg font-bold text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 hover:from-blue-500 hover:via-indigo-500 hover:to-violet-500 shadow-xl shadow-indigo-600/30 transition-all duration-300 active:scale-98 cursor-pointer hover:shadow-indigo-500/40"
-          >
-            <span>{p.heroCta}</span>
-            <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </button>
+          {/* CTA Button with Ambient Glow */}
+          <div className="relative inline-flex flex-col items-center">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              type="button"
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-4.5 rounded-full text-base sm:text-lg font-bold text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 hover:from-blue-500 hover:via-indigo-500 hover:to-violet-500 shadow-xl shadow-indigo-600/30 transition-all duration-300 active:scale-98 cursor-pointer hover:shadow-indigo-500/40"
+            >
+              <span>{p.heroCta}</span>
+              <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </button>
 
-          {/* Sub Guarantee Note */}
-          <span className="mt-3 text-xs sm:text-sm text-gray-500">
-            {p.heroSubNote}
-          </span>
+            {/* Sub Guarantee Note */}
+            <span className="mt-3 text-xs sm:text-sm text-gray-500">
+              {p.heroSubNote}
+            </span>
 
-          {/* Playful Hand-drawn style note (Waalaxy signature) */}
-          <div className="hidden md:flex items-center gap-2 mt-4 text-xs font-handwriting text-indigo-600 italic font-medium">
-            <svg className="w-6 h-6 text-indigo-600 -rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M7 17l9.2-9.2M17 17V7H7" />
-            </svg>
-            <span>{p.arrowNote}</span>
+            {/* Playful Hand-drawn style note (Waalaxy signature) */}
+            <div className="hidden md:flex items-center gap-2 mt-4 text-xs font-handwriting text-indigo-600 italic font-medium">
+              <svg className="w-6 h-6 text-indigo-600 -rotate-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M7 17l9.2-9.2M17 17V7H7" />
+              </svg>
+              <span>{p.arrowNote}</span>
+            </div>
           </div>
         </div>
 
-        {/* Logos / Social Proof Bar */}
-        <div className="mt-16 sm:mt-24 pt-8 border-t border-gray-200/80">
-          <p className="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-8">
+        {/* Logos / Social Proof Bar (Exact same image logos as the landing page) */}
+        <div className="w-full mt-16 sm:mt-24 pt-12 sm:pt-14 border-t border-gray-200/70">
+          <p className="text-center text-xs uppercase tracking-widest text-gray-500 font-semibold mb-8 sm:mb-10">
             {p.socialProofTitle}
           </p>
-          <BrandLogosRow gapClass="gap-6 sm:gap-10 md:gap-12 lg:gap-14" />
+          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 md:gap-14">
+            {brandLogos.map((logo, index) => (
+              <Image
+                key={index}
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width}
+                height={logo.height}
+                className="brightness-0 opacity-60 hover:opacity-100 dark:brightness-100 dark:opacity-40 transition-all duration-200"
+              />
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. REVENUE CALCULATOR SECTION (Waalaxy Style Light) */}
+      {/* 2. REVENUE CALCULATOR SECTION (Full max-w-7xl width) */}
       {/* ========================================================================= */}
-      <section className="relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <div className="text-center mb-10">
+      <section className="relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-10 sm:mb-12">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-3">
             {p.calcTitle}
           </h2>
-          <p className="text-sm sm:text-base text-gray-600">
+          <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
             {p.calcSubtitle}
           </p>
         </div>
 
         {/* Interactive Calculator Box */}
-        <div className="relative p-6 sm:p-10 rounded-3xl bg-white border border-gray-200/90 shadow-xl shadow-indigo-100/50">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="relative p-6 sm:p-10 lg:p-12 rounded-3xl bg-white border border-gray-200/90 shadow-xl shadow-indigo-100/50 w-full">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-12">
             {/* Controls */}
             <div className="w-full md:w-1/2 space-y-6">
               <div>
@@ -186,7 +210,7 @@ export default function PartnersPage() {
                 <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
                   {p.calcPlanLabel}
                 </label>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3">
                   {[
                     { name: 'Starter', price: 24.90 },
                     { name: 'Growth', price: 99.90, popular: true },
@@ -196,7 +220,7 @@ export default function PartnersPage() {
                       key={plan.name}
                       type="button"
                       onClick={() => setSelectedPlanPrice(plan.price)}
-                      className={`px-3 py-2 rounded-xl text-xs font-semibold border transition-all text-center cursor-pointer ${
+                      className={`px-3 py-2.5 rounded-xl text-xs font-semibold border transition-all text-center cursor-pointer ${
                         selectedPlanPrice === plan.price
                           ? 'bg-indigo-600 text-white border-indigo-600 shadow-md shadow-indigo-600/25'
                           : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-gray-300 hover:bg-gray-100'
@@ -212,11 +236,11 @@ export default function PartnersPage() {
 
             {/* Big Highlighted Output Box (Matching Waalaxy Blue Highlight Pill) */}
             <div className="w-full md:w-1/2 flex flex-col items-center text-center">
-              <div className="w-full p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 shadow-xl shadow-indigo-600/25 flex flex-col items-center justify-center text-white">
+              <div className="w-full p-6 sm:p-8 lg:p-10 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 shadow-xl shadow-indigo-600/25 flex flex-col items-center justify-center text-white">
                 <span className="text-xs sm:text-sm font-semibold text-blue-100 uppercase tracking-wider mb-1">
                   {p.calcResultPrefix}
                 </span>
-                <div className="text-3xl sm:text-5xl font-black text-white tracking-tight my-1">
+                <div className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight my-1">
                   ${monthlyCommission} <span className="text-sm sm:text-lg font-bold">USD</span>
                 </div>
                 <span className="text-xs sm:text-sm font-bold text-blue-200 uppercase tracking-wider">
@@ -224,7 +248,7 @@ export default function PartnersPage() {
                 </span>
               </div>
 
-              <p className="mt-4 text-xs text-gray-500 max-w-xs text-center leading-relaxed">
+              <p className="mt-4 text-xs text-gray-500 max-w-sm text-center leading-relaxed">
                 {p.calcPassiveNote}
               </p>
 
@@ -244,9 +268,9 @@ export default function PartnersPage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. THREE PILLARS (Light Mockups) */}
+      {/* 3. THREE PILLARS (Full max-w-7xl width) */}
       {/* ========================================================================= */}
-      <section className="relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <section className="relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-16 sm:mb-20">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
             {p.pillarsSuperTitle}
@@ -459,9 +483,9 @@ export default function PartnersPage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. FAQ ACCORDION SECTION (Light Mode) */}
+      {/* 4. FAQ ACCORDION SECTION (Full max-w-7xl width) */}
       {/* ========================================================================= */}
-      <section className="relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <section className="relative z-10 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div className="max-w-xl">
             <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-3">
@@ -486,7 +510,7 @@ export default function PartnersPage() {
         </div>
 
         {/* 2-Column Accordion */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {p.faqs.map((faq, i) => {
             const isOpen = openFaqIndex === i;
             return (
@@ -497,7 +521,7 @@ export default function PartnersPage() {
                 <button
                   type="button"
                   onClick={() => toggleFaq(i)}
-                  className="w-full text-left p-5 flex items-center justify-between gap-3 font-bold text-xs sm:text-sm text-gray-900 focus:outline-none cursor-pointer"
+                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-3 font-bold text-xs sm:text-sm text-gray-900 focus:outline-none cursor-pointer"
                 >
                   <span>{faq.q}</span>
                   <svg
@@ -514,7 +538,7 @@ export default function PartnersPage() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
+                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
                     {faq.a}
                   </div>
                 )}
@@ -525,13 +549,13 @@ export default function PartnersPage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. BOTTOM HERO CALL-TO-ACTION */}
+      {/* 5. BOTTOM HERO CALL-TO-ACTION (Full max-w-7xl width) */}
       {/* ========================================================================= */}
-      <section className="relative z-10 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
-        <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white shadow-2xl shadow-indigo-600/25 relative overflow-hidden">
+      <section className="relative z-10 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+        <div className="w-full p-8 sm:p-14 lg:p-16 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white shadow-2xl shadow-indigo-600/25 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           
-          <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
             ¿Listo para generar ingresos recurrentes con InHubFlow?
           </h2>
           <p className="text-sm sm:text-base text-blue-100 max-w-xl mx-auto mb-8">
