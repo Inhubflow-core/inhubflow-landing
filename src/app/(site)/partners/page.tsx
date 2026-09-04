@@ -4,6 +4,7 @@ import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/app/providers/language';
 import { toast } from 'sonner';
+import { MinusIcon, PlusIcon } from '@/icons/icons';
 
 export default function PartnersPage() {
   const { t, locale } = useLanguage();
@@ -533,37 +534,34 @@ export default function PartnersPage() {
             </a>
           </div>
 
-          {/* 2-Column Accordion */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          {/* Full-width 2-Column Responsive FAQ Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 w-full">
             {p.faqs.map((faq, i) => {
               const isOpen = openFaqIndex === i;
               return (
                 <div
                   key={i}
-                  className="rounded-2xl bg-white border border-gray-200/90 hover:border-gray-300 shadow-sm transition-all overflow-hidden"
+                  className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 shadow-xs hover:border-blue-400/50 dark:hover:border-blue-500/30 transition-all flex flex-col justify-between"
                 >
                   <button
                     type="button"
                     onClick={() => toggleFaq(i)}
-                    className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-3 font-bold text-xs sm:text-sm text-gray-900 focus:outline-none cursor-pointer"
+                    className="flex items-start justify-between w-full text-left cursor-pointer focus:outline-none group gap-3"
+                    aria-expanded={isOpen}
                   >
-                    <span>{faq.q}</span>
-                    <svg
-                      className={`w-4 h-4 text-indigo-600 shrink-0 transition-transform duration-200 ${
-                        isOpen ? 'rotate-180' : ''
-                      }`}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                    >
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
+                    <span className="text-base sm:text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">
+                      {faq.q}
+                    </span>
+                    <span className="flex-shrink-0 text-blue-500 p-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 group-hover:bg-blue-100 transition-colors">
+                      {isOpen ? <MinusIcon /> : <PlusIcon />}
+                    </span>
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100">
-                      {faq.a}
+                    <div className="mt-3.5 pt-3 border-t border-gray-100 dark:border-gray-800/80 animate-in fade-in duration-200">
+                      <p className="text-xs sm:text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                        {faq.a}
+                      </p>
                     </div>
                   )}
                 </div>
