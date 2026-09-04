@@ -18,7 +18,7 @@ const testimonials = [
     company: 'VP of Growth en SaaS Venture',
     image: '/images/users/user-2.jpg',
     testimonial:
-      'InHubFlow unificó todo nuestro pipeline de ventas. La gestión inteligente de contactos y el Agente SDR nos llenan la agenda de demostraciones comerciales todas las semanas.',
+      'InHubFlow unificó todo nuestro pipeline de ventas. La gestión inteligente de contactos y el Asistente SDR nos llenan la agenda de demostraciones comerciales todas las semanas.',
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ const testimonials = [
     company: 'Director de Expansión en EnterpriseTech',
     image: '/images/users/user-5.jpg',
     testimonial:
-      'El Agente SDR de IA responde en segundos a las dudas comerciales de los clientes en LinkedIn y les comparte nuestro enlace de Google Calendar en piloto automático.',
+      'El Asistente SDR de IA responde en segundos a las dudas comerciales de los clientes en LinkedIn y les comparte nuestro enlace de Google Calendar en piloto automático.',
   },
   {
     id: 6,

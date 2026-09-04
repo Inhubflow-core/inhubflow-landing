@@ -31,9 +31,9 @@ const dictionaries = {
       startNow: 'Comenzar Ahora',
     },
     hero: {
-      subheading: 'AI-POWERED B2B SALES CRM & SDR AGENT SUITE',
+      subheading: 'AI-POWERED B2B SALES CRM & SDR ASSISTANT SUITE',
       title1: 'Atrae Clientes B2B y Llena tu Agenda en Piloto Automático con',
-      titleHighlight: 'Agentes SDR de IA y CRM Comercial',
+      titleHighlight: 'Asistentes SDR de IA y CRM Comercial',
       description:
         'Gestiona y califica contactos comerciales B2B, automatiza mensajes de seguimiento personalizados con IA, y agenda videollamadas comerciales 24/7 con total seguridad empresarial.',
       ctaPrimary: 'Comenzar Prueba Gratis',
@@ -49,14 +49,14 @@ const dictionaries = {
       chatAgent: 'InHubFlow SDR IA',
       chatMsg2: '¡Hola Marcos! Nuestra plataforma gestiona tus contactos B2B y ejecuta flujos de seguimiento con IA. Cuando un cliente muestra interés, nuestro SDR califica sus necesidades y agenda la videollamada en tu Calendly automáticamente.',
       chatMsg3: '¡Excelente! Nos interesa para nuestro equipo comercial. ¿Tienen demo disponible mañana?',
-      showcaseTitle: 'Asistente LinkedIn / Email + Agente SDR de IA & Agenda Reunión',
+      showcaseTitle: 'Asistente LinkedIn / Email + Asistente SDR de IA & Agenda Reunión',
       logosTitle: 'Optimizando las relaciones y ventas de equipos comerciales en toda Iberoamérica',
     },
     features: {
       badge: 'Capacidades de Alto Rendimiento',
       title: 'Todo lo que necesitas para optimizar tus ventas y relaciones B2B',
       subtitle:
-        'Reemplaza herramientas desconectadas. InHubFlow unifica la gestión de contactos y cuentas, secuencias de comunicación multicanal, emails de seguimiento y Agentes SDR de IA en un solo lugar.',
+        'Reemplaza herramientas desconectadas. InHubFlow unifica la gestión de contactos y cuentas, secuencias de comunicación multicanal, emails de seguimiento y Asistentes SDR de IA en un solo lugar.',
       items: [
         {
           title: 'Gestión Inteligente de Contactos B2B',
@@ -83,7 +83,7 @@ const dictionaries = {
           icon: 'shield',
         },
         {
-          title: 'Agentes SDR de IA 24/7',
+          title: 'Asistentes SDR de IA 24/7',
           description:
             'Inteligencia Artificial conversacional entrenada con tu base de conocimiento que responde en segundos, resuelve dudas comerciales y agenda citas en Calendly.',
           icon: 'bot',
@@ -111,7 +111,7 @@ const dictionaries = {
         'Automatiza flujos de seguimiento profesional por LinkedIn y correo corporativo que se pausan automáticamente al recibir una respuesta del cliente.',
       card2Tag1: 'Seguridad Empresarial',
       card2Tag2: 'Alta Entregabilidad',
-      card3Title: 'Agentes SDR de IA para Cierre 24/7',
+      card3Title: 'Asistentes SDR de IA para Cierre 24/7',
       card3Desc:
         'Tus clientes no tienen que esperar. La IA responde en segundos en LinkedIn, resuelve dudas comerciales complejas y agenda la cita en tu calendario.',
       card3Tag1: 'Sincronización Calendly / Google',
@@ -138,7 +138,7 @@ const dictionaries = {
         {
           question: '¿Qué es InHubFlow y cómo acelera mis ventas B2B?',
           answer:
-            'InHubFlow es una suite integral de CRM comercial y productividad de ventas B2B con Inteligencia Artificial. Te permite organizar contactos calificados, ejecutar secuencias de comunicación multicanal y seguimiento por email, y dejar que Agentes SDR de IA califiquen y agenden reuniones de venta 24/7 en tu calendario.',
+            'InHubFlow es una suite integral de CRM comercial y productividad de ventas B2B con Inteligencia Artificial. Te permite organizar contactos calificados, ejecutar secuencias de comunicación multicanal y seguimiento por email, y dejar que Asistentes SDR de IA califiquen y agenden reuniones de venta 24/7 en tu calendario.',
         },
         {
           question: '¿Es 100% seguro para mis cuentas de LinkedIn?',
@@ -146,9 +146,9 @@ const dictionaries = {
             'Sí, 100% seguro. InHubFlow cuenta con protocolos de seguridad empresarial, pausas de navegación natural y límites diarios inteligentes que respetan las buenas prácticas de la plataforma para garantizar la total reputación y privacidad de tus cuentas comerciales.',
         },
         {
-          question: '¿Cómo funciona el Agente SDR con Inteligencia Artificial?',
+          question: '¿Cómo funciona el Asistente SDR con Inteligencia Artificial?',
           answer:
-            'El Agente SDR se entrena con la información de tu empresa, servicios y preguntas frecuentes. Cuando un contacto responde a tu mensaje en LinkedIn, la IA analiza la intención, redacta respuestas contextuales con lenguaje natural, supera objeciones y envía tu enlace de Calendly o Google Calendar para agendar la videollamada.',
+            'El Asistente SDR se entrena con la información de tu empresa, servicios y preguntas frecuentes. Cuando un contacto responde a tu mensaje en LinkedIn, la IA analiza la intención, redacta respuestas contextuales con lenguaje natural, supera objeciones y envía tu enlace de Calendly o Google Calendar para agendar la videollamada.',
         },
         {
           question: '¿Necesito contratar Sales Navigator u otras herramientas externas?',
@@ -168,7 +168,7 @@ const dictionaries = {
       ],
     },
     footer: {
-      desc: 'InHubFlow es la suite empresarial de CRM comercial y productividad B2B con Agentes SDR de Inteligencia Artificial. Escala tu gestión de clientes y optimiza tu agenda de ventas.',
+      desc: 'InHubFlow es la suite empresarial de CRM comercial y productividad B2B con Asistentes SDR de Inteligencia Artificial. Escala tu gestión de clientes y optimiza tu agenda de ventas.',
       status: 'Sistemas operando al 100% de disponibilidad',
       col1Title: 'Plataforma',
       col1Item1: 'Área de Cliente',
@@ -309,9 +309,9 @@ const dictionaries = {
       startNow: 'Começar Agora',
     },
     hero: {
-      subheading: 'AI-POWERED B2B SALES CRM & SDR AGENT SUITE',
+      subheading: 'AI-POWERED B2B SALES CRM & SDR ASSISTANT SUITE',
       title1: 'Atraia Clientes B2B e Lote sua Agenda no Piloto Automático com',
-      titleHighlight: 'Agentes SDR de IA e CRM Comercial',
+      titleHighlight: 'Assistentes SDR de IA e CRM Comercial',
       description:
         'Gerencie e qualifique contatos comerciais B2B, automatize mensagens de acompanhamento personalizadas por IA, e agende reuniões comerciais 24/7 com total segurança empresarial.',
       ctaPrimary: 'Começar Teste Grátis',
@@ -327,14 +327,14 @@ const dictionaries = {
       chatAgent: 'InHubFlow SDR IA',
       chatMsg2: 'Olá Marcos! Nossa plataforma gerencia seus contatos B2B e executa fluxos de acompanhamento com IA. Quando um cliente demonstra interesse, nosso SDR qualifica as necessidades e agenda no seu Calendly automaticamente.',
       chatMsg3: 'Excelente! Temos muito interesse para nossa equipe comercial. Vocês têm demo disponível amanhã?',
-      showcaseTitle: 'Assistente LinkedIn / E-mail + Agente SDR de IA & Agenda Reunião',
+      showcaseTitle: 'Assistente LinkedIn / E-mail + Assistente SDR de IA & Agenda Reunião',
       logosTitle: 'Otimizando as relações e vendas de equipes comerciais em toda a Ibero-América',
     },
     features: {
       badge: 'Capacidades de Alto Desempenho',
       title: 'Tudo o que você precisa para otimizar suas vendas e relacionamentos B2B',
       subtitle:
-        'Substitua ferramentas desconectadas. O InHubFlow unifica a gestão de contatos, sequências de comunicação multicanal, e-mails de acompanhamento e Agentes SDR de IA em um só lugar.',
+        'Substitua ferramentas desconectadas. O InHubFlow unifica a gestão de contatos, sequências de comunicação multicanal, e-mails de acompanhamento e Assistentes SDR de IA em um só lugar.',
       items: [
         {
           title: 'Gestão Inteligente de Contatos B2B',
@@ -361,7 +361,7 @@ const dictionaries = {
           icon: 'shield',
         },
         {
-          title: 'Agentes SDR de IA 24/7',
+          title: 'Assistentes SDR de IA 24/7',
           description:
             'Inteligência Artificial conversacional treinada com sua base de conhecimento que responde em segundos, resolve objeções e agenda reuniões no Calendly.',
           icon: 'bot',
@@ -389,7 +389,7 @@ const dictionaries = {
         'Automatize fluxos de acompanhamento profissional por LinkedIn e e-mail corporativo que pausam automaticamente ao receber uma resposta do cliente.',
       card2Tag1: 'Segurança Empresarial',
       card2Tag2: 'Alta Entregabilidade',
-      card3Title: 'Agentes SDR de IA para Fechamento 24/7',
+      card3Title: 'Assistentes SDR de IA para Fechamento 24/7',
       card3Desc:
         'Seus clientes não precisam esperar. A IA responde em segundos no LinkedIn, soluciona dúvidas complexas e agenda a reunião no seu calendário.',
       card3Tag1: 'Sincronização Calendly / Google',
@@ -416,7 +416,7 @@ const dictionaries = {
         {
           question: 'O que é o InHubFlow e como ele acelera minhas vendas B2B?',
           answer:
-            'O InHubFlow é uma suíte completa de CRM comercial e produtividade de vendas B2B com Inteligência Artificial. Permite organizar contatos qualificados, executar sequências de comunicação multicanal e e-mail de acompanhamento, e deixar Agentes SDR de IA qualificando e agendando reuniões 24/7.',
+            'O InHubFlow é uma suíte completa de CRM comercial e produtividade de vendas B2B com Inteligência Artificial. Permite organizar contatos qualificados, executar sequências de comunicação multicanal e e-mail de acompanhamento, e deixar Assistentes SDR de IA qualificando e agendando reuniões 24/7.',
         },
         {
           question: 'É 100% seguro para minhas contas do LinkedIn?',
@@ -424,9 +424,9 @@ const dictionaries = {
             'Sim, 100% seguro. O InHubFlow conta com protocolos de segurança empresarial, pausas de navegação natural e limites diários inteligentes que respeitam as boas práticas da plataforma.',
         },
         {
-          question: 'Como funciona o Agente SDR com Inteligência Artificial?',
+          question: 'Como funciona o Assistente SDR com Inteligência Artificial?',
           answer:
-            'O SDR de IA é treinado com as informações da sua empresa, serviços e perguntas frequentes. Quando um contato responde no LinkedIn, a IA analisa a intenção, redige respostas naturais, supera objeções e envia seu link do Calendly ou Google Calendar.',
+            'O Assistente SDR de IA é treinado com as informações da sua empresa, serviços e perguntas frequentes. Quando um contato responde no LinkedIn, a IA analisa a intenção, redige respostas naturais, supera objeções e envia seu link do Calendly ou Google Calendar.',
         },
         {
           question: 'Preciso assinar o Sales Navigator ou ferramentas externas?',
@@ -446,7 +446,7 @@ const dictionaries = {
       ],
     },
     footer: {
-      desc: 'InHubFlow é a suíte empresarial de CRM comercial e produtividade B2B com Agentes SDR de Inteligência Artificial. Escale suas vendas corporativas no piloto automático.',
+      desc: 'InHubFlow é a suíte empresarial de CRM comercial e produtividade B2B com Assistentes SDR de Inteligência Artificial. Escale suas vendas corporativas no piloto automático.',
       status: 'Sistemas operando com 100% de disponibilidade',
       col1Title: 'Plataforma',
       col1Item1: 'Área do Cliente',
@@ -587,9 +587,9 @@ const dictionaries = {
       startNow: 'Get Started',
     },
     hero: {
-      subheading: 'AI-POWERED B2B SALES CRM & SDR AGENT SUITE',
+      subheading: 'AI-POWERED B2B SALES CRM & SDR ASSISTANT SUITE',
       title1: 'Acquire B2B Clients & Fill Your Pipeline on Autopilot with',
-      titleHighlight: 'AI SDR Agents & Sales CRM',
+      titleHighlight: 'AI SDR Assistants & Sales CRM',
       description:
         'Manage and qualify B2B business relationships, automate personalized follow-up sequences with AI, and schedule sales meetings 24/7 with complete enterprise security.',
       ctaPrimary: 'Start Free Trial',
@@ -605,14 +605,14 @@ const dictionaries = {
       chatAgent: 'InHubFlow AI SDR',
       chatMsg2: 'Hi Mark! Our platform manages your B2B contacts and runs AI-personalized follow-up workflows. When a contact replies, our AI SDR qualifies buyer intent and schedules the call on your Calendly automatically.',
       chatMsg3: 'Awesome! We are 5 sales reps and need this. Is there a demo available tomorrow?',
-      showcaseTitle: 'LinkedIn / Email Assistant + AI SDR Agent & Meeting Scheduler',
+      showcaseTitle: 'LinkedIn / Email Assistant + AI SDR Assistant & Meeting Scheduler',
       logosTitle: 'Powering commercial relationships and sales teams worldwide',
     },
     features: {
       badge: 'High-Performance Capabilities',
       title: 'Everything you need to accelerate B2B sales and client relationships',
       subtitle:
-        'Replace disconnected tools. InHubFlow unifies contact management, multichannel communication sequences, follow-up emails, and AI SDR Agents into one high-converting suite.',
+        'Replace disconnected tools. InHubFlow unifies contact management, multichannel communication sequences, follow-up emails, and AI SDR Assistants into one high-converting suite.',
       items: [
         {
           title: 'Smart B2B Contact Management',
@@ -639,7 +639,7 @@ const dictionaries = {
           icon: 'shield',
         },
         {
-          title: '24/7 AI SDR Agents',
+          title: '24/7 AI SDR Assistants',
           description:
             'Conversational AI trained on your knowledge base that replies in seconds, overcomes objections, qualifies buyers, and schedules meetings in Calendly.',
           icon: 'bot',
@@ -694,7 +694,7 @@ const dictionaries = {
         {
           question: 'What is InHubFlow and how does it accelerate B2B sales?',
           answer:
-            'InHubFlow is a comprehensive AI-powered B2B sales CRM and productivity suite. It allows you to organize qualified contacts, run automated multichannel communication and email follow-up sequences, and deploy 24/7 AI SDR Agents to qualify potential clients and book meetings directly into your calendar.',
+            'InHubFlow is a comprehensive AI-powered B2B sales CRM and productivity suite. It allows you to organize qualified contacts, run automated multichannel communication and email follow-up sequences, and deploy 24/7 AI SDR Assistants to qualify potential clients and book meetings directly into your calendar.',
         },
         {
           question: 'Is it 100% safe for my LinkedIn accounts?',
@@ -702,9 +702,9 @@ const dictionaries = {
             'Yes, 100% safe. InHubFlow utilizes enterprise security protocols, humanized natural pacing, and smart daily activity limits that strictly adhere to platform best practices.',
         },
         {
-          question: 'How does the AI SDR Agent work?',
+          question: 'How does the AI SDR Assistant work?',
           answer:
-            'The AI SDR is trained on your company knowledge, products, and sales FAQs. When a contact replies, the AI analyzes intent, crafts contextual natural language responses, handles objections, and shares your Calendly or Google Calendar booking link.',
+            'The AI SDR Assistant is trained on your company knowledge, products, and sales FAQs. When a contact replies, the AI analyzes intent, crafts contextual natural language responses, handles objections, and shares your Calendly or Google Calendar booking link.',
         },
         {
           question: 'Do I need Sales Navigator or expensive third-party tools?',
@@ -724,7 +724,7 @@ const dictionaries = {
       ],
     },
     footer: {
-      desc: 'InHubFlow is the enterprise B2B sales CRM and productivity suite powered by AI SDR Agents. Scale your customer acquisition and optimize your sales calendar on autopilot.',
+      desc: 'InHubFlow is the enterprise B2B sales CRM and productivity suite powered by AI SDR Assistants. Scale your customer acquisition and optimize your sales calendar on autopilot.',
       status: 'All systems operational (100% uptime)',
       col1Title: 'Platform',
       col1Item1: 'Client Area',

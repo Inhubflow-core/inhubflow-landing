@@ -24,7 +24,7 @@ export const CORE_FEATURES = [
     icon: "shield",
   },
   {
-    title: "Agentes SDR de IA 24/7",
+    title: "Asistentes SDR de IA 24/7",
     description:
       "Inteligencia Artificial conversacional entrenada con tu base de conocimiento que responde en segundos, resuelve dudas comerciales y agenda citas en Calendly.",
     icon: "bot",

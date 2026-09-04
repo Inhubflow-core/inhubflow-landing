@@ -42,13 +42,13 @@ export default function AIToolsTabs() {
     },
     {
       id: 'sdr',
-      label: 'Agentes SDR de IA 24/7',
+      label: 'Asistentes SDR de IA 24/7',
       icon: <span className="text-xl">🤖</span>,
       lightImage: '/images/tab-image/tab-image-4.jpg',
       darkImage: '/images/tab-image/tab-image-4-dark.jpg',
       title: 'Calificación Automática y Agendamiento en Google Calendar',
       description:
-        'Tu SDR de Inteligencia Artificial mantiene conversaciones naturales, responde objeciones comerciales, valida el interés del cliente y agenda la cita directamente en tu calendario.',
+        'Tu Asistente SDR de Inteligencia Artificial mantiene conversaciones naturales, responde objeciones comerciales, valida el interés del cliente y agenda la cita directamente en tu calendario.',
     },
   ];
 
