@@ -87,18 +87,18 @@ export default function Footer() {
                     >
                       {t.footer.col1Item1}
                     </a>
-                    <a
-                      href="/privacy#terms"
+                    <Link
+                      href="/terms"
                       className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item2}
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/privacy"
                       className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item3}
-                    </a>
+                    </Link>
                     <a
                       href="/contact"
                       className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
