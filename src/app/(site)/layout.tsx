@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header/header';
+import LiveChatWidget from '@/components/chat/LiveChatWidget';
 
 export const dynamic = 'force-dynamic';
 
@@ -13,6 +14,7 @@ export default function SiteLayout({
       <Header />
       <div className="isolate flex-1 flex flex-col">{children}</div>
       <Footer />
+      <LiveChatWidget />
     </div>
   );
 }
