@@ -314,7 +314,7 @@ export default function LiveChatWidget() {
             {/* Messages thread */}
             {messages.map((m) => {
               const isVisitor = m.sender_type === 'visitor';
-              const isHuman = m.sender_type === 'human';
+              const isHuman = m.sender_type === 'human' || (m.sender_type as string) === 'human_agent';
 
               return (
                 <div
