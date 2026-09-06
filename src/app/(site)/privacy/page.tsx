@@ -423,48 +423,45 @@ export default function PrivacyPage() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#0A0F1D] text-gray-200">
-      {/* Background glow effects */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-none w-full max-w-7xl h-[450px] overflow-hidden opacity-30">
-        <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-[750px] h-[450px] bg-gradient-to-b from-[#3B2EFF] via-[#6366F1] to-transparent rounded-full blur-[140px]" />
-      </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20">
-        {/* Header Section */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+    <div className="relative min-h-screen bg-white text-gray-900 selection:bg-emerald-600 selection:text-white">
+      {/* Header & Hero Section with soft light gradient */}
+      <section className="w-full relative overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F6F4FE] to-[#ECE7FE] pt-12 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 border-b border-gray-200/70">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/80 mb-5 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
             {current.badge}
-          </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
             {current.title}
           </h1>
-          <p className="text-base sm:text-lg text-gray-400 mb-3">
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto mb-4 font-normal">
             {current.subtitle}
           </p>
-          <div className="inline-flex items-center gap-2 text-xs text-gray-400 bg-white/5 border border-white/10 px-3 py-1 rounded-md">
+          <div className="inline-flex items-center gap-2 text-xs text-gray-600 bg-white/90 border border-gray-200 px-3.5 py-1.5 rounded-full shadow-2xs">
             <span>🛡️</span>
-            <span>{current.updated}</span>
+            <span className="font-medium">{current.updated}</span>
           </div>
         </div>
+      </section>
 
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         {/* Executive Highlights Grid */}
-        <div className="mb-14 p-6 sm:p-8 rounded-2xl bg-[#111827]/80 border border-gray-800/80 backdrop-blur-md shadow-xl">
-          <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-            <span className="text-emerald-400">🔒</span>
+        <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-gray-50/80 border border-gray-200/90 shadow-sm">
+          <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
+            <span className="text-emerald-600">🔒</span>
             {current.summaryTitle}
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {current.summaryItems.map((item, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl bg-gray-900/60 border border-gray-800 hover:border-emerald-500/40 transition duration-200"
+                className="p-4 rounded-2xl bg-white border border-gray-200/80 hover:border-emerald-400 hover:shadow-md transition duration-200"
               >
-                <div className="text-emerald-400 font-bold text-sm mb-1.5 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <div className="text-emerald-700 font-bold text-sm mb-1.5 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                   {item.title}
                 </div>
-                <p className="text-xs text-gray-400 leading-relaxed">
+                <p className="text-xs text-gray-600 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -475,8 +472,8 @@ export default function PrivacyPage() {
         {/* Main Content Layout with Sidebar Navigation */}
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 xl:gap-12 items-start">
           {/* Sticky Navigation Sidebar */}
-          <aside className="sticky top-24 hidden lg:block p-4 rounded-xl bg-[#111827]/60 border border-gray-800 backdrop-blur-sm">
-            <span className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-3 px-2">
+          <aside className="sticky top-24 hidden lg:block p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
+            <span className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-3 px-2">
               Índice de Privacidad
             </span>
             <nav className="space-y-1">
@@ -485,10 +482,10 @@ export default function PrivacyPage() {
                   key={sec.id}
                   href={`#${sec.id}`}
                   onClick={() => setActiveSection(sec.id)}
-                  className={`block px-3 py-2 rounded-lg text-xs font-medium transition ${
+                  className={`block px-3 py-2 rounded-xl text-xs font-medium transition ${
                     activeSection === sec.id
-                      ? 'bg-emerald-600/20 text-emerald-300 border border-emerald-500/30'
-                      : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+                      ? 'bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                   }`}
                 >
                   {sec.label}
@@ -496,13 +493,13 @@ export default function PrivacyPage() {
               ))}
             </nav>
 
-            <div className="mt-6 pt-5 border-t border-gray-800/80 px-2">
-              <p className="text-xs text-gray-400 mb-3">
+            <div className="mt-6 pt-5 border-t border-gray-100 px-2">
+              <p className="text-xs text-gray-600 mb-3">
                 {current.contactPrompt}
               </p>
               <a
                 href="mailto:privacy@inhubflow.online"
-                className="block text-center text-xs font-semibold px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white transition shadow-sm"
+                className="block text-center text-xs font-bold px-3 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white transition shadow-sm cursor-pointer"
               >
                 {current.contactBtn}
               </a>
@@ -510,42 +507,42 @@ export default function PrivacyPage() {
           </aside>
 
           {/* Privacy Clauses Text Body */}
-          <div className="space-y-10 text-gray-300 leading-relaxed">
+          <div className="space-y-8 text-gray-700 leading-relaxed">
             {/* 1. Intro */}
             <section
               id="intro"
-              className="p-6 sm:p-8 rounded-2xl bg-[#111827]/50 border border-gray-800/70"
+              className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200/90 shadow-xs"
             >
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {s.intro.title}
               </h2>
-              <p className="text-sm text-gray-300 mb-4">{s.intro.p1}</p>
-              <p className="text-sm text-gray-300">{s.intro.p2}</p>
+              <p className="text-sm text-gray-700 mb-4 leading-relaxed">{s.intro.p1}</p>
+              <p className="text-sm text-gray-700 leading-relaxed">{s.intro.p2}</p>
             </section>
 
             {/* 2. Roles */}
             <section
               id="roles"
-              className="p-6 sm:p-8 rounded-2xl bg-[#111827]/50 border border-gray-800/70"
+              className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200/90 shadow-xs"
             >
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {s.roles.title}
               </h2>
-              <p className="text-sm text-gray-300 mb-5">{s.roles.p1}</p>
+              <p className="text-sm text-gray-700 mb-5 leading-relaxed">{s.roles.p1}</p>
               <div className="space-y-4">
-                <div className="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
-                  <h3 className="text-sm font-semibold text-emerald-400 mb-1">
+                <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
+                  <h3 className="text-sm font-bold text-emerald-700 mb-1">
                     {s.roles.role1Title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-300">
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     {s.roles.role1Desc}
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
-                  <h3 className="text-sm font-semibold text-indigo-400 mb-1">
+                <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
+                  <h3 className="text-sm font-bold text-indigo-700 mb-1">
                     {s.roles.role2Title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-300">
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     {s.roles.role2Desc}
                   </p>
                 </div>
@@ -555,19 +552,19 @@ export default function PrivacyPage() {
             {/* 3. Collected Data */}
             <section
               id="collected"
-              className="p-6 sm:p-8 rounded-2xl bg-[#111827]/50 border border-gray-800/70"
+              className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200/90 shadow-xs"
             >
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {s.collected.title}
               </h2>
-              <p className="text-sm text-gray-300 mb-4">{s.collected.p1}</p>
+              <p className="text-sm text-gray-700 mb-4 leading-relaxed">{s.collected.p1}</p>
               <ul className="space-y-3">
                 {s.collected.list.map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300"
+                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700"
                   >
-                    <span className="text-emerald-400 shrink-0 mt-0.5">✔</span>
+                    <span className="text-emerald-600 shrink-0 font-bold mt-0.5">✔</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -577,24 +574,24 @@ export default function PrivacyPage() {
             {/* 4. AI Policy */}
             <section
               id="aiPolicy"
-              className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-indigo-950/40 via-purple-950/20 to-[#111827]/60 border border-indigo-900/50 shadow-lg"
+              className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-indigo-50/70 via-purple-50/40 to-white border border-indigo-200/80 shadow-xs"
             >
               <div className="flex items-center gap-2 mb-3">
-                <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-200">
                   {s.aiPolicy.badge}
                 </span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {s.aiPolicy.title}
               </h2>
-              <p className="text-sm text-gray-300 mb-5">{s.aiPolicy.p1}</p>
+              <p className="text-sm text-gray-700 mb-5 leading-relaxed">{s.aiPolicy.p1}</p>
               <ul className="space-y-3">
                 {s.aiPolicy.list.map((rule, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300"
+                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700"
                   >
-                    <span className="text-indigo-400 shrink-0">✦</span>
+                    <span className="text-indigo-600 shrink-0 font-bold">✦</span>
                     <span>{rule}</span>
                   </li>
                 ))}
@@ -604,19 +601,19 @@ export default function PrivacyPage() {
             {/* 5. Purposes */}
             <section
               id="purposes"
-              className="p-6 sm:p-8 rounded-2xl bg-[#111827]/50 border border-gray-800/70"
+              className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200/90 shadow-xs"
             >
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {s.purposes.title}
               </h2>
-              <p className="text-sm text-gray-300 mb-4">{s.purposes.p1}</p>
+              <p className="text-sm text-gray-700 mb-4 leading-relaxed">{s.purposes.p1}</p>
               <ul className="space-y-2.5">
                 {s.purposes.list.map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300"
+                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700"
                   >
-                    <span className="text-emerald-400 shrink-0">✔</span>
+                    <span className="text-emerald-600 shrink-0 font-bold">✔</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -626,19 +623,19 @@ export default function PrivacyPage() {
             {/* 6. Security & Multi-Seat */}
             <section
               id="security"
-              className="p-6 sm:p-8 rounded-2xl bg-[#111827]/50 border border-gray-800/70"
+              className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200/90 shadow-xs"
             >
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {s.security.title}
               </h2>
-              <p className="text-sm text-gray-300 mb-4">{s.security.p1}</p>
+              <p className="text-sm text-gray-700 mb-4 leading-relaxed">{s.security.p1}</p>
               <ul className="space-y-3">
                 {s.security.list.map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300"
+                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700"
                   >
-                    <span className="text-emerald-400 shrink-0">🛡️</span>
+                    <span className="text-emerald-600 shrink-0 font-semibold">🛡️</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -648,21 +645,21 @@ export default function PrivacyPage() {
             {/* 7. Subprocessors */}
             <section
               id="thirdParties"
-              className="p-6 sm:p-8 rounded-2xl bg-[#111827]/50 border border-gray-800/70"
+              className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200/90 shadow-xs"
             >
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {s.thirdParties.title}
               </h2>
-              <p className="text-sm text-gray-300 mb-4">
+              <p className="text-sm text-gray-700 mb-4 leading-relaxed">
                 {s.thirdParties.p1}
               </p>
               <ul className="space-y-2.5">
                 {s.thirdParties.list.map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300"
+                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700"
                   >
-                    <span className="text-indigo-400 shrink-0">🏢</span>
+                    <span className="text-indigo-600 shrink-0">🏢</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -672,25 +669,25 @@ export default function PrivacyPage() {
             {/* 8. Your Rights */}
             <section
               id="rights"
-              className="p-6 sm:p-8 rounded-2xl bg-[#111827]/50 border border-gray-800/70"
+              className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200/90 shadow-xs"
             >
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {s.rights.title}
               </h2>
-              <p className="text-sm text-gray-300 mb-4">{s.rights.p1}</p>
+              <p className="text-sm text-gray-700 mb-4 leading-relaxed">{s.rights.p1}</p>
               <ul className="space-y-2.5 mb-5">
                 {s.rights.list.map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300"
+                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700"
                   >
-                    <span className="text-emerald-400 shrink-0">⚖️</span>
+                    <span className="text-emerald-600 shrink-0">⚖️</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="p-4 rounded-xl bg-emerald-950/20 border border-emerald-900/40 text-xs sm:text-sm text-emerald-200">
-                <strong className="block font-semibold mb-1 text-emerald-100">
+              <div className="p-4 rounded-xl bg-emerald-50/80 border border-emerald-200 text-xs sm:text-sm text-emerald-900 leading-relaxed">
+                <strong className="block font-semibold mb-1 text-emerald-950">
                   Ejercicio Inmediato de Derechos:
                 </strong>
                 {s.rights.p2}
@@ -700,57 +697,57 @@ export default function PrivacyPage() {
             {/* 9. Cookies */}
             <section
               id="cookies"
-              className="p-6 sm:p-8 rounded-2xl bg-[#111827]/50 border border-gray-800/70"
+              className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200/90 shadow-xs"
             >
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {s.cookies.title}
               </h2>
-              <p className="text-sm text-gray-300 mb-3">{s.cookies.p1}</p>
+              <p className="text-sm text-gray-700 mb-3 leading-relaxed">{s.cookies.p1}</p>
               <ul className="space-y-2 mb-4">
                 {s.cookies.list.map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300"
+                    className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700"
                   >
-                    <span className="text-amber-400 shrink-0">🍪</span>
+                    <span className="text-amber-500 shrink-0">🍪</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-xs sm:text-sm text-gray-400">{s.cookies.p2}</p>
+              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{s.cookies.p2}</p>
             </section>
 
             {/* 10. Retention & DPO */}
             <section
               id="retention"
-              className="p-6 sm:p-8 rounded-2xl bg-[#111827]/50 border border-gray-800/70"
+              className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200/90 shadow-xs"
             >
-              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {s.retention.title}
               </h2>
-              <div className="space-y-3 text-sm text-gray-300 mb-6">
+              <div className="space-y-3 text-sm text-gray-700 mb-6 leading-relaxed">
                 <p>{s.retention.p1}</p>
                 <p>{s.retention.p2}</p>
               </div>
-              <div className="p-5 rounded-xl bg-gradient-to-r from-emerald-950/40 via-teal-950/30 to-gray-900 border border-emerald-900/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="p-5 rounded-2xl bg-gradient-to-r from-emerald-50/90 via-teal-50/60 to-gray-50 border border-emerald-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div>
-                  <h4 className="text-sm font-semibold text-white">
+                  <h4 className="text-sm font-bold text-gray-900">
                     Oficina de Privacidad y DPO InHubFlow
                   </h4>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-gray-600">
                     Atención a peticiones de derechos RGPD / LGPD
                   </p>
                 </div>
                 <div className="flex gap-2.5 flex-wrap">
                   <a
                     href={`mailto:${s.retention.dpoEmail}`}
-                    className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs transition shadow-sm"
+                    className="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition shadow-xs"
                   >
                     {s.retention.dpoEmail}
                   </a>
                   <Link
                     href="/terms"
-                    className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium text-xs transition border border-white/20"
+                    className="px-4 py-2.5 rounded-xl bg-white hover:bg-gray-100 text-gray-800 font-semibold text-xs transition border border-gray-300 shadow-2xs"
                   >
                     Ver Términos y Condiciones
                   </Link>
