@@ -167,10 +167,21 @@ export default function LiveChatWidget() {
       const res = await fetch(`${baseUrl}/api/live-chat/poll?${query}`);
       if (res.ok) {
         const data = await res.json();
+
+        // If session was purged after 5 minutes of inactivity, reset to clean state
+        if (data.expired || data.status === 'not_found' || data.status === 'expired') {
+          if (typeof window !== 'undefined') {
+            localStorage.removeItem('inhubflow_live_chat_session_id');
+          }
+          setSession(null);
+          setMessages([]);
+          return;
+        }
+
         if (data.session) {
           setSession(data.session);
         }
-        if (Array.isArray(data.messages) && data.messages.length > 0) {
+        if (Array.isArray(data.messages)) {
           setMessages(data.messages);
         }
       }
