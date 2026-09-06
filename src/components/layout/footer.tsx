@@ -100,7 +100,7 @@ export default function Footer() {
                       {t.footer.col1Item3}
                     </Link>
                     <a
-                      href="/contact"
+                      href="#blogs"
                       className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item4}
