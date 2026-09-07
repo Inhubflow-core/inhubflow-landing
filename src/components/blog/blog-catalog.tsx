@@ -300,31 +300,36 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
         </div>
       )}
 
-      {/* Bottom Global CTA Banner */}
+      {/* Bottom Global CTA Banner - 2 Columns */}
       <div className="mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-indigo-900 via-indigo-800 to-purple-900 text-white shadow-xl relative overflow-hidden">
-        <div className="relative z-10 max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-400/20 text-indigo-200 border border-indigo-400/30 mb-3">
-            ⚡ {i18nLabels.globalCtaBadge}
+        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          {/* Left Column: Title & Description */}
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-400/20 text-indigo-200 border border-indigo-400/30 mb-3">
+              ⚡ {i18nLabels.globalCtaBadge}
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3 text-white leading-tight">
+              {i18nLabels.globalCtaTitle}
+            </h2>
+            <p className="text-sm sm:text-base text-indigo-100 leading-relaxed">
+              {i18nLabels.globalCtaDesc}
+            </p>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold mb-3 text-white">
-            {i18nLabels.globalCtaTitle}
-          </h2>
-          <p className="text-xs sm:text-sm text-indigo-100 mb-6 leading-relaxed">
-            {i18nLabels.globalCtaDesc}
-          </p>
-          <div className="flex flex-wrap items-center gap-4">
+
+          {/* Right Column: CTA Button & Subtext */}
+          <div className="flex flex-col items-start lg:items-center gap-2.5 shrink-0">
             <a
               href="https://b2b.inhubflow.online"
-              className="px-6 py-3 rounded-xl bg-white text-indigo-900 font-extrabold text-xs sm:text-sm hover:bg-gray-100 transition shadow-md"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-indigo-900 font-extrabold text-sm sm:text-base hover:bg-gray-100 transition shadow-lg text-center cursor-pointer transform hover:-translate-y-0.5"
             >
               {i18nLabels.globalCtaBtn}
             </a>
-            <span className="text-xs text-indigo-200">
+            <span className="text-xs sm:text-sm text-indigo-200 font-medium">
               {i18nLabels.globalCtaSubtext}
             </span>
           </div>
         </div>
-        <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-indigo-500/30 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute -bottom-16 -right-16 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none" />
       </div>
     </div>
   );
