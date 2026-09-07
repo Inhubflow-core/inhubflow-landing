@@ -285,32 +285,28 @@ export default async function BlogPostLanguagePage({ params }: Props) {
         </div>
       </header>
 
-      {/* Main Content Layout - Exact landing page width (max-w-7xl) */}
+      {/* Main Editorial Content - Flowing text without cards */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-        <main className="space-y-10 sm:space-y-12">
-          {/* 1. Gancho Impactante (Hook Box) */}
-          <section className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-950 text-white shadow-xl border border-indigo-800/40 relative overflow-hidden">
-            <div className="relative z-10">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-4 leading-snug max-w-4xl">
-                {vsl.hook.headline}
-              </h2>
-              <p className="text-base sm:text-lg text-indigo-100 mb-6 leading-relaxed max-w-4xl">
-                {vsl.hook.subheadline}
-              </p>
-              <div className="p-5 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15 max-w-3xl">
-                <p className="text-sm sm:text-base text-white font-semibold italic leading-relaxed">
-                  &quot;{vsl.hook.boldTake}&quot;
-                </p>
-              </div>
-            </div>
-          </section>
+        <main className="space-y-12">
+          {/* 1. Gancho Impactante */}
+          <div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 leading-tight tracking-tight max-w-4xl">
+              {vsl.hook.headline}
+            </h2>
+            <p className="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed max-w-4xl">
+              {vsl.hook.subheadline}
+            </p>
+            <blockquote className="border-l-4 border-indigo-600 pl-5 py-2 my-6 italic text-gray-800 text-base sm:text-lg max-w-4xl">
+              &quot;{vsl.hook.boldTake}&quot;
+            </blockquote>
+          </div>
 
           {/* 2. El Problema (PAS: Exponer, Agitar, Empujar al límite) */}
-          <section className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-8">
+          <div className="space-y-8">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {vsl.problem.exposureTitle}
-              </h2>
+              </h3>
               <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed max-w-5xl">
                 {vsl.problem.exposureParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
@@ -318,8 +314,8 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               </div>
             </div>
 
-            {/* Agitation */}
-            <div className="pt-6 border-t border-gray-100">
+            {/* Agitación */}
+            <div className="pt-2">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                 {vsl.problem.agitationTitle}
               </h3>
@@ -330,8 +326,8 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               </div>
             </div>
 
-            {/* Breaking Point / Limit */}
-            <div className="pt-6 border-t border-gray-100">
+            {/* Punto de Quiebre / Límite */}
+            <div className="pt-2">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                 {vsl.problem.limitTitle}
               </h3>
@@ -341,9 +337,9 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                 ))}
               </div>
 
-              {/* Pain Bullets Callout */}
-              <div className="p-6 sm:p-8 rounded-2xl bg-rose-50/70 border border-rose-200">
-                <h4 className="text-sm sm:text-base font-bold text-rose-950 mb-4 flex items-center gap-2">
+              {/* Puntos de dolor */}
+              <div className="my-6">
+                <p className="font-bold text-gray-900 mb-4 text-base sm:text-lg flex items-center gap-2">
                   <span>🛑</span>
                   <span>
                     {post.lang === 'en'
@@ -352,12 +348,12 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                       ? 'O custo de continuar prospectando no modelo antigo:'
                       : 'Lo que te cuesta seguir haciéndolo del modo antiguo:'}
                   </span>
-                </h4>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                </p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-5xl">
                   {vsl.problem.painBullets.map((bullet, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-2.5 text-xs sm:text-sm text-rose-900 font-medium"
+                      className="flex items-start gap-2.5 text-base text-gray-700 font-medium"
                     >
                       <span className="text-rose-600 font-bold shrink-0">✕</span>
                       <span>{bullet}</span>
@@ -366,15 +362,15 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                 </ul>
               </div>
             </div>
-          </section>
+          </div>
 
           {/* 3. La Solución InHubFlow */}
-          <section className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-8">
+          <div className="space-y-8 pt-4">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                 {vsl.solution.title}
               </h2>
-              <p className="text-sm sm:text-base text-gray-600 mb-4 font-medium">
+              <p className="text-sm sm:text-base text-indigo-600 font-semibold mb-4">
                 {vsl.solution.subtitle}
               </p>
               <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 max-w-5xl">
@@ -384,27 +380,19 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               </div>
             </div>
 
-            {/* 3-Step Visual Process */}
+            {/* Proceso en 3 Pasos */}
             <div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
                 {vsl.solution.processTitle}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {vsl.solution.steps.map((st) => (
-                  <div
-                    key={st.step}
-                    className="p-6 rounded-2xl bg-indigo-50/50 border border-indigo-100 hover:border-indigo-300 transition"
-                  >
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="text-2xl">{st.icon}</span>
-                      <span className="w-6 h-6 rounded-full bg-indigo-600 text-white font-bold text-xs flex items-center justify-center">
-                        {st.step}
-                      </span>
+                  <div key={st.step} className="border-t-2 border-indigo-600 pt-4 space-y-2">
+                    <div className="flex items-center gap-2 text-indigo-600 font-bold text-sm">
+                      <span className="text-xl">{st.icon}</span>
+                      <span>{st.step}. {st.title}</span>
                     </div>
-                    <h4 className="font-bold text-sm sm:text-base text-gray-900 mb-2 leading-snug">
-                      {st.title}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                       {st.desc}
                     </p>
                   </div>
@@ -412,16 +400,14 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               </div>
             </div>
 
-            <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-200">
-              <p className="text-sm sm:text-base font-bold text-emerald-950 flex items-center gap-2">
-                <span>💎</span>
-                <span>{vsl.solution.keyBenefit}</span>
-              </p>
-            </div>
-          </section>
+            <p className="text-sm sm:text-base font-semibold text-emerald-800 bg-emerald-50/70 border-l-4 border-emerald-500 py-3.5 px-5 rounded-r-xl max-w-5xl flex items-center gap-2.5">
+              <span>💎</span>
+              <span>{vsl.solution.keyBenefit}</span>
+            </p>
+          </div>
 
-          {/* 4. Credibilidad (Seguridad de Nivel Empresarial y Casos de Éxito) */}
-          <section className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-8">
+          {/* 4. Credibilidad & Prueba Social */}
+          <div className="space-y-8 pt-4">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                 {vsl.credibility.title}
@@ -430,42 +416,36 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                 {vsl.credibility.subtitle}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 max-w-5xl">
                 {vsl.credibility.points.map((pt, idx) => (
-                  <div
-                    key={idx}
-                    className="p-6 rounded-2xl bg-gray-50 border border-gray-200/80"
-                  >
-                    <div className="text-2xl mb-2">{pt.icon}</div>
-                    <h4 className="font-bold text-sm sm:text-base text-gray-900 mb-1.5">
-                      {pt.title}
+                  <div key={idx} className="space-y-1">
+                    <h4 className="font-bold text-sm sm:text-base text-gray-900 flex items-center gap-2">
+                      <span>{pt.icon}</span>
+                      <span>{pt.title}</span>
                     </h4>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed pl-7">
                       {pt.desc}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="p-5 rounded-2xl bg-indigo-50/70 border border-indigo-200 flex items-center gap-3 text-xs sm:text-sm text-indigo-950 font-semibold mb-8">
-                <span className="text-xl">🛡️</span>
+              <p className="text-xs sm:text-sm text-indigo-900 font-semibold my-4 flex items-center gap-2">
+                <span className="text-lg">🛡️</span>
                 <span>{vsl.credibility.securityBadgeText}</span>
-              </div>
+              </p>
             </div>
 
             {/* Resultados y Prueba Social */}
-            <div className="pt-6 border-t border-gray-100 space-y-6">
+            <div className="pt-6 border-t border-gray-200 space-y-6">
               <h3 className="text-lg sm:text-xl font-bold text-gray-900">
                 {vsl.socialProof.title}
               </h3>
 
               {/* 3 Hard Stats */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-4">
                 {vsl.socialProof.stats.map((st, idx) => (
-                  <div
-                    key={idx}
-                    className="p-6 rounded-2xl bg-indigo-50/40 border border-indigo-100 text-center"
-                  >
+                  <div key={idx}>
                     <div className="text-2xl sm:text-3xl font-extrabold text-indigo-600 mb-1">
                       {st.value}
                     </div>
@@ -479,71 +459,66 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                 ))}
               </div>
 
-              {/* Testimonial Box */}
-              <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-gray-900 via-slate-900 to-indigo-950 text-white shadow-md border border-gray-800">
-                <div className="flex items-center gap-1 text-amber-400 text-sm mb-3">
+              {/* Testimonial Quote */}
+              <blockquote className="my-6 pl-6 border-l-4 border-indigo-600 space-y-3 max-w-4xl">
+                <div className="flex items-center gap-1 text-amber-500 text-sm">
                   ★★★★★
                 </div>
-                <blockquote className="text-sm sm:text-base italic text-gray-200 mb-4 leading-relaxed max-w-4xl">
+                <p className="text-sm sm:text-base italic text-gray-800 leading-relaxed">
                   &quot;{vsl.socialProof.testimonial.quote}&quot;
-                </blockquote>
-                <div className="flex items-center justify-between gap-4 flex-wrap text-xs">
-                  <div>
-                    <p className="font-bold text-white text-sm">
-                      {vsl.socialProof.testimonial.author}
-                    </p>
-                    <p className="text-gray-400 text-xs">
-                      {vsl.socialProof.testimonial.role} •{' '}
-                      {vsl.socialProof.testimonial.company}
-                    </p>
-                  </div>
-                  <span className="px-3.5 py-1.5 rounded-full bg-indigo-500/30 text-indigo-200 border border-indigo-400/30 font-bold text-xs">
+                </p>
+                <footer className="text-xs sm:text-sm text-gray-600 flex items-center gap-2 flex-wrap">
+                  <span className="font-bold text-gray-900">
+                    {vsl.socialProof.testimonial.author}
+                  </span>
+                  <span>•</span>
+                  <span>
+                    {vsl.socialProof.testimonial.role}, {vsl.socialProof.testimonial.company}
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 font-semibold text-xs border border-indigo-200">
                     ✓ {vsl.socialProof.testimonial.highlight}
                   </span>
-                </div>
-              </div>
+                </footer>
+              </blockquote>
             </div>
-          </section>
+          </div>
 
-          {/* 5. CTA (7 Días de Test Gratuito) */}
-          <section className="p-8 sm:p-12 lg:p-16 rounded-3xl bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-800 text-white shadow-xl relative overflow-hidden">
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-amber-400 text-gray-950 mb-4 shadow-xs">
-                {vsl.closingCta.urgencyBadge}
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-extrabold text-white mb-3 leading-tight max-w-4xl">
-                {vsl.closingCta.headline}
-              </h2>
-              <p className="text-base sm:text-lg text-indigo-100 mb-6 leading-relaxed max-w-3xl">
-                {vsl.closingCta.subheadline}
-              </p>
+          {/* 5. Cierre y CTA (7 Días de Test Gratuito) */}
+          <div className="pt-10 border-t border-gray-200 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-amber-100 text-amber-900 border border-amber-300/60">
+              {vsl.closingCta.urgencyBadge}
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight max-w-4xl">
+              {vsl.closingCta.headline}
+            </h2>
+            <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl">
+              {vsl.closingCta.subheadline}
+            </p>
 
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-3xl mb-8">
-                {vsl.closingCta.bullets.map((b, idx) => (
-                  <li
-                    key={idx}
-                    className="flex items-center gap-2 text-xs sm:text-sm text-white font-medium"
-                  >
-                    <span className="text-amber-300 font-bold">✔</span>
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <a
-                  href={vsl.closingCta.targetUrl}
-                  className="w-full sm:w-auto text-center px-8 py-4 rounded-xl bg-white text-indigo-900 font-extrabold text-sm sm:text-base hover:bg-gray-100 transition shadow-lg cursor-pointer transform hover:-translate-y-0.5"
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-3xl">
+              {vsl.closingCta.bullets.map((b, idx) => (
+                <li
+                  key={idx}
+                  className="flex items-center gap-2.5 text-sm sm:text-base text-gray-800 font-medium"
                 >
-                  {vsl.closingCta.ctaLabel}
-                </a>
-                <p className="text-xs text-indigo-200">
-                  {vsl.closingCta.ctaSubtext}
-                </p>
-              </div>
+                  <span className="text-indigo-600 font-bold">✔</span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <a
+                href={vsl.closingCta.targetUrl}
+                className="inline-block px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-base transition shadow-md hover:shadow-lg cursor-pointer transform hover:-translate-y-0.5"
+              >
+                {vsl.closingCta.ctaLabel}
+              </a>
+              <p className="text-xs sm:text-sm text-gray-500">
+                {vsl.closingCta.ctaSubtext}
+              </p>
             </div>
-            <div className="absolute -top-20 -right-20 w-72 h-72 bg-indigo-400/20 rounded-full blur-3xl pointer-events-none" />
-          </section>
+          </div>
         </main>
       </div>
     </article>
