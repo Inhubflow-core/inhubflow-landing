@@ -291,9 +291,6 @@ export default async function BlogPostLanguagePage({ params }: Props) {
           {/* 1. Gancho Impactante (Hook Box) */}
           <section className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-950 text-white shadow-xl border border-indigo-800/40 relative overflow-hidden">
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30 mb-4">
-                ⚠️ {vsl.hook.alertText}
-              </div>
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white mb-4 leading-snug">
                 {vsl.hook.headline}
               </h2>
