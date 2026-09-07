@@ -21,6 +21,11 @@ export const navItems = [
   },
   {
     type: 'link',
+    href: '/blog',
+    label: 'Blog',
+  },
+  {
+    type: 'link',
     href: 'https://b2b.inhubflow.online',
     label: 'Acceso Clientes ➔',
   },

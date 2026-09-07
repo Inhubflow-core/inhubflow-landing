@@ -99,12 +99,12 @@ export default function Footer() {
                     >
                       {t.footer.col1Item3}
                     </Link>
-                    <a
-                      href="#blogs"
+                    <Link
+                      href="/blog"
                       className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
                     >
                       {t.footer.col1Item4}
-                    </a>
+                    </Link>
                     <Link
                       href="/partners"
                       className="text-xs sm:text-sm text-gray-400 transition hover:text-white"
