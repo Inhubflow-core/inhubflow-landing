@@ -13,8 +13,10 @@ function base64UrlEncode(str: string): string {
 export async function GET() {
   const baseUrl = 'https://inhubflow.online';
   const urls = [
-    `${baseUrl}/blog`,
-    ...BLOG_POSTS.map((post) => `${baseUrl}/blog/${post.slug}`),
+    `${baseUrl}/blog/es`,
+    `${baseUrl}/blog/en`,
+    `${baseUrl}/blog/pt`,
+    ...BLOG_POSTS.map((post) => `${baseUrl}/blog/${post.lang}/${post.slug}`),
   ];
 
   const hasCredentials = Boolean(

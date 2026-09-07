@@ -1,3 +1,5 @@
+export type BlogLanguage = 'es' | 'en' | 'pt';
+
 export interface BlogAuthor {
   name: string;
   role: string;
@@ -30,6 +32,8 @@ export interface FaqItem {
 
 export interface BlogPost {
   slug: string;
+  lang: BlogLanguage;
+  translationKey: string;
   title: string;
   metaTitle: string;
   metaDescription: string;

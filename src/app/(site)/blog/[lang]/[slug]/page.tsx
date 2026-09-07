@@ -2,30 +2,56 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { BLOG_POSTS, getBlogPostBySlug } from '@/data/blog/posts';
+import {
+  BLOG_POSTS,
+  getBlogPostByLangAndSlug,
+  getAlternateTranslations,
+} from '@/data/blog/posts';
+import { BlogLanguage } from '@/data/blog/types';
 import ArticleInteractive from '@/components/blog/article-interactive';
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ lang: string; slug: string }>;
 };
+
+const validLangs: BlogLanguage[] = ['es', 'en', 'pt'];
 
 export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({
+    lang: post.lang,
     slug: post.slug,
   }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
-
-  if (!post) {
-    return {
-      title: 'Artículo no encontrado | InHubFlow',
-    };
+  const { lang, slug } = await params;
+  if (!validLangs.includes(lang as BlogLanguage)) {
+    return { title: 'Artículo no encontrado | InHubFlow' };
   }
 
-  const canonicalUrl = `https://inhubflow.online/blog/${post.slug}`;
+  const post = getBlogPostByLangAndSlug(lang as BlogLanguage, slug);
+  if (!post) {
+    return { title: 'Artículo no encontrado | InHubFlow' };
+  }
+
+  const canonicalUrl = `https://inhubflow.online/blog/${post.lang}/${post.slug}`;
+  const alternates = getAlternateTranslations(post);
+
+  const languageAlternates: Record<string, string> = {
+    'x-default': alternates.es
+      ? `https://inhubflow.online/blog/es/${alternates.es.slug}`
+      : canonicalUrl,
+  };
+
+  if (alternates.es) {
+    languageAlternates.es = `https://inhubflow.online/blog/es/${alternates.es.slug}`;
+  }
+  if (alternates.en) {
+    languageAlternates.en = `https://inhubflow.online/blog/en/${alternates.en.slug}`;
+  }
+  if (alternates.pt) {
+    languageAlternates.pt = `https://inhubflow.online/blog/pt/${alternates.pt.slug}`;
+  }
 
   return {
     title: post.metaTitle,
@@ -33,13 +59,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: post.keywords,
     alternates: {
       canonical: canonicalUrl,
+      languages: languageAlternates,
     },
     openGraph: {
       title: post.metaTitle,
       description: post.metaDescription,
       url: canonicalUrl,
       siteName: 'InHubFlow',
-      locale: 'es_ES',
+      locale:
+        post.lang === 'en' ? 'en_US' : post.lang === 'pt' ? 'pt_BR' : 'es_ES',
       type: 'article',
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
@@ -54,15 +82,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+export default async function BlogPostLanguagePage({ params }: Props) {
+  const { lang, slug } = await params;
+  if (!validLangs.includes(lang as BlogLanguage)) {
+    notFound();
+  }
 
+  const post = getBlogPostByLangAndSlug(lang as BlogLanguage, slug);
   if (!post) {
     notFound();
   }
 
-  const canonicalUrl = `https://inhubflow.online/blog/${post.slug}`;
+  const canonicalUrl = `https://inhubflow.online/blog/${post.lang}/${post.slug}`;
+  const alternates = getAlternateTranslations(post);
   const vsl = post.vsl;
 
   // Schema JSON-LD Structured Data
@@ -71,6 +103,7 @@ export default async function BlogPostPage({ params }: Props) {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.metaDescription,
+    inLanguage: post.lang,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': canonicalUrl,
@@ -94,6 +127,17 @@ export default async function BlogPostPage({ params }: Props) {
     keywords: post.keywords.join(', '),
   };
 
+  const breadcrumbLabels: Record<
+    BlogLanguage,
+    { home: string; blog: string }
+  > = {
+    es: { home: 'Inicio', blog: 'Blog' },
+    en: { home: 'Home', blog: 'Blog' },
+    pt: { home: 'Início', blog: 'Blog' },
+  };
+
+  const labels = breadcrumbLabels[post.lang];
+
   const jsonLdBreadcrumb = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -101,14 +145,14 @@ export default async function BlogPostPage({ params }: Props) {
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Inicio',
+        name: labels.home,
         item: 'https://inhubflow.online',
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Blog',
-        item: 'https://inhubflow.online/blog',
+        name: `${labels.blog} (${post.lang.toUpperCase()})`,
+        item: `https://inhubflow.online/blog/${post.lang}`,
       },
       {
         '@type': 'ListItem',
@@ -119,20 +163,21 @@ export default async function BlogPostPage({ params }: Props) {
     ],
   };
 
-  const jsonLdFaq = post.faq && post.faq.length > 0
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: post.faq.map((item) => ({
-          '@type': 'Question',
-          name: item.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: item.answer,
-          },
-        })),
-      }
-    : null;
+  const jsonLdFaq =
+    post.faq && post.faq.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: post.faq.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
 
   return (
     <article className="relative min-h-screen bg-[#FAFAFC] text-gray-900 selection:bg-indigo-600 selection:text-white">
@@ -159,22 +204,73 @@ export default async function BlogPostPage({ params }: Props) {
       <header className="w-full relative overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F6F4FE] to-[#ECE7FE] pt-12 sm:pt-16 pb-12 sm:pb-16 border-b border-gray-200/80">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumbs */}
-          <nav
-            aria-label="Breadcrumb"
-            className="flex items-center gap-2 text-xs text-gray-600 mb-6 flex-wrap"
-          >
-            <Link href="/" className="hover:text-indigo-600 transition">
-              Inicio
-            </Link>
-            <span>/</span>
-            <Link href="/blog" className="hover:text-indigo-600 transition">
-              Blog
-            </Link>
-            <span>/</span>
-            <span className="text-indigo-700 font-semibold truncate max-w-xs">
-              {post.categoryLabel}
-            </span>
-          </nav>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <nav
+              aria-label="Breadcrumb"
+              className="flex items-center gap-2 text-xs text-gray-600 flex-wrap"
+            >
+              <Link href="/" className="hover:text-indigo-600 transition">
+                {labels.home}
+              </Link>
+              <span>/</span>
+              <Link
+                href={`/blog/${post.lang}`}
+                className="hover:text-indigo-600 transition font-semibold"
+              >
+                Blog ({post.lang.toUpperCase()})
+              </Link>
+              <span>/</span>
+              <span className="text-indigo-700 font-semibold truncate max-w-xs">
+                {post.categoryLabel}
+              </span>
+            </nav>
+
+            {/* Language Switcher for Sibling Translations */}
+            <div className="flex items-center gap-1.5 self-start sm:self-auto bg-white/80 p-1 rounded-xl border border-gray-200 shadow-2xs">
+              <span className="text-[11px] text-gray-500 font-medium px-2">
+                Idioma:
+              </span>
+              {alternates.es && (
+                <Link
+                  href={`/blog/es/${alternates.es.slug}`}
+                  className={`px-2 py-1 rounded-lg text-xs font-bold transition ${
+                    post.lang === 'es'
+                      ? 'bg-indigo-600 text-white'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                  title="Versión en Español"
+                >
+                  🇪🇸 ES
+                </Link>
+              )}
+              {alternates.en && (
+                <Link
+                  href={`/blog/en/${alternates.en.slug}`}
+                  className={`px-2 py-1 rounded-lg text-xs font-bold transition ${
+                    post.lang === 'en'
+                      ? 'bg-indigo-600 text-white'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                  title="English Version"
+                >
+                  🇺🇸 EN
+                </Link>
+              )}
+              {alternates.pt && (
+                <Link
+                  href={`/blog/pt/${alternates.pt.slug}`}
+                  className={`px-2 py-1 rounded-lg text-xs font-bold transition ${
+                    post.lang === 'pt'
+                      ? 'bg-indigo-600 text-white'
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                  title="Versão em Português"
+                >
+                  🇧🇷 PT
+                </Link>
+              )}
+            </div>
+          </div>
 
           {/* Category & Read Time Badge */}
           <div className="flex flex-wrap items-center gap-2.5 mb-4">
@@ -185,7 +281,7 @@ export default async function BlogPostPage({ params }: Props) {
               ⏱️ {post.readTime}
             </span>
             <span className="text-xs text-gray-600 bg-white/90 px-3 py-1 rounded-full border border-gray-200 shadow-2xs">
-              📅 Actualizado: {post.updatedAt}
+              📅 {post.updatedAt}
             </span>
           </div>
 
@@ -240,7 +336,7 @@ export default async function BlogPostPage({ params }: Props) {
             <section className="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-6">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-rose-600 mb-1 block">
-                  Paso 1: El Diagnóstico Real
+                  Paso 1
                 </span>
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                   {vsl.problem.exposureTitle}
@@ -278,7 +374,14 @@ export default async function BlogPostPage({ params }: Props) {
                 {/* Pain Bullets Callout */}
                 <div className="p-5 rounded-2xl bg-rose-50/70 border border-rose-200">
                   <h4 className="text-xs sm:text-sm font-bold text-rose-950 mb-3 flex items-center gap-2">
-                    <span>🛑</span> Lo que te cuesta seguir haciéndolo del modo antiguo:
+                    <span>🛑</span>
+                    <span>
+                      {post.lang === 'en'
+                        ? 'The cost of doing outbound the legacy way:'
+                        : post.lang === 'pt'
+                        ? 'O custo de continuar prospectando no modelo antigo:'
+                        : 'Lo que te cuesta seguir haciéndolo del modo antiguo:'}
+                    </span>
                   </h4>
                   <ul className="space-y-2">
                     {vsl.problem.painBullets.map((bullet, idx) => (
@@ -299,7 +402,7 @@ export default async function BlogPostPage({ params }: Props) {
             <section className="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-6">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1 block">
-                  Paso 2: El Nuevo Paradigma
+                  Paso 2
                 </span>
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                   {vsl.solution.title}
@@ -350,11 +453,11 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
             </section>
 
-            {/* 4. Credibilidad (Por qué confiar: Anti-Ban & Seguridad) */}
+            {/* 4. Credibilidad (Anti-Ban & Seguridad) */}
             <section className="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-6">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1 block">
-                  Paso 3: Arquitectura & Confianza
+                  Paso 3
                 </span>
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                   {vsl.credibility.title}
@@ -387,11 +490,11 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
             </section>
 
-            {/* 5. Prueba Social (Métricas & Testimonio) */}
+            {/* 5. Prueba Social */}
             <section className="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-6">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1 block">
-                  Paso 4: Resultados Comprobados
+                  Paso 4
                 </span>
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">
                   {vsl.socialProof.title}
@@ -431,7 +534,8 @@ export default async function BlogPostPage({ params }: Props) {
                         {vsl.socialProof.testimonial.author}
                       </p>
                       <p className="text-gray-400 text-[11px]">
-                        {vsl.socialProof.testimonial.role} • {vsl.socialProof.testimonial.company}
+                        {vsl.socialProof.testimonial.role} •{' '}
+                        {vsl.socialProof.testimonial.company}
                       </p>
                     </div>
                     <span className="px-3 py-1 rounded-full bg-indigo-500/30 text-indigo-200 border border-indigo-400/30 font-bold text-[11px]">
@@ -488,23 +592,33 @@ export default async function BlogPostPage({ params }: Props) {
             {/* Quick Summary Card */}
             <div className="p-5 rounded-2xl bg-white border border-gray-200 shadow-xs">
               <span className="block text-xs font-bold uppercase tracking-wider text-indigo-600 mb-2">
-                En este artículo
+                {post.lang === 'en'
+                  ? 'In this article'
+                  : post.lang === 'pt'
+                  ? 'Neste artigo'
+                  : 'En este artículo'}
               </span>
               <h4 className="text-sm font-bold text-gray-900 mb-3 leading-snug">
                 {post.title}
               </h4>
               <div className="space-y-2 text-xs text-gray-600 border-t border-gray-100 pt-3">
                 <div className="flex items-center justify-between">
-                  <span>⏱️ Lectura:</span>
-                  <span className="font-semibold text-gray-900">{post.readTime}</span>
+                  <span>⏱️ {post.lang === 'en' ? 'Read:' : 'Lectura:'}</span>
+                  <span className="font-semibold text-gray-900">
+                    {post.readTime}
+                  </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>📅 Publicado:</span>
-                  <span className="font-semibold text-gray-900">{post.publishedAt}</span>
+                  <span>📅 {post.lang === 'en' ? 'Date:' : 'Publicado:'}</span>
+                  <span className="font-semibold text-gray-900">
+                    {post.publishedAt}
+                  </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span>🎯 Enfoque:</span>
-                  <span className="font-semibold text-gray-900">{post.categoryLabel}</span>
+                  <span>🎯 {post.lang === 'en' ? 'Topic:' : 'Categoría:'}</span>
+                  <span className="font-semibold text-gray-900">
+                    {post.categoryLabel}
+                  </span>
                 </div>
               </div>
             </div>
@@ -512,35 +626,64 @@ export default async function BlogPostPage({ params }: Props) {
             {/* Direct Sticky CTA Card */}
             <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-900 to-indigo-950 text-white shadow-md border border-gray-800">
               <span className="inline-block text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-indigo-500/30 text-indigo-300 border border-indigo-400/30 mb-3 uppercase tracking-wider">
-                Prueba 14 Días Gratis
+                {post.lang === 'en'
+                  ? '14-Day Free Trial'
+                  : post.lang === 'pt'
+                  ? '14 Dias Grátis'
+                  : 'Prueba 14 Días Gratis'}
               </span>
               <h4 className="text-base font-bold text-white mb-2 leading-tight">
-                ¿Listo para llenar tu calendario de ventas?
+                {post.lang === 'en'
+                  ? 'Ready to fill your sales pipeline?'
+                  : post.lang === 'pt'
+                  ? 'Pronto para encher seu calendário?'
+                  : '¿Listo para llenar tu calendario de ventas?'}
               </h4>
               <p className="text-xs text-gray-300 mb-4 leading-relaxed">
-                Automatiza tu prospección en LinkedIn y deja que el SDR de IA agende citas por ti.
+                {post.lang === 'en'
+                  ? 'Automate LinkedIn outreach and let AI SDR agents book qualified meetings for you.'
+                  : post.lang === 'pt'
+                  ? 'Automatize o LinkedIn e deixe os agentes SDR com IA agendarem reuniões por você.'
+                  : 'Automatiza tu prospección en LinkedIn y deja que el SDR de IA agende citas por ti.'}
               </p>
               <a
                 href="https://b2b.inhubflow.online"
                 className="block text-center w-full py-2.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition shadow-xs cursor-pointer"
               >
-                Probar InHubFlow Gratis ➔
+                {post.lang === 'en'
+                  ? 'Try InHubFlow Free ➔'
+                  : post.lang === 'pt'
+                  ? 'Testar InHubFlow Grátis ➔'
+                  : 'Probar InHubFlow Gratis ➔'}
               </a>
               <span className="block text-center text-[10px] text-gray-400 mt-2">
-                Sin tarjeta de crédito obligatoria
+                {post.lang === 'en'
+                  ? 'No credit card required'
+                  : post.lang === 'pt'
+                  ? 'Sem cartão de crédito obrigatório'
+                  : 'Sin tarjeta de crédito obligatoria'}
               </span>
             </div>
 
             {/* Link to other articles */}
             <div className="p-4 rounded-2xl bg-white border border-gray-200 shadow-xs text-xs">
               <span className="font-bold text-gray-900 block mb-2">
-                📚 Más Guías de Ventas B2B:
+                📚{' '}
+                {post.lang === 'en'
+                  ? 'More B2B Guides:'
+                  : post.lang === 'pt'
+                  ? 'Mais Guias B2B:'
+                  : 'Más Guías de Ventas B2B:'}
               </span>
               <Link
-                href="/blog"
+                href={`/blog/${post.lang}`}
                 className="text-indigo-600 hover:text-indigo-700 font-bold block"
               >
-                Ver todos los artículos ➔
+                {post.lang === 'en'
+                  ? 'View all guides ➔'
+                  : post.lang === 'pt'
+                  ? 'Ver todos os guias ➔'
+                  : 'Ver todos los artículos ➔'}
               </Link>
             </div>
           </aside>
