@@ -163,22 +163,6 @@ export default async function BlogPostLanguagePage({ params }: Props) {
     ],
   };
 
-  const jsonLdFaq =
-    post.faq && post.faq.length > 0
-      ? {
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
-          mainEntity: post.faq.map((item) => ({
-            '@type': 'Question',
-            name: item.question,
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: item.answer,
-            },
-          })),
-        }
-      : null;
-
   return (
     <article className="relative min-h-screen bg-[#FAFAFC] text-gray-900 selection:bg-indigo-600 selection:text-white">
       {/* Inject Structured Data */}
@@ -190,15 +174,9 @@ export default async function BlogPostLanguagePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
-      {jsonLdFaq && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
-        />
-      )}
 
-      {/* Interactive elements: Top reading bar, FAQs accordion, GSC copy button */}
-      <ArticleInteractive faq={post.faq} canonicalUrl={canonicalUrl} />
+      {/* Interactive elements: Top reading bar */}
+      <ArticleInteractive />
 
       {/* Article Header & Breadcrumbs Hero */}
       <header className="w-full relative overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F6F4FE] to-[#ECE7FE] pt-12 sm:pt-16 pb-12 sm:pb-16 border-b border-gray-200/80">
