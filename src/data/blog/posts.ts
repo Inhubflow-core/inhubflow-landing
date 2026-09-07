@@ -148,7 +148,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       closingCta: {
         headline: 'Deja de arriesgar tu cuenta. Empieza a llenar tu agenda hoy.',
-        subheadline: 'Prueba InHubFlow gratis durante 14 días y experimenta el poder de la prospección segura en piloto automático.',
+        subheadline: 'Prueba InHubFlow gratis durante 7 días y experimenta el poder de la prospección segura en piloto automático.',
         urgencyBadge: '⚡ Cupos Limitados: Solo habilitamos 35 nuevas cuentas por servidor esta semana para garantizar máxima entregabilidad.',
         bullets: [
           'Sin tarjeta de crédito obligatoria para comenzar.',
@@ -156,7 +156,7 @@ export const BLOG_POSTS: BlogPost[] = [
           'Garantía de seguridad y cadencia humana 100% activa.',
           'Acceso total al SDR con IA y secuencias multicanal.',
         ],
-        ctaLabel: 'Comenzar Prueba Gratuita de 14 Días ➔',
+        ctaLabel: 'Comenzar Prueba Gratuita de 7 Días ➔',
         ctaSubtext: 'Acceso inmediato • Sin compromiso • Cancela cuando quieras',
         targetUrl: 'https://b2b.inhubflow.online',
       },
@@ -324,15 +324,15 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       closingCta: {
         headline: 'Pon a trabajar a tu SDR con Inteligencia Artificial hoy mismo.',
-        subheadline: 'Prueba InHubFlow gratis durante 14 días y experimenta el alivio de tener tu calendario lleno de reuniones cualificadas.',
+        subheadline: 'Prueba InHubFlow gratis durante 7 días y experimenta el alivio de tener tu calendario lleno de reuniones cualificadas.',
         urgencyBadge: '🔥 Oferta Especial: Activa tu prueba gratis hoy y mantén tus condiciones preferenciales sin aumentos de precio.',
         bullets: [
           'Configura tu agente SDR en menos de 10 minutos.',
           'Sincronización directa con tu calendario de Calendly.',
           'Sin permanencia, cancela en cualquier momento con un clic.',
-          'Garantía total de satisfacción de 14 días.',
+          'Garantía total de satisfacción de 7 días.',
         ],
-        ctaLabel: 'Activar Mi SDR IA Gratis por 14 Días ➔',
+        ctaLabel: 'Activar Mi SDR IA Gratis por 7 Días ➔',
         ctaSubtext: 'Comienza en minutos • Sin tarjeta obligatoria • Citas automáticas',
         targetUrl: 'https://b2b.inhubflow.online',
       },
@@ -502,7 +502,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       closingCta: {
         headline: 'Duplica tus reuniones comerciales este mes con una secuencia multicanal.',
-        subheadline: 'Prueba la plataforma InHubFlow gratis durante 14 días y activa tu primer workflow multicanal en 15 minutos.',
+        subheadline: 'Prueba la plataforma InHubFlow gratis durante 7 días y activa tu primer workflow multicanal en 15 minutos.',
         urgencyBadge: '⚡ Garantía de Pipeline: Configura tu flujo hoy y comienza a generar conversaciones cualificadas esta misma semana.',
         bullets: [
           'Workflows preconfigurados de alta conversión listos para usar.',
@@ -511,7 +511,7 @@ export const BLOG_POSTS: BlogPost[] = [
           'Soporte directo por chat para ayudarte a lanzar tu primera campaña.',
         ],
         ctaLabel: 'Lanzar Mi Secuencia Multicanal Gratis ➔',
-        ctaSubtext: '14 días de prueba sin coste • Configuración guiada • Resultados inmediatos',
+        ctaSubtext: '7 días de prueba sin coste • Configuración guiada • Resultados inmediatos',
         targetUrl: 'https://b2b.inhubflow.online',
       },
     },
@@ -678,7 +678,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       closingCta: {
         headline: 'Stop risking your account. Start filling your calendar today.',
-        subheadline: 'Test InHubFlow risk-free for 14 days and experience the power of safe, automated pipeline generation.',
+        subheadline: 'Test InHubFlow risk-free for 7 days and experience the power of safe, automated pipeline generation.',
         urgencyBadge: '⚡ Limited Capacity: We only onboard 35 new workspace accounts per server IP this week to guarantee deliverability.',
         bullets: [
           'No credit card required to get started.',
@@ -686,7 +686,7 @@ export const BLOG_POSTS: BlogPost[] = [
           'Full human cadence safety guarantee active.',
           'Full access to AI SDR and multichannel workflows.',
         ],
-        ctaLabel: 'Start Your 14-Day Free Trial ➔',
+        ctaLabel: 'Start Your 7-Day Free Trial ➔',
         ctaSubtext: 'Instant access • No long-term contracts • Cancel anytime',
         targetUrl: 'https://b2b.inhubflow.online',
       },
@@ -850,15 +850,15 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       closingCta: {
         headline: 'Put your 24/7 AI SDR to work today.',
-        subheadline: 'Test InHubFlow free for 14 days and watch your calendar fill with high-intent sales conversations.',
+        subheadline: 'Test InHubFlow free for 7 days and watch your calendar fill with high-intent sales conversations.',
         urgencyBadge: '🔥 Special Pricing: Lock in grandfathered subscription terms on all future platform upgrades today.',
         bullets: [
           'Deploy your AI SDR in under 10 minutes.',
           'Seamless integration with your Calendly links.',
           'No long-term commitments, cancel anytime with one click.',
-          '14-day total satisfaction guarantee.',
+          '7-day total satisfaction guarantee.',
         ],
-        ctaLabel: 'Activate My AI SDR Free for 14 Days ➔',
+        ctaLabel: 'Activate My AI SDR Free for 7 Days ➔',
         ctaSubtext: 'Launch in minutes • No credit card required • Automated meetings',
         targetUrl: 'https://b2b.inhubflow.online',
       },
@@ -1028,7 +1028,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       closingCta: {
         headline: 'Double your B2B sales meetings this month with multichannel sequences.',
-        subheadline: 'Try InHubFlow free for 14 days and launch your first synchronized workflow in 15 minutes.',
+        subheadline: 'Try InHubFlow free for 7 days and launch your first synchronized workflow in 15 minutes.',
         urgencyBadge: '⚡ Pipeline Guarantee: Launch your cadence today and generate qualified conversations this week.',
         bullets: [
           'High-converting workflow blueprints included.',
@@ -1037,7 +1037,7 @@ export const BLOG_POSTS: BlogPost[] = [
           'Direct chat onboarding assistance to launch your first cadence.',
         ],
         ctaLabel: 'Launch My Multichannel Cadence Free ➔',
-        ctaSubtext: '14-day free trial • Guided setup • Measurable results',
+        ctaSubtext: '7-day free trial • Guided setup • Measurable results',
         targetUrl: 'https://b2b.inhubflow.online',
       },
     },
@@ -1204,7 +1204,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       closingCta: {
         headline: 'Pare de arriscar seu perfil. Comece a encher seu calendário hoje.',
-        subheadline: 'Teste o InHubFlow grátis por 14 dias e experimente o poder da prospecção segura no piloto automático.',
+        subheadline: 'Teste o InHubFlow grátis por 7 dias e experimente o poder da prospecção segura no piloto automático.',
         urgencyBadge: '⚡ Vagas Limitadas: Liberamos apenas 35 novas contas por servidor IP esta semana para manter a máxima entregabilidade.',
         bullets: [
           'Sem necessidade de cartão de crédito para começar.',
@@ -1212,7 +1212,7 @@ export const BLOG_POSTS: BlogPost[] = [
           'Garantia de segurança e cadência humana 100% ativa.',
           'Acesso completo ao SDR com IA e fluxos multicanal.',
         ],
-        ctaLabel: 'Iniciar Teste Gratuito de 14 Dias ➔',
+        ctaLabel: 'Iniciar Teste Gratuito de 7 Dias ➔',
         ctaSubtext: 'Acesso imediato • Sem compromisso • Cancele quando quiser',
         targetUrl: 'https://b2b.inhubflow.online',
       },
@@ -1376,15 +1376,15 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       closingCta: {
         headline: 'Coloque seu SDR com Inteligência Artificial para trabalhar hoje.',
-        subheadline: 'Teste o InHubFlow grátis por 14 dias e veja seu calendário ser preenchido com reuniões qualificadas.',
+        subheadline: 'Teste o InHubFlow grátis por 7 dias e veja seu calendário ser preenchido com reuniões qualificadas.',
         urgencyBadge: '🔥 Condição Especial: Ative seu teste hoje e garanta condições preferenciais sem reajustes futuros.',
         bullets: [
           'Configure seu agente de IA em menos de 10 minutos.',
           'Integração direta com seus links do Calendly.',
           'Sem fidelidade ou carência, cancele quando desejar.',
-          'Garantia total de satisfação de 14 dias.',
+          'Garantia total de satisfação de 7 dias.',
         ],
-        ctaLabel: 'Ativar Meu SDR IA Grátis por 14 Dias ➔',
+        ctaLabel: 'Ativar Meu SDR IA Grátis por 7 Dias ➔',
         ctaSubtext: 'Início em minutos • Sem cartão obrigatório • Reuniões automáticas',
         targetUrl: 'https://b2b.inhubflow.online',
       },
@@ -1554,7 +1554,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       closingCta: {
         headline: 'Duplique suas reuniões de vendas este mês com sequências multicanal.',
-        subheadline: 'Experimente a plataforma InHubFlow grátis por 14 dias e ative seu primeiro fluxo em 15 minutos.',
+        subheadline: 'Experimente a plataforma InHubFlow grátis por 7 dias e ative seu primeiro fluxo em 15 minutos.',
         urgencyBadge: '⚡ Garantia de Pipeline: Lance sua sequência hoje e comece a gerar conversas qualificadas esta semana.',
         bullets: [
           'Workflows pré-configurados de alta conversão inclusos.',
@@ -1563,7 +1563,7 @@ export const BLOG_POSTS: BlogPost[] = [
           'Suporte em tempo real para ajudar você a lançar sua primeira campanha.',
         ],
         ctaLabel: 'Criar Minha Sequência Multicanal Grátis ➔',
-        ctaSubtext: '14 dias de teste sem custo • Configuração guiada • Resultados rápidos',
+        ctaSubtext: '7 dias de teste sem custo • Configuração guiada • Resultados rápidos',
         targetUrl: 'https://b2b.inhubflow.online',
       },
     },

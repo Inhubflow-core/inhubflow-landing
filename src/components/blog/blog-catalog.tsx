@@ -30,7 +30,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
           globalCtaTitle: 'Multiply qualified sales meetings with zero ban risk',
           globalCtaDesc:
             'Join over 300 B2B companies automating outreach with 24/7 AI SDRs and undetectable human cadence.',
-          globalCtaBtn: 'Start 14-Day Free Trial ➔',
+          globalCtaBtn: 'Start 7-Day Free Trial ➔',
           globalCtaSubtext: '✓ No credit card required',
           categories: [
             { id: 'all', label: 'All Articles' },
@@ -54,7 +54,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
           globalCtaTitle: 'Multiplique suas reuniões comerciais sem risco de bloqueio',
           globalCtaDesc:
             'Junte-se a mais de 300 empresas B2B que automatizam prospecção no LinkedIn e E-mail com SDR de IA e cadência humana.',
-          globalCtaBtn: 'Iniciar Teste Gratuito de 14 Dias ➔',
+          globalCtaBtn: 'Iniciar Teste Gratuito de 7 Dias ➔',
           globalCtaSubtext: '✓ Sem cartão de crédito obrigatório',
           categories: [
             { id: 'all', label: 'Todos os Artigos' },
@@ -79,7 +79,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
           globalCtaTitle: 'Multiplica tus reuniones comerciales sin riesgo de baneo',
           globalCtaDesc:
             'Únete a más de 300 agencias y empresas que ya automatizan su prospección en LinkedIn y Email con SDRs de IA y cadencia humana 100% segura.',
-          globalCtaBtn: 'Comenzar Prueba Gratuita de 14 Días ➔',
+          globalCtaBtn: 'Comenzar Prueba Gratuita de 7 Días ➔',
           globalCtaSubtext: '✓ Sin tarjeta de crédito requerida',
           categories: [
             { id: 'all', label: 'Todos los Artículos' },
