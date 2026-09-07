@@ -93,7 +93,7 @@ export default async function BlogLanguagePage({ params }: Props) {
     <div className="relative min-h-screen bg-[#FAFAFC] text-gray-900 selection:bg-indigo-600 selection:text-white">
       {/* Header & Hero Section */}
       <section className="w-full relative overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F6F4FE] to-[#ECE7FE] pt-14 sm:pt-20 pb-12 sm:pb-16 border-b border-gray-200/70">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/80 mb-5 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 animate-pulse" />
             {hero.badge}
@@ -108,7 +108,7 @@ export default async function BlogLanguagePage({ params }: Props) {
       </section>
 
       {/* Main Content Area */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         <BlogCatalog posts={posts} currentLang={currentLang} />
       </div>
     </div>

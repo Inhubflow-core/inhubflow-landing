@@ -180,7 +180,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
 
       {/* Article Header & Breadcrumbs Hero */}
       <header className="w-full relative overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F6F4FE] to-[#ECE7FE] pt-12 sm:pt-16 pb-12 sm:pb-16 border-b border-gray-200/80">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumbs */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <nav
@@ -264,7 +264,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
           </div>
 
           {/* Main H1 Title */}
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6 max-w-4xl">
             {post.title}
           </h1>
 
@@ -285,20 +285,20 @@ export default async function BlogPostLanguagePage({ params }: Props) {
         </div>
       </header>
 
-      {/* Main Reading Layout - Centered & Distraction-Free */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      {/* Main Content Layout - Exact landing page width (max-w-7xl) */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         <main className="space-y-10 sm:space-y-12">
           {/* 1. Gancho Impactante (Hook Box) */}
-          <section className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-950 text-white shadow-xl border border-indigo-800/40 relative overflow-hidden">
+          <section className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-950 text-white shadow-xl border border-indigo-800/40 relative overflow-hidden">
             <div className="relative z-10">
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white mb-4 leading-snug">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-4 leading-snug max-w-4xl">
                 {vsl.hook.headline}
               </h2>
-              <p className="text-sm sm:text-base text-indigo-100 mb-5 leading-relaxed">
+              <p className="text-base sm:text-lg text-indigo-100 mb-6 leading-relaxed max-w-4xl">
                 {vsl.hook.subheadline}
               </p>
-              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-                <p className="text-xs sm:text-sm text-white font-semibold italic leading-relaxed">
+              <div className="p-5 sm:p-6 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15 max-w-3xl">
+                <p className="text-sm sm:text-base text-white font-semibold italic leading-relaxed">
                   &quot;{vsl.hook.boldTake}&quot;
                 </p>
               </div>
@@ -306,12 +306,12 @@ export default async function BlogPostLanguagePage({ params }: Props) {
           </section>
 
           {/* 2. El Problema (PAS: Exponer, Agitar, Empujar al límite) */}
-          <section className="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-6">
+          <section className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-8">
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
                 {vsl.problem.exposureTitle}
               </h2>
-              <div className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed max-w-5xl">
                 {vsl.problem.exposureParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
@@ -319,11 +319,11 @@ export default async function BlogPostLanguagePage({ params }: Props) {
             </div>
 
             {/* Agitation */}
-            <div className="pt-4 border-t border-gray-100">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
+            <div className="pt-6 border-t border-gray-100">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                 {vsl.problem.agitationTitle}
               </h3>
-              <div className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed max-w-5xl">
                 {vsl.problem.agitationParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
@@ -331,19 +331,19 @@ export default async function BlogPostLanguagePage({ params }: Props) {
             </div>
 
             {/* Breaking Point / Limit */}
-            <div className="pt-4 border-t border-gray-100">
-              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
+            <div className="pt-6 border-t border-gray-100">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                 {vsl.problem.limitTitle}
               </h3>
-              <div className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed mb-6">
+              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 max-w-5xl">
                 {vsl.problem.limitParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
               </div>
 
               {/* Pain Bullets Callout */}
-              <div className="p-5 rounded-2xl bg-rose-50/70 border border-rose-200">
-                <h4 className="text-xs sm:text-sm font-bold text-rose-950 mb-3 flex items-center gap-2">
+              <div className="p-6 sm:p-8 rounded-2xl bg-rose-50/70 border border-rose-200">
+                <h4 className="text-sm sm:text-base font-bold text-rose-950 mb-4 flex items-center gap-2">
                   <span>🛑</span>
                   <span>
                     {post.lang === 'en'
@@ -353,7 +353,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                       : 'Lo que te cuesta seguir haciéndolo del modo antiguo:'}
                   </span>
                 </h4>
-                <ul className="space-y-2">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {vsl.problem.painBullets.map((bullet, idx) => (
                     <li
                       key={idx}
@@ -369,15 +369,15 @@ export default async function BlogPostLanguagePage({ params }: Props) {
           </section>
 
           {/* 3. La Solución InHubFlow */}
-          <section className="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-6">
+          <section className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-8">
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                 {vsl.solution.title}
               </h2>
-              <p className="text-xs sm:text-sm text-gray-600 mb-4 font-medium">
+              <p className="text-sm sm:text-base text-gray-600 mb-4 font-medium">
                 {vsl.solution.subtitle}
               </p>
-              <div className="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed mb-6">
+              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 max-w-5xl">
                 {vsl.solution.introParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
@@ -386,14 +386,14 @@ export default async function BlogPostLanguagePage({ params }: Props) {
 
             {/* 3-Step Visual Process */}
             <div>
-              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-4">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
                 {vsl.solution.processTitle}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {vsl.solution.steps.map((st) => (
                   <div
                     key={st.step}
-                    className="p-4 sm:p-5 rounded-2xl bg-indigo-50/50 border border-indigo-100 hover:border-indigo-300 transition"
+                    className="p-6 rounded-2xl bg-indigo-50/50 border border-indigo-100 hover:border-indigo-300 transition"
                   >
                     <div className="flex items-center justify-between gap-2 mb-3">
                       <span className="text-2xl">{st.icon}</span>
@@ -401,10 +401,10 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                         {st.step}
                       </span>
                     </div>
-                    <h4 className="font-bold text-xs sm:text-sm text-gray-900 mb-1.5 leading-snug">
+                    <h4 className="font-bold text-sm sm:text-base text-gray-900 mb-2 leading-snug">
                       {st.title}
                     </h4>
-                    <p className="text-xs text-gray-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                       {st.desc}
                     </p>
                   </div>
@@ -412,8 +412,8 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-200">
-              <p className="text-xs sm:text-sm font-bold text-emerald-950 flex items-center gap-2">
+            <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-200">
+              <p className="text-sm sm:text-base font-bold text-emerald-950 flex items-center gap-2">
                 <span>💎</span>
                 <span>{vsl.solution.keyBenefit}</span>
               </p>
@@ -421,33 +421,33 @@ export default async function BlogPostLanguagePage({ params }: Props) {
           </section>
 
           {/* 4. Credibilidad (Seguridad de Nivel Empresarial y Casos de Éxito) */}
-          <section className="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-6">
+          <section className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-white border border-gray-200/90 shadow-xs space-y-8">
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                 {vsl.credibility.title}
               </h2>
-              <p className="text-xs sm:text-sm text-gray-600 mb-6 font-medium">
+              <p className="text-sm sm:text-base text-gray-600 mb-6 font-medium">
                 {vsl.credibility.subtitle}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                 {vsl.credibility.points.map((pt, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-2xl bg-gray-50 border border-gray-200/80"
+                    className="p-6 rounded-2xl bg-gray-50 border border-gray-200/80"
                   >
-                    <div className="text-xl mb-2">{pt.icon}</div>
-                    <h4 className="font-bold text-xs sm:text-sm text-gray-900 mb-1">
+                    <div className="text-2xl mb-2">{pt.icon}</div>
+                    <h4 className="font-bold text-sm sm:text-base text-gray-900 mb-1.5">
                       {pt.title}
                     </h4>
-                    <p className="text-xs text-gray-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                       {pt.desc}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-200 flex items-center gap-3 text-xs sm:text-sm text-indigo-950 font-semibold mb-8">
+              <div className="p-5 rounded-2xl bg-indigo-50/70 border border-indigo-200 flex items-center gap-3 text-xs sm:text-sm text-indigo-950 font-semibold mb-8">
                 <span className="text-xl">🛡️</span>
                 <span>{vsl.credibility.securityBadgeText}</span>
               </div>
@@ -460,19 +460,19 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               </h3>
 
               {/* 3 Hard Stats */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {vsl.socialProof.stats.map((st, idx) => (
                   <div
                     key={idx}
-                    className="p-5 rounded-2xl bg-indigo-50/40 border border-indigo-100 text-center"
+                    className="p-6 rounded-2xl bg-indigo-50/40 border border-indigo-100 text-center"
                   >
                     <div className="text-2xl sm:text-3xl font-extrabold text-indigo-600 mb-1">
                       {st.value}
                     </div>
-                    <div className="font-bold text-xs text-gray-900 mb-1">
+                    <div className="font-bold text-xs sm:text-sm text-gray-900 mb-1">
                       {st.label}
                     </div>
-                    <p className="text-[11px] text-gray-600 leading-tight">
+                    <p className="text-xs text-gray-600 leading-tight">
                       {st.desc}
                     </p>
                   </div>
@@ -480,24 +480,24 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               </div>
 
               {/* Testimonial Box */}
-              <div className="p-6 rounded-2xl bg-gradient-to-r from-gray-900 via-slate-900 to-indigo-950 text-white shadow-md border border-gray-800">
+              <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-gray-900 via-slate-900 to-indigo-950 text-white shadow-md border border-gray-800">
                 <div className="flex items-center gap-1 text-amber-400 text-sm mb-3">
                   ★★★★★
                 </div>
-                <blockquote className="text-xs sm:text-sm italic text-gray-200 mb-4 leading-relaxed">
+                <blockquote className="text-sm sm:text-base italic text-gray-200 mb-4 leading-relaxed max-w-4xl">
                   &quot;{vsl.socialProof.testimonial.quote}&quot;
                 </blockquote>
                 <div className="flex items-center justify-between gap-4 flex-wrap text-xs">
                   <div>
-                    <p className="font-bold text-white">
+                    <p className="font-bold text-white text-sm">
                       {vsl.socialProof.testimonial.author}
                     </p>
-                    <p className="text-gray-400 text-[11px]">
+                    <p className="text-gray-400 text-xs">
                       {vsl.socialProof.testimonial.role} •{' '}
                       {vsl.socialProof.testimonial.company}
                     </p>
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-indigo-500/30 text-indigo-200 border border-indigo-400/30 font-bold text-[11px]">
+                  <span className="px-3.5 py-1.5 rounded-full bg-indigo-500/30 text-indigo-200 border border-indigo-400/30 font-bold text-xs">
                     ✓ {vsl.socialProof.testimonial.highlight}
                   </span>
                 </div>
@@ -506,19 +506,19 @@ export default async function BlogPostLanguagePage({ params }: Props) {
           </section>
 
           {/* 5. CTA (7 Días de Test Gratuito) */}
-          <section className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-800 text-white shadow-xl relative overflow-hidden">
+          <section className="p-8 sm:p-12 lg:p-16 rounded-3xl bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-800 text-white shadow-xl relative overflow-hidden">
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-amber-400 text-gray-950 mb-4 shadow-xs">
                 {vsl.closingCta.urgencyBadge}
               </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mb-3 leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-extrabold text-white mb-3 leading-tight max-w-4xl">
                 {vsl.closingCta.headline}
               </h2>
-              <p className="text-sm sm:text-base text-indigo-100 mb-6 leading-relaxed">
+              <p className="text-base sm:text-lg text-indigo-100 mb-6 leading-relaxed max-w-3xl">
                 {vsl.closingCta.subheadline}
               </p>
 
-              <ul className="space-y-2.5 mb-8">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-3xl mb-8">
                 {vsl.closingCta.bullets.map((b, idx) => (
                   <li
                     key={idx}
