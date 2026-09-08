@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 
   const descriptions: Record<BlogLanguage, string> = {
-    es: 'Estrategias avanzadas de prospección B2B, automatización segura en LinkedIn sin bloqueos, y cartas de venta sobre agentes SDR con Inteligencia Artificial.',
+    es: 'Estrategias avanzadas de prospección B2B, automatización segura en LinkedIn sin bloqueos, y guías sobre agentes SDR con Inteligencia Artificial.',
     en: 'Advanced B2B outbound strategies, safe LinkedIn automation without bans, and high-conversion playbooks on autonomous AI SDR agents.',
     pt: 'Estratégias avançadas de prospecção B2B, automação segura no LinkedIn sem bloqueios e guias práticos sobre agentes SDR com Inteligência Artificial.',
   };
