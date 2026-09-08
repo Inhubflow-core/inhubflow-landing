@@ -31,7 +31,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
           globalCtaDesc:
             'Join over 300 B2B companies automating outreach with 24/7 AI SDRs and undetectable human cadence.',
           globalCtaBtn: 'Start 7-Day Free Trial ➔',
-          globalCtaSubtext: '✓ No credit card required',
+          globalCtaSubtext: 'Instant access • No commitment • Cancel anytime',
           categories: [
             { id: 'all', label: 'All Articles' },
             { id: 'linkedin-automation', label: 'LinkedIn & Security' },
@@ -55,7 +55,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
           globalCtaDesc:
             'Junte-se a mais de 300 empresas B2B que automatizam prospecção no LinkedIn e E-mail com SDR de IA e cadência humana.',
           globalCtaBtn: 'Iniciar Teste Gratuito de 7 Dias ➔',
-          globalCtaSubtext: '✓ Sem cartão de crédito obrigatório',
+          globalCtaSubtext: 'Acesso imediato • Sem compromisso • Cancele quando quiser',
           categories: [
             { id: 'all', label: 'Todos os Artigos' },
             { id: 'linkedin-automation', label: 'LinkedIn & Segurança' },
@@ -80,7 +80,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
           globalCtaDesc:
             'Únete a más de 300 agencias y empresas que ya automatizan su prospección en LinkedIn y Email con SDRs de IA y cadencia humana 100% segura.',
           globalCtaBtn: 'Comenzar Prueba Gratuita de 7 Días ➔',
-          globalCtaSubtext: '✓ Sin tarjeta de crédito requerida',
+          globalCtaSubtext: 'Acceso inmediato • Sin compromiso • Cancela cuando quieras',
           categories: [
             { id: 'all', label: 'Todos los Artículos' },
             { id: 'linkedin-automation', label: 'LinkedIn & Seguridad' },
