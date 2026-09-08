@@ -37,19 +37,19 @@ export const BLOG_POSTS: BlogPost[] = [
         boldTake: 'Perder tu cuenta de LinkedIn no es solo perder contactos: es perder 10 años de reputación profesional y congelar tus ingresos de un día para otro.',
       },
       problem: {
-        exposureTitle: '1. La Trampa Mortal de la Prospección Tradicional',
+        exposureTitle: 'La Trampa Mortal de la Prospección Tradicional',
         exposureParagraphs: [
           'Todos sabemos que LinkedIn es la mina de oro B2B más rentable del planeta. Ahí están tus clientes ideales, los directores que toman decisiones y los presupuestos millonarios.',
           'Pero prospectar a mano es una tortura. Pasar 4 horas al día enviando mensajes uno a uno agota a cualquiera y te deja sin tiempo para cerrar ventas.',
           'La mayoría de agencias y vendedores cometen el error fatal: instalan un bot barato de $20 o una extensión en Chrome que promete enviar cientos de mensajes mágicamente.',
         ],
-        agitationTitle: '2. Por Qué la Pesadilla Empeora Cada Día',
+        agitationTitle: 'Por Qué la Pesadilla Empeora Cada Día',
         agitationParagraphs: [
           'El nuevo algoritmo de seguridad de LinkedIn analiza patrones microscópicos: la velocidad con la que haces clic, la regularidad matemática de los envíos y la huella digital de tu navegador.',
           'Cuando un bot envía 5 mensajes en 30 segundos sin pestañear, LinkedIn levanta una bandera roja de inmediato.',
           'Primero recibes el temido CAPTCHA constante. Luego, tu visibilidad en el feed cae al 5%. Y una mañana cualquiera abres LinkedIn y ves el mensaje que hiela la sangre: "Tu cuenta ha sido restringida permanentemente".',
         ],
-        limitTitle: '3. El Punto de Quiebre: ¿Parar o Escalar con Inteligencia?',
+        limitTitle: 'El Punto de Quiebre: ¿Parar o Escalar con Inteligencia?',
         limitParagraphs: [
           'Quedarte de brazos cruzados prospectando a mano significa que tu competencia te pasará por encima.',
           'Pero seguir usando herramientas arcaicas que inyectan código en el DOM de LinkedIn es una ruleta rusa donde tu perfil es la víctima.',
@@ -213,19 +213,19 @@ export const BLOG_POSTS: BlogPost[] = [
         boldTake: 'En 2026, los humanos deben estar cerrando ventas y negociando contratos, no pasando 6 horas al día haciendo tareas mecánicas de prospección.',
       },
       problem: {
-        exposureTitle: '1. La Pesada Carga Financiera de un SDR Tradicional',
+        exposureTitle: 'La Pesada Carga Financiera de un SDR Tradicional',
         exposureParagraphs: [
           'Contratar a un representante de desarrollo de ventas (SDR) parece la solución lógica cuando necesitas más reuniones.',
           'Pero la factura real es devastadora: sueldo fijo, cargas sociales, comisiones, licencias de software ($150 en LinkedIn, $80 en CRM, $90 en herramientas de email) y horas interminables de formación.',
           'Y aun así, un ser humano solo puede enviar entre 30 y 50 mensajes diarios antes de agotarse mentalmente.',
         ],
-        agitationTitle: '2. Respuestas a Destiempo y Pérdida de Oportunidades Calientes',
+        agitationTitle: 'Respuestas a Destiempo y Pérdida de Oportunidades Calientes',
         agitationParagraphs: [
           '¿Qué pasa cuando un cliente potencial responde un viernes a las 8 de la noche con una pregunta clave sobre tu servicio?',
           'Con un SDR junior, ese mensaje se queda sin respuesta hasta el lunes por la mañana. Para entonces, el prospecto ya investigó a tu competencia y contrató a otro.',
           'Además, la tasa de rotación en el puesto de SDR es la más alta de la industria: pasas 3 meses enseñándole tu negocio y se marcha a los 5 meses.',
         ],
-        limitTitle: '3. El Dilema del Fundador: ¿Escalar Costes o Multiplicar Eficiencia?',
+        limitTitle: 'El Dilema del Fundador: ¿Escalar Costes o Multiplicar Eficiencia?',
         limitParagraphs: [
           'Seguir contratando más personal para hacer tareas repetitivas destruye tus márgenes de beneficio.',
           'Necesitas una fuerza de ventas que trabaje los 7 días de la semana, que conozca tu producto al milímetro y que jamás sufra de pereza o desánimo.',
@@ -385,19 +385,19 @@ export const BLOG_POSTS: BlogPost[] = [
         boldTake: 'Cuando sincronizas visitas de perfil, notas en LinkedIn y correos de seguimiento coordinados, tu tasa de respuesta se multiplica por 4 de inmediato.',
       },
       problem: {
-        exposureTitle: '1. El Síndrome del Canal Único y la Bandeja de Spam',
+        exposureTitle: 'El Síndrome del Canal Único y la Bandeja de Spam',
         exposureParagraphs: [
           'Si solo envías correos fríos, estás a merced de los filtros de spam de Google y Microsoft que cada día son más agresivos.',
           'Si solo usas LinkedIn, estás limitado por el número de conexiones semanales que permite la plataforma.',
           'Tus prospectos reciben docenas de propuestas al día. Si ven tu nombre en un solo sitio una sola vez, lo ignoran por completo.',
         ],
-        agitationTitle: '2. Mensajes Desconectados que Destruyen tu Imagen de Marca',
+        agitationTitle: 'Mensajes Desconectados que Destruyen tu Imagen de Marca',
         agitationParagraphs: [
           'Peor aún: muchos equipos intentan hacer multicanal de forma manual y descoordinada.',
           'Le envían un email frío a un director y, dos minutos después, otro miembro del equipo le manda un mensaje idéntico por LinkedIn.',
           'El prospecto se siente acosado y percibe a tu empresa como amateur e invasiva. El resultado: te marcan como spam y pierdes la cuenta para siempre.',
         ],
-        limitTitle: '3. La Necesidad de una Orquestación Sincronizada',
+        limitTitle: 'La Necesidad de una Orquestación Sincronizada',
         limitParagraphs: [
           'No se trata de bombardear al cliente, sino de estar presente donde él trabaja con una cadencia elegante y natural.',
           'Primero generas curiosidad, luego abres la conversación y finalmente aportas valor por el canal donde el prospecto esté más receptivo.',
@@ -567,19 +567,19 @@ export const BLOG_POSTS: BlogPost[] = [
         boldTake: 'Losing your LinkedIn account is not just losing contacts: it wipes out 10 years of professional reputation and freezes your pipeline overnight.',
       },
       problem: {
-        exposureTitle: '1. The Fatal Trap of Legacy Outbound',
+        exposureTitle: 'The Fatal Trap of Legacy Outbound',
         exposureParagraphs: [
           'LinkedIn is the highest ROI channel in B2B sales. Key corporate decision-makers and enterprise budgets are right there.',
           'Yet manual outreach is exhausting. Spending 4 hours every day sending repetitive connection notes burns out your team and steals time from closing deals.',
           'That leads most agencies to make a deadly mistake: downloading a cheap $20 Chrome extension promising mass autopilot messages.',
         ],
-        agitationTitle: '2. Why the Algorithmic Trap is Closing Faster',
+        agitationTitle: 'Why the Algorithmic Trap is Closing Faster',
         agitationParagraphs: [
           'LinkedIn’s 2026 security algorithms monitor behavioral micro-signals: click velocity, algorithmic timing regularities, and browser fingerprints.',
           'When an automated bot sends 5 invites in 30 seconds without natural pauses, security flags are triggered immediately.',
           'First comes persistent CAPTCHAs. Next, your feed visibility plummets by 90%. Then you wake up to the dreaded notification: "Your account has been restricted indefinitely."',
         ],
-        limitTitle: '3. The Turning Point: Scale or Fall Behind',
+        limitTitle: 'The Turning Point: Scale or Fall Behind',
         limitParagraphs: [
           'Going back to 100% manual typing means your competitors will outpace your pipeline.',
           'Yet running outdated DOM-injecting bots is playing Russian roulette with your company’s brand.',
@@ -739,19 +739,19 @@ export const BLOG_POSTS: BlogPost[] = [
         boldTake: 'In 2026, humans should be closing deals and negotiating contracts, not spending 6 hours a day on robotic copy-pasting.',
       },
       problem: {
-        exposureTitle: '1. The Heavy Financial Burden of Legacy Sales Reps',
+        exposureTitle: 'The Heavy Financial Burden of Legacy Sales Reps',
         exposureParagraphs: [
           'Hiring an SDR sounds like the standard playbook when you need more pipeline.',
           'Yet the true invoice is overwhelming: base salary, payroll taxes, commissions, and software licenses ($150 LinkedIn, $80 CRM, $90 email tools) plus weeks of coaching.',
           'Despite that investment, a human can only send 30 to 50 thoughtful messages a day before mental fatigue kicks in.',
         ],
-        agitationTitle: '2. Delayed Responses Mean Cold Opportunities',
+        agitationTitle: 'Delayed Responses Mean Cold Opportunities',
         agitationParagraphs: [
           'What happens when a high-value prospect replies on Friday at 7 PM with a critical question?',
           'With a human junior, that message sits unread until Monday morning. By then, the prospect has already booked a demo with your competitor.',
           'Furthermore, SDR churn is the highest across the tech industry—you spend 3 months training them, only to watch them depart at month 5.',
         ],
-        limitTitle: '3. The Founder’s Dilemma: Inflate Overhead or Scale with AI?',
+        limitTitle: 'The Founder’s Dilemma: Inflate Overhead or Scale with AI?',
         limitParagraphs: [
           'Adding headcount for repetitive mechanical outreach degrades your net margins.',
           'You need a sales machine that operates 24/7, knows your playbook inside out, and never suffers from inconsistency or burnout.',
@@ -911,19 +911,19 @@ export const BLOG_POSTS: BlogPost[] = [
         boldTake: 'When you synchronize subtle profile visits, LinkedIn connection notes, and contextual email follow-ups, your response rate quadruples immediately.',
       },
       problem: {
-        exposureTitle: '1. Single-Channel Vulnerability & Spam Traps',
+        exposureTitle: 'Single-Channel Vulnerability & Spam Traps',
         exposureParagraphs: [
           'Relying solely on cold email leaves you vulnerable to increasingly strict spam filters from Google and Microsoft.',
           'Relying solely on LinkedIn limits your volume to the platform’s strict weekly invite quotas.',
           'Your target accounts receive dozens of pitches every day. If they only see your name once on one channel, you are instantly ignored.',
         ],
-        agitationTitle: '2. Disconnected Outreach Destroys Brand Equity',
+        agitationTitle: 'Disconnected Outreach Destroys Brand Equity',
         agitationParagraphs: [
           'Even worse: many revenue teams attempt multichannel outreach manually and without coordination.',
           'A rep sends a cold email to a VP, and two minutes later another colleague fires an identical pitch on LinkedIn.',
           'The prospect feels spammed and views your company as amateur and aggressive. The result: unsubscribed, blocked, and burned.',
         ],
-        limitTitle: '3. The Need for Intelligent Orchestration',
+        limitTitle: 'The Need for Intelligent Orchestration',
         limitParagraphs: [
           'Effective outbound isn’t about spamming prospects; it’s about establishing a natural presence across their daily workflow.',
           'First pique curiosity, then open conversation, and finally deliver value on whichever channel the prospect prefers.',
@@ -1093,19 +1093,19 @@ export const BLOG_POSTS: BlogPost[] = [
         boldTake: 'Perder sua conta do LinkedIn não é apenas perder contatos: é perder 10 anos de autoridade profissional e paralisar suas vendas da noite para o dia.',
       },
       problem: {
-        exposureTitle: '1. A Armadilha Fatal da Prospecção Antiga',
+        exposureTitle: 'A Armadilha Fatal da Prospecção Antiga',
         exposureParagraphs: [
           'O LinkedIn é o canal B2B mais lucrativo do planeta. É lá onde estão os diretores com poder de decisão e os maiores orçamentos empresariais.',
           'Porém, prospectar manualmente é desgastante. Passar 4 horas por dia enviando mensagens manuais esgota os vendedores e impede que eles foquem em fechar vendas.',
           'Muitas empresas cometem o erro grave: instalam uma extensão barata de $20 no Chrome que promete disparar centenas de mensagens magicamente.',
         ],
-        agitationTitle: '2. Por Que a Vigilância do Algoritmo Está Mais Rígida',
+        agitationTitle: 'Por Que a Vigilância do Algoritmo Está Mais Rígida',
         agitationParagraphs: [
           'O algoritmo de segurança do LinkedIn analisa padrões microscópicos: a velocidade com que você clica, a precisão matemática dos envios e a impressão digital do seu navegador.',
           'Quando um bot envia 5 convites em 30 segundos sem pausas naturais, o sistema dispara um sinal de alerta vermelho.',
           'Primeiro surgem CAPTCHAs constantes. Em seguida, seu alcance no feed cai para quase zero. Até que um dia você tenta entrar e vê a mensagem terrível: "Sua conta foi restrita permanentemente".',
         ],
-        limitTitle: '3. O Ponto de Decisão: Parar ou Escalar com Inteligência?',
+        limitTitle: 'O Ponto de Decisão: Parar ou Escalar com Inteligência?',
         limitParagraphs: [
           'Ficar de braços cruzados prospectando manualmente significa ser engolido pela concorrência.',
           'Mas continuar usando ferramentas ultrapassadas que injetam código no DOM do LinkedIn é uma roleta russa com o seu perfil comercial.',
@@ -1265,19 +1265,19 @@ export const BLOG_POSTS: BlogPost[] = [
         boldTake: 'Em 2026, seres humanos devem estar negociando contratos e fechando vendas, não passando 6 horas por dia fazendo tarefas robóticas.',
       },
       problem: {
-        exposureTitle: '1. O Alto Custo Fixo de um SDR Tradicional',
+        exposureTitle: 'O Alto Custo Fixo de um SDR Tradicional',
         exposureParagraphs: [
           'Contratar um profissional de pré-vendas (SDR) parece a saída padrão quando faltam reuniões no calendário.',
           'Mas a conta real é pesada: salário fixo, encargos trabalhistas, comissões, ferramentas ($150 LinkedIn, $80 CRM, $90 e-mail) e semanas de treinamento.',
           'Mesmo assim, um profissional humano consegue enviar apenas entre 30 e 50 mensagens diárias antes de se esgotar mentalmente.',
         ],
-        agitationTitle: '2. Demora no Atendimento e Leads que Esfriam',
+        agitationTitle: 'Demora no Atendimento e Leads que Esfriam',
         agitationParagraphs: [
           'O que acontece quando um lead altamente qualificado responde numa sexta-feira às 19h com uma dúvida essencial?',
           'Com um SDR júnior, a mensagem fica abandonada até segunda-feira de manhã. Até lá, o cliente já pesquisou seu concorrente e fechou negócio com ele.',
           'Além disso, a rotatividade no cargo de SDR é a mais alta do setor: você investe 3 meses ensinando seu negócio e ele sai no quinto mês.',
         ],
-        limitTitle: '3. O Dilema do Fundador: Inflar Custos ou Escalar com IA?',
+        limitTitle: 'O Dilema do Fundador: Inflar Custos ou Escalar com IA?',
         limitParagraphs: [
           'Contratar mais pessoas para funções repetitivas consome suas margens de lucro.',
           'Você precisa de um time comercial ativo 24/7, que conheça seu produto com perfeição e nunca tenha desmotivação ou cansaço.',
@@ -1437,19 +1437,19 @@ export const BLOG_POSTS: BlogPost[] = [
         boldTake: 'Quando você sincroniza visitas de perfil, notas no LinkedIn e e-mails de acompanhamento coordenados, sua taxa de resposta quadruplica de imediato.',
       },
       problem: {
-        exposureTitle: '1. A Vulnerabilidade do Canal Único e os Filtros de Spam',
+        exposureTitle: 'A Vulnerabilidade do Canal Único e os Filtros de Spam',
         exposureParagraphs: [
           'Se você depende apenas de e-mail frio, está à mercê dos filtros anti-spam cada vez mais severos do Google e Microsoft.',
           'Se você usa apenas o LinkedIn, fica limitado às cotas semanais de conexões impostas pela rede.',
           'Seus clientes em potencial recebem dezenas de mensagens por dia. Se virem seu nome apenas uma vez em um único lugar, vão ignorar você.',
         ],
-        agitationTitle: '2. Mensagens Desconectadas que Prejudicam Sua Marca',
+        agitationTitle: 'Mensagens Desconectadas que Prejudicam Sua Marca',
         agitationParagraphs: [
           'Pior ainda: muitas equipes tentam fazer prospecção multicanal de forma manual e sem alinhamento.',
           'Um vendedor manda um e-mail frio para um diretor e, minutos depois, outro membro da equipe manda a mesma proposta no LinkedIn.',
           'O lead se sente importunado e passa a ver sua empresa como amadora e invasiva. Resultado: bloqueio imediato e oportunidade perdida para sempre.',
         ],
-        limitTitle: '3. A Necessidade de Orquestração Sincronizada',
+        limitTitle: 'A Necessidade de Orquestração Sincronizada',
         limitParagraphs: [
           'Prospecção eficaz não é bombardear o cliente, mas sim marcar presença sutil onde ele trabalha com uma cadência fluida e natural.',
           'Primeiro você desperta curiosidade, depois inicia a conversa e entrega valor no canal em que o lead estiver mais receptivo.',

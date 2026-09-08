@@ -425,38 +425,32 @@ export default async function BlogPostLanguagePage({ params }: Props) {
           {/* 2. El Problema (PAS: Exponer, Agitar, Empujar al límite) */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-                {vsl.problem.exposureTitle}
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+                {vsl.problem.exposureTitle.replace(/^\d+\.\s*/, '')}
               </h3>
-              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed w-full text-justify">
-                {vsl.problem.exposureParagraphs.map((p, idx) => (
-                  <p key={idx}>{p}</p>
-                ))}
-              </div>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed w-full text-justify">
+                {vsl.problem.exposureParagraphs.join(' ')}
+              </p>
             </div>
 
             {/* Agitación */}
             <div className="pt-2">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                {vsl.problem.agitationTitle}
+                {vsl.problem.agitationTitle.replace(/^\d+\.\s*/, '')}
               </h3>
-              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed w-full text-justify">
-                {vsl.problem.agitationParagraphs.map((p, idx) => (
-                  <p key={idx}>{p}</p>
-                ))}
-              </div>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed w-full text-justify">
+                {vsl.problem.agitationParagraphs.join(' ')}
+              </p>
             </div>
 
             {/* Punto de Quiebre / Límite */}
             <div className="pt-2">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                {vsl.problem.limitTitle}
+                {vsl.problem.limitTitle.replace(/^\d+\.\s*/, '')}
               </h3>
-              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 w-full text-justify">
-                {vsl.problem.limitParagraphs.map((p, idx) => (
-                  <p key={idx}>{p}</p>
-                ))}
-              </div>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 w-full text-justify">
+                {vsl.problem.limitParagraphs.join(' ')}
+              </p>
 
               {/* Puntos de dolor */}
               <div className="my-6">
@@ -491,11 +485,9 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               <p className="text-sm sm:text-base text-indigo-600 font-semibold mb-4">
                 {vsl.solution.subtitle}
               </p>
-              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 w-full text-justify">
-                {vsl.solution.introParagraphs.map((p, idx) => (
-                  <p key={idx}>{p}</p>
-                ))}
-              </div>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 w-full text-justify">
+                {vsl.solution.introParagraphs.join(' ')}
+              </p>
             </div>
 
             {/* Proceso en 3 Pasos */}
