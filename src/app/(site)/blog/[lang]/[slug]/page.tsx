@@ -414,10 +414,10 @@ export default async function BlogPostLanguagePage({ params }: Props) {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 leading-tight tracking-tight max-w-4xl">
               {vsl.hook.headline}
             </h2>
-            <p className="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed max-w-4xl">
+            <p className="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed max-w-4xl text-justify">
               {vsl.hook.subheadline}
             </p>
-            <blockquote className="border-l-4 border-indigo-600 pl-5 py-2 my-6 italic text-gray-800 text-base sm:text-lg max-w-4xl">
+            <blockquote className="border-l-4 border-indigo-600 pl-5 py-2 my-6 italic text-gray-800 text-base sm:text-lg max-w-4xl text-justify">
               &quot;{vsl.hook.boldTake}&quot;
             </blockquote>
           </div>
@@ -428,7 +428,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {vsl.problem.exposureTitle}
               </h3>
-              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed max-w-5xl">
+              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed max-w-5xl text-justify">
                 {vsl.problem.exposureParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
@@ -440,7 +440,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                 {vsl.problem.agitationTitle}
               </h3>
-              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed max-w-5xl">
+              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed max-w-5xl text-justify">
                 {vsl.problem.agitationParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
@@ -452,7 +452,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                 {vsl.problem.limitTitle}
               </h3>
-              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 max-w-5xl">
+              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 max-w-5xl text-justify">
                 {vsl.problem.limitParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
@@ -494,7 +494,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               <p className="text-sm sm:text-base text-indigo-600 font-semibold mb-4">
                 {vsl.solution.subtitle}
               </p>
-              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 max-w-5xl">
+              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 max-w-5xl text-justify">
                 {vsl.solution.introParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
@@ -513,7 +513,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                       <span className="text-xl">{st.icon}</span>
                       <span>{st.step}. {st.title}</span>
                     </div>
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed text-justify">
                       {st.desc}
                     </p>
                   </div>
@@ -544,7 +544,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                       <span>{pt.icon}</span>
                       <span>{pt.title}</span>
                     </h4>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed pl-7">
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed pl-7 text-justify">
                       {pt.desc}
                     </p>
                   </div>
@@ -585,7 +585,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                 <div className="flex items-center gap-1 text-amber-500 text-sm">
                   ★★★★★
                 </div>
-                <p className="text-sm sm:text-base italic text-gray-800 leading-relaxed">
+                <p className="text-sm sm:text-base italic text-gray-800 leading-relaxed text-justify">
                   &quot;{vsl.socialProof.testimonial.quote}&quot;
                 </p>
                 <footer className="text-xs sm:text-sm text-gray-600 flex items-center gap-2 flex-wrap">
