@@ -385,7 +385,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
           </div>
 
           {/* Main H1 Title */}
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6 max-w-4xl">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6 w-full">
             {post.title}
           </h1>
 
@@ -411,13 +411,13 @@ export default async function BlogPostLanguagePage({ params }: Props) {
         <main className="space-y-12">
           {/* 1. Gancho Impactante */}
           <div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 leading-tight tracking-tight max-w-4xl">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-4 leading-tight tracking-tight w-full">
               {vsl.hook.headline}
             </h2>
-            <p className="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed max-w-4xl text-justify">
+            <p className="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed w-full text-justify">
               {vsl.hook.subheadline}
             </p>
-            <blockquote className="border-l-4 border-indigo-600 pl-5 py-2 my-6 italic text-gray-800 text-base sm:text-lg max-w-4xl text-justify">
+            <blockquote className="border-l-4 border-indigo-600 pl-5 py-2 my-6 italic text-gray-800 text-base sm:text-lg w-full text-justify">
               &quot;{vsl.hook.boldTake}&quot;
             </blockquote>
           </div>
@@ -428,7 +428,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
                 {vsl.problem.exposureTitle}
               </h3>
-              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed max-w-5xl text-justify">
+              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed w-full text-justify">
                 {vsl.problem.exposureParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
@@ -440,7 +440,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                 {vsl.problem.agitationTitle}
               </h3>
-              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed max-w-5xl text-justify">
+              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed w-full text-justify">
                 {vsl.problem.agitationParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
@@ -452,7 +452,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                 {vsl.problem.limitTitle}
               </h3>
-              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 max-w-5xl text-justify">
+              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 w-full text-justify">
                 {vsl.problem.limitParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
@@ -470,7 +470,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                       : 'Lo que te cuesta seguir haciéndolo del modo antiguo:'}
                   </span>
                 </p>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-5xl">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
                   {vsl.problem.painBullets.map((bullet, idx) => (
                     <li
                       key={idx}
@@ -494,7 +494,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               <p className="text-sm sm:text-base text-indigo-600 font-semibold mb-4">
                 {vsl.solution.subtitle}
               </p>
-              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 max-w-5xl text-justify">
+              <div className="space-y-3 text-base sm:text-lg text-gray-700 leading-relaxed mb-6 w-full text-justify">
                 {vsl.solution.introParagraphs.map((p, idx) => (
                   <p key={idx}>{p}</p>
                 ))}
@@ -521,7 +521,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               </div>
             </div>
 
-            <p className="text-sm sm:text-base font-semibold text-emerald-800 bg-emerald-50/70 border-l-4 border-emerald-500 py-3.5 px-5 rounded-r-xl max-w-5xl flex items-center gap-2.5">
+            <p className="text-sm sm:text-base font-semibold text-emerald-800 bg-emerald-50/70 border-l-4 border-emerald-500 py-3.5 px-5 rounded-r-xl w-full flex items-center gap-2.5">
               <span>💎</span>
               <span>{vsl.solution.keyBenefit}</span>
             </p>
@@ -537,7 +537,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                 {vsl.credibility.subtitle}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 max-w-5xl">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 w-full">
                 {vsl.credibility.points.map((pt, idx) => (
                   <div key={idx} className="space-y-1">
                     <h4 className="font-bold text-sm sm:text-base text-gray-900 flex items-center gap-2">
@@ -581,7 +581,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               </div>
 
               {/* Testimonial Quote */}
-              <blockquote className="my-6 pl-6 border-l-4 border-indigo-600 space-y-3 max-w-4xl">
+              <blockquote className="my-6 pl-6 border-l-4 border-indigo-600 space-y-3 w-full">
                 <div className="flex items-center gap-1 text-amber-500 text-sm">
                   ★★★★★
                 </div>
