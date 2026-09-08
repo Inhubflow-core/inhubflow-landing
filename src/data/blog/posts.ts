@@ -158,7 +158,7 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
         ctaLabel: 'Comenzar Prueba Gratuita de 7 Días ➔',
         ctaSubtext: 'Acceso inmediato • Sin compromiso • Cancela cuando quieras',
-        targetUrl: 'https://b2b.inhubflow.online',
+        targetUrl: 'https://inhubflow.online/',
       },
     },
     faq: [
@@ -334,7 +334,7 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
         ctaLabel: 'Activar Mi SDR IA Gratis por 7 Días ➔',
         ctaSubtext: 'Comienza en minutos • Sin tarjeta obligatoria • Citas automáticas',
-        targetUrl: 'https://b2b.inhubflow.online',
+        targetUrl: 'https://inhubflow.online/',
       },
     },
     faq: [
@@ -512,7 +512,7 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
         ctaLabel: 'Lanzar Mi Secuencia Multicanal Gratis ➔',
         ctaSubtext: '7 días de prueba sin coste • Configuración guiada • Resultados inmediatos',
-        targetUrl: 'https://b2b.inhubflow.online',
+        targetUrl: 'https://inhubflow.online/',
       },
     },
     faq: [
@@ -688,7 +688,7 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
         ctaLabel: 'Start Your 7-Day Free Trial ➔',
         ctaSubtext: 'Instant access • No long-term contracts • Cancel anytime',
-        targetUrl: 'https://b2b.inhubflow.online',
+        targetUrl: 'https://inhubflow.online/',
       },
     },
     faq: [
@@ -860,7 +860,7 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
         ctaLabel: 'Activate My AI SDR Free for 7 Days ➔',
         ctaSubtext: 'Launch in minutes • No credit card required • Automated meetings',
-        targetUrl: 'https://b2b.inhubflow.online',
+        targetUrl: 'https://inhubflow.online/',
       },
     },
     faq: [
@@ -1038,7 +1038,7 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
         ctaLabel: 'Launch My Multichannel Cadence Free ➔',
         ctaSubtext: '7-day free trial • Guided setup • Measurable results',
-        targetUrl: 'https://b2b.inhubflow.online',
+        targetUrl: 'https://inhubflow.online/',
       },
     },
     faq: [
@@ -1214,7 +1214,7 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
         ctaLabel: 'Iniciar Teste Gratuito de 7 Dias ➔',
         ctaSubtext: 'Acesso imediato • Sem compromisso • Cancele quando quiser',
-        targetUrl: 'https://b2b.inhubflow.online',
+        targetUrl: 'https://inhubflow.online/',
       },
     },
     faq: [
@@ -1386,7 +1386,7 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
         ctaLabel: 'Ativar Meu SDR IA Grátis por 7 Dias ➔',
         ctaSubtext: 'Início em minutos • Sem cartão obrigatório • Reuniões automáticas',
-        targetUrl: 'https://b2b.inhubflow.online',
+        targetUrl: 'https://inhubflow.online/',
       },
     },
     faq: [
@@ -1564,7 +1564,7 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
         ctaLabel: 'Criar Minha Sequência Multicanal Grátis ➔',
         ctaSubtext: '7 dias de teste sem custo • Configuração guiada • Resultados rápidos',
-        targetUrl: 'https://b2b.inhubflow.online',
+        targetUrl: 'https://inhubflow.online/',
       },
     },
     faq: [

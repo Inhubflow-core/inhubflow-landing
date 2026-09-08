@@ -623,7 +623,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               {/* Right Column: CTA Button & Subtext */}
               <div className="flex flex-col items-start lg:items-center gap-2.5 shrink-0">
                 <a
-                  href="https://b2b.inhubflow.online"
+                  href="https://inhubflow.online/"
                   className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-indigo-900 font-extrabold text-sm sm:text-base hover:bg-gray-100 transition shadow-lg text-center cursor-pointer transform hover:-translate-y-0.5"
                 >
                   {cta.btn}
