@@ -6,6 +6,7 @@ import {
   BLOG_POSTS,
   getBlogPostByLangAndSlug,
   getAlternateTranslations,
+  getAdjacentBlogPosts,
 } from '@/data/blog/posts';
 import { BlogLanguage } from '@/data/blog/types';
 import ArticleInteractive from '@/components/blog/article-interactive';
@@ -248,6 +249,15 @@ export default async function BlogPostLanguagePage({ params }: Props) {
     ) % 4;
 
   const cta = ctaModels[post.lang][modelIndex];
+
+  const adjacent = getAdjacentBlogPosts(post.lang, post.slug);
+
+  const navLabels: Record<BlogLanguage, { prev: string; next: string }> = {
+    es: { prev: 'ARTÍCULO ANTERIOR', next: 'PRÓXIMO ARTÍCULO' },
+    en: { prev: 'PREVIOUS ARTICLE', next: 'NEXT ARTICLE' },
+    pt: { prev: 'ARTIGO ANTERIOR', next: 'PRÓXIMO ARTIGO' },
+  };
+  const currentNavLabels = navLabels[post.lang];
 
   const jsonLdBreadcrumb = {
     '@context': 'https://schema.org',
@@ -625,6 +635,48 @@ export default async function BlogPostLanguagePage({ params }: Props) {
             </div>
             <div className="absolute -bottom-16 -right-16 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none" />
           </div>
+
+          {/* Navegación entre Artículos (Anterior / Próximo) */}
+          {(adjacent.prev || adjacent.next) && (
+            <nav
+              aria-label="Navegación entre artículos"
+              className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-2 gap-6"
+            >
+              {adjacent.prev ? (
+                <Link
+                  href={`/blog/${adjacent.prev.lang}/${adjacent.prev.slug}`}
+                  className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200/80 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all duration-200 group flex flex-col justify-center text-left"
+                >
+                  <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider group-hover:text-indigo-600 transition-colors flex items-center gap-1.5">
+                    <span className="text-sm font-bold">&lsaquo;</span>
+                    <span>{currentNavLabels.prev}</span>
+                  </div>
+                  <h3 className="mt-3 text-base sm:text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors leading-snug line-clamp-2">
+                    {adjacent.prev.title}
+                  </h3>
+                </Link>
+              ) : (
+                <div />
+              )}
+
+              {adjacent.next ? (
+                <Link
+                  href={`/blog/${adjacent.next.lang}/${adjacent.next.slug}`}
+                  className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200/80 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all duration-200 group flex flex-col justify-center text-right"
+                >
+                  <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider group-hover:text-indigo-600 transition-colors flex items-center justify-end gap-1.5">
+                    <span>{currentNavLabels.next}</span>
+                    <span className="text-sm font-bold">&rsaquo;</span>
+                  </div>
+                  <h3 className="mt-3 text-base sm:text-lg font-bold text-gray-900 group-hover:text-indigo-600 transition-colors leading-snug line-clamp-2">
+                    {adjacent.next.title}
+                  </h3>
+                </Link>
+              ) : (
+                <div />
+              )}
+            </nav>
+          )}
         </main>
       </div>
     </article>

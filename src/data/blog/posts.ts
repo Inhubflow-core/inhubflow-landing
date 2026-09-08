@@ -1613,3 +1613,23 @@ export function getAlternateTranslations(post: BlogPost): {
     pt: siblings.find((p) => p.lang === 'pt'),
   };
 }
+
+export function getAdjacentBlogPosts(
+  lang: BlogLanguage,
+  slug: string
+): {
+  prev?: BlogPost;
+  next?: BlogPost;
+} {
+  const posts = getBlogPostsByLang(lang);
+  const currentIndex = posts.findIndex((p) => p.slug === slug);
+  if (currentIndex === -1 || posts.length <= 1) return {};
+
+  const prev =
+    currentIndex > 0 ? posts[currentIndex - 1] : posts[posts.length - 1];
+  const next =
+    currentIndex < posts.length - 1 ? posts[currentIndex + 1] : posts[0];
+
+  return { prev, next };
+}
+
