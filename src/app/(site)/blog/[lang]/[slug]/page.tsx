@@ -138,6 +138,41 @@ export default async function BlogPostLanguagePage({ params }: Props) {
 
   const labels = breadcrumbLabels[post.lang];
 
+  const ctaLabels: Record<
+    BlogLanguage,
+    {
+      badge: string;
+      title: string;
+      desc: string;
+      btn: string;
+      subtext: string;
+    }
+  > = {
+    es: {
+      badge: 'SOFTWARE B2B DE ALTO RENDIMIENTO',
+      title: 'Multiplica tus reuniones comerciales sin riesgo de baneo',
+      desc: 'Únete a más de 300 agencias y empresas que ya automatizan su prospección en LinkedIn y Email con SDRs de IA y cadencia humana 100% segura.',
+      btn: 'Comenzar Prueba Gratuita de 7 Días ➔',
+      subtext: 'Acceso inmediato • Sin compromiso • Cancela cuando quieras',
+    },
+    en: {
+      badge: 'HIGH-PERFORMANCE B2B OUTBOUND',
+      title: 'Multiply qualified sales meetings with zero ban risk',
+      desc: 'Join over 300 B2B companies automating outreach with 24/7 AI SDRs and undetectable human cadence.',
+      btn: 'Start 7-Day Free Trial ➔',
+      subtext: 'Instant access • No commitment • Cancel anytime',
+    },
+    pt: {
+      badge: 'PROSPECÇÃO B2B DE ALTO RENDIMENTO',
+      title: 'Multiplique suas reuniões comerciais sem risco de bloqueio',
+      desc: 'Junte-se a mais de 300 empresas B2B que automatizam prospecção no LinkedIn e E-mail com SDR de IA e cadência humana.',
+      btn: 'Iniciar Teste Gratuito de 7 Dias ➔',
+      subtext: 'Acesso imediato • Sem compromisso • Cancele quando quiser',
+    },
+  };
+
+  const cta = ctaLabels[post.lang];
+
   const jsonLdBreadcrumb = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -483,41 +518,36 @@ export default async function BlogPostLanguagePage({ params }: Props) {
             </div>
           </div>
 
-          {/* 5. Cierre y CTA (7 Días de Test Gratuito) */}
-          <div className="pt-10 border-t border-gray-200 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-amber-100 text-amber-900 border border-amber-300/60">
-              {vsl.closingCta.urgencyBadge}
-            </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight max-w-4xl">
-              {vsl.closingCta.headline}
-            </h2>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl">
-              {vsl.closingCta.subheadline}
-            </p>
+          {/* 5. Cierre y CTA Global Banner - 2 Columns */}
+          <div className="mt-14 p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-indigo-900 via-indigo-800 to-purple-900 text-white shadow-xl relative overflow-hidden">
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+              {/* Left Column: Title & Description */}
+              <div className="max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-400/20 text-indigo-200 border border-indigo-400/30 mb-3">
+                  {cta.badge}
+                </div>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3 text-white leading-tight">
+                  {cta.title}
+                </h2>
+                <p className="text-sm sm:text-base text-indigo-100 leading-relaxed">
+                  {cta.desc}
+                </p>
+              </div>
 
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-3xl">
-              {vsl.closingCta.bullets.map((b, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-center gap-2.5 text-sm sm:text-base text-gray-800 font-medium"
+              {/* Right Column: CTA Button & Subtext */}
+              <div className="flex flex-col items-start lg:items-center gap-2.5 shrink-0">
+                <a
+                  href="https://b2b.inhubflow.online"
+                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-indigo-900 font-extrabold text-sm sm:text-base hover:bg-gray-100 transition shadow-lg text-center cursor-pointer transform hover:-translate-y-0.5"
                 >
-                  <span className="text-indigo-600 font-bold">✔</span>
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <a
-                href={vsl.closingCta.targetUrl}
-                className="inline-block px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-base transition shadow-md hover:shadow-lg cursor-pointer transform hover:-translate-y-0.5"
-              >
-                {vsl.closingCta.ctaLabel}
-              </a>
-              <p className="text-xs sm:text-sm text-gray-500">
-                {vsl.closingCta.ctaSubtext}
-              </p>
+                  {cta.btn}
+                </a>
+                <span className="text-xs sm:text-sm text-indigo-200 font-medium">
+                  {cta.subtext}
+                </span>
+              </div>
             </div>
+            <div className="absolute -bottom-16 -right-16 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none" />
           </div>
         </main>
       </div>
