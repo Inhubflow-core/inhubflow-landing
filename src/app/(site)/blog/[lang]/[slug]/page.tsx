@@ -10,6 +10,7 @@ import {
 } from '@/data/blog/posts';
 import { BlogLanguage } from '@/data/blog/types';
 import ArticleInteractive from '@/components/blog/article-interactive';
+import BlogLangSync from '@/components/blog/blog-lang-sync';
 
 type Props = {
   params: Promise<{ lang: string; slug: string }>;
@@ -299,77 +300,39 @@ export default async function BlogPostLanguagePage({ params }: Props) {
       {/* Interactive elements: Top reading bar */}
       <ArticleInteractive />
 
+      {/* Sync language with global header preference */}
+      <BlogLangSync
+        currentLang={post.lang}
+        alternateSlugs={{
+          es: alternates.es?.slug,
+          en: alternates.en?.slug,
+          pt: alternates.pt?.slug,
+        }}
+      />
+
       {/* Article Header & Breadcrumbs Hero */}
       <header className="w-full relative overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F6F4FE] to-[#ECE7FE] pt-12 sm:pt-16 pb-12 sm:pb-16 border-b border-gray-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumbs */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-            <nav
-              aria-label="Breadcrumb"
-              className="flex items-center gap-2 text-xs text-gray-600 flex-wrap"
+          <nav
+            aria-label="Breadcrumb"
+            className="flex items-center gap-2 text-xs text-gray-600 flex-wrap mb-6"
+          >
+            <Link href="/" className="hover:text-indigo-600 transition">
+              {labels.home}
+            </Link>
+            <span>/</span>
+            <Link
+              href={`/blog/${post.lang}`}
+              className="hover:text-indigo-600 transition font-semibold"
             >
-              <Link href="/" className="hover:text-indigo-600 transition">
-                {labels.home}
-              </Link>
-              <span>/</span>
-              <Link
-                href={`/blog/${post.lang}`}
-                className="hover:text-indigo-600 transition font-semibold"
-              >
-                Blog ({post.lang.toUpperCase()})
-              </Link>
-              <span>/</span>
-              <span className="text-indigo-700 font-semibold truncate max-w-xs">
-                {post.categoryLabel}
-              </span>
-            </nav>
-
-            {/* Language Switcher for Sibling Translations */}
-            <div className="flex items-center gap-1.5 self-start sm:self-auto bg-white/80 p-1 rounded-xl border border-gray-200 shadow-2xs">
-              <span className="text-[11px] text-gray-500 font-medium px-2">
-                Idioma:
-              </span>
-              {alternates.es && (
-                <Link
-                  href={`/blog/es/${alternates.es.slug}`}
-                  className={`px-2 py-1 rounded-lg text-xs font-bold transition ${
-                    post.lang === 'es'
-                      ? 'bg-indigo-600 text-white'
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                  title="Versión en Español"
-                >
-                  ES
-                </Link>
-              )}
-              {alternates.en && (
-                <Link
-                  href={`/blog/en/${alternates.en.slug}`}
-                  className={`px-2 py-1 rounded-lg text-xs font-bold transition ${
-                    post.lang === 'en'
-                      ? 'bg-indigo-600 text-white'
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                  title="English Version"
-                >
-                  EN
-                </Link>
-              )}
-              {alternates.pt && (
-                <Link
-                  href={`/blog/pt/${alternates.pt.slug}`}
-                  className={`px-2 py-1 rounded-lg text-xs font-bold transition ${
-                    post.lang === 'pt'
-                      ? 'bg-indigo-600 text-white'
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                  title="Versão em Português"
-                >
-                  PT
-                </Link>
-              )}
-            </div>
-          </div>
+              {labels.blog}
+            </Link>
+            <span>/</span>
+            <span className="text-indigo-700 font-semibold truncate max-w-xs">
+              {post.categoryLabel}
+            </span>
+          </nav>
 
           {/* Category & Read Time Badge */}
           <div className="flex flex-wrap items-center gap-2.5 mb-4">

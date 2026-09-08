@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { BlogPost, BlogLanguage } from '@/data/blog/types';
+import BlogLangSync from '@/components/blog/blog-lang-sync';
 
 interface BlogCatalogProps {
   posts: BlogPost[];
@@ -113,39 +114,8 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
 
   return (
     <div className="w-full">
-      {/* Language Switcher Tabs */}
-      <div className="flex items-center justify-center gap-2 mb-8">
-        <Link
-          href="/blog/es"
-          className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${
-            currentLang === 'es'
-              ? 'bg-indigo-600 text-white shadow-xs'
-              : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-100'
-          }`}
-        >
-          Español
-        </Link>
-        <Link
-          href="/blog/en"
-          className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${
-            currentLang === 'en'
-              ? 'bg-indigo-600 text-white shadow-xs'
-              : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-100'
-          }`}
-        >
-          English
-        </Link>
-        <Link
-          href="/blog/pt"
-          className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${
-            currentLang === 'pt'
-              ? 'bg-indigo-600 text-white shadow-xs'
-              : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-100'
-          }`}
-        >
-          Português
-        </Link>
-      </div>
+      {/* Automatically synchronize language with the global navbar header */}
+      <BlogLangSync currentLang={currentLang} />
 
       {/* Search & Category Filter Bar */}
       <div className="mb-10 p-4 sm:p-6 rounded-3xl bg-white border border-gray-200/90 shadow-xs">

@@ -1,15 +1,52 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { useLanguage, SUPPORTED_LOCALES } from '@/app/providers/language';
+import { usePathname, useRouter } from 'next/navigation';
+import { useLanguage, SUPPORTED_LOCALES, Locale } from '@/app/providers/language';
+import { getBlogPostByLangAndSlug, getAlternateTranslations } from '@/data/blog/posts';
+import { BlogLanguage } from '@/data/blog/types';
 
 export default function LanguageSelector() {
   const { locale, setLocale } = useLanguage();
+  const router = useRouter();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const currentOption =
     SUPPORTED_LOCALES.find((item) => item.code === locale) || SUPPORTED_LOCALES[1];
+
+  const handleSelectLanguage = (optionCode: Locale) => {
+    setLocale(optionCode);
+    setIsOpen(false);
+
+    const targetLang: BlogLanguage = optionCode.startsWith('pt')
+      ? 'pt'
+      : optionCode.startsWith('en')
+      ? 'en'
+      : 'es';
+
+    // If currently on a blog page, route directly to the target language counterpart
+    if (pathname && pathname.startsWith('/blog')) {
+      const segments = pathname.split('/').filter(Boolean);
+      if (segments.length >= 3) {
+        const currentLang = segments[1] as BlogLanguage;
+        const currentSlug = segments[2];
+        const post = getBlogPostByLangAndSlug(currentLang, currentSlug);
+        if (post) {
+          const alts = getAlternateTranslations(post);
+          const targetSlug = alts[targetLang]?.slug;
+          if (targetSlug) {
+            router.push(`/blog/${targetLang}/${targetSlug}`);
+            return;
+          }
+        }
+        router.push(`/blog/${targetLang}`);
+      } else {
+        router.push(`/blog/${targetLang}`);
+      }
+    }
+  };
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -60,10 +97,7 @@ export default function LanguageSelector() {
             {SUPPORTED_LOCALES.map((option) => (
               <button
                 key={option.code}
-                onClick={() => {
-                  setLocale(option.code);
-                  setIsOpen(false);
-                }}
+                onClick={() => handleSelectLanguage(option.code)}
                 className={`flex w-full items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-colors cursor-pointer ${
                   locale === option.code
                     ? 'bg-blue-50 text-blue-600 font-bold'
