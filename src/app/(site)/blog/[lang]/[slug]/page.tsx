@@ -518,10 +518,10 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                     <div className="text-2xl sm:text-3xl font-extrabold text-indigo-600 mb-1">
                       {st.value}
                     </div>
-                    <div className="font-bold text-xs sm:text-sm text-gray-900 mb-1">
+                    <div className="font-bold text-sm sm:text-base text-gray-900 mb-1.5">
                       {st.label}
                     </div>
-                    <p className="text-xs text-gray-600 leading-tight">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed text-justify">
                       {st.desc}
                     </p>
                   </div>
