@@ -123,7 +123,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
               : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-100'
           }`}
         >
-          🇪🇸 Español
+          Español
         </Link>
         <Link
           href="/blog/en"
@@ -133,7 +133,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
               : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-100'
           }`}
         >
-          🇺🇸 English
+          English
         </Link>
         <Link
           href="/blog/pt"
@@ -143,7 +143,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
               : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-100'
           }`}
         >
-          🇧🇷 Português
+          Português
         </Link>
       </div>
 
@@ -169,8 +169,11 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
 
           {/* Live Search Input */}
           <div className="relative w-full md:w-72 shrink-0">
-            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm">
-              🔍
+            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400">
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
             </span>
             <input
               type="text"
@@ -197,7 +200,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#101828] via-[#1E293B] to-[#0F172A] text-white p-6 sm:p-10 lg:p-12 shadow-xl border border-gray-800">
             <div className="relative z-10 max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-4">
-                <span>⭐ {i18nLabels.featuredBadge}</span>
+                <span>{i18nLabels.featuredBadge}</span>
                 <span>•</span>
                 <span>{featuredPost.readTime}</span>
               </div>
@@ -232,7 +235,6 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
       {/* Articles Grid */}
       {filteredPosts.length === 0 ? (
         <div className="text-center py-16 px-4 rounded-3xl bg-white border border-gray-200/90 shadow-xs">
-          <p className="text-3xl mb-3">🔍</p>
           <h3 className="text-lg font-bold text-gray-900 mb-1">
             {i18nLabels.noResultsTitle}
           </h3>
@@ -263,7 +265,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
                     {post.categoryLabel}
                   </span>
                   <span className="text-xs text-gray-600 font-medium">
-                    ⏱️ {post.readTime}
+                    {post.readTime}
                   </span>
                 </div>
 
@@ -285,7 +287,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
                 {/* Pain bullet reminder */}
                 <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-xs">
                   <span className="text-gray-600 font-medium">
-                    📅 {post.publishedAt}
+                    {post.publishedAt}
                   </span>
                   <Link
                     href={`/blog/${currentLang}/${post.slug}`}

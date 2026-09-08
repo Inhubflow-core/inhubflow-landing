@@ -339,7 +339,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                   }`}
                   title="Versión en Español"
                 >
-                  🇪🇸 ES
+                  ES
                 </Link>
               )}
               {alternates.en && (
@@ -352,7 +352,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                   }`}
                   title="English Version"
                 >
-                  🇺🇸 EN
+                  EN
                 </Link>
               )}
               {alternates.pt && (
@@ -365,7 +365,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                   }`}
                   title="Versão em Português"
                 >
-                  🇧🇷 PT
+                  PT
                 </Link>
               )}
             </div>
@@ -377,10 +377,10 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               {post.categoryLabel}
             </span>
             <span className="text-xs text-gray-600 bg-white/90 px-3 py-1 rounded-full border border-gray-200 shadow-2xs">
-              ⏱️ {post.readTime}
+              {post.readTime}
             </span>
             <span className="text-xs text-gray-600 bg-white/90 px-3 py-1 rounded-full border border-gray-200 shadow-2xs">
-              📅 {post.updatedAt}
+              {post.updatedAt}
             </span>
           </div>
 
@@ -460,15 +460,12 @@ export default async function BlogPostLanguagePage({ params }: Props) {
 
               {/* Puntos de dolor */}
               <div className="my-6">
-                <p className="font-bold text-gray-900 mb-4 text-base sm:text-lg flex items-center gap-2">
-                  <span>🛑</span>
-                  <span>
-                    {post.lang === 'en'
-                      ? 'The cost of doing outbound the legacy way:'
-                      : post.lang === 'pt'
-                      ? 'O custo de continuar prospectando no modelo antigo:'
-                      : 'Lo que te cuesta seguir haciéndolo del modo antiguo:'}
-                  </span>
+                <p className="font-bold text-gray-900 mb-4 text-base sm:text-lg">
+                  {post.lang === 'en'
+                    ? 'The cost of doing outbound the legacy way:'
+                    : post.lang === 'pt'
+                    ? 'O custo de continuar prospectando no modelo antigo:'
+                    : 'Lo que te cuesta seguir haciéndolo del modo antiguo:'}
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
                   {vsl.problem.painBullets.map((bullet, idx) => (
@@ -509,8 +506,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {vsl.solution.steps.map((st) => (
                   <div key={st.step} className="border-t-2 border-indigo-600 pt-4 space-y-2">
-                    <div className="flex items-center gap-2 text-indigo-600 font-bold text-sm">
-                      <span className="text-xl">{st.icon}</span>
+                    <div className="text-indigo-600 font-bold text-sm">
                       <span>{st.step}. {st.title}</span>
                     </div>
                     <p className="text-sm sm:text-base text-gray-600 leading-relaxed text-justify">
@@ -521,9 +517,8 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               </div>
             </div>
 
-            <p className="text-sm sm:text-base font-semibold text-emerald-800 bg-emerald-50/70 border-l-4 border-emerald-500 py-3.5 px-5 rounded-r-xl w-full flex items-center gap-2.5">
-              <span>💎</span>
-              <span>{vsl.solution.keyBenefit}</span>
+            <p className="text-sm sm:text-base font-semibold text-emerald-800 bg-emerald-50/70 border-l-4 border-emerald-500 py-3.5 px-5 rounded-r-xl w-full">
+              {vsl.solution.keyBenefit}
             </p>
           </div>
 
@@ -540,20 +535,18 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 w-full">
                 {vsl.credibility.points.map((pt, idx) => (
                   <div key={idx} className="space-y-1">
-                    <h4 className="font-bold text-sm sm:text-base text-gray-900 flex items-center gap-2">
-                      <span>{pt.icon}</span>
-                      <span>{pt.title}</span>
+                    <h4 className="font-bold text-sm sm:text-base text-gray-900">
+                      {pt.title}
                     </h4>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed pl-7 text-justify">
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify">
                       {pt.desc}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <p className="text-xs sm:text-sm text-indigo-900 font-semibold my-4 flex items-center gap-2">
-                <span className="text-lg">🛡️</span>
-                <span>{vsl.credibility.securityBadgeText}</span>
+              <p className="text-xs sm:text-sm text-indigo-900 font-semibold my-4">
+                {vsl.credibility.securityBadgeText}
               </p>
             </div>
 
