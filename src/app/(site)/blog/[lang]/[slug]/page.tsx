@@ -493,14 +493,14 @@ export default async function BlogPostLanguagePage({ params }: Props) {
                     <h4 className="font-bold text-sm sm:text-base text-gray-900">
                       {pt.title}
                     </h4>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify">
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed text-justify">
                       {pt.desc}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <p className="text-xs sm:text-sm text-indigo-900 font-semibold my-4">
+              <p className="text-sm sm:text-base text-indigo-900 font-semibold my-4">
                 {vsl.credibility.securityBadgeText}
               </p>
             </div>
