@@ -306,7 +306,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
           {/* Left Column: Title & Description */}
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-400/20 text-indigo-200 border border-indigo-400/30 mb-3">
-              ⚡ {i18nLabels.globalCtaBadge}
+              {i18nLabels.globalCtaBadge}
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-3 text-white leading-tight">
               {i18nLabels.globalCtaTitle}

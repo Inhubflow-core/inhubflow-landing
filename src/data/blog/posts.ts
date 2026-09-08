@@ -149,7 +149,7 @@ export const BLOG_POSTS: BlogPost[] = [
       closingCta: {
         headline: 'Deja de arriesgar tu cuenta. Empieza a llenar tu agenda hoy.',
         subheadline: 'Prueba InHubFlow gratis durante 7 días y experimenta el poder de la prospección segura en piloto automático.',
-        urgencyBadge: '⚡ Cupos Limitados: Solo habilitamos 35 nuevas cuentas por servidor esta semana para garantizar máxima entregabilidad.',
+        urgencyBadge: 'Cupos Limitados: Solo habilitamos 35 nuevas cuentas por servidor esta semana para garantizar máxima entregabilidad.',
         bullets: [
           'Sin tarjeta de crédito obligatoria para comenzar.',
           'Configuración lista en menos de 5 minutos.',
@@ -503,7 +503,7 @@ export const BLOG_POSTS: BlogPost[] = [
       closingCta: {
         headline: 'Duplica tus reuniones comerciales este mes con una secuencia multicanal.',
         subheadline: 'Prueba la plataforma InHubFlow gratis durante 7 días y activa tu primer workflow multicanal en 15 minutos.',
-        urgencyBadge: '⚡ Garantía de Pipeline: Configura tu flujo hoy y comienza a generar conversaciones cualificadas esta misma semana.',
+        urgencyBadge: 'Garantía de Pipeline: Configura tu flujo hoy y comienza a generar conversaciones cualificadas esta misma semana.',
         bullets: [
           'Workflows preconfigurados de alta conversión listos para usar.',
           'Bandeja unificada para LinkedIn y Correo corporativo.',
@@ -679,7 +679,7 @@ export const BLOG_POSTS: BlogPost[] = [
       closingCta: {
         headline: 'Stop risking your account. Start filling your calendar today.',
         subheadline: 'Test InHubFlow risk-free for 7 days and experience the power of safe, automated pipeline generation.',
-        urgencyBadge: '⚡ Limited Capacity: We only onboard 35 new workspace accounts per server IP this week to guarantee deliverability.',
+        urgencyBadge: 'Limited Capacity: We only onboard 35 new workspace accounts per server IP this week to guarantee deliverability.',
         bullets: [
           'No credit card required to get started.',
           'Live in under 5 minutes.',
@@ -1029,7 +1029,7 @@ export const BLOG_POSTS: BlogPost[] = [
       closingCta: {
         headline: 'Double your B2B sales meetings this month with multichannel sequences.',
         subheadline: 'Try InHubFlow free for 7 days and launch your first synchronized workflow in 15 minutes.',
-        urgencyBadge: '⚡ Pipeline Guarantee: Launch your cadence today and generate qualified conversations this week.',
+        urgencyBadge: 'Pipeline Guarantee: Launch your cadence today and generate qualified conversations this week.',
         bullets: [
           'High-converting workflow blueprints included.',
           'Consolidated inbox for LinkedIn and corporate email.',
@@ -1205,7 +1205,7 @@ export const BLOG_POSTS: BlogPost[] = [
       closingCta: {
         headline: 'Pare de arriscar seu perfil. Comece a encher seu calendário hoje.',
         subheadline: 'Teste o InHubFlow grátis por 7 dias e experimente o poder da prospecção segura no piloto automático.',
-        urgencyBadge: '⚡ Vagas Limitadas: Liberamos apenas 35 novas contas por servidor IP esta semana para manter a máxima entregabilidade.',
+        urgencyBadge: 'Vagas Limitadas: Liberamos apenas 35 novas contas por servidor IP esta semana para manter a máxima entregabilidade.',
         bullets: [
           'Sem necessidade de cartão de crédito para começar.',
           'Configuração pronta em menos de 5 minutos.',
@@ -1555,7 +1555,7 @@ export const BLOG_POSTS: BlogPost[] = [
       closingCta: {
         headline: 'Duplique suas reuniões de vendas este mês com sequências multicanal.',
         subheadline: 'Experimente a plataforma InHubFlow grátis por 7 dias e ative seu primeiro fluxo em 15 minutos.',
-        urgencyBadge: '⚡ Garantia de Pipeline: Lance sua sequência hoje e comece a gerar conversas qualificadas esta semana.',
+        urgencyBadge: 'Garantia de Pipeline: Lance sua sequência hoje e comece a gerar conversas qualificadas esta semana.',
         bullets: [
           'Workflows pré-configurados de alta conversão inclusos.',
           'Caixa de entrada integrada para LinkedIn e E-mail corporativo.',
