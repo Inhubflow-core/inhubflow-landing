@@ -417,13 +417,13 @@ export default async function BlogPostLanguagePage({ params }: Props) {
 
               {/* Puntos de dolor */}
               <div className="my-6">
-                <p className="font-bold text-gray-900 mb-4 text-base sm:text-lg">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
                   {post.lang === 'en'
                     ? 'The cost of doing outbound the legacy way:'
                     : post.lang === 'pt'
                     ? 'O custo de continuar prospectando no modelo antigo:'
                     : 'Lo que te cuesta seguir haciéndolo del modo antiguo:'}
-                </p>
+                </h3>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
                   {vsl.problem.painBullets.map((bullet, idx) => (
                     <li
