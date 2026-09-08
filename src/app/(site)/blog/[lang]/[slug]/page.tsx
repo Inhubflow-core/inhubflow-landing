@@ -461,7 +461,7 @@ export default async function BlogPostLanguagePage({ params }: Props) {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {vsl.solution.steps.map((st) => (
                   <div key={st.step} className="border-t-2 border-indigo-600 pt-4 space-y-2">
-                    <div className="text-indigo-600 font-bold text-sm">
+                    <div className="text-indigo-600 font-bold text-sm sm:text-base">
                       <span>{st.step}. {st.title}</span>
                     </div>
                     <p className="text-sm sm:text-base text-gray-600 leading-relaxed text-justify">
