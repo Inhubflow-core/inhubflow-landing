@@ -60,19 +60,19 @@ async function getAccessToken() {
   return tokenData.access_token;
 }
 
-// Extract URLs from posts.ts
-const postsFilePath = path.join(__dirname, '../src/data/blog/posts.ts');
-const content = fs.readFileSync(postsFilePath, 'utf8');
+// Extract URLs from posts-es.ts, posts-en.ts, and posts-pt.ts
+const esContent = fs.readFileSync(path.join(__dirname, '../src/data/blog/posts-es.ts'), 'utf8');
+const enContent = fs.readFileSync(path.join(__dirname, '../src/data/blog/posts-en.ts'), 'utf8');
+const ptContent = fs.readFileSync(path.join(__dirname, '../src/data/blog/posts-pt.ts'), 'utf8');
 
-const esMatch = content.match(/ESPAÑOL[\s\S]*?(?=INGLÉS|$)/);
-const enMatch = content.match(/INGLÉS[\s\S]*?(?=PORTUGUÊS|$)/);
-const ptMatch = content.match(/PORTUGUÊS[\s\S]*?$/);
-
-const esSlugs = esMatch ? [...esMatch[0].matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1]) : [];
-const enSlugs = enMatch ? [...enMatch[0].matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1]) : [];
-const ptSlugs = ptMatch ? [...ptMatch[0].matchAll(/slug:\s*'([^']+)'/g)].map((m) => m[1]) : [];
+const esSlugs = [...esContent.matchAll(/slug"?:\s*['"]([^'"]+)['"]/g)].map((m) => m[1]);
+const enSlugs = [...enContent.matchAll(/slug"?:\s*['"]([^'"]+)['"]/g)].map((m) => m[1]);
+const ptSlugs = [...ptContent.matchAll(/slug"?:\s*['"]([^'"]+)['"]/g)].map((m) => m[1]);
 
 const allUrls = [
+  `${baseUrl}`,
+  `${baseUrl}/pricing`,
+  `${baseUrl}/partners`,
   `${baseUrl}/blog/es`,
   ...esSlugs.map((s) => `${baseUrl}/blog/es/${s}`),
   `${baseUrl}/blog/en`,
