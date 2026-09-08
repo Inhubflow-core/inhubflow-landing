@@ -138,40 +138,116 @@ export default async function BlogPostLanguagePage({ params }: Props) {
 
   const labels = breadcrumbLabels[post.lang];
 
-  const ctaLabels: Record<
+  // 4 high-converting CTA models faithful to the 2-column gradient card design
+  const ctaModels: Record<
     BlogLanguage,
-    {
+    Array<{
       badge: string;
       title: string;
       desc: string;
       btn: string;
       subtext: string;
-    }
+    }>
   > = {
-    es: {
-      badge: 'SOFTWARE B2B DE ALTO RENDIMIENTO',
-      title: 'Multiplica tus reuniones comerciales sin riesgo de baneo',
-      desc: 'Únete a más de 300 agencias y empresas que ya automatizan su prospección en LinkedIn y Email con SDRs de IA y cadencia humana 100% segura.',
-      btn: 'Comenzar Prueba Gratuita de 7 Días ➔',
-      subtext: 'Acceso inmediato • Sin compromiso • Cancela cuando quieras',
-    },
-    en: {
-      badge: 'HIGH-PERFORMANCE B2B OUTBOUND',
-      title: 'Multiply qualified sales meetings with zero ban risk',
-      desc: 'Join over 300 B2B companies automating outreach with 24/7 AI SDRs and undetectable human cadence.',
-      btn: 'Start 7-Day Free Trial ➔',
-      subtext: 'Instant access • No commitment • Cancel anytime',
-    },
-    pt: {
-      badge: 'PROSPECÇÃO B2B DE ALTO RENDIMENTO',
-      title: 'Multiplique suas reuniões comerciais sem risco de bloqueio',
-      desc: 'Junte-se a mais de 300 empresas B2B que automatizam prospecção no LinkedIn e E-mail com SDR de IA e cadência humana.',
-      btn: 'Iniciar Teste Gratuito de 7 Dias ➔',
-      subtext: 'Acesso imediato • Sem compromisso • Cancele quando quiser',
-    },
+    es: [
+      {
+        badge: 'SEGURIDAD OUTBOUND & ANTI-BANEO',
+        title: 'Multiplica tus reuniones comerciales sin riesgo de baneo',
+        desc: 'Únete a más de 300 agencias y empresas que ya automatizan su prospección en LinkedIn y Email con SDRs de IA y cadencia humana 100% segura.',
+        btn: 'Comenzar Prueba Gratuita de 7 Días ➔',
+        subtext: 'Acceso inmediato • Sin compromiso • Cancela cuando quieras',
+      },
+      {
+        badge: 'SDR CON INTELIGENCIA ARTIFICIAL 24/7',
+        title: 'Pon a tu SDR de IA a agendar reuniones cualificadas hoy mismo',
+        desc: 'Ahorra hasta un 80% en costes comerciales y deja que la inteligencia artificial responda objeciones, califique leads y agende citas en tu Calendly.',
+        btn: 'Activar Mi SDR IA Gratis por 7 Días ➔',
+        subtext: 'Acceso inmediato • Sin compromiso • Cancela cuando quieras',
+      },
+      {
+        badge: 'SISTEMA OUTBOUND MULTICANAL',
+        title: 'Duplica tus respuestas combinando LinkedIn y Correo en un solo flujo',
+        desc: 'Sincroniza tus mensajes directos y secuencias de email en una sola bandeja inteligente para que ningún prospecto con alto valor se escape.',
+        btn: 'Lanzar Flujo Multicanal Gratis por 7 Días ➔',
+        subtext: 'Acceso inmediato • Sin compromiso • Cancela cuando quieras',
+      },
+      {
+        badge: 'MOTOR DE ADQUISICIÓN B2B ESCALABLE',
+        title: 'Llena tu calendario con tomadores de decisión listos para comprar',
+        desc: 'Deja de depender del boca a boca o de bases de datos obsoletas. Inyecta prospectos calificados cada semana de forma 100% predecible.',
+        btn: 'Probar InHubFlow Gratis por 7 Días ➔',
+        subtext: 'Acceso inmediato • Sin compromiso • Cancela cuando quieras',
+      },
+    ],
+    en: [
+      {
+        badge: 'ANTI-BAN & SAFE OUTBOUND INFRASTRUCTURE',
+        title: 'Multiply qualified sales meetings with zero ban risk',
+        desc: 'Join over 300 B2B companies automating outreach with 24/7 AI SDRs and undetectable human cadence.',
+        btn: 'Start 7-Day Free Trial ➔',
+        subtext: 'Instant access • No commitment • Cancel anytime',
+      },
+      {
+        badge: 'AUTONOMOUS 24/7 AI SDR',
+        title: 'Deploy your AI SDR to book qualified sales calls while you sleep',
+        desc: 'Cut pipeline generation costs by 80% and let artificial intelligence qualify decision-makers and fill your calendar automatically.',
+        btn: 'Activate My AI SDR Free for 7 Days ➔',
+        subtext: 'Instant access • No commitment • Cancel anytime',
+      },
+      {
+        badge: 'SYNCHRONIZED MULTICHANNEL CADENCE',
+        title: 'Double your reply rates by pairing LinkedIn and Email workflows',
+        desc: 'Connect intelligent touchpoints: if a prospect ignores LinkedIn, InHubFlow seamlessly triggers high-deliverability email cadences.',
+        btn: 'Launch Multichannel Cadence Free for 7 Days ➔',
+        subtext: 'Instant access • No commitment • Cancel anytime',
+      },
+      {
+        badge: 'SCALABLE B2B ACQUISITION ENGINE',
+        title: 'Fill your sales calendar with high-intent decision-makers',
+        desc: 'Stop relying on unpredictable referrals or stale lead lists. Inject high-value enterprise pipeline into your business every week.',
+        btn: 'Try InHubFlow Free for 7 Days ➔',
+        subtext: 'Instant access • No commitment • Cancel anytime',
+      },
+    ],
+    pt: [
+      {
+        badge: 'SEGURANÇA & INFRAESTRUTURA ANTI-BLOQUEIO',
+        title: 'Multiplique suas reuniões comerciais sem risco de bloqueio',
+        desc: 'Junte-se a mais de 300 empresas B2B que automatizam prospecção no LinkedIn e E-mail com SDR de IA e cadência humana.',
+        btn: 'Iniciar Teste Gratuito de 7 Dias ➔',
+        subtext: 'Acesso imediato • Sem compromisso • Cancele quando quiser',
+      },
+      {
+        badge: 'SDR AUTÔNOMO COM IA 24/7',
+        title: 'Coloque seu SDR de IA para agendar reuniões enquanto você dorme',
+        desc: 'Reduza até 80% dos custos de prospecção e deixe a inteligência artificial qualificar leads e preencher seu calendário no Calendly.',
+        btn: 'Ativar Meu SDR IA Grátis por 7 Dias ➔',
+        subtext: 'Acesso imediato • Sem compromisso • Cancele quando quiser',
+      },
+      {
+        badge: 'OUTBOUND MULTICANAL SINCRONIZADO',
+        title: 'Duplique suas respostas combinando LinkedIn e E-mail em um só fluxo',
+        desc: 'Conecte etapas inteligentes: se o lead não responder no LinkedIn, o InHubFlow ativa sequências de e-mail com alta entregabilidade.',
+        btn: 'Criar Sequência Multicanal Grátis por 7 Dias ➔',
+        subtext: 'Acesso imediato • Sem compromisso • Cancele quando quiser',
+      },
+      {
+        badge: 'MOTOR DE AQUISIÇÃO B2B ESCALÁVEL',
+        title: 'Encha seu calendário com tomadores de decisão prontos para comprar',
+        desc: 'Pare de depender de indicações imprevisíveis. Injete novas reuniões qualificadas no seu funil comercial toda semana com previsibilidade.',
+        btn: 'Testar InHubFlow Grátis por 7 Dias ➔',
+        subtext: 'Acesso imediato • Sem compromisso • Cancele quando quiser',
+      },
+    ],
   };
 
-  const cta = ctaLabels[post.lang];
+  // Deterministic rotation across the 4 CTA models based on post slug
+  const modelIndex =
+    Math.abs(
+      post.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0)
+    ) % 4;
+
+  const cta = ctaModels[post.lang][modelIndex];
 
   const jsonLdBreadcrumb = {
     '@context': 'https://schema.org',
