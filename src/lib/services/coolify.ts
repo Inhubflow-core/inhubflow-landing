@@ -1,5 +1,5 @@
 /**
- * Coolify REST API Client for Automated B2B Linki Instance Provisioning
+ * Coolify REST API Client for Automated B2B Instance Provisioning
  */
 
 const COOLIFY_API_URL = process.env.COOLIFY_API_URL || "https://panel.inhubflow.online/api/v1";
@@ -8,7 +8,7 @@ const COOLIFY_SERVER_UUID = process.env.COOLIFY_SERVER_UUID || "kkiircnr8oycyecz
 const COOLIFY_PROJECT_UUID = process.env.COOLIFY_PROJECT_UUID || "obaptxnn3pias032gd7zuqjm";
 const COOLIFY_ENVIRONMENT_NAME = process.env.COOLIFY_ENVIRONMENT_NAME || "production";
 
-interface DeployLinkiInstanceParams {
+interface DeployB2BInstanceParams {
   companySlug: string;
   companyName: string;
   adminEmail: string;
@@ -74,9 +74,9 @@ async function resolveProjectAndEnv(): Promise<{ projectUuid: string; environmen
 }
 
 /**
- * Creates and deploys a dedicated Linki instance for a customer with 4 slots and custom subdomain.
+ * Creates and deploys a dedicated InHubFlow B2B instance for a customer with 4 slots and custom subdomain.
  */
-export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Promise<CoolifyProvisionResult> {
+export async function deployB2BInstance(params: DeployB2BInstanceParams): Promise<CoolifyProvisionResult> {
   const { companySlug, companyName, adminEmail, adminPassword = "", slotsLimit = 4 } = params;
   const cleanSlug = companySlug.toLowerCase().replace(/[^a-z0-9-]/g, "");
   const subdomainUrl = `https://${cleanSlug}-b2b.inhubflow.online`;
@@ -98,11 +98,11 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
       project_uuid: projectUuid,
       server_uuid: serverUuid,
       environment_name: environmentName,
-      git_repository: "https://github.com/Inhubflow-core/inhubflow-linki",
+      git_repository: process.env.COOLIFY_B2B_GIT_REPOSITORY || "https://github.com/Inhubflow-core/inhubflow-b2b",
       git_branch: "main",
       build_pack: "nixpacks",
       ports_exposes: "3000",
-      name: `Linki B2B - ${companyName} (${cleanSlug})`,
+      name: `InHubFlow B2B - ${companyName} (${cleanSlug})`,
       description: `Dedicated InHubFlow B2B instance for ${companyName} with ${slotsLimit} slots`,
     };
 
@@ -188,7 +188,7 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
       });
     }
 
-    console.log(`[Coolify Service] ✅ Linki instance '${cleanSlug}' created at ${subdomainUrl} (UUID: ${applicationUuid}).`);
+    console.log(`[Coolify Service] ✅ InHubFlow B2B instance '${cleanSlug}' created at ${subdomainUrl} (UUID: ${applicationUuid}).`);
 
     return {
       success: true,
@@ -196,7 +196,7 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
       subdomainUrl,
     };
   } catch (error: any) {
-    console.error("[Coolify Service] ❌ Error provisioning Linki instance:", error.message || error);
+    console.error("[Coolify Service] ❌ Error provisioning InHubFlow B2B instance:", error.message || error);
     return {
       success: false,
       error: error.message || "Unknown error",
@@ -208,7 +208,7 @@ export async function deployLinkiInstance(params: DeployLinkiInstanceParams): Pr
 /**
  * Stops or pauses an instance when subscription is canceled.
  */
-export async function stopLinkiInstance(applicationUuid: string): Promise<boolean> {
+export async function stopB2BInstance(applicationUuid: string): Promise<boolean> {
   try {
     const res = await fetch(`${COOLIFY_API_URL}/applications/${applicationUuid}/stop`, {
       method: "POST",

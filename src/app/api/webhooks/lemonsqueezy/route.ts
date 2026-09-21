@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
-import { deployLinkiInstance, stopLinkiInstance } from "@/lib/services/coolify";
+import { deployB2BInstance, stopB2BInstance } from "@/lib/services/coolify";
 
 const LEMON_WEBHOOK_SECRET = process.env.LEMONSQUEEZY_WEBHOOK_SECRET || "inhubflow_lemon_secret_2026";
 
@@ -83,7 +83,7 @@ export async function POST(req: NextRequest) {
 
         console.log(`[LemonSqueezy Webhook] Provisioning plan '${planId}' (${slotsLimit} slots) for: ${companyName} (${adminEmail})`);
 
-        const coolifyResult = await deployLinkiInstance({
+        const coolifyResult = await deployB2BInstance({
           companySlug,
           companyName,
           adminEmail,
@@ -91,7 +91,7 @@ export async function POST(req: NextRequest) {
           slotsLimit,
         });
 
-        // Forward to central InHubFlow Linki platform for Partner commission attribution
+        // Forward to central InHubFlow B2B platform for Partner commission attribution
         try {
           await fetch("https://b2b.inhubflow.online/api/webhooks/lemonsqueezy", {
             method: "POST",
@@ -107,7 +107,7 @@ export async function POST(req: NextRequest) {
           plan_id: planId,
           slots_limit: slotsLimit,
           provisioned: {
-            b2b_linki: coolifyResult,
+            b2b_instance: coolifyResult,
           },
         });
       }
@@ -116,7 +116,7 @@ export async function POST(req: NextRequest) {
       case "subscription_expired": {
         const coolifyAppUuid = customData.coolify_app_uuid;
         if (coolifyAppUuid) {
-          await stopLinkiInstance(coolifyAppUuid);
+          await stopB2BInstance(coolifyAppUuid);
         }
 
         try {

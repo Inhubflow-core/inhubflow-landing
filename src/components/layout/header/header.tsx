@@ -50,7 +50,7 @@ export default function Header() {
 
           {/* Right Header Actions */}
           <div className="flex items-center gap-2.5 sm:gap-3.5 xl:gap-4 justify-end shrink-0">
-            {/* Language Selector matching Linki & Chatwoot */}
+            {/* Language Selector matching B2B & Chatwoot */}
             <LanguageSelector />
 
             <a

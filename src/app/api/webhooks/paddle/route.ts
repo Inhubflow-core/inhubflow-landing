@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
 import { createChatwootAccount, suspendChatwootAccount } from "@/lib/services/chatwoot";
-import { deployLinkiInstance, stopLinkiInstance } from "@/lib/services/coolify";
+import { deployB2BInstance, stopB2BInstance } from "@/lib/services/coolify";
 
 const PADDLE_WEBHOOK_SECRET = process.env.PADDLE_WEBHOOK_SECRET_KEY || "";
 
@@ -96,8 +96,8 @@ export async function POST(req: NextRequest) {
 
         let coolifyResult = null;
 
-        // Provision B2B Linki Dedicated Instance with exact slotsLimit (5, 10, or 20)
-        coolifyResult = await deployLinkiInstance({
+        // Provision B2B Dedicated Instance with exact slotsLimit (5, 10, or 20)
+        coolifyResult = await deployB2BInstance({
           companySlug,
           companyName,
           adminEmail,
@@ -110,7 +110,7 @@ export async function POST(req: NextRequest) {
           plan_id: planId,
           slots_limit: slotsLimit,
           provisioned: {
-            b2b_linki: coolifyResult,
+            b2b_instance: coolifyResult,
           },
         });
       }
@@ -125,7 +125,7 @@ export async function POST(req: NextRequest) {
         }
 
         if (coolifyAppUuid) {
-          await stopLinkiInstance(coolifyAppUuid);
+          await stopB2BInstance(coolifyAppUuid);
         }
 
         console.log(`[Paddle Webhook] ⏸️ Suspended services for canceled subscription: ${eventData.id}`);

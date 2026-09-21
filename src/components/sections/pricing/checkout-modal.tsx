@@ -177,9 +177,10 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
       const resData = await res.json();
       console.log('[LemonSqueezy Webhook Simulation Response]:', resData);
 
-      if (resData.provisioned?.b2b_linki && !resData.provisioned.b2b_linki.success) {
+      const b2bResult = resData.provisioned?.b2b_instance;
+      if (b2bResult && !b2bResult.success) {
         setLoading(false);
-        setError(`Error del servidor Coolify: ${resData.provisioned.b2b_linki.error || 'Error desconocido'}`);
+        setError(`Error del servidor Coolify: ${b2bResult.error || 'Error desconocido'}`);
         return;
       }
 
