@@ -17,7 +17,13 @@ export default function HowItWorksSection() {
       bullet1: 'Radar continuo en LinkedIn y noticias',
       bullet2: 'Scoring de intención de compra (0 a 100%)',
       bullet3: 'Sin spam a ciegas, solo prospectos calientes',
-      icon: '🎯',
+      icon: (
+        <svg className="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <circle cx="12" cy="12" r="6" />
+          <circle cx="12" cy="12" r="2" />
+        </svg>
+      ),
     },
     {
       step: '02',
@@ -29,7 +35,11 @@ export default function HowItWorksSection() {
       bullet1: 'LinkedIn Outreach (Visita + Conexión + InMail)',
       bullet2: 'Cold Email con rotación multicuenta y warmup',
       bullet3: 'Ritmos y pausas humanizadas anti-bloqueo',
-      icon: '⚡',
+      icon: (
+        <svg className="w-6 h-6 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        </svg>
+      ),
     },
     {
       step: '03',
@@ -41,7 +51,16 @@ export default function HowItWorksSection() {
       bullet1: 'Respuestas fundamentadas sin inventar datos',
       bullet2: 'Modo Aprobación manual o Modo 100% Autónomo',
       bullet3: 'Handoff inmediato a humano ante casos especiales',
-      icon: '🤖',
+      icon: (
+        <svg className="w-6 h-6 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 8V4H8" />
+          <rect width="16" height="12" x="4" y="8" rx="2" />
+          <path d="M2 14h2" />
+          <path d="M20 14h2" />
+          <path d="M15 13v2" />
+          <path d="M9 13v2" />
+        </svg>
+      ),
     },
     {
       step: '04',
@@ -53,7 +72,15 @@ export default function HowItWorksSection() {
       bullet1: 'Sincronización nativa con Calendly y Google Calendar',
       bullet2: 'Pipeline CRM con avance automático de etapas',
       bullet3: 'Tu equipo entra a la videollamada listo para cerrar',
-      icon: '📅',
+      icon: (
+        <svg className="w-6 h-6 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+          <line x1="16" x2="16" y1="2" y2="6" />
+          <line x1="8" x2="8" y1="2" y2="6" />
+          <line x1="3" x2="21" y1="10" y2="10" />
+          <path d="m9 16 2 2 4-4" />
+        </svg>
+      ),
     },
   ];
 

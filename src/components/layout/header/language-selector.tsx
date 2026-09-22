@@ -105,7 +105,9 @@ export default function LanguageSelector() {
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-sm">{option.flag}</span>
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-gray-100 text-gray-700 font-mono border border-gray-200">
+                    {option.badge}
+                  </span>
                   <span>{option.label}</span>
                 </div>
                 {locale === option.code && (

@@ -25,7 +25,7 @@ export function PlatformShowcase() {
 
   return (
     <div
-      className="w-full max-w-[1100px] mx-auto relative z-30 px-1 sm:px-0"
+      className="w-full max-w-7xl mx-auto relative z-30 px-1 sm:px-0"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -50,7 +50,12 @@ export function PlatformShowcase() {
               : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
           }`}
         >
-          <span>📡</span>
+          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
+            <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+          </svg>
           <span>Radar de Señales</span>
           <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
         </button>
@@ -67,7 +72,9 @@ export function PlatformShowcase() {
               : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
           }`}
         >
-          <span>⚡</span>
+          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
           <span>Secuencias Multicanal</span>
         </button>
 
@@ -83,7 +90,14 @@ export function PlatformShowcase() {
               : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
           }`}
         >
-          <span>🤖</span>
+          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 8V4H8" />
+            <rect width="16" height="12" x="4" y="8" rx="2" />
+            <path d="M2 14h2" />
+            <path d="M20 14h2" />
+            <path d="M15 13v2" />
+            <path d="M9 13v2" />
+          </svg>
           <span>SDR con IA 24/7</span>
         </button>
       </div>
@@ -158,8 +172,12 @@ export function PlatformShowcase() {
               <div className="space-y-2 text-xs flex-1 flex flex-col justify-around">
                 <div className="flex items-center justify-between p-3 rounded-xl bg-amber-500/5 dark:bg-amber-950/20 border border-amber-500/20 gap-3">
                   <div className="flex items-center gap-3 min-w-0">
-                    <span className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-500 flex items-center justify-center font-bold text-sm shrink-0">
-                      🎯
+                    <span className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-500 flex items-center justify-center shrink-0">
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="12" r="6" />
+                        <circle cx="12" cy="12" r="2" />
+                      </svg>
                     </span>
                     <div className="min-w-0">
                       <p className="font-bold text-gray-900 dark:text-white truncate">Reacción en Post de Competidor X</p>
@@ -168,15 +186,23 @@ export function PlatformShowcase() {
                       </p>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-500 font-bold text-[10px] shrink-0">
-                    🔥 98% Intención
+                  <span className="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-500 font-bold text-[10px] shrink-0 inline-flex items-center gap-1">
+                    <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                    98% Intención
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between p-3 rounded-xl bg-sky-500/5 dark:bg-sky-950/20 border border-sky-500/20 gap-3">
                   <div className="flex items-center gap-3 min-w-0">
-                    <span className="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-500 flex items-center justify-center font-bold text-sm shrink-0">
-                      👔
+                    <span className="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-500 flex items-center justify-center shrink-0">
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      </svg>
                     </span>
                     <div className="min-w-0">
                       <p className="font-bold text-gray-900 dark:text-white truncate">Nuevo en el Cargo (&lt;30 días)</p>
@@ -185,15 +211,21 @@ export function PlatformShowcase() {
                       </p>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-500 font-bold text-[10px] shrink-0">
-                    🔥 95% Intención
+                  <span className="px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-500 font-bold text-[10px] shrink-0 inline-flex items-center gap-1">
+                    <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                    95% Intención
                   </span>
                 </div>
 
                 <div className="flex items-center justify-between p-3 rounded-xl bg-purple-500/5 dark:bg-purple-950/20 border border-purple-500/20 gap-3">
                   <div className="flex items-center gap-3 min-w-0">
-                    <span className="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-500 flex items-center justify-center font-bold text-sm shrink-0">
-                      🔍
+                    <span className="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-500 flex items-center justify-center shrink-0">
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                      </svg>
                     </span>
                     <div className="min-w-0">
                       <p className="font-bold text-gray-900 dark:text-white truncate">Palabras Clave de Búsqueda de Solución</p>
@@ -202,8 +234,11 @@ export function PlatformShowcase() {
                       </p>
                     </div>
                   </div>
-                  <span className="px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-500 font-bold text-[10px] shrink-0">
-                    🔥 96% Intención
+                  <span className="px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-500 font-bold text-[10px] shrink-0 inline-flex items-center gap-1">
+                    <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                    96% Intención
                   </span>
                 </div>
               </div>

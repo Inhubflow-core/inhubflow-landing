@@ -353,8 +353,10 @@ export default function LiveChatWidget() {
                     R
                   </div>
                 ) : (
-                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur border border-white/40 flex items-center justify-center text-white text-lg">
-                    ⚡
+                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur border border-white/40 flex items-center justify-center text-white">
+                    <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
                   </div>
                 )}
                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-indigo-700 rounded-full"></span>
@@ -519,7 +521,9 @@ export default function LiveChatWidget() {
                 {/* Operator Typing Indicator (WhatsApp-like) */}
                 {isOperatorTyping && !isLoading && (
                   <div className="flex items-center gap-2 text-xs text-emerald-700 font-medium pl-10 animate-pulse">
-                    <span>✍️</span>
+                    <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+                    </svg>
                     <span>{t.typingHuman}</span>
                     <span className="inline-flex gap-1">
                       <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce"></span>
@@ -617,8 +621,10 @@ export default function LiveChatWidget() {
             {locale === 'pt-BR' ? 'Chat ao Vivo' : locale === 'en' ? 'Live Chat' : 'Chat en Vivo'}
           </span>
 
-          <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-sm">
-            💬
+          <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white">
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
           </div>
 
           {hasUnread && (

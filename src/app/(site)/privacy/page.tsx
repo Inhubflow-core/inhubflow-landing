@@ -438,7 +438,9 @@ export default function PrivacyPage() {
             {current.subtitle}
           </p>
           <div className="inline-flex items-center gap-2 text-xs text-gray-600 bg-white/90 border border-gray-200 px-3.5 py-1.5 rounded-full shadow-2xs">
-            <span>🛡️</span>
+            <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
             <span className="font-medium">{current.updated}</span>
           </div>
         </div>
@@ -635,7 +637,9 @@ export default function PrivacyPage() {
                     key={idx}
                     className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700"
                   >
-                    <span className="text-emerald-600 shrink-0 font-semibold">🛡️</span>
+                    <svg className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -659,7 +663,16 @@ export default function PrivacyPage() {
                     key={idx}
                     className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700"
                   >
-                    <span className="text-indigo-600 shrink-0">🏢</span>
+                    <svg className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+                      <path d="M9 22v-4h6v4" />
+                      <path d="M8 6h.01" />
+                      <path d="M16 6h.01" />
+                      <path d="M8 10h.01" />
+                      <path d="M16 10h.01" />
+                      <path d="M8 14h.01" />
+                      <path d="M16 14h.01" />
+                    </svg>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -681,7 +694,13 @@ export default function PrivacyPage() {
                     key={idx}
                     className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-700"
                   >
-                    <span className="text-emerald-600 shrink-0">⚖️</span>
+                    <svg className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+                      <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" />
+                      <path d="M7 21h10" />
+                      <path d="M12 3v18" />
+                      <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" />
+                    </svg>
                     <span>{item}</span>
                   </li>
                 ))}

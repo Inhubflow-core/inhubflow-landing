@@ -33,8 +33,13 @@ export default function PricingSection() {
 
         {hasPartnerDiscount && (
           <div className="max-w-2xl mx-auto mb-8 p-4 rounded-2xl bg-gradient-to-r from-amber-500/15 via-emerald-500/15 to-blue-500/15 border border-amber-500/30 text-center shadow-lg animate-in fade-in slide-in-from-top-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider mb-2 shadow-xs">
-              🎉 Descuento de Embajador Oficial Activado
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider mb-2 shadow-xs">
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="19" x2="5" y1="5" y2="19" />
+                <circle cx="6.5" cy="6.5" r="2.5" />
+                <circle cx="17.5" cy="17.5" r="2.5" />
+              </svg>
+              <span>Descuento de Embajador Oficial Activado</span>
             </div>
             <p className="text-sm font-bold text-gray-900 dark:text-white">
               ¡Tienes <span className="text-emerald-600 dark:text-emerald-400 font-extrabold text-base">20% OFF de por vida</span> en todos los planes gracias a tu Partner Oficial <span className="font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-600 dark:text-amber-400">({partnerCode})</span>!
