@@ -91,7 +91,7 @@ export default function TestimonialsSection() {
           <div className="mt-8 text-center relative z-10">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="inline-flex items-center dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 px-6 py-3 text-xs sm:text-sm font-semibold text-gray-800 bg-white border border-gray-200 dark:hover:bg-gray-700 rounded-full shadow-xs hover:bg-gray-50 focus:outline-none cursor-pointer active:scale-98"
+              className="inline-flex items-center dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 px-6 py-3 text-xs sm:text-sm font-semibold text-gray-800 bg-white border border-gray-200 dark:hover:bg-gray-700 rounded-full hover:bg-gray-50 focus:outline-none cursor-pointer active:scale-98"
             >
               <span>{showAll ? 'Ver menos' : 'Ver más testimonios'}</span>
             </button>
@@ -114,14 +114,14 @@ function TestimonialCard({
   testimonial: (typeof testimonials)[number];
 }) {
   return (
-    <div className="p-2 sm:p-2.5 bg-white dark:bg-white/5 dark:border-gray-800 dark:hover:border-white/10 border rounded-2xl sm:rounded-[20px] border-gray-200 shadow-xs hover:shadow-md transition-shadow">
+    <div className="p-2 sm:p-2.5 bg-white dark:bg-white/5 dark:border-gray-800 dark:hover:border-white/10 border rounded-2xl sm:rounded-[20px] border-gray-200 transition-colors">
       <div className="flex items-center p-3 mb-2.5 bg-gray-50/80 dark:bg-white/[0.03] rounded-xl sm:rounded-2xl">
         <Image
           src={testimonial.image || '/placeholder.svg'}
           alt={testimonial.name}
           width={48}
           height={48}
-          className="size-11 sm:size-12 object-cover ring-2 ring-white dark:ring-gray-700 mr-3.5 rounded-full drop-shadow-sm shrink-0"
+          className="size-11 sm:size-12 object-cover ring-2 ring-white dark:ring-gray-700 mr-3.5 rounded-full shrink-0"
         />
         <div className="min-w-0">
           <h3 className="text-gray-900 font-bold text-sm sm:text-base dark:text-white/90 truncate">

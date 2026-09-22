@@ -110,7 +110,7 @@ export default function HowItWorksSection() {
           {steps.map((item) => (
             <div
               key={item.step}
-              className="p-6 rounded-3xl border border-gray-200 dark:border-gray-800 bg-gray-50/70 dark:bg-gray-900/60 hover:border-brand-500/40 dark:hover:border-brand-500/40 hover:bg-white dark:hover:bg-gray-850 transition-all hover:shadow-xl group flex flex-col justify-between"
+              className="p-6 rounded-3xl border border-gray-200 dark:border-gray-800 bg-gray-50/70 dark:bg-gray-900/60 hover:border-brand-500/40 dark:hover:border-brand-500/40 hover:bg-white dark:hover:bg-gray-850 transition-all group flex flex-col justify-between"
             >
               <div>
                 {/* Step number and Icon */}
@@ -118,7 +118,7 @@ export default function HowItWorksSection() {
                   <span className="text-3xl font-extrabold text-gray-300 dark:text-gray-700 font-mono group-hover:text-brand-500 transition-colors">
                     {item.step}
                   </span>
-                  <span className="w-12 h-12 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-xl shadow-xs group-hover:scale-110 transition-transform">
+                  <span className="w-12 h-12 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
                     {item.icon}
                   </span>
                 </div>
@@ -159,14 +159,14 @@ export default function HowItWorksSection() {
         </div>
 
         {/* Bottom Banner CTA */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">
             <h4 className="text-xl sm:text-2xl font-bold">¿Listo para llenar tu agenda comercial de reuniones calificadas?</h4>
             <p className="text-blue-100 text-xs sm:text-sm">Configura tu primera campaña con señales de intención en menos de 3 minutos.</p>
           </div>
           <a
             href="#pricing"
-            className="px-7 py-3.5 rounded-full bg-white text-gray-900 font-extrabold text-sm hover:bg-gray-100 transition-all shadow-md shrink-0 active:scale-95"
+            className="px-7 py-3.5 rounded-full bg-white text-gray-900 font-extrabold text-sm hover:bg-gray-100 transition-all shrink-0 active:scale-95"
           >
             Comenzar Prueba Gratis →
           </a>

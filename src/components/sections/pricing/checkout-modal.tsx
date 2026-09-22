@@ -198,7 +198,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-      <div className="relative w-full max-w-lg p-6 bg-white dark:bg-[#101828] rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-800 text-gray-900 dark:text-white">
+      <div className="relative w-full max-w-lg p-6 bg-white dark:bg-[#101828] rounded-3xl border border-gray-100 dark:border-gray-800 text-gray-900 dark:text-white">
         {/* Header */}
         <div className="flex items-center justify-between pb-4 border-b border-gray-100 dark:border-gray-800">
           <div>
@@ -262,7 +262,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
               {(plan.id === 'b2b' || plan.id === 'allinone') && (
                 <div className="p-4 bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800 rounded-2xl flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#465fff] text-white flex items-center justify-center shadow-md shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-[#465fff] text-white flex items-center justify-center shrink-0">
                       <RiSendPlaneLine size={20} />
                     </div>
                     <div>
@@ -278,7 +278,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
                     href={`https://${previewSlug}-b2b.inhubflow.online`}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-1.5 px-4 py-2 bg-[#465fff] hover:bg-[#3641f5] text-white text-xs font-bold rounded-xl transition-all shadow-md shrink-0"
+                    className="flex items-center gap-1.5 px-4 py-2 bg-[#465fff] hover:bg-[#3641f5] text-white text-xs font-bold rounded-xl transition-all shrink-0"
                   >
                     <span>Entrar</span>
                     <RiExternalLinkLine size={13} />
@@ -290,7 +290,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
               {(plan.id === 'b2c' || plan.id === 'allinone') && (
                 <div className="p-4 bg-blue-500/5 dark:bg-blue-500/10 border border-blue-500/20 rounded-2xl flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-md">
+                    <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center">
                       <RiMessage3Line size={20} />
                     </div>
                     <div>
@@ -401,7 +401,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
                   </span>
                 </p>
               </div>
-              <span className="text-xs px-2.5 py-1 bg-amber-500 text-slate-950 font-bold rounded-lg shadow-sm flex items-center gap-1">
+              <span className="text-xs px-2.5 py-1 bg-amber-500 text-slate-950 font-bold rounded-lg flex items-center gap-1">
                 <RiShieldCheckLine size={14} />
                 <span>Lemon Squeezy by Stripe</span>
               </span>
@@ -410,7 +410,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 px-6 font-bold text-sm text-white bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 rounded-full shadow-lg shadow-indigo-500/25 transition-all duration-200 cursor-pointer disabled:opacity-50"
+              className="w-full py-3.5 px-6 font-bold text-sm text-white bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 rounded-full transition-all duration-200 cursor-pointer disabled:opacity-50"
             >
               {locale === 'pt-BR'
                 ? 'Confirmar Ativação e Pagamento'

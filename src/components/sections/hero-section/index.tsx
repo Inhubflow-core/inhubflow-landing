@@ -30,7 +30,7 @@ export default function HeroSection() {
 
               {/* Mobile & Tablet Capabilities Pills (< 1280px) */}
               <div className="xl:hidden mt-6 flex flex-wrap items-center justify-center gap-2 max-w-lg mx-auto">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 border border-sky-200 dark:border-sky-800/50 shadow-xs text-xs font-bold text-gray-800 dark:text-gray-200">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 border border-sky-200 dark:border-sky-800/50 text-xs font-bold text-gray-800 dark:text-gray-200">
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0A66C2] text-white">
                     <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
@@ -41,7 +41,7 @@ export default function HeroSection() {
                   <span>{t.hero.badge1}</span>
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 border border-indigo-200 dark:border-indigo-800/50 shadow-xs text-xs font-bold text-gray-800 dark:text-gray-200">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 border border-indigo-200 dark:border-indigo-800/50 text-xs font-bold text-gray-800 dark:text-gray-200">
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-600 text-white">
                     <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                       <path d="M12 2a8 8 0 0 0-8 8c0 4.418 8 12 8 12s8-7.582 8-12a8 8 0 0 0-8-8z" />
@@ -51,7 +51,7 @@ export default function HeroSection() {
                   <span>{t.hero.badge2}</span>
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 border border-sky-200 dark:border-sky-800/50 shadow-xs text-xs font-bold text-gray-800 dark:text-gray-200">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 border border-sky-200 dark:border-sky-800/50 text-xs font-bold text-gray-800 dark:text-gray-200">
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0A66C2] text-white">
                     <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                       <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
@@ -60,7 +60,7 @@ export default function HeroSection() {
                   <span>{t.hero.badge3}</span>
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 border border-indigo-200 dark:border-indigo-800/50 shadow-xs text-xs font-bold text-gray-800 dark:text-gray-200">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 border border-indigo-200 dark:border-indigo-800/50 text-xs font-bold text-gray-800 dark:text-gray-200">
                   <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-white">
                     <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                       <rect width="18" height="18" x="3" y="4" rx="2" />
@@ -77,14 +77,14 @@ export default function HeroSection() {
               <div className="mt-6 sm:mt-10 flex sm:flex-row flex-col gap-3 sm:gap-4 relative z-30 items-center justify-center">
                 <a
                   href="#pricing"
-                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 h-12 inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-base font-bold scale-100 hover:scale-105 active:scale-98 cursor-pointer shadow-md shadow-blue-600/20"
+                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 h-12 inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-base font-bold scale-100 hover:scale-105 active:scale-98 cursor-pointer"
                 >
                   {t.hero.ctaPrimary}
                 </a>
 
                 <a
                   href="#features"
-                  className="w-full sm:w-auto bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition border border-gray-200 dark:border-gray-700 h-12 inline-flex items-center justify-center px-6 py-3 rounded-full text-gray-800 dark:text-gray-200 text-sm font-semibold cursor-pointer shadow-xs active:scale-98"
+                  className="w-full sm:w-auto bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition border border-gray-200 dark:border-gray-700 h-12 inline-flex items-center justify-center px-6 py-3 rounded-full text-gray-800 dark:text-gray-200 text-sm font-semibold cursor-pointer active:scale-98"
                 >
                   {t.hero.ctaSecondary}
                 </a>
@@ -100,8 +100,8 @@ export default function HeroSection() {
       {/* Floating Badges (Framed near the hero content boundary, without touching text) */}
       <div className="hidden xl:block pointer-events-none select-none absolute inset-0 max-w-[1360px] mx-auto">
         {/* Badge 1: Sincronizar Contactos (Upper Left) */}
-        <div className="absolute top-16 left-0 2xl:left-2 floating-1 w-[220px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-sky-200/80 dark:border-sky-800/60 shadow-[0_8px_25px_rgba(10,102,194,0.18)] backdrop-blur-md">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0A66C2] text-white shadow-sm shadow-blue-500/40">
+        <div className="absolute top-16 left-0 2xl:left-2 floating-1 w-[220px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-sky-200/80 dark:border-sky-800/60 backdrop-blur-md">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0A66C2] text-white">
             <svg className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
@@ -113,8 +113,8 @@ export default function HeroSection() {
         </div>
 
         {/* Badge 2: Calificación con IA (Lower Left) */}
-        <div className="absolute top-[320px] left-2 2xl:left-6 floating-2 w-[215px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-indigo-200/80 dark:border-indigo-800/60 shadow-[0_8px_25px_rgba(99,102,241,0.18)] backdrop-blur-md">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-indigo-600 to-blue-600 text-white shadow-sm shadow-indigo-500/40">
+        <div className="absolute top-[320px] left-2 2xl:left-6 floating-2 w-[215px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-indigo-200/80 dark:border-indigo-800/60 backdrop-blur-md">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-indigo-600 to-blue-600 text-white">
             <svg className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 2a8 8 0 0 0-8 8c0 4.418 8 12 8 12s8-7.582 8-12a8 8 0 0 0-8-8z" />
               <circle cx="12" cy="10" r="3" />
@@ -125,8 +125,8 @@ export default function HeroSection() {
         </div>
 
         {/* Badge 3: Atención Multicanal (Upper Right) */}
-        <div className="absolute top-20 right-0 2xl:right-2 floating-3 w-[215px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-sky-200/80 dark:border-sky-800/60 shadow-[0_8px_25px_rgba(10,102,194,0.18)] backdrop-blur-md">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0A66C2] text-white shadow-sm shadow-blue-500/40">
+        <div className="absolute top-20 right-0 2xl:right-2 floating-3 w-[215px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-sky-200/80 dark:border-sky-800/60 backdrop-blur-md">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0A66C2] text-white">
             <svg className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
             </svg>
@@ -136,8 +136,8 @@ export default function HeroSection() {
         </div>
 
         {/* Badge 4: Agendar Reunión (Lower Right) */}
-        <div className="absolute top-[330px] right-2 2xl:right-6 floating-4 w-[215px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-emerald-200/80 dark:border-emerald-800/60 shadow-[0_8px_25px_rgba(16,185,129,0.18)] backdrop-blur-md">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-sm shadow-emerald-500/40">
+        <div className="absolute top-[330px] right-2 2xl:right-6 floating-4 w-[215px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-emerald-200/80 dark:border-emerald-800/60 backdrop-blur-md">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <rect width="18" height="18" x="3" y="4" rx="2" />
               <line x1="16" x2="16" y1="2" y2="6" />

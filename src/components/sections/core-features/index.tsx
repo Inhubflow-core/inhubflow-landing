@@ -83,7 +83,7 @@ export function CoreFeatures() {
           {t.features.items.map((feature, index) => (
             <div
               key={feature.title}
-              className="bg-white p-6 sm:p-8 md:p-9 border border-gray-200 dark:bg-white/5 dark:border-white/5 rounded-2xl sm:rounded-[20px] shadow-[0px_20px_40px_-25px_rgba(107,110,148,0.06)] hover:shadow-xl transition-shadow"
+              className="bg-white p-6 sm:p-8 md:p-9 border border-gray-200 dark:bg-white/5 dark:border-white/5 rounded-2xl sm:rounded-[20px] transition-colors"
             >
               <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-500/10 flex items-center justify-center mb-4 sm:mb-6">
                 {getFeatureIcon(index)}

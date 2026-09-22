@@ -343,13 +343,13 @@ export default function LiveChatWidget() {
     <div className="fixed bottom-5 right-5 z-50 font-sans text-slate-800 select-none">
       {/* CHAT WINDOW */}
       {isOpen && (
-        <div className="flex flex-col w-[360px] sm:w-[400px] h-[540px] max-h-[85vh] bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
+        <div className="flex flex-col w-[360px] sm:w-[400px] h-[540px] max-h-[85vh] bg-white rounded-2xl border border-slate-200 overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
           {/* HEADER */}
-          <div className="bg-gradient-to-r from-indigo-600 via-indigo-700 to-blue-700 text-white px-5 py-4 flex items-center justify-between shadow-md relative">
+          <div className="bg-gradient-to-r from-indigo-600 via-indigo-700 to-blue-700 text-white px-5 py-4 flex items-center justify-between relative">
             <div className="flex items-center space-x-3">
               <div className="relative">
                 {isHumanTakeover ? (
-                  <div className="w-10 h-10 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white font-bold text-sm shadow-inner">
+                  <div className="w-10 h-10 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white font-bold text-sm">
                     R
                   </div>
                 ) : (
@@ -400,8 +400,10 @@ export default function LiveChatWidget() {
           {!isRegistered ? (
             <div className="flex-1 p-6 bg-slate-50/50 flex flex-col justify-center overflow-y-auto">
               <div className="text-center mb-5 space-y-2">
-                <div className="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 mx-auto flex items-center justify-center text-2xl shadow-xs">
-                  👋
+                <div className="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-600 mx-auto flex items-center justify-center text-2xl border border-indigo-200">
+                  <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  </svg>
                 </div>
                 <h3 className="text-base font-bold text-slate-900 leading-snug">
                   {t.formTitle}
@@ -428,7 +430,7 @@ export default function LiveChatWidget() {
                     value={visitorName}
                     onChange={(e) => setVisitorName(e.target.value)}
                     placeholder={t.namePlaceholder}
-                    className="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all shadow-xs"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all"
                   />
                 </div>
 
@@ -445,13 +447,13 @@ export default function LiveChatWidget() {
                     value={visitorPhone}
                     onChange={(e) => setVisitorPhone(e.target.value)}
                     placeholder={t.phonePlaceholder}
-                    className="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all shadow-xs"
+                    className="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-semibold text-xs shadow-md hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer"
+                  className="w-full mt-2 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-semibold text-xs transition-all active:scale-[0.98] cursor-pointer"
                 >
                   {t.startBtn}
                 </button>
@@ -471,8 +473,8 @@ export default function LiveChatWidget() {
                   <div className="w-7 h-7 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 border border-indigo-200">
                     AI
                   </div>
-                  <div className="bg-white border border-slate-200 text-slate-800 text-sm rounded-2xl rounded-tl-none px-4 py-3 shadow-sm max-w-[85%] leading-relaxed">
-                    ¡Hola {visitorName.split(' ')[0]}! 👋 {t.welcomeMessage}
+                  <div className="bg-white border border-slate-200 text-slate-800 text-sm rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%] leading-relaxed">
+                    ¡Hola {visitorName.split(' ')[0]}! {t.welcomeMessage}
                   </div>
                 </div>
 
@@ -490,7 +492,7 @@ export default function LiveChatWidget() {
                         <div
                           className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 border ${
                             isHuman
-                              ? 'bg-emerald-600 text-white border-emerald-700 shadow-sm'
+                              ? 'bg-emerald-600 text-white border-emerald-700'
                               : 'bg-indigo-100 text-indigo-600 border-indigo-200'
                           }`}
                         >
@@ -499,7 +501,7 @@ export default function LiveChatWidget() {
                       )}
 
                       <div
-                        className={`text-sm rounded-2xl px-4 py-3 shadow-sm max-w-[85%] leading-relaxed break-words ${
+                        className={`text-sm rounded-2xl px-4 py-3 max-w-[85%] leading-relaxed break-words ${
                           isVisitor
                             ? 'bg-indigo-600 text-white rounded-tr-none'
                             : isHuman
@@ -556,7 +558,7 @@ export default function LiveChatWidget() {
                       key={idx}
                       onClick={() => handleSendMessage(q)}
                       disabled={isLoading}
-                      className="text-[11px] bg-white hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-300 border border-slate-200 text-slate-600 px-2.5 py-1 rounded-full transition-all text-left shadow-xs active:scale-95 cursor-pointer"
+                      className="text-[11px] bg-white hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-300 border border-slate-200 text-slate-600 px-2.5 py-1 rounded-full transition-all text-left active:scale-95 cursor-pointer"
                     >
                       {q}
                     </button>
@@ -583,7 +585,7 @@ export default function LiveChatWidget() {
                 <button
                   type="submit"
                   disabled={!inputValue.trim() || isLoading}
-                  className="w-10 h-10 rounded-xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed text-white flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer shrink-0"
+                  className="w-10 h-10 rounded-xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed text-white flex items-center justify-center transition-all active:scale-95 cursor-pointer shrink-0"
                   aria-label={t.sendBtn}
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -608,7 +610,7 @@ export default function LiveChatWidget() {
             setIsOpen(true);
             setHasUnread(false);
           }}
-          className="group relative flex items-center gap-2.5 bg-gradient-to-r from-indigo-600 via-indigo-700 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white px-4 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 cursor-pointer border border-white/20"
+          className="group relative flex items-center gap-2.5 bg-gradient-to-r from-indigo-600 via-indigo-700 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white px-4 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 cursor-pointer border border-white/20"
           aria-label="Abrir chat en vivo"
         >
           {/* Pulsing online badge */}

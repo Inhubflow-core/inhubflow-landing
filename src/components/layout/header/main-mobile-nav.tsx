@@ -25,7 +25,7 @@ export default function MainMobileNav({ isOpen, onClose }: MobileMenuProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="lg:hidden fixed inset-x-0 top-[57px] bottom-0 bg-white/95 dark:bg-[#101828]/95 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 shadow-2xl z-50 flex flex-col justify-between animate-fadeIn overflow-y-auto">
+    <div className="lg:hidden fixed inset-x-0 top-[57px] bottom-0 bg-white/95 dark:bg-[#101828]/95 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 z-50 flex flex-col justify-between animate-fadeIn overflow-y-auto">
       <div className="pt-6 pb-4 space-y-2 px-5 sm:px-6">
         <p className="text-[11px] font-extrabold uppercase tracking-wider text-gray-400 px-3 pb-1">
           Navegación
@@ -54,7 +54,7 @@ export default function MainMobileNav({ isOpen, onClose }: MobileMenuProps) {
           target="_blank"
           rel="noreferrer"
           onClick={onClose}
-          className="flex items-center justify-center w-full h-12 border border-gray-300 dark:border-gray-700 px-5 rounded-full text-center text-sm font-bold text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 shadow-xs hover:border-blue-500 transition-all"
+          className="flex items-center justify-center w-full h-12 border border-gray-300 dark:border-gray-700 px-5 rounded-full text-center text-sm font-bold text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-800 hover:border-blue-500 transition-all"
         >
           <span>{t.nav.clientAccess}</span>
         </a>
@@ -62,7 +62,7 @@ export default function MainMobileNav({ isOpen, onClose }: MobileMenuProps) {
         <a
           href="#pricing"
           onClick={onClose}
-          className="flex items-center justify-center w-full h-12 bg-gradient-to-r from-blue-600 to-indigo-600 text-sm font-bold text-white rounded-full shadow-md shadow-blue-500/20 active:scale-98 transition-all"
+          className="flex items-center justify-center w-full h-12 bg-gradient-to-r from-blue-600 to-indigo-600 text-sm font-bold text-white rounded-full active:scale-98 transition-all"
         >
           <span>{t.nav.startNow}</span>
         </a>

@@ -157,7 +157,7 @@ export default function Footer() {
 
             {/* Columna 3 (30%): Card Official Partner */}
             <div className="w-full">
-              <div className="relative p-6 sm:p-7 rounded-2xl bg-gradient-to-b from-indigo-950/50 via-gray-900/40 to-white/[0.03] border border-indigo-500/30 hover:border-indigo-400/60 shadow-xl shadow-indigo-950/40 transition-all duration-300 group overflow-hidden">
+              <div className="relative p-6 sm:p-7 rounded-2xl bg-gradient-to-b from-indigo-950/50 via-gray-900/40 to-white/[0.03] border border-indigo-500/30 hover:border-indigo-400/60 transition-all duration-300 group overflow-hidden">
                 {/* Subtle ambient spotlight */}
                 <div className="absolute -top-12 -right-12 w-36 h-36 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none group-hover:bg-indigo-500/30 transition-all" />
 
@@ -175,7 +175,7 @@ export default function Footer() {
                 {/* CTA Button */}
                 <Link
                   href="/partners"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-bold text-white transition rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 hover:from-blue-500 hover:via-indigo-500 hover:to-violet-500 shadow-lg shadow-indigo-600/30 active:scale-98 cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-bold text-white transition rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 hover:from-blue-500 hover:via-indigo-500 hover:to-violet-500 active:scale-98 cursor-pointer"
                 >
                   <span>{t.footer.col4Cta}</span>
                   <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

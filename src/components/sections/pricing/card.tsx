@@ -40,12 +40,12 @@ export function PricingCard({ plan, billingPeriod }: Props) {
   return (
     <div className="relative">
       <div
-        className={`bg-white dark:bg-dark-primary rounded-2xl sm:rounded-[20px] shadow-one relative z-10 h-full flex flex-col justify-between ${
-          plan.popular ? 'border-2 border-primary-500 shadow-xl' : 'border border-gray-200 dark:border-gray-800'
+        className={`bg-white dark:bg-dark-primary rounded-2xl sm:rounded-[20px] relative z-10 h-full flex flex-col justify-between ${
+          plan.popular ? 'border-2 border-primary-500' : 'border border-gray-200 dark:border-gray-800'
         }`}
       >
         {plan.popular && (
-          <span className="absolute top-0 left-6 -translate-y-1/2 px-3 py-1 text-[10px] sm:text-xs font-bold rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-sm z-20">
+          <span className="absolute top-0 left-6 -translate-y-1/2 px-3 py-1 text-[10px] sm:text-xs font-bold rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white z-20">
             {badgeText}
           </span>
         )}
@@ -88,7 +88,7 @@ export function PricingCard({ plan, billingPeriod }: Props) {
             className={cn(
               'block w-full px-5 sm:px-6 py-3 sm:py-3.5 mt-5 sm:mt-7 text-xs sm:text-sm font-bold text-center rounded-full transition-all duration-200 cursor-pointer active:scale-98',
               {
-                'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-md shadow-blue-500/20':
+                'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white':
                   plan.popular,
                 'bg-gray-900 hover:bg-gray-800 dark:bg-white/10 dark:hover:bg-white/20 text-white':
                   !plan.popular,

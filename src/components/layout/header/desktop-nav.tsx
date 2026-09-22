@@ -43,7 +43,7 @@ export default function DesktopNav() {
               className={cn(
                 'text-gray-500 dark:text-gray-400 text-xs xl:text-sm px-3 xl:px-4 py-1.5 rounded-full hover:text-primary-500 font-medium transition-colors whitespace-nowrap shrink-0',
                 {
-                  'bg-white dark:bg-white/5 font-medium text-gray-800 dark:text-white/90 shadow-xs':
+                  'bg-white dark:bg-white/5 font-medium text-gray-800 dark:text-white/90':
                     pathname === item.href,
                 }
               )}
@@ -70,7 +70,7 @@ export default function DesktopNav() {
                 className={cn(
                   'text-gray-500 dark:text-gray-400 hover:text-primary-500 group text-sm inline-flex gap-1 items-center px-4 py-1.5 font-medium rounded-full cursor-pointer transition-colors',
                   {
-                    'bg-white dark:bg-white/5 font-medium text-gray-800 dark:text-white/90 shadow-xs':
+                    'bg-white dark:bg-white/5 font-medium text-gray-800 dark:text-white/90':
                       item.items?.some(({ href }) => pathname?.includes(href)),
                   }
                 )}
@@ -87,7 +87,7 @@ export default function DesktopNav() {
                 <div
                   onMouseEnter={toggleThisDropdown}
                   onMouseLeave={toggleThisDropdown}
-                  className="absolute right-0 w-[266px] bg-white dark:bg-dark-secondary dark:border-gray-800 rounded-2xl shadow-theme-lg border border-gray-100 p-3 z-50 animate-in fade-in duration-150"
+                  className="absolute right-0 w-[266px] bg-white dark:bg-dark-secondary dark:border-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-3 z-50 animate-in fade-in duration-150"
                 >
                   <div className="space-y-1">
                     {item.items?.map((subItem) => (

@@ -46,7 +46,7 @@ export function PlatformShowcase() {
           }}
           className={`flex items-center gap-2 px-3.5 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
             activeTab === 'signals'
-              ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md shadow-amber-500/20 scale-105'
+              ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white scale-105'
               : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
           }`}
         >
@@ -68,7 +68,7 @@ export function PlatformShowcase() {
           }}
           className={`flex items-center gap-2 px-3.5 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
             activeTab === 'sequences'
-              ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/20 scale-105'
+              ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white scale-105'
               : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
           }`}
         >
@@ -86,7 +86,7 @@ export function PlatformShowcase() {
           }}
           className={`flex items-center gap-2 px-3.5 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
             activeTab === 'sdr'
-              ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md shadow-purple-500/20 scale-105'
+              ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white scale-105'
               : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
           }`}
         >
@@ -103,7 +103,7 @@ export function PlatformShowcase() {
       </div>
 
       {/* Main Glassmorphic Showcase Window */}
-      <div className="p-3 sm:p-5 rounded-2xl sm:rounded-[32px] border border-white/60 dark:border-white/10 bg-white/70 dark:bg-gray-900/80 backdrop-blur-xl shadow-xl sm:shadow-2xl relative overflow-hidden">
+      <div className="p-3 sm:p-5 rounded-2xl sm:rounded-[32px] border border-gray-200/80 dark:border-white/10 bg-white/70 dark:bg-gray-900/80 backdrop-blur-xl relative overflow-hidden">
         {/* Browser / App Frame Header */}
         <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-2.5 mb-3 rounded-xl sm:rounded-2xl bg-white/70 dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/60 text-xs">
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
@@ -411,7 +411,7 @@ export function PlatformShowcase() {
                 </div>
 
                 <div className="flex items-start gap-2 max-w-[92%] sm:max-w-[85%] ml-auto justify-end">
-                  <div className="p-2.5 sm:p-3 rounded-2xl rounded-tr-none bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md text-[11px] sm:text-xs">
+                  <div className="p-2.5 sm:p-3 rounded-2xl rounded-tr-none bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-[11px] sm:text-xs">
                     <p>¡Hola Esteban! Nuestra suite combina detección de señales de compra con ritmos humanizados. Como SDR respondo dudas técnicas usando nuestra base de conocimiento y agendo directo en tu Calendly.</p>
                     <span className="text-[8px] sm:text-[9px] text-blue-200 block mt-1">10:14 AM • InHubFlow AI SDR</span>
                   </div>
@@ -425,7 +425,7 @@ export function PlatformShowcase() {
                 </div>
 
                 <div className="flex items-start gap-2 max-w-[92%] sm:max-w-[85%] ml-auto justify-end">
-                  <div className="p-2.5 sm:p-3 rounded-2xl rounded-tr-none bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md text-[11px] sm:text-xs">
+                  <div className="p-2.5 sm:p-3 rounded-2xl rounded-tr-none bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-[11px] sm:text-xs">
                     <p>¡Listo Esteban! He reservado el espacio para mañana a las 11:00 AM en Google Meet. ¡Nos vemos en la demo!</p>
                     <span className="text-[8px] sm:text-[9px] text-emerald-200 block mt-1">10:15 AM • Confirmada en Google Calendar</span>
                   </div>
@@ -445,7 +445,7 @@ export function PlatformShowcase() {
           <div className="w-full sm:w-auto">
             <a
               href="#pricing"
-              className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold hover:scale-105 active:scale-98 transition-transform shadow-md inline-flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold hover:scale-105 active:scale-98 transition-transform inline-flex items-center justify-center gap-2"
             >
               <span>Comenzar con InHubFlow B2B</span>
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

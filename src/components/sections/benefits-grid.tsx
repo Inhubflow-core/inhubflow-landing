@@ -23,7 +23,7 @@ export default function BenefitsGrid() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
           {/* Card 1 */}
-          <div className="relative flex flex-col justify-between bg-gradient-to-b from-blue-900/40 to-gray-900 border border-blue-500/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl hover:border-blue-400/60 transition-all">
+          <div className="relative flex flex-col justify-between bg-gradient-to-b from-blue-900/40 to-gray-900 border border-blue-500/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-blue-400/60 transition-all">
             <div>
               <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center mb-5">
                 <svg className="w-5 sm:w-6 h-5 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -46,7 +46,7 @@ export default function BenefitsGrid() {
           </div>
 
           {/* Card 2 */}
-          <div className="relative flex flex-col justify-between bg-gradient-to-b from-indigo-900/40 to-gray-900 border border-indigo-500/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl hover:border-indigo-400/60 transition-all">
+          <div className="relative flex flex-col justify-between bg-gradient-to-b from-indigo-900/40 to-gray-900 border border-indigo-500/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-indigo-400/60 transition-all">
             <div>
               <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl sm:rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-5">
                 <svg className="w-5 sm:w-6 h-5 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -67,7 +67,7 @@ export default function BenefitsGrid() {
           </div>
 
           {/* Card 3 */}
-          <div className="relative flex flex-col justify-between bg-gradient-to-b from-emerald-900/40 to-gray-900 border border-emerald-500/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl hover:border-emerald-400/60 transition-all">
+          <div className="relative flex flex-col justify-between bg-gradient-to-b from-emerald-900/40 to-gray-900 border border-emerald-500/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:border-emerald-400/60 transition-all">
             <div>
               <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-5">
                 <svg className="w-5 sm:w-6 h-5 sm:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

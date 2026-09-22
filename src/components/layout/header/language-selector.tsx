@@ -63,7 +63,7 @@ export default function LanguageSelector() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex h-9 sm:h-10 items-center gap-1.5 sm:gap-2 rounded-xl border border-gray-200 bg-white px-2.5 sm:px-3 text-xs font-semibold text-gray-700 transition-colors hover:bg-gray-50 shadow-xs cursor-pointer focus:outline-none whitespace-nowrap shrink-0"
+        className="flex h-9 sm:h-10 items-center gap-1.5 sm:gap-2 rounded-xl border border-gray-200 bg-white px-2.5 sm:px-3 text-xs font-semibold text-gray-700 transition-colors hover:bg-gray-50 cursor-pointer focus:outline-none whitespace-nowrap shrink-0"
         title="Seleccionar Idioma / Select Language"
       >
         <span className="text-[10px] font-extrabold text-gray-500 tracking-wider shrink-0">
@@ -86,7 +86,7 @@ export default function LanguageSelector() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 origin-top-right rounded-2xl border border-gray-100 bg-white p-2 shadow-xl backdrop-blur-md z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+        <div className="absolute right-0 mt-2 w-48 origin-top-right rounded-2xl border border-gray-200 bg-white p-2 backdrop-blur-md z-50 animate-in fade-in slide-in-from-top-2 duration-150">
           <div className="px-3 py-1.5 border-b border-gray-100 mb-1">
             <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
               Idioma / Language

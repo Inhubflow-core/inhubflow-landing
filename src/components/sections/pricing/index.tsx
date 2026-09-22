@@ -32,8 +32,8 @@ export default function PricingSection() {
         </div>
 
         {hasPartnerDiscount && (
-          <div className="max-w-2xl mx-auto mb-8 p-4 rounded-2xl bg-gradient-to-r from-amber-500/15 via-emerald-500/15 to-blue-500/15 border border-amber-500/30 text-center shadow-lg animate-in fade-in slide-in-from-top-4">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider mb-2 shadow-xs">
+          <div className="max-w-2xl mx-auto mb-8 p-4 rounded-2xl bg-gradient-to-r from-amber-500/15 via-emerald-500/15 to-blue-500/15 border border-amber-500/30 text-center animate-in fade-in slide-in-from-top-4">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider mb-2">
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="19" x2="5" y1="5" y2="19" />
                 <circle cx="6.5" cy="6.5" r="2.5" />
@@ -50,7 +50,7 @@ export default function PricingSection() {
         <div>
           {/* Billing Toggle */}
           <div className="flex justify-center relative z-30 mt-6 sm:mt-8">
-            <div className="relative flex p-1 sm:p-1.5 bg-white dark:bg-[#1D2939] rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
+            <div className="relative flex p-1 sm:p-1.5 bg-white dark:bg-[#1D2939] rounded-full border border-gray-200 dark:border-gray-700">
               {billingPeriods.map((period) => (
                 <button
                   key={period.key}
@@ -58,7 +58,7 @@ export default function PricingSection() {
                   className={cn(
                     'relative flex items-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer rounded-full text-gray-700 dark:text-gray-400',
                     {
-                      'bg-blue-600 text-white shadow-sm':
+                      'bg-blue-600 text-white':
                         period.key === activeBillingPeriodKey,
                       'pr-1.5 sm:pr-2': period.saving,
                     }

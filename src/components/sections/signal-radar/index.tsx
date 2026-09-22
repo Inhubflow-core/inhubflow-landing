@@ -89,7 +89,7 @@ export default function SignalRadarSection() {
             onClick={() => setSelectedSignal('competitor')}
             className={`p-5 rounded-2xl text-left border transition-all cursor-pointer ${
               selectedSignal === 'competitor'
-                ? 'bg-white/10 border-amber-500/60 shadow-lg shadow-amber-500/10 scale-[1.01]'
+                ? 'bg-white/10 border-amber-500/60 scale-[1.01]'
                 : 'bg-white/5 border-white/10 hover:bg-white/[0.08] hover:border-white/20'
             }`}
           >
@@ -112,7 +112,7 @@ export default function SignalRadarSection() {
             onClick={() => setSelectedSignal('keywords')}
             className={`p-5 rounded-2xl text-left border transition-all cursor-pointer ${
               selectedSignal === 'keywords'
-                ? 'bg-white/10 border-sky-500/60 shadow-lg shadow-sky-500/10 scale-[1.01]'
+                ? 'bg-white/10 border-sky-500/60 scale-[1.01]'
                 : 'bg-white/5 border-white/10 hover:bg-white/[0.08] hover:border-white/20'
             }`}
           >
@@ -134,7 +134,7 @@ export default function SignalRadarSection() {
             onClick={() => setSelectedSignal('icp')}
             className={`p-5 rounded-2xl text-left border transition-all cursor-pointer ${
               selectedSignal === 'icp'
-                ? 'bg-white/10 border-purple-500/60 shadow-lg shadow-purple-500/10 scale-[1.01]'
+                ? 'bg-white/10 border-purple-500/60 scale-[1.01]'
                 : 'bg-white/5 border-white/10 hover:bg-white/[0.08] hover:border-white/20'
             }`}
           >
@@ -155,7 +155,7 @@ export default function SignalRadarSection() {
         </div>
 
         {/* Live Signal Interactive Showcase Card - Full Width 7xl */}
-        <div className="w-full rounded-3xl border border-white/15 bg-gradient-to-b from-gray-900/90 to-gray-950/90 backdrop-blur-2xl p-6 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
+        <div className="w-full rounded-3xl border border-white/15 bg-gradient-to-b from-gray-900/90 to-gray-950/90 backdrop-blur-2xl p-6 sm:p-8 lg:p-10 relative overflow-hidden">
           {/* Top Bar of the Card */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 mb-8 border-b border-white/10">
             <div>
@@ -220,10 +220,10 @@ export default function SignalRadarSection() {
 
             {/* Right Column: Live Simulated Lead Card */}
             <div className="lg:col-span-7">
-              <div className="rounded-2xl border border-white/15 bg-black/50 p-5 sm:p-6 space-y-4 shadow-xl">
+              <div className="rounded-2xl border border-white/15 bg-black/50 p-5 sm:p-6 space-y-4">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-3.5">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-extrabold text-base flex items-center justify-center shrink-0 border border-white/20 shadow-md">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-extrabold text-base flex items-center justify-center shrink-0 border border-white/20">
                       {active.leadExample.name.slice(0, 2).toUpperCase()}
                     </div>
                     <div>

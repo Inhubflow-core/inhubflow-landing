@@ -118,7 +118,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
       <BlogLangSync currentLang={currentLang} />
 
       {/* Search & Category Filter Bar */}
-      <div className="mb-10 p-4 sm:p-6 rounded-3xl bg-white border border-gray-200/90 shadow-xs">
+      <div className="mb-10 p-4 sm:p-6 rounded-3xl bg-white border border-gray-200/90">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Category Filter Pills */}
           <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
@@ -128,7 +128,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition cursor-pointer ${
                   selectedCategory === cat.id
-                    ? 'bg-indigo-600 text-white shadow-xs'
+                    ? 'bg-indigo-600 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200/80'
                 }`}
               >
@@ -167,7 +167,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
       {/* Featured Article Hero */}
       {selectedCategory === 'all' && !searchQuery && featuredPost && (
         <div className="mb-12">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#101828] via-[#1E293B] to-[#0F172A] text-white p-6 sm:p-10 lg:p-12 shadow-xl border border-gray-800">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#101828] via-[#1E293B] to-[#0F172A] text-white p-6 sm:p-10 lg:p-12 border border-gray-800">
             <div className="relative z-10 max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-4">
                 <span>{i18nLabels.featuredBadge}</span>
@@ -183,7 +183,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   href={`/blog/${currentLang}/${featuredPost.slug}`}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition shadow-md hover:shadow-indigo-500/25"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm transition"
                 >
                   {i18nLabels.readArticle}
                 </Link>
@@ -204,7 +204,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
 
       {/* Articles Grid */}
       {filteredPosts.length === 0 ? (
-        <div className="text-center py-16 px-4 rounded-3xl bg-white border border-gray-200/90 shadow-xs">
+        <div className="text-center py-16 px-4 rounded-3xl bg-white border border-gray-200/90">
           <h3 className="text-lg font-bold text-gray-900 mb-1">
             {i18nLabels.noResultsTitle}
           </h3>
@@ -226,7 +226,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
           {filteredPosts.map((post) => (
             <article
               key={post.slug}
-              className="flex flex-col justify-between rounded-3xl bg-white border border-gray-200/90 shadow-xs hover:shadow-md hover:border-indigo-300 transition duration-200 overflow-hidden group"
+              className="flex flex-col justify-between rounded-3xl bg-white border border-gray-200/90 hover:border-indigo-300 transition duration-200 overflow-hidden group"
             >
               <div className="p-6 sm:p-7 flex-1 flex flex-col">
                 {/* Meta info */}
@@ -273,7 +273,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
       )}
 
       {/* Bottom Global CTA Banner - 2 Columns */}
-      <div className="mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-indigo-900 via-indigo-800 to-purple-900 text-white shadow-xl relative overflow-hidden">
+      <div className="mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-indigo-900 via-indigo-800 to-purple-900 text-white relative overflow-hidden">
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           {/* Left Column: Title & Description */}
           <div className="max-w-2xl">
@@ -292,7 +292,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
           <div className="flex flex-col items-start lg:items-center gap-2.5 shrink-0">
             <a
               href="https://inhubflow.online/"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-indigo-900 font-extrabold text-sm sm:text-base hover:bg-gray-100 transition shadow-lg text-center cursor-pointer transform hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-indigo-900 font-extrabold text-sm sm:text-base hover:bg-gray-100 transition text-center cursor-pointer transform hover:-translate-y-0.5"
             >
               {i18nLabels.globalCtaBtn}
             </a>

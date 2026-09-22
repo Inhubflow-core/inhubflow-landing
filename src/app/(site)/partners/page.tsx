@@ -97,7 +97,7 @@ export default function PartnersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="max-w-4xl mx-auto">
             {/* Rating Stars Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-xs sm:text-sm font-semibold text-amber-900 mb-6 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-xs sm:text-sm font-semibold text-amber-900 mb-6">
               <span>{p.rating}</span>
             </div>
 
@@ -124,7 +124,7 @@ export default function PartnersPage() {
                 <button
                   onClick={() => setIsModalOpen(true)}
                   type="button"
-                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 h-12 inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-base font-bold scale-100 hover:scale-105 active:scale-98 cursor-pointer shadow-md shadow-blue-600/20"
+                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 h-12 inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-base font-bold scale-100 hover:scale-105 active:scale-98 cursor-pointer"
                 >
                   {p.heroCta}
                 </button>
@@ -135,7 +135,7 @@ export default function PartnersPage() {
                     e.preventDefault();
                     document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="w-full sm:w-auto bg-white hover:bg-gray-50 transition border border-gray-200 h-12 inline-flex items-center justify-center px-6 py-3 rounded-full text-gray-800 text-sm font-semibold cursor-pointer shadow-xs active:scale-98"
+                  className="w-full sm:w-auto bg-white hover:bg-gray-50 transition border border-gray-200 h-12 inline-flex items-center justify-center px-6 py-3 rounded-full text-gray-800 text-sm font-semibold cursor-pointer active:scale-98"
                 >
                   {p.heroSecondaryCta}
                 </a>
@@ -192,7 +192,7 @@ export default function PartnersPage() {
           </div>
 
           {/* Interactive Calculator Box */}
-          <div className="relative p-6 sm:p-10 lg:p-12 rounded-3xl bg-gray-50/70 border border-gray-200/90 shadow-xl shadow-indigo-100/30 w-full">
+          <div className="relative p-6 sm:p-10 lg:p-12 rounded-3xl bg-gray-50/70 border border-gray-200/90 w-full">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-12">
               {/* Controls */}
               <div className="w-full md:w-1/2 space-y-6">
@@ -207,7 +207,7 @@ export default function PartnersPage() {
                     <select
                       value={clientCount}
                       onChange={(e) => setClientCount(Number(e.target.value))}
-                      className="bg-white border border-gray-300 text-gray-900 font-bold text-base sm:text-lg rounded-xl px-3 py-2 sm:px-4 sm:py-2.5 focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-600/20 cursor-pointer w-24 sm:w-28 shadow-xs"
+                      className="bg-white border border-gray-300 text-gray-900 font-bold text-base sm:text-lg rounded-xl px-3 py-2 sm:px-4 sm:py-2.5 focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-600/20 cursor-pointer w-24 sm:w-28"
                     >
                       {[1, 2, 3, 5, 10, 15, 20, 30, 50, 100].map((num) => (
                         <option key={num} value={num}>
@@ -243,7 +243,7 @@ export default function PartnersPage() {
                         onClick={() => setSelectedPlanPrice(plan.price)}
                         className={`px-3 py-2.5 rounded-xl text-xs font-semibold border transition-all text-center cursor-pointer ${
                           selectedPlanPrice === plan.price
-                            ? 'bg-indigo-600 text-white border-indigo-600 shadow-md shadow-indigo-600/25'
+                            ? 'bg-indigo-600 text-white border-indigo-600'
                             : 'bg-white text-gray-700 border-gray-200 hover:border-gray-300 hover:bg-gray-50'
                         }`}
                       >
@@ -260,7 +260,7 @@ export default function PartnersPage() {
 
               {/* Big Highlighted Output Box (Matching Waalaxy Blue Highlight Pill) */}
               <div className="w-full md:w-1/2 flex flex-col items-center text-center">
-                <div className="w-full p-6 sm:p-8 lg:p-10 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 shadow-xl shadow-indigo-600/25 flex flex-col items-center justify-center text-white">
+                <div className="w-full p-6 sm:p-8 lg:p-10 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 flex flex-col items-center justify-center text-white">
                   <span className="text-xs sm:text-sm font-semibold text-blue-100 uppercase tracking-wider mb-1">
                     {p.calcResultPrefix}
                   </span>
@@ -308,7 +308,7 @@ export default function PartnersPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
               <div className="lg:col-span-6 space-y-6">
                 <div className="flex items-center gap-4">
-                  <span className="flex items-center justify-center w-12 h-12 min-w-[48px] min-h-[48px] max-w-[48px] max-h-[48px] shrink-0 aspect-square rounded-2xl bg-blue-600 text-white font-extrabold text-xl shadow-lg shadow-blue-600/30 leading-none">
+                  <span className="flex items-center justify-center w-12 h-12 min-w-[48px] min-h-[48px] max-w-[48px] max-h-[48px] shrink-0 aspect-square rounded-2xl bg-blue-600 text-white font-extrabold text-xl leading-none">
                     {p.pillar1Number}
                   </span>
                   <h3 className="text-xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
@@ -322,7 +322,7 @@ export default function PartnersPage() {
 
                 <div className="space-y-3 pt-2">
                   {[p.pillar1Check1, p.pillar1Check2, p.pillar1Check3].map((check, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-gray-200/90 text-xs sm:text-sm font-semibold text-gray-800 shadow-xs">
+                    <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-gray-200/90 text-xs sm:text-sm font-semibold text-gray-800">
                       <span className="flex items-center justify-center w-5 h-5 rounded-md bg-blue-100 text-blue-600 shrink-0 font-bold">
                         ✓
                       </span>
@@ -334,7 +334,7 @@ export default function PartnersPage() {
 
               {/* Mockup Graphic 1: Affiliate Dashboard */}
               <div className="lg:col-span-6">
-                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-200 shadow-xl shadow-gray-200/60">
+                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-200">
                   {/* Header of Mockup */}
                   <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-4">
                     <div className="flex items-center gap-2">
@@ -369,7 +369,7 @@ export default function PartnersPage() {
                     <span className="font-mono text-xs text-indigo-700 font-medium truncate">
                       inhubflow.online/?20-OFF=TUCODIGO
                     </span>
-                    <span className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-indigo-600 text-white shrink-0 ml-2 shadow-xs cursor-pointer">
+                    <span className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-indigo-600 text-white shrink-0 ml-2 cursor-pointer">
                       Copiar
                     </span>
                   </div>
@@ -381,7 +381,7 @@ export default function PartnersPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
               {/* Mockup Graphic 2: Referral List */}
               <div className="lg:col-span-6 order-2 lg:order-1">
-                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-200 shadow-xl shadow-gray-200/60 space-y-3">
+                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-200 space-y-3">
                   <div className="flex items-center justify-between pb-3 border-b border-gray-100">
                     <span className="text-xs font-bold text-gray-900 uppercase tracking-wider">Historial de Clientes Referidos</span>
                     <span className="text-[11px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">100% Recurrente</span>
@@ -395,7 +395,7 @@ export default function PartnersPage() {
                   ].map((item, i) => (
                     <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-gray-50/70 border border-gray-200/60">
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-600 to-blue-500 flex items-center justify-center font-bold text-xs text-white shadow-xs">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-600 to-blue-500 flex items-center justify-center font-bold text-xs text-white">
                           {item.name[0]}
                         </div>
                         <div>
@@ -416,7 +416,7 @@ export default function PartnersPage() {
 
               <div className="lg:col-span-6 space-y-6 order-1 lg:order-2">
                 <div className="flex items-center gap-4">
-                  <span className="flex items-center justify-center w-12 h-12 min-w-[48px] min-h-[48px] max-w-[48px] max-h-[48px] shrink-0 aspect-square rounded-2xl bg-indigo-600 text-white font-extrabold text-xl shadow-lg shadow-indigo-600/30 leading-none">
+                  <span className="flex items-center justify-center w-12 h-12 min-w-[48px] min-h-[48px] max-w-[48px] max-h-[48px] shrink-0 aspect-square rounded-2xl bg-indigo-600 text-white font-extrabold text-xl leading-none">
                     {p.pillar2Number}
                   </span>
                   <h3 className="text-xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
@@ -430,7 +430,7 @@ export default function PartnersPage() {
 
                 <div className="space-y-3 pt-2">
                   {[p.pillar2Check1, p.pillar2Check2, p.pillar2Check3].map((check, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-gray-200/90 text-xs sm:text-sm font-semibold text-gray-800 shadow-xs">
+                    <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-gray-200/90 text-xs sm:text-sm font-semibold text-gray-800">
                       <span className="flex items-center justify-center w-5 h-5 rounded-md bg-indigo-100 text-indigo-600 shrink-0 font-bold">
                         ✓
                       </span>
@@ -445,7 +445,7 @@ export default function PartnersPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
               <div className="lg:col-span-6 space-y-6">
                 <div className="flex items-center gap-4">
-                  <span className="flex items-center justify-center w-12 h-12 min-w-[48px] min-h-[48px] max-w-[48px] max-h-[48px] shrink-0 aspect-square rounded-2xl bg-violet-600 text-white font-extrabold text-xl shadow-lg shadow-violet-600/30 leading-none">
+                  <span className="flex items-center justify-center w-12 h-12 min-w-[48px] min-h-[48px] max-w-[48px] max-h-[48px] shrink-0 aspect-square rounded-2xl bg-violet-600 text-white font-extrabold text-xl leading-none">
                     {p.pillar3Number}
                   </span>
                   <h3 className="text-xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
@@ -459,7 +459,7 @@ export default function PartnersPage() {
 
                 <div className="space-y-3 pt-2">
                   {[p.pillar3Check1, p.pillar3Check2, p.pillar3Check3].map((check, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-gray-200/90 text-xs sm:text-sm font-semibold text-gray-800 shadow-xs">
+                    <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-gray-200/90 text-xs sm:text-sm font-semibold text-gray-800">
                       <span className="flex items-center justify-center w-5 h-5 rounded-md bg-violet-100 text-violet-600 shrink-0 font-bold">
                         ✓
                       </span>
@@ -471,9 +471,9 @@ export default function PartnersPage() {
 
               {/* Mockup Graphic 3: Partner Support Chat */}
               <div className="lg:col-span-6">
-                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-200 shadow-xl shadow-gray-200/60 space-y-4">
+                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-200 space-y-4">
                   <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-sm text-white shadow-xs">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-sm text-white">
                       IH
                     </div>
                     <div>
@@ -498,7 +498,7 @@ export default function PartnersPage() {
                     href={whatsAppHref}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
+                    className="w-full mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all cursor-pointer"
                   >
                     <span>Hablar con Soporte de Partners</span>
                   </a>
@@ -528,7 +528,7 @@ export default function PartnersPage() {
               href={whatsAppHref}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm shadow-md shadow-blue-600/20 transition-all self-start sm:self-auto shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm transition-all self-start sm:self-auto shrink-0 cursor-pointer"
             >
               <span>{p.faqChatBtn}</span>
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -544,7 +544,7 @@ export default function PartnersPage() {
               return (
                 <div
                   key={i}
-                  className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 shadow-xs hover:border-blue-400/50 dark:hover:border-blue-500/30 transition-all flex flex-col justify-between"
+                  className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 hover:border-blue-400/50 dark:hover:border-blue-500/30 transition-all flex flex-col justify-between"
                 >
                   <button
                     type="button"
@@ -579,7 +579,7 @@ export default function PartnersPage() {
       {/* ========================================================================= */}
       <section className="w-full py-16 sm:py-24 bg-gray-50/60 border-t border-gray-100 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-full p-8 sm:p-14 lg:p-16 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white shadow-2xl shadow-indigo-600/25 relative overflow-hidden">
+          <div className="w-full p-8 sm:p-14 lg:p-16 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
             
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
@@ -593,7 +593,7 @@ export default function PartnersPage() {
             <button
               onClick={() => setIsModalOpen(true)}
               type="button"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-bold text-indigo-700 bg-white hover:bg-gray-50 shadow-xl transition-all cursor-pointer active:scale-98"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-bold text-indigo-700 bg-white hover:bg-gray-50 transition-all cursor-pointer active:scale-98"
             >
               <span>{p.heroCta}</span>
               <svg className="w-4 h-4 text-indigo-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -614,7 +614,7 @@ export default function PartnersPage() {
             onClick={() => setIsModalOpen(false)}
           />
 
-          <div className="relative w-full max-w-lg rounded-3xl bg-white border border-gray-200 p-6 sm:p-8 shadow-2xl text-left z-10">
+          <div className="relative w-full max-w-lg rounded-3xl bg-white border border-gray-200 p-6 sm:p-8 text-left z-10">
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-5 right-5 text-gray-400 hover:text-gray-700 transition-colors cursor-pointer"
@@ -712,7 +712,7 @@ export default function PartnersPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 rounded-full font-bold text-sm text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-indigo-600/25 transition-all cursor-pointer disabled:opacity-50"
+                    className="w-full py-3.5 rounded-full font-bold text-sm text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all cursor-pointer disabled:opacity-50"
                   >
                     {isSubmitting ? p.submitting : p.submitBtn}
                   </button>
@@ -734,7 +734,7 @@ export default function PartnersPage() {
                     href={whatsAppHref}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors shadow-md shadow-emerald-600/20"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors"
                   >
                     <span>{p.instantWhatsApp}</span>
                   </a>

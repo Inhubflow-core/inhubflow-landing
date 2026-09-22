@@ -37,7 +37,7 @@ export default function FaqAccordion() {
             return (
               <div
                 key={index}
-                className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 shadow-xs hover:border-blue-400/50 dark:hover:border-blue-500/30 transition-all flex flex-col justify-between"
+                className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 hover:border-blue-400/50 dark:hover:border-blue-500/30 transition-all flex flex-col justify-between"
               >
                 <button
                   type="button"
