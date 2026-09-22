@@ -3,17 +3,23 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/app/providers/language';
 
+type TabType = 'signals' | 'sequences' | 'sdr';
+
 export function PlatformShowcase() {
   const { t } = useLanguage();
-  const [activeTab, setActiveTab] = useState<'sequences' | 'sdr'>('sequences');
+  const [activeTab, setActiveTab] = useState<TabType>('signals');
   const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-rotate every 8 seconds if not hovered
+  // Auto-rotate every 9 seconds if not hovered or clicked
   useEffect(() => {
     if (isPaused) return;
     const interval = setInterval(() => {
-      setActiveTab((prev) => (prev === 'sequences' ? 'sdr' : 'sequences'));
-    }, 8000);
+      setActiveTab((prev) => {
+        if (prev === 'signals') return 'sequences';
+        if (prev === 'sequences') return 'sdr';
+        return 'signals';
+      });
+    }, 9000);
     return () => clearInterval(interval);
   }, [isPaused]);
 
@@ -30,6 +36,58 @@ export function PlatformShowcase() {
         </h2>
       </div>
 
+      {/* Interactive Module Switcher Pills */}
+      <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4">
+        <button
+          type="button"
+          onClick={() => {
+            setActiveTab('signals');
+            setIsPaused(true);
+          }}
+          className={`flex items-center gap-2 px-3.5 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+            activeTab === 'signals'
+              ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md shadow-amber-500/20 scale-105'
+              : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
+          }`}
+        >
+          <span>📡</span>
+          <span>Radar de Señales</span>
+          <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        </button>
+
+        <button
+          type="button"
+          onClick={() => {
+            setActiveTab('sequences');
+            setIsPaused(true);
+          }}
+          className={`flex items-center gap-2 px-3.5 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+            activeTab === 'sequences'
+              ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/20 scale-105'
+              : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
+          }`}
+        >
+          <span>⚡</span>
+          <span>Secuencias Multicanal</span>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => {
+            setActiveTab('sdr');
+            setIsPaused(true);
+          }}
+          className={`flex items-center gap-2 px-3.5 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+            activeTab === 'sdr'
+              ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md shadow-purple-500/20 scale-105'
+              : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
+          }`}
+        >
+          <span>🤖</span>
+          <span>SDR con IA 24/7</span>
+        </button>
+      </div>
+
       {/* Main Glassmorphic Showcase Window */}
       <div className="p-3 sm:p-5 rounded-2xl sm:rounded-[32px] border border-white/60 dark:border-white/10 bg-white/70 dark:bg-gray-900/80 backdrop-blur-xl shadow-xl sm:shadow-2xl relative overflow-hidden">
         {/* Browser / App Frame Header */}
@@ -42,7 +100,9 @@ export function PlatformShowcase() {
           <div className="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-gray-100 dark:bg-gray-900/70 text-gray-600 dark:text-gray-400 text-[10px] sm:text-[11px] font-mono max-w-[200px] sm:max-w-md truncate">
             <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-green-500 animate-pulse shrink-0" />
             <span className="truncate">
-              {activeTab === 'sequences'
+              {activeTab === 'signals'
+                ? 'b2b.inhubflow.online/signals/radar-live'
+                : activeTab === 'sequences'
                 ? 'b2b.inhubflow.online/workflows/growth-b2b'
                 : 'b2b.inhubflow.online/sdr/live-qualifier'}
             </span>
@@ -53,6 +113,103 @@ export function PlatformShowcase() {
             </span>
           </div>
         </div>
+
+        {/* TAB 0: RADAR DE SEÑALES */}
+        {activeTab === 'signals' && (
+          <div className="animate-fadeIn space-y-3 sm:space-y-4">
+            {/* Realtime KPI Bar */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+                <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Señales Hoy</p>
+                <p className="text-lg sm:text-xl font-bold text-amber-500 mt-0.5">84 activas</p>
+                <span className="text-[9px] sm:text-[10px] text-emerald-500 font-semibold">LinkedIn live</span>
+              </div>
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+                <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Score de Intención</p>
+                <p className="text-lg sm:text-xl font-bold text-orange-500 mt-0.5">96.8%</p>
+                <span className="text-[9px] sm:text-[10px] text-orange-500 font-semibold">Alta probabilidad</span>
+              </div>
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+                <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Decisores Detectados</p>
+                <p className="text-lg sm:text-xl font-bold text-blue-600 dark:text-blue-400 mt-0.5">312</p>
+                <span className="text-[9px] sm:text-[10px] text-blue-500 font-semibold">CEOs & Directores</span>
+              </div>
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+                <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Conversión a Respuesta</p>
+                <p className="text-lg sm:text-xl font-bold text-emerald-600 dark:text-emerald-400 mt-0.5">48.2%</p>
+                <span className="text-[9px] sm:text-[10px] text-emerald-500 font-semibold">vs 3% outbound frío</span>
+              </div>
+            </div>
+
+            {/* Live Signals Stream */}
+            <div className="p-3 sm:p-5 rounded-xl sm:rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-700 min-h-[280px] flex flex-col justify-between">
+              <div className="flex items-center justify-between mb-3 border-b border-gray-100 dark:border-gray-700 pb-2">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping shrink-0" />
+                  <h4 className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">
+                    Radar en Vivo: Oportunidades de Compra Detectadas
+                  </h4>
+                </div>
+                <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-500 border border-amber-500/20">
+                  3 Fuentes Activas
+                </span>
+              </div>
+
+              <div className="space-y-2 text-xs flex-1 flex flex-col justify-around">
+                <div className="flex items-center justify-between p-3 rounded-xl bg-amber-500/5 dark:bg-amber-950/20 border border-amber-500/20 gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <span className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-500 flex items-center justify-center font-bold text-sm shrink-0">
+                      🎯
+                    </span>
+                    <div className="min-w-0">
+                      <p className="font-bold text-gray-900 dark:text-white truncate">Reacción en Post de Competidor X</p>
+                      <p className="text-[11px] text-gray-500 dark:text-gray-400 truncate">
+                        Valeria Montero (Directora de Operaciones) comentó: <em>&quot;Buscamos una alternativa que integre LinkedIn e IA...&quot;</em>
+                      </p>
+                    </div>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-500 font-bold text-[10px] shrink-0">
+                    🔥 98% Intención
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between p-3 rounded-xl bg-sky-500/5 dark:bg-sky-950/20 border border-sky-500/20 gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <span className="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-500 flex items-center justify-center font-bold text-sm shrink-0">
+                      👔
+                    </span>
+                    <div className="min-w-0">
+                      <p className="font-bold text-gray-900 dark:text-white truncate">Nuevo en el Cargo (&lt;30 días)</p>
+                      <p className="text-[11px] text-gray-500 dark:text-gray-400 truncate">
+                        Martín Gómez asumió como VP Comercial en SaaS Corp • Presupuesto de contratación activo
+                      </p>
+                    </div>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-500 font-bold text-[10px] shrink-0">
+                    🔥 95% Intención
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between p-3 rounded-xl bg-purple-500/5 dark:bg-purple-950/20 border border-purple-500/20 gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <span className="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-500 flex items-center justify-center font-bold text-sm shrink-0">
+                      🔍
+                    </span>
+                    <div className="min-w-0">
+                      <p className="font-bold text-gray-900 dark:text-white truncate">Palabras Clave de Búsqueda de Solución</p>
+                      <p className="text-[11px] text-gray-500 dark:text-gray-400 truncate">
+                        Publicación en LinkedIn: <em>&quot;Recomendaciones de herramientas B2B para agendar reuniones con IA...&quot;</em>
+                      </p>
+                    </div>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-md bg-purple-500/10 text-purple-500 font-bold text-[10px] shrink-0">
+                    🔥 96% Intención
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* TAB 1: WORKFLOW SEQUENCES SHOWCASE */}
         {activeTab === 'sequences' && (
@@ -87,7 +244,7 @@ export function PlatformShowcase() {
                 <div className="flex items-center gap-2">
                   <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-blue-500 animate-ping shrink-0" />
                   <h4 className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white truncate">
-                    Pipeline Activo: Seguimiento y Cierre de Cuentas B2B
+                    Pipeline Activo: Prospección Multicanal LinkedIn + Email
                   </h4>
                 </div>
                 <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 shrink-0">
@@ -102,10 +259,10 @@ export function PlatformShowcase() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-gray-800 dark:text-gray-200 text-xs">
-                      Paso 1: Segmentación y Sincronización de Cuentas
+                      Paso 1: Detección y Enriquecimiento de Cuentas
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight">
-                      500 cuentas comerciales organizadas y sincronizadas desde tu CRM.
+                      Decisores identificados desde el Radar de Señales y sincronizados al CRM.
                     </p>
                   </div>
                   <span className="text-emerald-500 font-semibold text-[10px] sm:text-[11px] shrink-0">Completado</span>
@@ -117,10 +274,10 @@ export function PlatformShowcase() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-blue-900 dark:text-blue-200 text-xs">
-                      Paso 2: Calificación y Respuesta Comercial con IA
+                      Paso 2: Conexión y Nota Personalizada con IA en LinkedIn
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 text-[10px] sm:text-[11px] leading-tight">
-                      <em>&quot;Hola [Nombre], gracias por contactarnos. Tu asesor comercial está disponible... ¿agendamos una breve videollamada?&quot;</em>
+                      <em>&quot;Hola [Nombre], vi tu reciente comentario sobre escalabilidad... preparamos un caso de estudio puntual para ti.&quot;</em>
                     </p>
                   </div>
                   <span className="text-blue-500 font-semibold animate-pulse text-[10px] sm:text-[11px] shrink-0">Enviando...</span>
@@ -132,21 +289,21 @@ export function PlatformShowcase() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-gray-800 dark:text-gray-200 text-xs">
-                      Paso 3: Notificación & Seguimiento Inteligente
+                      Paso 3: Refuerzo por Cold Email con Warmup Continuo
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight">
-                      Seguimiento automático de propuestas y recordatorios comerciales para clientes en proceso.
+                      Envío multicuenta de alta entregabilidad si no responde en 48h en LinkedIn.
                     </p>
                   </div>
-                  <span className="text-purple-500 font-semibold text-[10px] sm:text-[11px] shrink-0">Condicionado</span>
+                  <span className="text-purple-400 font-medium text-[10px] sm:text-[11px] shrink-0">Programado</span>
                 </div>
 
-                <div className="flex items-start gap-2.5 sm:gap-3 p-2 sm:p-2.5 rounded-xl bg-emerald-50/40 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-900/30">
-                  <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-emerald-500/20 text-emerald-500 flex items-center justify-center font-bold shrink-0 text-xs">
+                <div className="flex items-start gap-2.5 sm:gap-3 p-2 sm:p-2.5 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/60">
+                  <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold shrink-0 text-xs">
                     4
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-gray-800 dark:text-gray-200 text-xs">
+                    <p className="font-semibold text-emerald-900 dark:text-emerald-200 text-xs">
                       Paso 4: Agendamiento Automático de Reunión
                     </p>
                     <p className="text-gray-500 dark:text-gray-400 text-[10px] sm:text-[11px] leading-tight">
@@ -213,14 +370,14 @@ export function PlatformShowcase() {
               <div className="space-y-2 sm:space-y-3 text-xs flex-1 flex flex-col justify-between">
                 <div className="flex items-start gap-2 max-w-[92%] sm:max-w-[85%]">
                   <div className="p-2.5 sm:p-3 rounded-2xl rounded-tl-none bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 text-[11px] sm:text-xs">
-                    <p>Hola, vi tu mensaje. ¿Cómo funciona su sistema para optimizar el seguimiento y agendamiento comercial?</p>
+                    <p>Hola, vi su nota sobre automatización. ¿Cómo resuelven el agendamiento y seguimiento comercial sin sonar a spam?</p>
                     <span className="text-[8px] sm:text-[9px] text-gray-400 block mt-1">10:14 AM</span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-2 max-w-[92%] sm:max-w-[85%] ml-auto justify-end">
                   <div className="p-2.5 sm:p-3 rounded-2xl rounded-tr-none bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md text-[11px] sm:text-xs">
-                    <p>¡Hola Esteban! Nuestra suite aplica ritmos de trabajo humanizados y privacidad corporativa de nivel empresarial. Como SDR de IA respondo dudas y agendo videollamadas en tu calendario.</p>
+                    <p>¡Hola Esteban! Nuestra suite combina detección de señales de compra con ritmos humanizados. Como SDR respondo dudas técnicas usando nuestra base de conocimiento y agendo directo en tu Calendly.</p>
                     <span className="text-[8px] sm:text-[9px] text-blue-200 block mt-1">10:14 AM • InHubFlow AI SDR</span>
                   </div>
                 </div>

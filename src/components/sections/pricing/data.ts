@@ -101,6 +101,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
         },
         features: [
           '1 Conta do LinkedIn Conectada (1 Slot Dedicado)',
+          'Radar de Sinais de Intenção B2B em Tempo Real',
           'Até 20 interações comerciais / dia* (600 por mês)',
           'Até 20 acompanhamentos automatizados / dia (600 por mês)',
           'Assistente SDR de IA 24/7 Ilimitado (Respostas e Agendamentos)',
@@ -124,6 +125,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
         },
         features: [
           '5 Contas do LinkedIn Conectadas (5 Slots Dedicados)',
+          'Radar de Sinais de Intenção B2B em Tempo Real',
           'Até 100 interações comerciais / dia* (3.000 por mês)',
           'Até 100 acompanhamentos automatizados / dia (3.000 por mês)',
           'Assistente SDR de IA 24/7 Ilimitado (Respostas e Agendamentos)',
@@ -147,6 +149,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
         },
         features: [
           '10 Contas do LinkedIn Conectadas (10 Slots Dedicados)',
+          'Radar de Sinais de Intenção B2B em Tempo Real',
           'Até 200 interações comerciais / dia* (6.000 por mês)',
           'Até 200 acompanhamentos automatizados / dia (6.000 por mês)',
           'Assistente SDR de IA 24/7 Ilimitado (Respostas e Agendamentos)',
@@ -175,6 +178,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
         },
         features: [
           '1 Connected LinkedIn Account (1 Dedicated Slot)',
+          'Real-Time B2B Intent Signal Radar',
           'Up to 20 commercial interactions / day* (600 / month)',
           'Up to 20 automated follow-ups / day (600 / month)',
           'Unlimited 24/7 AI SDR Assistant (Replies & Booking)',
@@ -198,6 +202,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
         },
         features: [
           '5 Connected LinkedIn Accounts (5 Dedicated Slots)',
+          'Real-Time B2B Intent Signal Radar',
           'Up to 100 commercial interactions / day* (3,000 / month)',
           'Up to 100 automated follow-ups / day (3,000 / month)',
           'Unlimited 24/7 AI SDR Assistant (Replies & Booking)',
@@ -221,6 +226,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
         },
         features: [
           '10 Connected LinkedIn Accounts (10 Dedicated Slots)',
+          'Real-Time B2B Intent Signal Radar',
           'Up to 200 commercial interactions / day* (6,000 / month)',
           'Up to 200 automated follow-ups / day (6,000 / month)',
           'Unlimited 24/7 AI SDR Assistant (Replies & Booking)',
@@ -249,6 +255,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
       },
       features: [
         '1 Cuenta de LinkedIn Conectada (1 Slot Dedicado)',
+        'Radar de Señales de Intención B2B en Tiempo Real',
         'Hasta 20 interacciones comerciales / día* (600 al mes)',
         'Hasta 20 seguimientos automatizados / día (600 al mes)',
         'Asistente SDR de IA 24/7 Ilimitado (Respuestas y Agendamiento)',
@@ -272,6 +279,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
       },
       features: [
         '5 Cuentas de LinkedIn Conectadas (5 Slots Dedicados)',
+        'Radar de Señales de Intención B2B en Tiempo Real',
         'Hasta 100 interacciones comerciales / día* (3.000 al mes)',
         'Hasta 100 seguimientos automatizados / día (3.000 al mes)',
         'Asistente SDR de IA 24/7 Ilimitado (Respuestas y Agendamiento)',
@@ -295,6 +303,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
       },
       features: [
         '10 Cuentas de LinkedIn Conectadas (10 Slots Dedicados)',
+        'Radar de Señales de Intención B2B en Tiempo Real',
         'Hasta 200 interacciones comerciales / día* (6.000 al mes)',
         'Hasta 200 seguimientos automatizados / día (6.000 al mes)',
         'Asistente SDR de IA 24/7 Ilimitado (Respuestas y Agendamiento)',
