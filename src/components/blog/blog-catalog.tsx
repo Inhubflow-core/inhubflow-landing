@@ -118,7 +118,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
       <BlogLangSync currentLang={currentLang} />
 
       {/* Search & Category Filter Bar */}
-      <div className="mb-10 p-4 sm:p-6 rounded-3xl bg-white border border-gray-200/90">
+      <div className="mb-10 p-4 sm:p-6 rounded-3xl bg-white border border-gray-300 dark:border-gray-700">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Category Filter Pills */}
           <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
@@ -167,7 +167,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
       {/* Featured Article Hero */}
       {selectedCategory === 'all' && !searchQuery && featuredPost && (
         <div className="mb-12">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#101828] via-[#1E293B] to-[#0F172A] text-white p-6 sm:p-10 lg:p-12 border border-gray-800">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#101828] via-[#1E293B] to-[#0F172A] text-white p-6 sm:p-10 lg:p-12 border border-gray-700">
             <div className="relative z-10 max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-4">
                 <span>{i18nLabels.featuredBadge}</span>
@@ -204,7 +204,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
 
       {/* Articles Grid */}
       {filteredPosts.length === 0 ? (
-        <div className="text-center py-16 px-4 rounded-3xl bg-white border border-gray-200/90">
+        <div className="text-center py-16 px-4 rounded-3xl bg-white border border-gray-300 dark:border-gray-700">
           <h3 className="text-lg font-bold text-gray-900 mb-1">
             {i18nLabels.noResultsTitle}
           </h3>
@@ -226,7 +226,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
           {filteredPosts.map((post) => (
             <article
               key={post.slug}
-              className="flex flex-col justify-between rounded-3xl bg-white border border-gray-200/90 hover:border-indigo-300 transition duration-200 overflow-hidden group"
+              className="flex flex-col justify-between rounded-3xl bg-white border border-gray-300 dark:border-gray-700 hover:border-indigo-400 transition duration-200 overflow-hidden group"
             >
               <div className="p-6 sm:p-7 flex-1 flex flex-col">
                 {/* Meta info */}
@@ -255,7 +255,7 @@ export default function BlogCatalog({ posts, currentLang }: BlogCatalogProps) {
                 </p>
 
                 {/* Pain bullet reminder */}
-                <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-xs">
+                <div className="mt-auto pt-4 border-t border-gray-300 dark:border-gray-700 flex items-center justify-between text-xs">
                   <span className="text-gray-600 font-medium">
                     {post.publishedAt}
                   </span>

@@ -25,7 +25,7 @@ export default function MainMobileNav({ isOpen, onClose }: MobileMenuProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="lg:hidden fixed inset-x-0 top-[57px] bottom-0 bg-white/95 dark:bg-[#101828]/95 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 z-50 flex flex-col justify-between animate-fadeIn overflow-y-auto">
+    <div className="lg:hidden fixed inset-x-0 top-[57px] bottom-0 bg-white/95 dark:bg-[#101828]/95 backdrop-blur-xl border-b border-gray-300 dark:border-gray-700 z-50 flex flex-col justify-between animate-fadeIn overflow-y-auto">
       <div className="pt-6 pb-4 space-y-2 px-5 sm:px-6">
         <p className="text-[11px] font-extrabold uppercase tracking-wider text-gray-400 px-3 pb-1">
           Navegación

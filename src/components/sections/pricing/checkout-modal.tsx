@@ -198,9 +198,9 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-      <div className="relative w-full max-w-lg p-6 bg-white dark:bg-[#101828] rounded-3xl border border-gray-100 dark:border-gray-800 text-gray-900 dark:text-white">
+      <div className="relative w-full max-w-lg p-6 bg-white dark:bg-[#101828] rounded-3xl border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white">
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-gray-100 dark:border-gray-800">
+        <div className="flex items-center justify-between pb-4 border-b border-gray-300 dark:border-gray-700">
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold tracking-wider text-indigo-600 dark:text-indigo-400 uppercase">
@@ -348,7 +348,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
                 placeholder={locale === 'pt-BR' ? 'Ex: Acme Logística' : locale === 'en' ? 'e.g. Acme Logistics' : 'Ej: Acme Logística'}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
               />
               {/* Live Subdomain Preview */}
               <p className="mt-1.5 text-xs text-gray-500 dark:text-gray-400">
@@ -369,7 +369,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="carlos@tuempresa.com"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
               />
             </div>
 
@@ -384,12 +384,12 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
               />
             </div>
 
             {/* Pricing summary */}
-            <div className="p-3.5 bg-indigo-50 dark:bg-indigo-950/30 rounded-2xl flex items-center justify-between border border-indigo-100 dark:border-indigo-900/50">
+            <div className="p-3.5 bg-indigo-50 dark:bg-indigo-950/30 rounded-2xl flex items-center justify-between border border-indigo-200 dark:border-indigo-800">
               <div>
                 <span className="text-xs text-indigo-700 dark:text-indigo-300 font-medium">
                   {locale === 'pt-BR' ? 'Total a pagar hoje' : locale === 'en' ? 'Total due today' : 'Total a pagar hoy'}:

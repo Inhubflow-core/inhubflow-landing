@@ -87,7 +87,7 @@ export default function DesktopNav() {
                 <div
                   onMouseEnter={toggleThisDropdown}
                   onMouseLeave={toggleThisDropdown}
-                  className="absolute right-0 w-[266px] bg-white dark:bg-dark-secondary dark:border-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-3 z-50 animate-in fade-in duration-150"
+                  className="absolute right-0 w-[266px] bg-white dark:bg-dark-secondary dark:border-gray-800 rounded-2xl border border-gray-300 dark:border-gray-700 p-3 z-50 animate-in fade-in duration-150"
                 >
                   <div className="space-y-1">
                     {item.items?.map((subItem) => (

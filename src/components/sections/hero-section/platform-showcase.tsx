@@ -47,7 +47,7 @@ export function PlatformShowcase() {
           className={`flex items-center gap-2 px-3.5 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
             activeTab === 'signals'
               ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white scale-105'
-              : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
+              : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
           }`}
         >
           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -69,7 +69,7 @@ export function PlatformShowcase() {
           className={`flex items-center gap-2 px-3.5 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
             activeTab === 'sequences'
               ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white scale-105'
-              : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
+              : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
           }`}
         >
           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -87,7 +87,7 @@ export function PlatformShowcase() {
           className={`flex items-center gap-2 px-3.5 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
             activeTab === 'sdr'
               ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white scale-105'
-              : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
+              : 'bg-white/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-800'
           }`}
         >
           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -103,9 +103,9 @@ export function PlatformShowcase() {
       </div>
 
       {/* Main Glassmorphic Showcase Window */}
-      <div className="p-3 sm:p-5 rounded-2xl sm:rounded-[32px] border border-gray-200/80 dark:border-white/10 bg-white/70 dark:bg-gray-900/80 backdrop-blur-xl relative overflow-hidden">
+      <div className="p-3 sm:p-5 rounded-2xl sm:rounded-[32px] border border-gray-300 dark:border-gray-700 bg-white/70 dark:bg-gray-900/80 backdrop-blur-xl relative overflow-hidden">
         {/* Browser / App Frame Header */}
-        <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-2.5 mb-3 rounded-xl sm:rounded-2xl bg-white/70 dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/60 text-xs">
+        <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-2.5 mb-3 rounded-xl sm:rounded-2xl bg-white/70 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700 text-xs">
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <span className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-red-400/80 inline-block" />
             <span className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-amber-400/80 inline-block" />
@@ -133,22 +133,22 @@ export function PlatformShowcase() {
           <div className="animate-fadeIn space-y-3 sm:space-y-4">
             {/* Realtime KPI Bar */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
-              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Señales Hoy</p>
                 <p className="text-lg sm:text-xl font-bold text-amber-500 mt-0.5">84 activas</p>
                 <span className="text-[9px] sm:text-[10px] text-emerald-500 font-semibold">LinkedIn live</span>
               </div>
-              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Score de Intención</p>
                 <p className="text-lg sm:text-xl font-bold text-orange-500 mt-0.5">96.8%</p>
                 <span className="text-[9px] sm:text-[10px] text-orange-500 font-semibold">Alta probabilidad</span>
               </div>
-              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Decisores Detectados</p>
                 <p className="text-lg sm:text-xl font-bold text-blue-600 dark:text-blue-400 mt-0.5">312</p>
                 <span className="text-[9px] sm:text-[10px] text-blue-500 font-semibold">CEOs & Directores</span>
               </div>
-              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Conversión a Respuesta</p>
                 <p className="text-lg sm:text-xl font-bold text-emerald-600 dark:text-emerald-400 mt-0.5">48.2%</p>
                 <span className="text-[9px] sm:text-[10px] text-emerald-500 font-semibold">vs 3% outbound frío</span>
@@ -156,8 +156,8 @@ export function PlatformShowcase() {
             </div>
 
             {/* Live Signals Stream */}
-            <div className="p-3 sm:p-5 rounded-xl sm:rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-700 min-h-[280px] flex flex-col justify-between">
-              <div className="flex items-center justify-between mb-3 border-b border-gray-100 dark:border-gray-700 pb-2">
+            <div className="p-3 sm:p-5 rounded-xl sm:rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-300 dark:border-gray-700 min-h-[280px] flex flex-col justify-between">
+              <div className="flex items-center justify-between mb-3 border-b border-gray-300 dark:border-gray-700 pb-2">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping shrink-0" />
                   <h4 className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">
@@ -251,22 +251,22 @@ export function PlatformShowcase() {
           <div className="animate-fadeIn space-y-3 sm:space-y-4">
             {/* Realtime KPI Bar */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
-              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Contactos Gestionados</p>
                 <p className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mt-0.5">3,420</p>
                 <span className="text-[9px] sm:text-[10px] text-emerald-500 font-semibold">+18.4% semana</span>
               </div>
-              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Aceptación LinkedIn</p>
                 <p className="text-lg sm:text-xl font-bold text-blue-600 dark:text-blue-400 mt-0.5">48.6%</p>
                 <span className="text-[9px] sm:text-[10px] text-blue-500 font-semibold">Notas con IA</span>
               </div>
-              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Apertura de Email</p>
                 <p className="text-lg sm:text-xl font-bold text-indigo-600 dark:text-indigo-400 mt-0.5">71.4%</p>
                 <span className="text-[9px] sm:text-[10px] text-indigo-500 font-semibold">Alta entrega</span>
               </div>
-              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Citas Agendadas</p>
                 <p className="text-lg sm:text-xl font-bold text-emerald-600 dark:text-emerald-400 mt-0.5">42</p>
                 <span className="text-[9px] sm:text-[10px] text-emerald-500 font-semibold">Google Sync</span>
@@ -274,7 +274,7 @@ export function PlatformShowcase() {
             </div>
 
             {/* Campaign Sequence Flow Simulation */}
-            <div className="p-3 sm:p-5 rounded-xl sm:rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-700 min-h-[280px] flex flex-col justify-between">
+            <div className="p-3 sm:p-5 rounded-xl sm:rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-300 dark:border-gray-700 min-h-[280px] flex flex-col justify-between">
               <div className="flex items-center justify-between mb-2 sm:mb-2.5">
                 <div className="flex items-center gap-2">
                   <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-blue-500 animate-ping shrink-0" />
@@ -288,7 +288,7 @@ export function PlatformShowcase() {
               </div>
 
               <div className="space-y-2 text-xs flex-1 flex flex-col justify-between">
-                <div className="flex items-start gap-2.5 sm:gap-3 p-2 sm:p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800">
+                <div className="flex items-start gap-2.5 sm:gap-3 p-2 sm:p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900/60 border border-gray-300 dark:border-gray-700">
                   <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-blue-500/20 text-blue-500 flex items-center justify-center font-bold shrink-0 text-xs">
                     1
                   </div>
@@ -357,22 +357,22 @@ export function PlatformShowcase() {
           <div className="animate-fadeIn space-y-3 sm:space-y-4">
             {/* Realtime KPI Bar */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
-              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Decisiones IA</p>
                 <p className="text-lg sm:text-xl font-bold text-violet-600 dark:text-violet-400 mt-0.5">1,280</p>
                 <span className="text-[9px] sm:text-[10px] text-violet-500 font-semibold">Tiempo real</span>
               </div>
-              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Velocidad IA</p>
                 <p className="text-lg sm:text-xl font-bold text-emerald-600 dark:text-emerald-400 mt-0.5">&lt; 3s</p>
                 <span className="text-[9px] sm:text-[10px] text-emerald-500 font-semibold">24/7 activo</span>
               </div>
-              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Conversión a Cita</p>
                 <p className="text-lg sm:text-xl font-bold text-blue-600 dark:text-blue-400 mt-0.5">38.2%</p>
                 <span className="text-[9px] sm:text-[10px] text-blue-500 font-semibold">Calificación</span>
               </div>
-              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-200/70 dark:border-gray-700/70">
+              <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700">
                 <p className="text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400 font-medium truncate">Precisión IA</p>
                 <p className="text-lg sm:text-xl font-bold text-purple-600 dark:text-purple-400 mt-0.5">94%</p>
                 <span className="text-[9px] sm:text-[10px] text-purple-500 font-semibold">Seguridad</span>
@@ -380,8 +380,8 @@ export function PlatformShowcase() {
             </div>
 
             {/* Live LinkedIn AI SDR Conversation Simulation */}
-            <div className="p-3 sm:p-5 rounded-xl sm:rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-700 min-h-[280px] flex flex-col justify-between">
-              <div className="flex items-center justify-between mb-2.5 border-b border-gray-100 dark:border-gray-700 pb-2">
+            <div className="p-3 sm:p-5 rounded-xl sm:rounded-2xl bg-white/90 dark:bg-gray-800/90 border border-gray-300 dark:border-gray-700 min-h-[280px] flex flex-col justify-between">
+              <div className="flex items-center justify-between mb-2.5 border-b border-gray-300 dark:border-gray-700 pb-2">
                 <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                   <div className="relative shrink-0">
                     <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#0A66C2] text-white flex items-center justify-center font-bold text-xs">
@@ -436,7 +436,7 @@ export function PlatformShowcase() {
         )}
 
         {/* Bottom Quick Access CTA Bar */}
-        <div className="mt-3 sm:mt-4 pt-3 border-t border-gray-100 dark:border-gray-800/80 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-3 text-xs">
+        <div className="mt-3 sm:mt-4 pt-3 border-t border-gray-300 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-3 text-xs">
           <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-center sm:text-left">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500 shrink-0" />
             <span className="text-[11px] sm:text-xs">Seguridad empresarial activa con intervalos humanizados y cumplimiento normativo.</span>

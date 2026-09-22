@@ -157,7 +157,7 @@ export default function Footer() {
 
             {/* Columna 3 (30%): Card Official Partner */}
             <div className="w-full">
-              <div className="relative p-6 sm:p-7 rounded-2xl bg-gradient-to-b from-indigo-950/50 via-gray-900/40 to-white/[0.03] border border-indigo-500/30 hover:border-indigo-400/60 transition-all duration-300 group overflow-hidden">
+              <div className="relative p-6 sm:p-7 rounded-2xl bg-gradient-to-b from-indigo-950/50 via-gray-900/40 to-white/[0.03] border border-indigo-500/50 hover:border-indigo-400/80 transition-all duration-300 group overflow-hidden">
                 {/* Subtle ambient spotlight */}
                 <div className="absolute -top-12 -right-12 w-36 h-36 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none group-hover:bg-indigo-500/30 transition-all" />
 
@@ -199,7 +199,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-gray-800/80">
+      <div className="border-t border-gray-700">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-5 sm:py-6 text-center">
             <p className="text-xs sm:text-sm text-gray-500 font-medium">

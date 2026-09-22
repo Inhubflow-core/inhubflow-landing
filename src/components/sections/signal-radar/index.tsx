@@ -89,8 +89,8 @@ export default function SignalRadarSection() {
             onClick={() => setSelectedSignal('competitor')}
             className={`p-5 rounded-2xl text-left border transition-all cursor-pointer ${
               selectedSignal === 'competitor'
-                ? 'bg-white/10 border-amber-500/60 scale-[1.01]'
-                : 'bg-white/5 border-white/10 hover:bg-white/[0.08] hover:border-white/20'
+                ? 'bg-white/10 border-amber-500/70 scale-[1.01]'
+                : 'bg-white/5 border-white/20 hover:bg-white/[0.08] hover:border-white/35'
             }`}
           >
             <div className="flex items-center justify-between mb-3">
@@ -112,8 +112,8 @@ export default function SignalRadarSection() {
             onClick={() => setSelectedSignal('keywords')}
             className={`p-5 rounded-2xl text-left border transition-all cursor-pointer ${
               selectedSignal === 'keywords'
-                ? 'bg-white/10 border-sky-500/60 scale-[1.01]'
-                : 'bg-white/5 border-white/10 hover:bg-white/[0.08] hover:border-white/20'
+                ? 'bg-white/10 border-sky-500/70 scale-[1.01]'
+                : 'bg-white/5 border-white/20 hover:bg-white/[0.08] hover:border-white/35'
             }`}
           >
             <div className="flex items-center justify-between mb-3">
@@ -134,8 +134,8 @@ export default function SignalRadarSection() {
             onClick={() => setSelectedSignal('icp')}
             className={`p-5 rounded-2xl text-left border transition-all cursor-pointer ${
               selectedSignal === 'icp'
-                ? 'bg-white/10 border-purple-500/60 scale-[1.01]'
-                : 'bg-white/5 border-white/10 hover:bg-white/[0.08] hover:border-white/20'
+                ? 'bg-white/10 border-purple-500/70 scale-[1.01]'
+                : 'bg-white/5 border-white/20 hover:bg-white/[0.08] hover:border-white/35'
             }`}
           >
             <div className="flex items-center justify-between mb-3">
@@ -155,9 +155,9 @@ export default function SignalRadarSection() {
         </div>
 
         {/* Live Signal Interactive Showcase Card - Full Width 7xl */}
-        <div className="w-full rounded-3xl border border-white/15 bg-gradient-to-b from-gray-900/90 to-gray-950/90 backdrop-blur-2xl p-6 sm:p-8 lg:p-10 relative overflow-hidden">
+        <div className="w-full rounded-3xl border border-white/25 bg-gradient-to-b from-gray-900/90 to-gray-950/90 backdrop-blur-2xl p-6 sm:p-8 lg:p-10 relative overflow-hidden">
           {/* Top Bar of the Card */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 mb-8 border-b border-white/10">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 mb-8 border-b border-white/20">
             <div>
               <div className="flex items-center gap-2 mb-1.5">
                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold border ${active.tagColor}`}>
@@ -171,7 +171,7 @@ export default function SignalRadarSection() {
               <h3 className="text-xl sm:text-2xl font-bold text-white">{active.title}</h3>
             </div>
 
-            <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-xl border border-white/10 text-xs font-semibold text-gray-300 self-start sm:self-auto shrink-0">
+            <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-xl border border-white/20 text-xs font-semibold text-gray-300 self-start sm:self-auto shrink-0">
               <svg className="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
               </svg>
@@ -220,10 +220,10 @@ export default function SignalRadarSection() {
 
             {/* Right Column: Live Simulated Lead Card */}
             <div className="lg:col-span-7">
-              <div className="rounded-2xl border border-white/15 bg-black/50 p-5 sm:p-6 space-y-4">
+              <div className="rounded-2xl border border-white/25 bg-black/50 p-5 sm:p-6 space-y-4">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-3.5">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-extrabold text-base flex items-center justify-center shrink-0 border border-white/20">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-extrabold text-base flex items-center justify-center shrink-0 border border-white/30">
                       {active.leadExample.name.slice(0, 2).toUpperCase()}
                     </div>
                     <div>
@@ -237,7 +237,7 @@ export default function SignalRadarSection() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5 bg-gradient-to-r from-emerald-500/20 to-emerald-600/10 border border-emerald-500/30 px-3 py-1.5 rounded-xl self-start sm:self-auto">
+                  <div className="flex items-center gap-1.5 bg-gradient-to-r from-emerald-500/20 to-emerald-600/10 border border-emerald-500/40 px-3 py-1.5 rounded-xl self-start sm:self-auto">
                     <svg className="w-3.5 h-3.5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                     </svg>
@@ -246,7 +246,7 @@ export default function SignalRadarSection() {
                 </div>
 
                 {/* Event Trigger Quote */}
-                <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs sm:text-sm">
+                <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/20 text-xs sm:text-sm">
                   <span className="text-gray-400 font-semibold block mb-1">Evento disparador detectado por el Radar:</span>
                   <p className="text-gray-200 font-medium italic">"{active.leadExample.event}"</p>
                 </div>
@@ -266,7 +266,7 @@ export default function SignalRadarSection() {
           </div>
 
           {/* Bottom Footnote */}
-          <div className="mt-8 pt-5 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-gray-400 gap-3">
+          <div className="mt-8 pt-5 border-t border-white/20 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-gray-400 gap-3">
             <span>✓ Filtro contra falsos positivos con IA</span>
             <span>✓ Exportable a listas de prospección en 1 clic</span>
             <span>✓ 100% Nativo en tu suscripción de InHubFlow</span>

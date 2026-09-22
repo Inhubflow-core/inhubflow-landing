@@ -18,7 +18,7 @@ export default function HeroLogos() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="w-full relative z-30 mx-auto pt-12 sm:pt-14 pb-14 sm:pb-16 border-t border-gray-200/70 dark:border-gray-800/80 mt-12 sm:mt-16">
+      <div className="w-full relative z-30 mx-auto pt-12 sm:pt-14 pb-14 sm:pb-16 border-t border-gray-300 dark:border-gray-700 mt-12 sm:mt-16">
         <p className="text-center text-gray-500 dark:text-white/60 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 sm:mb-8">
           {t.hero.logosTitle}
         </p>

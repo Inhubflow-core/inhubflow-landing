@@ -50,7 +50,7 @@ export default function PricingSection() {
         <div>
           {/* Billing Toggle */}
           <div className="flex justify-center relative z-30 mt-6 sm:mt-8">
-            <div className="relative flex p-1 sm:p-1.5 bg-white dark:bg-[#1D2939] rounded-full border border-gray-200 dark:border-gray-700">
+            <div className="relative flex p-1 sm:p-1.5 bg-white dark:bg-[#1D2939] rounded-full border border-gray-300 dark:border-gray-700">
               {billingPeriods.map((period) => (
                 <button
                   key={period.key}

@@ -135,7 +135,7 @@ export default function PartnersPage() {
                     e.preventDefault();
                     document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="w-full sm:w-auto bg-white hover:bg-gray-50 transition border border-gray-200 h-12 inline-flex items-center justify-center px-6 py-3 rounded-full text-gray-800 text-sm font-semibold cursor-pointer active:scale-98"
+                  className="w-full sm:w-auto bg-white hover:bg-gray-50 transition border border-gray-300 dark:border-gray-700 h-12 inline-flex items-center justify-center px-6 py-3 rounded-full text-gray-800 text-sm font-semibold cursor-pointer active:scale-98"
                 >
                   {p.heroSecondaryCta}
                 </a>
@@ -157,7 +157,7 @@ export default function PartnersPage() {
           </div>
 
           {/* Logos / Social Proof Bar (Exact same image logos as the landing page) */}
-          <div className="w-full mt-16 sm:mt-24 pt-12 sm:pt-14 border-t border-gray-200/70">
+          <div className="w-full mt-16 sm:mt-24 pt-12 sm:pt-14 border-t border-gray-300 dark:border-gray-700">
             <p className="text-center text-xs uppercase tracking-widest text-gray-500 font-semibold mb-8 sm:mb-10">
               {p.socialProofTitle}
             </p>
@@ -180,7 +180,7 @@ export default function PartnersPage() {
       {/* ========================================================================= */}
       {/* 2. REVENUE CALCULATOR SECTION (Full max-w-7xl width) */}
       {/* ========================================================================= */}
-      <section id="calculator" className="w-full py-16 sm:py-24 bg-white border-b border-gray-100 scroll-mt-20">
+      <section id="calculator" className="w-full py-16 sm:py-24 bg-white border-b border-gray-300 dark:border-gray-700 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-3">
@@ -192,7 +192,7 @@ export default function PartnersPage() {
           </div>
 
           {/* Interactive Calculator Box */}
-          <div className="relative p-6 sm:p-10 lg:p-12 rounded-3xl bg-gray-50/70 border border-gray-200/90 w-full">
+          <div className="relative p-6 sm:p-10 lg:p-12 rounded-3xl bg-gray-50/70 border border-gray-300 dark:border-gray-700 w-full">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 lg:gap-12">
               {/* Controls */}
               <div className="w-full md:w-1/2 space-y-6">
@@ -244,7 +244,7 @@ export default function PartnersPage() {
                         className={`px-3 py-2.5 rounded-xl text-xs font-semibold border transition-all text-center cursor-pointer ${
                           selectedPlanPrice === plan.price
                             ? 'bg-indigo-600 text-white border-indigo-600'
-                            : 'bg-white text-gray-700 border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                            : 'bg-white text-gray-700 border-gray-300 dark:border-gray-700 hover:border-indigo-400 hover:bg-gray-50'
                         }`}
                       >
                         <div className="font-bold">{plan.name}</div>
@@ -295,7 +295,7 @@ export default function PartnersPage() {
       {/* ========================================================================= */}
       {/* 3. THREE PILLARS (Full max-w-7xl width) */}
       {/* ========================================================================= */}
-      <section className="w-full py-16 sm:py-24 bg-gray-50/60 border-b border-gray-100">
+      <section className="w-full py-16 sm:py-24 bg-gray-50/60 border-b border-gray-300 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 sm:mb-20">
             <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
@@ -322,7 +322,7 @@ export default function PartnersPage() {
 
                 <div className="space-y-3 pt-2">
                   {[p.pillar1Check1, p.pillar1Check2, p.pillar1Check3].map((check, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-gray-200/90 text-xs sm:text-sm font-semibold text-gray-800">
+                    <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-gray-300 dark:border-gray-700 text-xs sm:text-sm font-semibold text-gray-800">
                       <span className="flex items-center justify-center w-5 h-5 rounded-md bg-blue-100 text-blue-600 shrink-0 font-bold">
                         ✓
                       </span>
@@ -334,9 +334,9 @@ export default function PartnersPage() {
 
               {/* Mockup Graphic 1: Affiliate Dashboard */}
               <div className="lg:col-span-6">
-                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-200">
+                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-300 dark:border-gray-700">
                   {/* Header of Mockup */}
-                  <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-4">
+                  <div className="flex items-center justify-between pb-4 border-b border-gray-300 dark:border-gray-700 mb-4">
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 rounded-full bg-red-400" />
                       <div className="w-3 h-3 rounded-full bg-amber-400" />
@@ -350,7 +350,7 @@ export default function PartnersPage() {
 
                   {/* Metrics row */}
                   <div className="grid grid-cols-3 gap-3 mb-4">
-                    <div className="p-3 rounded-xl bg-gray-50 border border-gray-200/60">
+                    <div className="p-3 rounded-xl bg-gray-50 border border-gray-300 dark:border-gray-700">
                       <div className="text-[10px] uppercase tracking-wider text-gray-500 font-medium">Clics</div>
                       <div className="text-base sm:text-lg font-bold text-gray-900 mt-1">1,248</div>
                     </div>
@@ -365,7 +365,7 @@ export default function PartnersPage() {
                   </div>
 
                   {/* Link Box */}
-                  <div className="p-3.5 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-between">
+                  <div className="p-3.5 rounded-xl bg-gray-50 border border-gray-300 dark:border-gray-700 flex items-center justify-between">
                     <span className="font-mono text-xs text-indigo-700 font-medium truncate">
                       inhubflow.online/?20-OFF=TUCODIGO
                     </span>
@@ -381,8 +381,8 @@ export default function PartnersPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
               {/* Mockup Graphic 2: Referral List */}
               <div className="lg:col-span-6 order-2 lg:order-1">
-                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-200 space-y-3">
-                  <div className="flex items-center justify-between pb-3 border-b border-gray-100">
+                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-300 dark:border-gray-700 space-y-3">
+                  <div className="flex items-center justify-between pb-3 border-b border-gray-300 dark:border-gray-700">
                     <span className="text-xs font-bold text-gray-900 uppercase tracking-wider">Historial de Clientes Referidos</span>
                     <span className="text-[11px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">100% Recurrente</span>
                   </div>
@@ -393,7 +393,7 @@ export default function PartnersPage() {
                     { name: 'Consultora Ventas 360', plan: 'Plan Growth ($128.00 con 20% OFF)', comm: '+$64.00 / mes', date: 'Activo' },
                     { name: 'Outbound Digital SL', plan: 'Plan Starter ($32.00 con 20% OFF)', comm: '+$16.00 / mes', date: 'Activo' },
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-gray-50/70 border border-gray-200/60">
+                    <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-gray-50/70 border border-gray-300 dark:border-gray-700">
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-600 to-blue-500 flex items-center justify-center font-bold text-xs text-white">
                           {item.name[0]}
@@ -430,7 +430,7 @@ export default function PartnersPage() {
 
                 <div className="space-y-3 pt-2">
                   {[p.pillar2Check1, p.pillar2Check2, p.pillar2Check3].map((check, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-gray-200/90 text-xs sm:text-sm font-semibold text-gray-800">
+                    <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-gray-300 dark:border-gray-700 text-xs sm:text-sm font-semibold text-gray-800">
                       <span className="flex items-center justify-center w-5 h-5 rounded-md bg-indigo-100 text-indigo-600 shrink-0 font-bold">
                         ✓
                       </span>
@@ -459,7 +459,7 @@ export default function PartnersPage() {
 
                 <div className="space-y-3 pt-2">
                   {[p.pillar3Check1, p.pillar3Check2, p.pillar3Check3].map((check, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-gray-200/90 text-xs sm:text-sm font-semibold text-gray-800">
+                    <div key={i} className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-gray-300 dark:border-gray-700 text-xs sm:text-sm font-semibold text-gray-800">
                       <span className="flex items-center justify-center w-5 h-5 rounded-md bg-violet-100 text-violet-600 shrink-0 font-bold">
                         ✓
                       </span>
@@ -471,8 +471,8 @@ export default function PartnersPage() {
 
               {/* Mockup Graphic 3: Partner Support Chat */}
               <div className="lg:col-span-6">
-                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-200 space-y-4">
-                  <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
+                <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gray-300 dark:border-gray-700 space-y-4">
+                  <div className="flex items-center gap-3 pb-3 border-b border-gray-300 dark:border-gray-700">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-sm text-white">
                       IH
                     </div>
@@ -544,7 +544,7 @@ export default function PartnersPage() {
               return (
                 <div
                   key={i}
-                  className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 hover:border-blue-400/50 dark:hover:border-blue-500/30 transition-all flex flex-col justify-between"
+                  className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-white/5 border border-gray-300 dark:border-gray-700 hover:border-blue-500 transition-all flex flex-col justify-between"
                 >
                   <button
                     type="button"
@@ -561,7 +561,7 @@ export default function PartnersPage() {
                   </button>
 
                   {isOpen && (
-                    <div className="mt-3.5 pt-3 border-t border-gray-100 dark:border-gray-800/80 animate-in fade-in duration-200">
+                    <div className="mt-3.5 pt-3 border-t border-gray-300 dark:border-gray-700 animate-in fade-in duration-200">
                       <p className="text-xs sm:text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                         {faq.a}
                       </p>
@@ -577,7 +577,7 @@ export default function PartnersPage() {
       {/* ========================================================================= */}
       {/* 5. BOTTOM HERO CALL-TO-ACTION (Full max-w-7xl width) */}
       {/* ========================================================================= */}
-      <section className="w-full py-16 sm:py-24 bg-gray-50/60 border-t border-gray-100 text-center">
+      <section className="w-full py-16 sm:py-24 bg-gray-50/60 border-t border-gray-300 dark:border-gray-700 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="w-full p-8 sm:p-14 lg:p-16 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
@@ -614,7 +614,7 @@ export default function PartnersPage() {
             onClick={() => setIsModalOpen(false)}
           />
 
-          <div className="relative w-full max-w-lg rounded-3xl bg-white border border-gray-200 p-6 sm:p-8 text-left z-10">
+          <div className="relative w-full max-w-lg rounded-3xl bg-white border border-gray-300 dark:border-gray-700 p-6 sm:p-8 text-left z-10">
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-5 right-5 text-gray-400 hover:text-gray-700 transition-colors cursor-pointer"
@@ -728,7 +728,7 @@ export default function PartnersPage() {
                   {p.successDesc}
                 </p>
 
-                <div className="pt-4 border-t border-gray-100 space-y-3">
+                <div className="pt-4 border-t border-gray-300 dark:border-gray-700 space-y-3">
                   <p className="text-xs text-gray-500 font-semibold">{p.instantActionTitle}</p>
                   <a
                     href={whatsAppHref}

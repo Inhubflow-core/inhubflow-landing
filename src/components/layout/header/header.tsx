@@ -19,7 +19,7 @@ export default function Header() {
   }, [pathname]);
 
   return (
-    <header className="bg-white/95 dark:bg-dark-primary/95 backdrop-blur-md border-b dark:border-gray-800 border-gray-100 sticky top-0 z-50 py-2 sm:py-2.5 lg:py-3.5 transition-all">
+    <header className="bg-white/95 dark:bg-dark-primary/95 backdrop-blur-md border-b border-gray-300 dark:border-gray-700 sticky top-0 z-50 py-2 sm:py-2.5 lg:py-3.5 transition-all">
       <div className="px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
         <div className="flex items-center justify-between gap-3 sm:gap-4 xl:gap-8">
           {/* Brand Logo */}
@@ -76,7 +76,7 @@ export default function Header() {
                 setMobileMenuOpen(!mobileMenuOpen);
               }}
               type="button"
-              className="shrink-0 inline-flex items-center justify-center p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 lg:hidden"
+              className="shrink-0 inline-flex items-center justify-center p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 lg:hidden"
               aria-label="Abrir Menú"
             >
               {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}

@@ -85,7 +85,7 @@ export default function HowItWorksSection() {
   ];
 
   return (
-    <section id="how-it-works" className="py-16 sm:py-24 relative overflow-hidden bg-white dark:bg-[#0b1120] border-y border-gray-200 dark:border-gray-800">
+    <section id="how-it-works" className="py-16 sm:py-24 relative overflow-hidden bg-white dark:bg-[#0b1120] border-y border-gray-300 dark:border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-18">
@@ -110,7 +110,7 @@ export default function HowItWorksSection() {
           {steps.map((item) => (
             <div
               key={item.step}
-              className="p-6 rounded-3xl border border-gray-200 dark:border-gray-800 bg-gray-50/70 dark:bg-gray-900/60 hover:border-brand-500/40 dark:hover:border-brand-500/40 hover:bg-white dark:hover:bg-gray-850 transition-all group flex flex-col justify-between"
+              className="p-6 rounded-3xl border border-gray-300 dark:border-gray-700 bg-gray-50/70 dark:bg-gray-900/60 hover:border-brand-500/50 dark:hover:border-brand-500/50 hover:bg-white dark:hover:bg-gray-850 transition-all group flex flex-col justify-between"
             >
               <div>
                 {/* Step number and Icon */}
@@ -118,7 +118,7 @@ export default function HowItWorksSection() {
                   <span className="text-3xl font-extrabold text-gray-300 dark:text-gray-700 font-mono group-hover:text-brand-500 transition-colors">
                     {item.step}
                   </span>
-                  <span className="w-12 h-12 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                  <span className="w-12 h-12 rounded-2xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
                     {item.icon}
                   </span>
                 </div>
@@ -140,7 +140,7 @@ export default function HowItWorksSection() {
               </div>
 
               {/* Bullet Points */}
-              <div className="pt-4 border-t border-gray-200/80 dark:border-gray-800/80 space-y-1.5">
+              <div className="pt-4 border-t border-gray-300 dark:border-gray-700 space-y-1.5">
                 <div className="flex items-center gap-2 text-[11px] text-gray-700 dark:text-gray-300 font-medium">
                   <span className="text-emerald-500">✓</span>
                   <span>{item.bullet1}</span>

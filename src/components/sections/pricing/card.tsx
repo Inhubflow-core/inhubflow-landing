@@ -41,7 +41,7 @@ export function PricingCard({ plan, billingPeriod }: Props) {
     <div className="relative">
       <div
         className={`bg-white dark:bg-dark-primary rounded-2xl sm:rounded-[20px] relative z-10 h-full flex flex-col justify-between ${
-          plan.popular ? 'border-2 border-primary-500' : 'border border-gray-200 dark:border-gray-800'
+          plan.popular ? 'border-2 border-primary-500' : 'border border-gray-300 dark:border-gray-700'
         }`}
       >
         {plan.popular && (
@@ -98,7 +98,7 @@ export function PricingCard({ plan, billingPeriod }: Props) {
             {plan.cta}
           </button>
         </div>
-        <div className="px-6 sm:px-8 pb-6 sm:pb-7 pt-2 border-t border-gray-100 dark:border-gray-800/80">
+        <div className="px-6 sm:px-8 pb-6 sm:pb-7 pt-2 border-t border-gray-300 dark:border-gray-700">
           <ul className="space-y-2.5 sm:space-y-3">
             {plan.features.map((feature) => (
               <li key={feature} className="flex items-start">

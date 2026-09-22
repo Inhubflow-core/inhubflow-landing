@@ -343,7 +343,7 @@ export default function LiveChatWidget() {
     <div className="fixed bottom-5 right-5 z-50 font-sans text-slate-800 select-none">
       {/* CHAT WINDOW */}
       {isOpen && (
-        <div className="flex flex-col w-[360px] sm:w-[400px] h-[540px] max-h-[85vh] bg-white rounded-2xl border border-slate-200 overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
+        <div className="flex flex-col w-[360px] sm:w-[400px] h-[540px] max-h-[85vh] bg-white rounded-2xl border border-slate-300 overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300">
           {/* HEADER */}
           <div className="bg-gradient-to-r from-indigo-600 via-indigo-700 to-blue-700 text-white px-5 py-4 flex items-center justify-between relative">
             <div className="flex items-center space-x-3">
@@ -430,7 +430,7 @@ export default function LiveChatWidget() {
                     value={visitorName}
                     onChange={(e) => setVisitorName(e.target.value)}
                     placeholder={t.namePlaceholder}
-                    className="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all"
                   />
                 </div>
 
@@ -447,7 +447,7 @@ export default function LiveChatWidget() {
                     value={visitorPhone}
                     onChange={(e) => setVisitorPhone(e.target.value)}
                     placeholder={t.phonePlaceholder}
-                    className="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all"
                   />
                 </div>
 
@@ -473,7 +473,7 @@ export default function LiveChatWidget() {
                   <div className="w-7 h-7 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 border border-indigo-200">
                     AI
                   </div>
-                  <div className="bg-white border border-slate-200 text-slate-800 text-sm rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%] leading-relaxed">
+                  <div className="bg-white border border-slate-300 text-slate-800 text-sm rounded-2xl rounded-tl-none px-4 py-3 max-w-[85%] leading-relaxed">
                     ¡Hola {visitorName.split(' ')[0]}! {t.welcomeMessage}
                   </div>
                 </div>
@@ -506,7 +506,7 @@ export default function LiveChatWidget() {
                             ? 'bg-indigo-600 text-white rounded-tr-none'
                             : isHuman
                             ? 'bg-emerald-50 border border-emerald-300 text-slate-800 rounded-tl-none font-normal'
-                            : 'bg-white border border-slate-200 text-slate-800 rounded-tl-none'
+                            : 'bg-white border border-slate-300 text-slate-800 rounded-tl-none'
                         }`}
                       >
                         {!isVisitor && (
@@ -552,13 +552,13 @@ export default function LiveChatWidget() {
 
               {/* QUICK SUGGESTION CHIPS */}
               {messages.filter((m) => m.sender_type === 'visitor').length < 2 && (
-                <div className="px-4 py-2 bg-slate-100/70 border-t border-slate-200 flex flex-wrap gap-1.5">
+                <div className="px-4 py-2 bg-slate-100/70 border-t border-slate-300 flex flex-wrap gap-1.5">
                   {t.quickQuestions.map((q, idx) => (
                     <button
                       key={idx}
                       onClick={() => handleSendMessage(q)}
                       disabled={isLoading}
-                      className="text-[11px] bg-white hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-300 border border-slate-200 text-slate-600 px-2.5 py-1 rounded-full transition-all text-left active:scale-95 cursor-pointer"
+                      className="text-[11px] bg-white hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-300 border border-slate-300 text-slate-600 px-2.5 py-1 rounded-full transition-all text-left active:scale-95 cursor-pointer"
                     >
                       {q}
                     </button>
@@ -572,7 +572,7 @@ export default function LiveChatWidget() {
                   e.preventDefault();
                   handleSendMessage();
                 }}
-                className="p-3 bg-white border-t border-slate-200 flex items-center gap-2"
+                className="p-3 bg-white border-t border-slate-300 flex items-center gap-2"
               >
                 <input
                   type="text"
@@ -580,7 +580,7 @@ export default function LiveChatWidget() {
                   onChange={(e) => handleInputChange(e.target.value)}
                   placeholder={t.inputPlaceholder}
                   disabled={isLoading}
-                  className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all"
+                  className="flex-1 bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition-all"
                 />
                 <button
                   type="submit"
@@ -597,7 +597,7 @@ export default function LiveChatWidget() {
           )}
 
           {/* BRAND FOOTER */}
-          <div className="bg-slate-50 border-t border-slate-100 py-1.5 text-center text-[10px] text-slate-400">
+          <div className="bg-slate-50 border-t border-slate-200 py-1.5 text-center text-[10px] text-slate-400">
             {t.poweredBy}
           </div>
         </div>

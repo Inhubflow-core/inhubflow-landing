@@ -63,7 +63,7 @@ export default function LanguageSelector() {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex h-9 sm:h-10 items-center gap-1.5 sm:gap-2 rounded-xl border border-gray-200 bg-white px-2.5 sm:px-3 text-xs font-semibold text-gray-700 transition-colors hover:bg-gray-50 cursor-pointer focus:outline-none whitespace-nowrap shrink-0"
+        className="flex h-9 sm:h-10 items-center gap-1.5 sm:gap-2 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-2.5 sm:px-3 text-xs font-semibold text-gray-700 dark:text-gray-300 transition-colors hover:bg-gray-50 dark:hover:bg-gray-750 cursor-pointer focus:outline-none whitespace-nowrap shrink-0"
         title="Seleccionar Idioma / Select Language"
       >
         <span className="text-[10px] font-extrabold text-gray-500 tracking-wider shrink-0">
@@ -86,8 +86,8 @@ export default function LanguageSelector() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 origin-top-right rounded-2xl border border-gray-200 bg-white p-2 backdrop-blur-md z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-          <div className="px-3 py-1.5 border-b border-gray-100 mb-1">
+        <div className="absolute right-0 mt-2 w-48 origin-top-right rounded-2xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-850 p-2 backdrop-blur-md z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+          <div className="px-3 py-1.5 border-b border-gray-300 dark:border-gray-700 mb-1">
             <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
               Idioma / Language
             </span>
@@ -100,12 +100,12 @@ export default function LanguageSelector() {
                 onClick={() => handleSelectLanguage(option.code)}
                 className={`flex w-full items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-colors cursor-pointer ${
                   locale === option.code
-                    ? 'bg-blue-50 text-blue-600 font-bold'
-                    : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                    ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 font-bold'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-gray-100 text-gray-700 font-mono border border-gray-200">
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-mono border border-gray-300 dark:border-gray-700">
                     {option.badge}
                   </span>
                   <span>{option.label}</span>
