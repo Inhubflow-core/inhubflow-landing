@@ -22,7 +22,7 @@ export default function HeroSection() {
                 <span
                   className="bg-clip-text text-transparent inline-block"
                   style={{
-                    backgroundImage: 'linear-gradient(90deg, #03184f 0%, #6938ef 100%)',
+                    backgroundImage: 'linear-gradient(90deg, #03184f 0%, #0293ce 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                   }}
@@ -84,7 +84,7 @@ export default function HeroSection() {
                   href="#pricing"
                   className="w-full sm:w-auto transition-all duration-300 h-12 inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-base font-bold scale-100 hover:scale-105 active:scale-98 cursor-pointer hover:opacity-95"
                   style={{
-                    background: 'linear-gradient(180deg, #03184f 0%, #6938ef 100%)',
+                    background: 'linear-gradient(90deg, #03184f 0%, #0293ce 100%)',
                   }}
                 >
                   {t.hero.ctaPrimary}
