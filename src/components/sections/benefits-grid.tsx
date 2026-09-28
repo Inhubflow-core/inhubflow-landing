@@ -10,9 +10,6 @@ export default function BenefitsGrid() {
     <section id="benefits" className="bg-gray-900 py-16 sm:py-24 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto mb-10 sm:mb-16 text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-3 inline-block">
-            {t.benefits.badge}
-          </span>
           <h2 className="mb-3 sm:mb-4 font-extrabold text-center text-white text-2xl sm:text-3xl md:text-4xl tracking-tight">
             {t.benefits.title}
           </h2>

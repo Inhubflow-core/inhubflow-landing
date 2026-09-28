@@ -66,9 +66,6 @@ export default function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div>
           <div className="max-w-2xl mx-auto mb-10 sm:mb-14 text-center">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-500 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-3 inline-block">
-              Casos de Éxito
-            </span>
             <h2 className="mb-3 sm:mb-4 font-extrabold text-center text-gray-900 text-2xl sm:text-3xl md:text-4xl dark:text-white tracking-tight">
               Lo que dicen los equipos que escalan con InHubFlow
             </h2>
