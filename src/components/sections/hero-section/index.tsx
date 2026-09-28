@@ -39,7 +39,7 @@ export default function HeroSection() {
                   return (
                     <>
                       {parts[0]}
-                      <span className="inline-flex items-center font-bold text-gray-900 dark:text-white align-baseline">
+                      <span className="inline-flex items-center font-semibold text-gray-700 dark:text-gray-200 align-baseline">
                         <span>Linked</span>
                         <svg
                           className="inline-block w-[1.08em] h-[1.08em] ml-[1.5px] -translate-y-[1px] shrink-0"
