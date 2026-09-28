@@ -32,7 +32,23 @@ export default function HeroSection() {
               </h1>
 
               <p className="max-w-[760px] text-center mx-auto dark:text-gray-300 text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed px-2">
-                {t.hero.description}
+                {(() => {
+                  const text = t.hero.description;
+                  const parts = text.split('LinkedIn');
+                  if (parts.length === 1) return text;
+                  return (
+                    <>
+                      {parts[0]}
+                      <span className="inline-flex items-center font-bold text-gray-900 dark:text-white">
+                        <span>Linked</span>
+                        <span className="ml-[2px] inline-flex items-center justify-center bg-[#0A66C2] text-white font-bold rounded-[3px] px-[4px] py-[1px] text-[0.8em] leading-none tracking-normal">
+                          in
+                        </span>
+                      </span>
+                      {parts[1]}
+                    </>
+                  );
+                })()}
               </p>
 
               {/* Mobile & Tablet Capabilities Pills (< 1280px) */}
