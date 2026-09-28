@@ -68,7 +68,7 @@ export function PlatformShowcase() {
           type="button"
           onClick={goToPrev}
           aria-label="Slide anterior"
-          className="absolute -left-2 sm:-left-5 lg:-left-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 dark:bg-gray-800/95 border border-gray-200 dark:border-gray-700 shadow-xl shadow-black/10 flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-400/50 hover:scale-110 active:scale-95 transition-all duration-200 backdrop-blur-md cursor-pointer group"
+          className="absolute -left-2 sm:-left-5 lg:-left-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 dark:bg-gray-800/95 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-400/50 hover:scale-110 active:scale-95 transition-all duration-200 backdrop-blur-md cursor-pointer group"
         >
           <svg className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:-translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="m15 18-6-6 6-6" />
@@ -80,7 +80,7 @@ export function PlatformShowcase() {
           type="button"
           onClick={goToNext}
           aria-label="Siguiente slide"
-          className="absolute -right-2 sm:-right-5 lg:-right-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 dark:bg-gray-800/95 border border-gray-200 dark:border-gray-700 shadow-xl shadow-black/10 flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-400/50 hover:scale-110 active:scale-95 transition-all duration-200 backdrop-blur-md cursor-pointer group"
+          className="absolute -right-2 sm:-right-5 lg:-right-6 top-1/2 -translate-y-1/2 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/95 dark:bg-gray-800/95 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-400/50 hover:scale-110 active:scale-95 transition-all duration-200 backdrop-blur-md cursor-pointer group"
         >
           <svg className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="m9 18 6-6-6-6" />
@@ -379,7 +379,7 @@ export function PlatformShowcase() {
                   {/* Chat Header */}
                   <div className="flex items-center justify-between pb-2 border-b border-gray-300 dark:border-gray-700 mb-2">
                     <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-purple-600 to-pink-600 flex items-center justify-center text-white text-xs font-bold shadow-sm">
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-purple-600 to-pink-600 flex items-center justify-center text-white text-xs font-bold">
                         IA
                       </div>
                       <div>
@@ -431,25 +431,10 @@ export function PlatformShowcase() {
             </div>
           </div>
 
-          {/* Bottom Quick Access CTA Bar */}
-          <div className="mt-3 sm:mt-4 pt-3 border-t border-gray-300 dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-3 text-xs">
-            <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-center sm:text-left">
-              <span className="flex h-2 w-2 rounded-full bg-emerald-500 shrink-0" />
-              <span className="text-[11px] sm:text-xs">Seguridad empresarial activa con intervalos humanizados y cumplimiento normativo.</span>
-            </div>
-
-            <div className="w-full sm:w-auto">
-              <a
-                href="#pricing"
-                className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold hover:scale-105 active:scale-98 transition-transform inline-flex items-center justify-center gap-2"
-              >
-                <span>Comenzar con InHubFlow B2B</span>
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </a>
-            </div>
+          {/* Bottom Security Notice */}
+          <div className="mt-3 sm:mt-4 pt-3 border-t border-gray-300 dark:border-gray-700 flex items-center justify-center gap-2 text-gray-500 dark:text-gray-400">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-500 shrink-0" />
+            <span className="text-[11px] sm:text-xs">Seguridad empresarial activa con intervalos humanizados y cumplimiento normativo.</span>
           </div>
         </div>
       </div>
@@ -469,7 +454,7 @@ export function PlatformShowcase() {
               <span
                 className={`block h-3 rounded-full transition-all duration-300 ease-out ${
                   isActive
-                    ? 'w-10 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 shadow-md shadow-indigo-500/30'
+                    ? 'w-10 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
                     : 'w-3 bg-gray-300 dark:bg-gray-700 group-hover:bg-gray-400 dark:group-hover:bg-gray-600'
                 }`}
               />

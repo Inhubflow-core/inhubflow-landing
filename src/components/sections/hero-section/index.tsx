@@ -75,7 +75,7 @@ export default function HeroSection() {
               <div className="mt-6 sm:mt-10 flex sm:flex-row flex-col gap-3 sm:gap-4 relative z-30 items-center justify-center">
                 <a
                   href="#pricing"
-                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 h-12 inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-base font-bold scale-100 hover:scale-105 active:scale-98 cursor-pointer shadow-lg shadow-blue-500/20"
+                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 h-12 inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-base font-bold scale-100 hover:scale-105 active:scale-98 cursor-pointer"
                 >
                   {t.hero.ctaPrimary}
                 </a>
@@ -98,8 +98,8 @@ export default function HeroSection() {
       {/* Floating Badges: Interactive Glassmorphism Micro-Cards */}
       <div className="hidden xl:block pointer-events-none select-none absolute inset-0 max-w-[1360px] mx-auto">
         {/* Card 1: Defina su Cliente (Upper Left) */}
-        <div className="absolute top-12 left-0 2xl:left-4 floating-1 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35)] hover:scale-105 hover:border-blue-300/60 dark:hover:border-blue-700/60 transition-all duration-300 cursor-default">
-          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/20">
+        <div className="absolute top-12 left-0 2xl:left-4 floating-1 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 hover:scale-105 hover:border-blue-300/60 dark:hover:border-blue-700/60 transition-all duration-300 cursor-default">
+          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white">
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
@@ -119,8 +119,8 @@ export default function HeroSection() {
         </div>
 
         {/* Card 2: Configure Señales (Lower Left) */}
-        <div className="absolute top-[300px] left-2 2xl:left-8 floating-2 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35)] hover:scale-105 hover:border-purple-300/60 dark:hover:border-purple-700/60 transition-all duration-300 cursor-default">
-          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-500/20">
+        <div className="absolute top-[300px] left-2 2xl:left-8 floating-2 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 hover:scale-105 hover:border-purple-300/60 dark:hover:border-purple-700/60 transition-all duration-300 cursor-default">
+          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-600 text-white">
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 2a10 10 0 1 0 10 10" />
               <path d="M12 6a6 6 0 1 0 6 6" />
@@ -139,8 +139,8 @@ export default function HeroSection() {
         </div>
 
         {/* Card 3: Lance sus Campañas (Upper Right) */}
-        <div className="absolute top-14 right-0 2xl:right-4 floating-3 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35)] hover:scale-105 hover:border-cyan-300/60 dark:hover:border-cyan-700/60 transition-all duration-300 cursor-default">
-          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white shadow-md shadow-cyan-500/20">
+        <div className="absolute top-14 right-0 2xl:right-4 floating-3 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 hover:scale-105 hover:border-cyan-300/60 dark:hover:border-cyan-700/60 transition-all duration-300 cursor-default">
+          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white">
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 2 11 13" />
               <path d="m22 2-7 20-4-9-9-4 20-7z" />
@@ -157,8 +157,8 @@ export default function HeroSection() {
         </div>
 
         {/* Card 4: Agende Reuniones (Lower Right) */}
-        <div className="absolute top-[310px] right-2 2xl:right-8 floating-4 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35)] hover:scale-105 hover:border-emerald-300/60 dark:hover:border-emerald-700/60 transition-all duration-300 cursor-default">
-          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-500/20">
+        <div className="absolute top-[310px] right-2 2xl:right-8 floating-4 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 hover:scale-105 hover:border-emerald-300/60 dark:hover:border-emerald-700/60 transition-all duration-300 cursor-default">
+          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white">
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <rect width="18" height="18" x="3" y="4" rx="2" />
               <line x1="16" x2="16" y1="2" y2="6" />
