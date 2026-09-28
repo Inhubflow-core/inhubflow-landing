@@ -149,10 +149,10 @@ export function CoreFeatures() {
           <h2 className="font-extrabold text-gray-900 dark:text-white text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-5 max-w-3xl mx-auto">
             Un mes de contenido{' '}
             <span className="relative inline-block">
-              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-600">
+              <span className="relative z-10" style={{ color: '#6938ef' }}>
                 viral y calificado
               </span>
-              <span className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-purple-500 via-pink-400 to-indigo-500 rounded-full" />
+              <span className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full" style={{ backgroundColor: '#6938ef' }} />
             </span>
             {' '}programado en minutos
           </h2>
@@ -273,7 +273,8 @@ export function CoreFeatures() {
                 </div>
                 <a
                   href="#pricing"
-                  className="shrink-0 px-4 py-2 rounded-full text-xs font-bold bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white transition-all hover:scale-105 shadow-md shadow-purple-500/20 inline-flex items-center gap-1.5"
+                  className="shrink-0 px-4 py-2 rounded-full text-xs font-bold text-white transition-all hover:scale-105 hover:opacity-90 shadow-md inline-flex items-center gap-1.5"
+                  style={{ backgroundColor: '#6938ef', boxShadow: '0 4px 14px 0 rgba(105,56,239,0.25)' }}
                 >
                   Probar gratis
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
