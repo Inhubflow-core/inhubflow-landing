@@ -149,10 +149,20 @@ export function CoreFeatures() {
           <h2 className="font-extrabold text-gray-900 dark:text-white text-3xl sm:text-4xl md:text-5xl tracking-tight leading-tight mb-5 max-w-3xl mx-auto">
             Un mes de contenido{' '}
             <span className="relative inline-block">
-              <span className="relative z-10" style={{ color: '#0099ff' }}>
+              <span
+                className="relative z-10 bg-clip-text text-transparent inline-block"
+                style={{
+                  backgroundImage: 'linear-gradient(90deg, #0099ff 0%, #0022ff 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
                 viral y calificado
               </span>
-              <span className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full" style={{ backgroundColor: '#0099ff' }} />
+              <span
+                className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full"
+                style={{ background: 'linear-gradient(90deg, #0099ff 0%, #0022ff 100%)' }}
+              />
             </span>
             {' '}programado en minutos
           </h2>
