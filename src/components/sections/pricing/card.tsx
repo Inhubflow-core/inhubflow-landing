@@ -47,7 +47,7 @@ export function PricingCard({ plan, billingPeriod }: Props) {
         {plan.popular && (
           <span
             className="absolute top-0 left-6 -translate-y-1/2 px-3 py-1 text-[10px] sm:text-xs font-bold rounded-full text-white z-20"
-            style={{ background: 'linear-gradient(90deg, #005ddc 0%, #011999 100%)' }}
+            style={{ background: 'linear-gradient(90deg, #005ddc 0%, #6938ef 100%)' }}
           >
             {badgeText}
           </span>
@@ -99,7 +99,7 @@ export function PricingCard({ plan, billingPeriod }: Props) {
             )}
             style={
               plan.popular
-                ? { background: 'linear-gradient(90deg, #005ddc 0%, #011999 100%)' }
+                ? { background: 'linear-gradient(90deg, #005ddc 0%, #6938ef 100%)' }
                 : undefined
             }
           >
