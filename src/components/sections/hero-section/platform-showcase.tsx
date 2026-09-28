@@ -1,13 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useLanguage } from '@/app/providers/language';
-
 const SLIDES = ['signals', 'sequences', 'sdr'] as const;
 type TabType = typeof SLIDES[number];
 
 export function PlatformShowcase() {
-  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -64,13 +61,6 @@ export function PlatformShowcase() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Section Title */}
-      <div className="text-center mb-6 sm:mb-8">
-        <h2 className="font-extrabold text-gray-900 text-2xl sm:text-3xl md:text-4xl dark:text-white max-w-3xl mx-auto tracking-tight leading-snug">
-          {t.hero.showcaseTitle}
-        </h2>
-      </div>
-
       {/* Relative wrapper for showcase and floating arrow buttons */}
       <div className="relative">
         {/* Left Arrow Button */}
