@@ -66,7 +66,7 @@ export default function SignalRadarSection() {
         name: 'Camila Rossi',
         role: 'Head of Sales & Growth',
         company: 'Logix Tech (250 emp.)',
-        event: 'Comentó en el post de Competidor X: "Me interesa una demo, ¿envían propuesta comercial?"',
+        event: 'Comentó en el post de Competidor X: Me interesa una demo, ¿envían propuesta comercial?',
         signalScore: '98% Intención de Compra',
         signalType: 'Reacción a Lead Magnet',
         action: 'SDR IA activó conexión personalizada con mención del debate del post',
@@ -138,7 +138,7 @@ export default function SignalRadarSection() {
         name: 'Fernando Silva',
         role: 'Chief Technology Officer (CTO)',
         company: 'FinNova Latam (Serie A cerrada: $3.5M)',
-        event: 'Publicó en LinkedIn: "Buscamos herramienta para escalar prospección B2B sin saturar el equipo técnico"',
+        event: 'Publicó en LinkedIn: Buscamos herramienta para escalar prospección B2B sin saturar el equipo técnico',
         signalScore: '95% Intención de Compra',
         signalType: 'Ronda Reciente + Intención Activa',
         action: 'Secuencia multicanal enviada con caso de estudio específico para Serie A',
@@ -350,38 +350,12 @@ export default function SignalRadarSection() {
           })}
         </div>
 
-        {/* Carousel Container with Prominent Side Arrows */}
+        {/* Carousel Container */}
         <div
           className="relative"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Prominent Floating Left Arrow (Desktop / Tablet) */}
-          <button
-            type="button"
-            onClick={handlePrev}
-            className="hidden md:flex absolute -left-5 lg:-left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#0b1324] border-2 border-white/20 hover:border-[#0099ff] hover:bg-[#0099ff] text-white transition-all items-center justify-center shadow-2xl cursor-pointer active:scale-95 group"
-            aria-label="Nivel Anterior"
-            title="Ver pantalla anterior"
-          >
-            <svg className="w-5 h-5 transition-transform group-hover:-translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-
-          {/* Prominent Floating Right Arrow (Desktop / Tablet) */}
-          <button
-            type="button"
-            onClick={handleNext}
-            className="hidden md:flex absolute -right-5 lg:-right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#0b1324] border-2 border-white/20 hover:border-[#0099ff] hover:bg-[#0099ff] text-white transition-all items-center justify-center shadow-2xl cursor-pointer active:scale-95 group"
-            aria-label="Siguiente Nivel"
-            title="Ver siguiente pantalla"
-          >
-            <svg className="w-5 h-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
-
           {/* Main Interactive Slide Showcase Card */}
           <div className="w-full rounded-3xl border border-white/25 bg-gradient-to-b from-gray-900/90 to-gray-950/90 backdrop-blur-2xl p-6 sm:p-8 lg:p-10 relative overflow-hidden shadow-2xl transition-all duration-300">
             
@@ -412,29 +386,31 @@ export default function SignalRadarSection() {
                   <span className="text-white font-extrabold text-sm" style={{ color: active.accentColor }}>{active.metric}</span>
                 </div>
 
-                {/* Mobile / Header Prev & Next Controls */}
-                <div className="flex items-center gap-1 bg-white/5 p-1 rounded-xl border border-white/15">
+                {/* Header Prev & Next Controls */}
+                <div className="flex items-center gap-1.5 bg-white/5 p-1 rounded-xl border border-white/20">
                   <button
                     type="button"
                     onClick={handlePrev}
-                    className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 transition cursor-pointer"
+                    className="h-8 px-2.5 rounded-lg flex items-center gap-1 text-gray-300 hover:text-white hover:bg-white/10 transition cursor-pointer text-xs font-semibold"
                     aria-label="Nivel Anterior"
-                    title="Anterior"
+                    title="Ver nivel anterior"
                   >
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="15 18 9 12 15 6" />
                     </svg>
+                    <span className="hidden sm:inline">Ant</span>
                   </button>
-                  <span className="text-xs font-mono font-bold px-2 text-white">
+                  <span className="text-xs font-mono font-bold px-2 text-[#0099ff]">
                     {currentSlide + 1} / 3
                   </span>
                   <button
                     type="button"
                     onClick={handleNext}
-                    className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 transition cursor-pointer"
+                    className="h-8 px-2.5 rounded-lg flex items-center gap-1 text-white bg-[#0099ff]/25 hover:bg-[#0099ff] border border-[#0099ff]/40 hover:border-[#0099ff] transition cursor-pointer text-xs font-semibold"
                     aria-label="Siguiente Nivel"
-                    title="Siguiente"
+                    title="Ver siguiente nivel"
                   >
+                    <span className="hidden sm:inline">Sig</span>
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6" />
                     </svg>
