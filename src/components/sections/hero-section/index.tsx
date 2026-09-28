@@ -19,7 +19,7 @@ export default function HeroSection() {
 
               <h1 className="text-gray-900 font-extrabold mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-[54px] dark:text-white sm:leading-[1.16] tracking-tight">
                 {t.hero.title1}{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400">
+                <span style={{ color: '#6938ef' }}>
                   {t.hero.titleHighlight}
                 </span>
               </h1>
@@ -75,7 +75,8 @@ export default function HeroSection() {
               <div className="mt-6 sm:mt-10 flex sm:flex-row flex-col gap-3 sm:gap-4 relative z-30 items-center justify-center">
                 <a
                   href="#pricing"
-                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 h-12 inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-base font-bold scale-100 hover:scale-105 active:scale-98 cursor-pointer"
+                  className="w-full sm:w-auto transition-all duration-300 h-12 inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-base font-bold scale-100 hover:scale-105 active:scale-98 cursor-pointer hover:opacity-90"
+                  style={{ backgroundColor: '#6938ef' }}
                 >
                   {t.hero.ctaPrimary}
                 </a>
