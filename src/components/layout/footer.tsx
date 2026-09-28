@@ -206,6 +206,9 @@ export default function Footer() {
             <p className="text-xs sm:text-sm text-gray-500 font-medium">
               &copy; {getCurrentYear()} InHubFlow | AI-Powered B2B Sales Suite - All Rights Reserved.
             </p>
+            <p className="mt-1.5 text-[11px] text-gray-500/80 max-w-2xl mx-auto">
+              InHubFlow es una plataforma independiente y no está afiliada, asociada ni respaldada oficialmente por LinkedIn Corporation o Microsoft.
+            </p>
           </div>
         </div>
       </div>
