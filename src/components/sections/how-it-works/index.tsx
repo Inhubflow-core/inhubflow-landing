@@ -162,7 +162,10 @@ export default function HowItWorksSection() {
           </div>
           <a
             href="#pricing"
-            className="px-7 py-3.5 rounded-full bg-white text-gray-900 font-extrabold text-sm hover:bg-gray-100 transition-all shrink-0 active:scale-95"
+            className="px-7 py-3.5 rounded-full text-gray-900 font-extrabold text-sm transition-all shrink-0 active:scale-95 border border-gray-200 hover:opacity-95"
+            style={{
+              background: 'linear-gradient(180deg, #FFFFFF 0%, #E5E7EB 100%)',
+            }}
           >
             Comenzar Prueba Gratis →
           </a>
