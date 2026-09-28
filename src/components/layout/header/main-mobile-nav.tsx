@@ -62,7 +62,10 @@ export default function MainMobileNav({ isOpen, onClose }: MobileMenuProps) {
         <a
           href="#pricing"
           onClick={onClose}
-          className="flex items-center justify-center w-full h-12 bg-gradient-to-r from-blue-600 to-indigo-600 text-sm font-bold text-white rounded-full active:scale-98 transition-all"
+          className="flex items-center justify-center w-full h-12 text-sm font-bold text-white rounded-full active:scale-98 transition-all hover:opacity-95"
+          style={{
+            background: 'linear-gradient(90deg, #03184f 0%, #6938ef 100%)',
+          }}
         >
           <span>{t.nav.startNow}</span>
         </a>

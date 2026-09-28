@@ -64,7 +64,10 @@ export default function Header() {
 
             <a
               href="#pricing"
-              className="hidden sm:inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-xs sm:text-sm font-bold text-white rounded-full transition-all duration-200 whitespace-nowrap shrink-0"
+              className="hidden sm:inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold text-white rounded-full transition-all duration-200 whitespace-nowrap shrink-0 hover:opacity-95"
+              style={{
+                background: 'linear-gradient(90deg, #03184f 0%, #6938ef 100%)',
+              }}
             >
               {t.nav.startNow}
             </a>

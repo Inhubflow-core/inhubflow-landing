@@ -158,7 +158,10 @@ export default function AIToolsTabs() {
               <p className="max-w-xl mx-auto mb-6 text-sm text-gray-500 dark:text-gray-400">
                 {currentTab.description}
               </p>
-              <button className="px-6 py-3 text-sm font-medium text-white transition-colors rounded-full bg-primary-500 hover:bg-primary-600">
+              <button
+                className="px-6 py-3 text-sm font-medium text-white transition-colors rounded-full hover:opacity-95 cursor-pointer"
+                style={{ background: 'linear-gradient(90deg, #03184f 0%, #6938ef 100%)' }}
+              >
                 Try it now for free
               </button>
             </div>

@@ -45,7 +45,10 @@ export function PricingCard({ plan, billingPeriod }: Props) {
         }`}
       >
         {plan.popular && (
-          <span className="absolute top-0 left-6 -translate-y-1/2 px-3 py-1 text-[10px] sm:text-xs font-bold rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white z-20">
+          <span
+            className="absolute top-0 left-6 -translate-y-1/2 px-3 py-1 text-[10px] sm:text-xs font-bold rounded-full text-white z-20"
+            style={{ background: 'linear-gradient(90deg, #03184f 0%, #6938ef 100%)' }}
+          >
             {badgeText}
           </span>
         )}
@@ -88,12 +91,17 @@ export function PricingCard({ plan, billingPeriod }: Props) {
             className={cn(
               'block w-full px-5 sm:px-6 py-3 sm:py-3.5 mt-5 sm:mt-7 text-xs sm:text-sm font-bold text-center rounded-full transition-all duration-200 cursor-pointer active:scale-98',
               {
-                'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white':
+                'text-white hover:opacity-95':
                   plan.popular,
                 'bg-gray-900 hover:bg-gray-800 dark:bg-white/10 dark:hover:bg-white/20 text-white':
                   !plan.popular,
               }
             )}
+            style={
+              plan.popular
+                ? { background: 'linear-gradient(90deg, #03184f 0%, #6938ef 100%)' }
+                : undefined
+            }
           >
             {plan.cta}
           </button>

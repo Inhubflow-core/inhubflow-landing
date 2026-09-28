@@ -175,7 +175,8 @@ export default function Footer() {
                 {/* CTA Button */}
                 <Link
                   href="/partners"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-bold text-white transition rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 hover:from-blue-500 hover:via-indigo-500 hover:to-violet-500 active:scale-98 cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-bold text-white transition rounded-full hover:opacity-95 active:scale-98 cursor-pointer"
+                  style={{ background: 'linear-gradient(90deg, #03184f 0%, #6938ef 100%)' }}
                 >
                   <span>{t.footer.col4Cta}</span>
                   <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
