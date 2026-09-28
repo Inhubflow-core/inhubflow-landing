@@ -265,10 +265,6 @@ export default function SignalRadarSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-gray-300 mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#0099ff] animate-pulse" />
-            <span>Radar de Señales de Intención Multicanal</span>
-          </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-5 leading-tight">
             Vende en el{' '}
