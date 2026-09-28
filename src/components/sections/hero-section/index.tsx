@@ -31,7 +31,7 @@ export default function HeroSection() {
                 </span>
               </h1>
 
-              <p className="max-w-[680px] text-center mx-auto dark:text-gray-300 text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed px-2">
+              <p className="max-w-[760px] text-center mx-auto dark:text-gray-300 text-gray-600 text-base sm:text-lg md:text-xl leading-relaxed px-2">
                 {t.hero.description}
               </p>
 
