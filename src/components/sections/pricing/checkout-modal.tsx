@@ -411,7 +411,7 @@ export function CheckoutModal({ isOpen, onClose, plan, billingPeriod }: Checkout
               type="submit"
               disabled={loading}
               className="w-full py-3.5 px-6 font-bold text-sm text-white rounded-full transition-all duration-200 cursor-pointer disabled:opacity-50 hover:opacity-95"
-              style={{ background: 'linear-gradient(90deg, #005ddc 0%, #6938ef 100%)' }}
+              style={{ background: 'linear-gradient(90deg, #0053dd 0%, #0023dd 100%)' }}
             >
               {locale === 'pt-BR'
                 ? 'Confirmar Ativação e Pagamento'
