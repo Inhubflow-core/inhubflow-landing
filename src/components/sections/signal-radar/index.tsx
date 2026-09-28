@@ -28,10 +28,38 @@ export default function SignalRadarSection() {
       metric: '92% Tasa de Interés',
       metricLabel: 'Impacto Comercial',
       triggers: [
-        { label: 'Likes en Posts de Competidores', icon: '👍' },
-        { label: 'Comentarios en Lead Magnets', icon: '💬' },
-        { label: 'Interacciones en Posts Virales', icon: '🔥' },
-        { label: 'Debates sobre Herramientas Rivales', icon: '⚔️' },
+        {
+          label: 'Likes en Posts de Competidores',
+          icon: (
+            <svg className="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+            </svg>
+          ),
+        },
+        {
+          label: 'Comentarios en Lead Magnets',
+          icon: (
+            <svg className="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          ),
+        },
+        {
+          label: 'Interacciones en Posts Virales',
+          icon: (
+            <svg className="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+            </svg>
+          ),
+        },
+        {
+          label: 'Debates sobre Herramientas Rivales',
+          icon: (
+            <svg className="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+          ),
+        },
       ],
       leadExample: {
         name: 'Camila Rossi',
@@ -63,10 +91,47 @@ export default function SignalRadarSection() {
       metric: '4.2x Más Respuestas',
       metricLabel: 'Efectividad en Conversión',
       triggers: [
-        { label: 'Rondas de Inversión (Seed, Serie A/B)', icon: '💰' },
-        { label: 'Expansión de Operaciones', icon: '🌍' },
-        { label: 'Noticias & Menciones en Medios', icon: '📰' },
-        { label: 'Fusiones y Adquisiciones (M&A)', icon: '🤝' },
+        {
+          label: 'Rondas de Inversión (Seed, Serie A/B)',
+          icon: (
+            <svg className="w-4 h-4 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+          ),
+        },
+        {
+          label: 'Expansión de Operaciones',
+          icon: (
+            <svg className="w-4 h-4 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          ),
+        },
+        {
+          label: 'Noticias & Menciones en Medios',
+          icon: (
+            <svg className="w-4 h-4 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" />
+              <path d="M18 14h-8" />
+              <path d="M15 18h-5" />
+              <path d="M10 6h8v4h-8V6Z" />
+            </svg>
+          ),
+        },
+        {
+          label: 'Fusiones y Adquisiciones (M&A)',
+          icon: (
+            <svg className="w-4 h-4 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="18" cy="18" r="3" />
+              <circle cx="6" cy="6" r="3" />
+              <path d="M13 6h3a2 2 0 0 1 2 2v7" />
+              <line x1="6" y1="9" x2="6" y2="21" />
+            </svg>
+          ),
+        },
       ],
       leadExample: {
         name: 'Fernando Silva',
@@ -100,12 +165,63 @@ export default function SignalRadarSection() {
       metric: 'Ventana Crítica 90 Días',
       metricLabel: 'Momento Óptimo',
       triggers: [
-        { label: 'Nuevos en el Cargo (<90 Días)', icon: '🎯' },
-        { label: 'Ascenso Interno a Decisor', icon: '📈' },
-        { label: 'Hiring Intent (Contratación Activa)', icon: '💼' },
-        { label: 'Empresas en Hipercrecimiento (+30%)', icon: '🚀' },
-        { label: 'Visitantes Recientes a tu Perfil', icon: '👀' },
-        { label: 'Más Activos en tu ICP (<48 Horas)', icon: '⚡' },
+        {
+          label: 'Nuevos en el Cargo (<90 Días)',
+          icon: (
+            <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <line x1="19" y1="8" x2="19" y2="14" />
+              <line x1="22" y1="11" x2="16" y2="11" />
+            </svg>
+          ),
+        },
+        {
+          label: 'Ascenso Interno a Decisor',
+          icon: (
+            <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+              <polyline points="17 6 23 6 23 12" />
+            </svg>
+          ),
+        },
+        {
+          label: 'Hiring Intent (Contratación Activa)',
+          icon: (
+            <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+            </svg>
+          ),
+        },
+        {
+          label: 'Empresas en Hipercrecimiento (+30%)',
+          icon: (
+            <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+              <path d="M12 9v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+            </svg>
+          ),
+        },
+        {
+          label: 'Visitantes Recientes a tu Perfil',
+          icon: (
+            <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          ),
+        },
+        {
+          label: 'Más Activos en tu ICP (<48 Horas)',
+          icon: (
+            <svg className="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          ),
+        },
       ],
       leadExample: {
         name: 'Mariana Duarte',
@@ -270,7 +386,7 @@ export default function SignalRadarSection() {
                 {active.desc}
               </p>
 
-              {/* Disparadores Detectados (Grid de Pills) */}
+              {/* Disparadores Detectados (Grid de UI Icons) */}
               <div>
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-3">
                   Señales y Disparadores Monitoreados:
@@ -279,9 +395,11 @@ export default function SignalRadarSection() {
                   {active.triggers.map((trig) => (
                     <div
                       key={trig.label}
-                      className="flex items-center gap-2 p-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs font-medium text-gray-200"
+                      className="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-xs font-medium text-gray-200"
                     >
-                      <span className="text-base shrink-0">{trig.icon}</span>
+                      <div className="w-7 h-7 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                        {trig.icon}
+                      </div>
                       <span className="leading-snug">{trig.label}</span>
                     </div>
                   ))}
