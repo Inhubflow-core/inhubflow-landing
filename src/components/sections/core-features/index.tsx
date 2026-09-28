@@ -297,43 +297,6 @@ export function CoreFeatures() {
           </div>
         </div>
 
-        {/* Bottom social proof strip */}
-        <div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-          {[
-            {
-              icon: '✍️',
-              stat: '1 mes de posts',
-              sub: 'listos en menos de 10 minutos',
-              gradient: 'from-purple-600/10 to-indigo-600/10',
-              border: 'border-purple-200/60 dark:border-purple-800/30',
-            },
-            {
-              icon: '📈',
-              stat: 'Inbound real',
-              sub: 'Prospectos que ya quieren comprarte',
-              gradient: 'from-blue-600/10 to-cyan-600/10',
-              border: 'border-blue-200/60 dark:border-blue-800/30',
-            },
-            {
-              icon: '🤖',
-              stat: 'Publicación 100% automática',
-              sub: 'en los horarios de mayor alcance',
-              gradient: 'from-emerald-500/10 to-teal-600/10',
-              border: 'border-emerald-200/60 dark:border-emerald-800/30',
-            },
-          ].map((item) => (
-            <div
-              key={item.stat}
-              className={`flex items-center gap-4 p-5 rounded-2xl bg-gradient-to-br ${item.gradient} border ${item.border}`}
-            >
-              <span className="text-3xl">{item.icon}</span>
-              <div>
-                <p className="font-extrabold text-gray-900 dark:text-white text-base sm:text-lg leading-tight">{item.stat}</p>
-                <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">{item.sub}</p>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
