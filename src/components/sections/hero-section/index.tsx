@@ -39,11 +39,21 @@ export default function HeroSection() {
                   return (
                     <>
                       {parts[0]}
-                      <span className="inline-flex items-center font-bold text-gray-900 dark:text-white">
+                      <span className="inline-flex items-center font-bold text-gray-900 dark:text-white align-baseline">
                         <span>Linked</span>
-                        <span className="ml-[2px] inline-flex items-center justify-center bg-[#0A66C2] text-white font-bold rounded-[3px] px-[4px] py-[1px] text-[0.8em] leading-none tracking-normal">
-                          in
-                        </span>
+                        <svg
+                          className="inline-block w-[1.08em] h-[1.08em] ml-[1.5px] -translate-y-[1px] shrink-0"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-label="in"
+                        >
+                          <rect width="24" height="24" rx="4" fill="#0A66C2" />
+                          <path
+                            d="M7.6 9H4.8V18H7.6V9ZM6.2 7.7C7.15 7.7 7.9 6.95 7.9 6C7.9 5.05 7.15 4.3 6.2 4.3C5.25 4.3 4.5 5.05 4.5 6C4.5 6.95 5.25 7.7 6.2 7.7ZM19.2 18V13.1C19.2 10.7 17.9 9.6 16.2 9.6C14.8 9.6 14.1 10.4 13.8 11V9H11C11.04 9.8 11 18 11 18H13.8V13.9C13.8 13.68 13.82 13.46 13.88 13.3C14.05 12.87 14.45 12.4 15.1 12.4C15.95 12.4 16.3 13.05 16.3 14V18H19.2Z"
+                            fill="white"
+                          />
+                        </svg>
                       </span>
                       {parts[1]}
                     </>
