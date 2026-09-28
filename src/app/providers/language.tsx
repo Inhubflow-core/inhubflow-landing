@@ -35,7 +35,7 @@ const dictionaries = {
       title1: 'Encuentra Leads calificados, identifica Señales de Intención y llena tu Agenda B2B con',
       titleHighlight: 'Asistentes SDR de IA',
       description:
-        'Identifica prospectos interesados, contáctalos en el momento ideal con secuencias multicanal y deja que tu Asistente SDR con IA transforme conversaciones en reuniones — 24/7.',
+        'Identifique prospectos interesados en LinkedIn, contáctelos en el momento ideal mediante secuencias multicanal y permita que su asistente SDR con IA transforme conversaciones en reuniones, 24/7.',
       ctaPrimary: 'Comenzar Prueba Gratis',
       ctaSecondary: 'Explorar Radar de Señales',
       guarantee: 'Sin tarjeta obligatoria para demo • Compatible con LinkedIn Free, Premium y Sales Nav • Configuración en 2 minutos',
