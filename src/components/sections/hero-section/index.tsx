@@ -29,44 +29,42 @@ export default function HeroSection() {
               </p>
 
               {/* Mobile & Tablet Capabilities Pills (< 1280px) */}
-              <div className="xl:hidden mt-6 flex flex-wrap items-center justify-center gap-2 max-w-lg mx-auto">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 border border-sky-200 dark:border-sky-800/50 text-xs font-bold text-gray-800 dark:text-gray-200">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0A66C2] text-white">
+              <div className="xl:hidden mt-6 flex flex-wrap items-center justify-center gap-2 max-w-xl mx-auto">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/85 dark:bg-gray-800/85 backdrop-blur-md border border-white/70 dark:border-gray-700 shadow-sm text-xs font-semibold text-gray-800 dark:text-gray-200">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-white">
                     <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                       <circle cx="9" cy="7" r="4" />
-                      <polyline points="16 11 18 13 22 9" />
                     </svg>
                   </span>
                   <span>{t.hero.badge1}</span>
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 border border-indigo-200 dark:border-indigo-800/50 text-xs font-bold text-gray-800 dark:text-gray-200">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-600 text-white">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/85 dark:bg-gray-800/85 backdrop-blur-md border border-white/70 dark:border-gray-700 shadow-sm text-xs font-semibold text-gray-800 dark:text-gray-200">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 text-white">
                     <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                      <path d="M12 2a8 8 0 0 0-8 8c0 4.418 8 12 8 12s8-7.582 8-12a8 8 0 0 0-8-8z" />
-                      <circle cx="12" cy="10" r="3" />
+                      <path d="M12 2a10 10 0 1 0 10 10" />
+                      <path d="M12 6a6 6 0 1 0 6 6" />
                     </svg>
                   </span>
                   <span>{t.hero.badge2}</span>
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 border border-sky-200 dark:border-sky-800/50 text-xs font-bold text-gray-800 dark:text-gray-200">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0A66C2] text-white">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/85 dark:bg-gray-800/85 backdrop-blur-md border border-white/70 dark:border-gray-700 shadow-sm text-xs font-semibold text-gray-800 dark:text-gray-200">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 text-white">
                     <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                      <path d="M22 2 11 13" />
+                      <path d="m22 2-7 20-4-9-9-4 20-7z" />
                     </svg>
                   </span>
                   <span>{t.hero.badge3}</span>
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 dark:bg-gray-800/90 border border-indigo-200 dark:border-indigo-800/50 text-xs font-bold text-gray-800 dark:text-gray-200">
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-white">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/85 dark:bg-gray-800/85 backdrop-blur-md border border-white/70 dark:border-gray-700 shadow-sm text-xs font-semibold text-gray-800 dark:text-gray-200">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-tr from-emerald-500 to-teal-600 text-white">
                     <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
                       <rect width="18" height="18" x="3" y="4" rx="2" />
-                      <line x1="16" x2="16" y1="2" y2="6" />
-                      <line x1="8" x2="8" y1="2" y2="6" />
-                      <line x1="3" x2="21" y1="10" y2="10" />
+                      <path d="m9 16 2 2 4-4" />
                     </svg>
                   </span>
                   <span>{t.hero.badge4}</span>
@@ -77,7 +75,7 @@ export default function HeroSection() {
               <div className="mt-6 sm:mt-10 flex sm:flex-row flex-col gap-3 sm:gap-4 relative z-30 items-center justify-center">
                 <a
                   href="#pricing"
-                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 h-12 inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-base font-bold scale-100 hover:scale-105 active:scale-98 cursor-pointer"
+                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 transition-all duration-300 h-12 inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-base font-bold scale-100 hover:scale-105 active:scale-98 cursor-pointer shadow-lg shadow-blue-500/20"
                 >
                   {t.hero.ctaPrimary}
                 </a>
@@ -97,56 +95,86 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Floating Badges (Framed near the hero content boundary, without touching text) */}
+      {/* Floating Badges: Interactive Glassmorphism Micro-Cards */}
       <div className="hidden xl:block pointer-events-none select-none absolute inset-0 max-w-[1360px] mx-auto">
-        {/* Badge 1: Sincronizar Contactos (Upper Left) */}
-        <div className="absolute top-16 left-0 2xl:left-2 floating-1 w-[220px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-sky-200/80 dark:border-sky-800/60 backdrop-blur-md">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0A66C2] text-white">
-            <svg className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        {/* Card 1: Defina su Cliente (Upper Left) */}
+        <div className="absolute top-12 left-0 2xl:left-4 floating-1 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35)] hover:scale-105 hover:border-blue-300/60 dark:hover:border-blue-700/60 transition-all duration-300 cursor-default">
+          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/20">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
               <circle cx="9" cy="7" r="4" />
-              <polyline points="16 11 18 13 22 9" />
+              <circle cx="19" cy="11" r="2" />
+              <path d="M19 8v1" />
+              <path d="M19 13v1" />
             </svg>
-          </span>
-          <span className="text-sm font-bold text-gray-800 dark:text-gray-100 tracking-wide">{t.hero.badge1}</span>
-          <span className="absolute -bottom-1.5 right-6 w-2.5 h-2.5 bg-[#0A66C2] rotate-45 rounded-[2px]" />
+            <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500 border border-white dark:border-gray-900" />
+            </span>
+          </div>
+          <div className="flex flex-col text-left">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">{t.hero.badgeStep1}</span>
+            <span className="text-sm font-bold text-gray-900 dark:text-white leading-tight">{t.hero.badge1}</span>
+          </div>
         </div>
 
-        {/* Badge 2: Calificación con IA (Lower Left) */}
-        <div className="absolute top-[320px] left-2 2xl:left-6 floating-2 w-[215px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-indigo-200/80 dark:border-indigo-800/60 backdrop-blur-md">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-tr from-indigo-600 to-blue-600 text-white">
-            <svg className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 2a8 8 0 0 0-8 8c0 4.418 8 12 8 12s8-7.582 8-12a8 8 0 0 0-8-8z" />
-              <circle cx="12" cy="10" r="3" />
+        {/* Card 2: Configure Señales (Lower Left) */}
+        <div className="absolute top-[300px] left-2 2xl:left-8 floating-2 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35)] hover:scale-105 hover:border-purple-300/60 dark:hover:border-purple-700/60 transition-all duration-300 cursor-default">
+          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-500/20">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2a10 10 0 1 0 10 10" />
+              <path d="M12 6a6 6 0 1 0 6 6" />
+              <circle cx="12" cy="12" r="2" />
+              <path d="M19.07 4.93 21 3" />
             </svg>
-          </span>
-          <span className="text-sm font-bold text-gray-800 dark:text-gray-100 tracking-wide">{t.hero.badge2}</span>
-          <span className="absolute -top-1.5 right-6 w-2.5 h-2.5 bg-indigo-600 rotate-45 rounded-[2px]" />
+            <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-purple-500 border border-white dark:border-gray-900" />
+            </span>
+          </div>
+          <div className="flex flex-col text-left">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">{t.hero.badgeStep2}</span>
+            <span className="text-sm font-bold text-gray-900 dark:text-white leading-tight">{t.hero.badge2}</span>
+          </div>
         </div>
 
-        {/* Badge 3: Atención Multicanal (Upper Right) */}
-        <div className="absolute top-20 right-0 2xl:right-2 floating-3 w-[215px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-sky-200/80 dark:border-sky-800/60 backdrop-blur-md">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0A66C2] text-white">
-            <svg className="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+        {/* Card 3: Lance sus Campañas (Upper Right) */}
+        <div className="absolute top-14 right-0 2xl:right-4 floating-3 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35)] hover:scale-105 hover:border-cyan-300/60 dark:hover:border-cyan-700/60 transition-all duration-300 cursor-default">
+          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 text-white shadow-md shadow-cyan-500/20">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 2 11 13" />
+              <path d="m22 2-7 20-4-9-9-4 20-7z" />
             </svg>
-          </span>
-          <span className="text-sm font-bold text-gray-800 dark:text-gray-100 tracking-wide">{t.hero.badge3}</span>
-          <span className="absolute -bottom-1.5 left-6 w-2.5 h-2.5 bg-[#0A66C2] rotate-45 rounded-[2px]" />
+            <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500 border border-white dark:border-gray-900" />
+            </span>
+          </div>
+          <div className="flex flex-col text-left">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">{t.hero.badgeStep3}</span>
+            <span className="text-sm font-bold text-gray-900 dark:text-white leading-tight">{t.hero.badge3}</span>
+          </div>
         </div>
 
-        {/* Badge 4: Agendar Reunión (Lower Right) */}
-        <div className="absolute top-[330px] right-2 2xl:right-6 floating-4 w-[215px] h-12 flex items-center gap-3 px-4.5 rounded-full bg-white/95 dark:bg-gray-800/95 border border-emerald-200/80 dark:border-emerald-800/60 backdrop-blur-md">
-          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        {/* Card 4: Agende Reuniones (Lower Right) */}
+        <div className="absolute top-[310px] right-2 2xl:right-8 floating-4 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.35)] hover:scale-105 hover:border-emerald-300/60 dark:hover:border-emerald-700/60 transition-all duration-300 cursor-default">
+          <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-500/20">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <rect width="18" height="18" x="3" y="4" rx="2" />
               <line x1="16" x2="16" y1="2" y2="6" />
               <line x1="8" x2="8" y1="2" y2="6" />
               <line x1="3" x2="21" y1="10" y2="10" />
+              <path d="m9 16 2 2 4-4" />
             </svg>
-          </span>
-          <span className="text-sm font-bold text-gray-800 dark:text-gray-100 tracking-wide">{t.hero.badge4}</span>
-          <span className="absolute -top-1.5 left-6 w-2.5 h-2.5 bg-emerald-600 rotate-45 rounded-[2px]" />
+            <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 border border-white dark:border-gray-900" />
+            </span>
+          </div>
+          <div className="flex flex-col text-left">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">{t.hero.badgeStep4}</span>
+            <span className="text-sm font-bold text-gray-900 dark:text-white leading-tight">{t.hero.badge4}</span>
+          </div>
         </div>
       </div>
 
