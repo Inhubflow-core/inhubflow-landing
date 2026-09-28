@@ -66,7 +66,7 @@ export default function SignalRadarSection() {
         name: 'Camila Rossi',
         role: 'Head of Sales & Growth',
         company: 'Logix Tech (250 emp.)',
-        event: 'Comentó en el post de Competidor X: Me interesa una demo, ¿envían propuesta comercial?',
+        event: 'Comentó en el post de Competidor X: "Me interesa una demo, ¿envían propuesta comercial?"',
         signalScore: '98% Intención de Compra',
         signalType: 'Reacción a Lead Magnet',
         action: 'SDR IA activó conexión personalizada con mención del debate del post',
@@ -138,7 +138,7 @@ export default function SignalRadarSection() {
         name: 'Fernando Silva',
         role: 'Chief Technology Officer (CTO)',
         company: 'FinNova Latam (Serie A cerrada: $3.5M)',
-        event: 'Publicó en LinkedIn: Buscamos herramienta para escalar prospección B2B sin saturar el equipo técnico',
+        event: 'Publicó en LinkedIn: "Buscamos herramienta para escalar prospección B2B sin saturar el equipo técnico"',
         signalScore: '95% Intención de Compra',
         signalType: 'Ronda Reciente + Intención Activa',
         action: 'Secuencia multicanal enviada con caso de estudio específico para Serie A',
@@ -282,14 +282,106 @@ export default function SignalRadarSection() {
             El 95% de los decisores ignora los mensajes genéricos. InHubFlow vigila la red en 3 niveles de intención y te avisa cuando un prospecto muestra una señal real de compra para contactarlo al instante.
           </p>
 
+          {/* Interactive Hint Callout */}
+          <div className="mt-5 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#0099ff]/10 border border-[#0099ff]/30 text-xs font-medium text-sky-300">
+            <svg className="w-3.5 h-3.5 text-[#0099ff] animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+            <span>Haz clic en cualquiera de los 3 niveles o usa las flechas para explorar cada pantalla interactiva</span>
+          </div>
         </div>
 
-        {/* Carousel Container */}
+        {/* 3 Level Clickable Tabs (Interactive Indicator Buttons) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mb-8">
+          {levels.map((lvl, index) => {
+            const isSelected = currentSlide === index;
+            return (
+              <button
+                key={lvl.id}
+                type="button"
+                onClick={() => setCurrentSlide(index)}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                className={`p-5 rounded-2xl text-left border transition-all duration-300 cursor-pointer relative overflow-hidden group ${
+                  isSelected
+                    ? 'bg-white/10 border-white/40 shadow-xl scale-[1.01]'
+                    : 'bg-white/5 border-white/15 hover:bg-white/[0.08] hover:border-white/35 hover:-translate-y-0.5'
+                }`}
+                style={isSelected ? { borderColor: lvl.accentColor } : {}}
+              >
+                {/* Active Indicator Top Line with Auto-progress Animation */}
+                {isSelected && (
+                  <div
+                    className="absolute top-0 left-0 right-0 h-[3.5px]"
+                    style={{ backgroundColor: lvl.accentColor }}
+                  />
+                )}
+
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="text-xs font-extrabold uppercase tracking-wider"
+                      style={{ color: lvl.accentColor }}
+                    >
+                      {lvl.levelNum}
+                    </span>
+                    <span className="text-[10px] uppercase font-bold text-gray-400 px-2 py-0.5 rounded bg-white/5 border border-white/10">
+                      {isSelected ? '● Pantalla Activa' : 'Clic para ver'}
+                    </span>
+                  </div>
+                  
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110"
+                    style={{ backgroundColor: `${lvl.accentColor}20` }}
+                  >
+                    {lvl.icon}
+                  </div>
+                </div>
+
+                <p className="text-base font-bold text-white mb-1.5 flex items-center justify-between">
+                  <span>{lvl.title.split(':')[0]}</span>
+                  <span className={`text-xs transition-transform ${isSelected ? 'translate-x-1 text-white' : 'text-gray-400 group-hover:translate-x-1'}`}>
+                    →
+                  </span>
+                </p>
+                <p className="text-xs text-gray-400 leading-relaxed">{lvl.shortDesc}</p>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Carousel Container with Prominent Side Arrows */}
         <div
           className="relative"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
+          {/* Prominent Floating Left Arrow (Desktop / Tablet) */}
+          <button
+            type="button"
+            onClick={handlePrev}
+            className="hidden md:flex absolute -left-5 lg:-left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#0b1324] border-2 border-white/20 hover:border-[#0099ff] hover:bg-[#0099ff] text-white transition-all items-center justify-center shadow-2xl cursor-pointer active:scale-95 group"
+            aria-label="Nivel Anterior"
+            title="Ver pantalla anterior"
+          >
+            <svg className="w-5 h-5 transition-transform group-hover:-translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          {/* Prominent Floating Right Arrow (Desktop / Tablet) */}
+          <button
+            type="button"
+            onClick={handleNext}
+            className="hidden md:flex absolute -right-5 lg:-right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#0b1324] border-2 border-white/20 hover:border-[#0099ff] hover:bg-[#0099ff] text-white transition-all items-center justify-center shadow-2xl cursor-pointer active:scale-95 group"
+            aria-label="Siguiente Nivel"
+            title="Ver siguiente pantalla"
+          >
+            <svg className="w-5 h-5 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+
           {/* Main Interactive Slide Showcase Card */}
           <div className="w-full rounded-3xl border border-white/25 bg-gradient-to-b from-gray-900/90 to-gray-950/90 backdrop-blur-2xl p-6 sm:p-8 lg:p-10 relative overflow-hidden shadow-2xl transition-all duration-300">
             
@@ -320,31 +412,29 @@ export default function SignalRadarSection() {
                   <span className="text-white font-extrabold text-sm" style={{ color: active.accentColor }}>{active.metric}</span>
                 </div>
 
-                {/* Header Prev & Next Controls */}
-                <div className="flex items-center gap-1.5 bg-white/5 p-1 rounded-xl border border-white/20">
+                {/* Mobile / Header Prev & Next Controls */}
+                <div className="flex items-center gap-1 bg-white/5 p-1 rounded-xl border border-white/15">
                   <button
                     type="button"
                     onClick={handlePrev}
-                    className="h-8 px-2.5 rounded-lg flex items-center gap-1 text-gray-300 hover:text-white hover:bg-white/10 transition cursor-pointer text-xs font-semibold"
+                    className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 transition cursor-pointer"
                     aria-label="Nivel Anterior"
-                    title="Ver nivel anterior"
+                    title="Anterior"
                   >
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="15 18 9 12 15 6" />
                     </svg>
-                    <span className="hidden sm:inline">Ant</span>
                   </button>
-                  <span className="text-xs font-mono font-bold px-2 text-[#0099ff]">
+                  <span className="text-xs font-mono font-bold px-2 text-white">
                     {currentSlide + 1} / 3
                   </span>
                   <button
                     type="button"
                     onClick={handleNext}
-                    className="h-8 px-2.5 rounded-lg flex items-center gap-1 text-white bg-[#0099ff]/25 hover:bg-[#0099ff] border border-[#0099ff]/40 hover:border-[#0099ff] transition cursor-pointer text-xs font-semibold"
+                    className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-300 hover:text-white hover:bg-white/10 transition cursor-pointer"
                     aria-label="Siguiente Nivel"
-                    title="Ver siguiente nivel"
+                    title="Siguiente"
                   >
-                    <span className="hidden sm:inline">Sig</span>
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6" />
                     </svg>
@@ -404,80 +494,80 @@ export default function SignalRadarSection() {
                 </div>
               </div>
 
-              {/* Right Column: Live Simulated Lead Detection Card */}
+              {/* Right Column: Live Simulated Lead Detection Card (Light Theme) */}
               <div className="lg:col-span-7">
-                <div className="rounded-2xl border border-white/20 bg-black/60 p-5 sm:p-6 space-y-4 shadow-xl relative overflow-hidden">
+                <div className="rounded-2xl border border-gray-200/90 bg-white p-5 sm:p-6 space-y-4 shadow-2xl shadow-black/50 relative overflow-hidden text-gray-900">
                   
                   {/* Header of Detected Lead */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div className="flex items-center gap-3.5">
                       <div
-                        className="w-12 h-12 rounded-full text-white font-extrabold text-base flex items-center justify-center shrink-0 border border-white/30 shadow-md"
+                        className="w-12 h-12 rounded-full text-white font-extrabold text-base flex items-center justify-center shrink-0 border border-white shadow-md"
                         style={{ background: `linear-gradient(135deg, ${active.accentColor}, #0022ff)` }}
                       >
                         {active.leadExample.name.slice(0, 2).toUpperCase()}
                       </div>
                       <div>
                         <div className="flex items-center gap-2 flex-wrap">
-                          <p className="text-sm sm:text-base font-bold text-white">{active.leadExample.name}</p>
-                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                          <p className="text-sm sm:text-base font-extrabold text-gray-900">{active.leadExample.name}</p>
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#0A66C2]/10 text-[#0A66C2] border border-[#0A66C2]/25">
                             LinkedIn Verificado
                           </span>
-                          <span className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-white/10 text-gray-300 border border-white/15">
+                          <span className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-gray-100 text-gray-700 border border-gray-200">
                             {active.leadExample.signalType}
                           </span>
                         </div>
-                        <p className="text-xs text-gray-400 mt-0.5">
-                          {active.leadExample.role} • <strong className="text-gray-300">{active.leadExample.company}</strong>
+                        <p className="text-xs text-gray-500 mt-0.5">
+                          {active.leadExample.role} • <strong className="text-gray-800 font-semibold">{active.leadExample.company}</strong>
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-1.5 bg-emerald-500/20 border border-emerald-500/40 px-3 py-1.5 rounded-xl self-start sm:self-auto shrink-0">
-                      <svg className="w-3.5 h-3.5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <div className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-300/80 px-3 py-1.5 rounded-xl self-start sm:self-auto shrink-0 shadow-xs">
+                      <svg className="w-3.5 h-3.5 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                       </svg>
-                      <span className="text-emerald-400 font-extrabold text-xs">{active.leadExample.signalScore}</span>
+                      <span className="text-emerald-700 font-extrabold text-xs">{active.leadExample.signalScore}</span>
                     </div>
                   </div>
 
-                  {/* Event Trigger Detected Box */}
-                  <div className="p-4 rounded-xl bg-white/[0.04] border border-white/15 text-xs sm:text-sm">
+                  {/* Event Trigger Detected Box (Light Warm) */}
+                  <div className="p-4 rounded-xl bg-amber-50/80 border border-amber-200/90 text-xs sm:text-sm">
                     <div className="flex items-center justify-between gap-2 mb-1.5">
-                      <span className="text-gray-400 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping" />
+                      <span className="text-amber-900/90 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping" />
                         Evento Disparador Detectado por el Radar:
                       </span>
-                      <span className="text-[10px] text-gray-500 font-mono">Hace 4 min</span>
+                      <span className="text-[10px] text-amber-700/80 font-mono font-medium">Hace 4 min</span>
                     </div>
-                    <p className="text-gray-100 font-medium italic leading-relaxed">
+                    <p className="text-gray-900 font-semibold italic leading-relaxed">
                       "{active.leadExample.event}"
                     </p>
                   </div>
 
-                  {/* Automated Action Triggered */}
-                  <div className="p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/20 space-y-2">
+                  {/* Automated Action Triggered (Light Sky/Blue) */}
+                  <div className="p-3.5 rounded-xl bg-sky-50/90 border border-sky-200 space-y-2">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-                      <div className="flex items-center gap-2 text-sky-400 font-semibold">
-                        <span className="w-2 h-2 rounded-full bg-sky-400" />
+                      <div className="flex items-center gap-2 text-[#0066cc] font-bold">
+                        <span className="w-2 h-2 rounded-full bg-[#0099ff]" />
                         <span>Acción Automática SDR IA:</span>
                       </div>
-                      <span className="text-[11px] font-semibold text-emerald-400 bg-emerald-500/20 px-2 py-0.5 rounded-md border border-emerald-500/30">
+                      <span className="text-[11px] font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded-md">
                         Respuesta esperada: {active.leadExample.responseTime}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-200 leading-relaxed pl-4">
+                    <p className="text-xs text-gray-800 leading-relaxed pl-4 font-medium">
                       {active.leadExample.action}
                     </p>
                   </div>
 
                   {/* Step Indicators within card */}
-                  <div className="flex items-center justify-between pt-1 text-[11px] text-gray-400">
-                    <span className="flex items-center gap-1">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" />
+                  <div className="flex items-center justify-between pt-2 border-t border-gray-100 text-[11px] text-gray-500">
+                    <span className="flex items-center gap-1.5 text-gray-600 font-medium">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
                       Lead calificado automáticamente
                     </span>
-                    <span className="font-mono text-gray-400">Canal: LinkedIn + Smart Email</span>
+                    <span className="font-mono text-gray-500 font-medium">Canal: LinkedIn + Smart Email</span>
                   </div>
                 </div>
               </div>
