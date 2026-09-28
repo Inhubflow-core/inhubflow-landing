@@ -507,51 +507,31 @@ export default function SignalRadarSection() {
               </div>
             </div>
 
-            {/* Bottom Interactive Navigation & Controls Bar */}
-            <div className="mt-8 pt-5 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-4">
-              
-              {/* Prev Level Button */}
-              <button
-                type="button"
-                onClick={handlePrev}
-                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-xs font-bold text-gray-200 hover:text-white transition cursor-pointer"
-              >
-                <span>←</span>
-                <span>Nivel Anterior: {levels[currentSlide === 0 ? levels.length - 1 : currentSlide - 1].shortTitle}</span>
-              </button>
-
-              {/* Progress Dots with Autoplay status indicator */}
-              <div className="flex flex-col items-center gap-1.5">
-                <div className="flex items-center gap-2.5">
-                  {levels.map((lvl, idx) => (
-                    <button
-                      key={lvl.id}
-                      type="button"
-                      onClick={() => setCurrentSlide(idx)}
-                      className={`h-2.5 transition-all rounded-full cursor-pointer ${
-                        currentSlide === idx ? 'w-8 bg-[#0099ff]' : 'w-2.5 bg-white/20 hover:bg-white/40'
-                      }`}
-                      aria-label={`Ir al Nivel ${idx + 1}`}
-                      title={`Ir a ${lvl.levelNum}: ${lvl.shortTitle}`}
-                    />
-                  ))}
-                </div>
-                <span className="text-[11px] text-gray-400 font-medium">
-                  {isPaused ? '⏸ En pausa (reanudará al mover cursor)' : '⟳ Rotación automática (cada 7s)'}
-                </span>
-              </div>
-
-              {/* Next Level Button */}
-              <button
-                type="button"
-                onClick={handleNext}
-                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-[#0099ff] border border-white/20 hover:border-[#0099ff] text-xs font-bold text-white transition cursor-pointer shadow-md"
-              >
-                <span>Siguiente: {levels[currentSlide === levels.length - 1 ? 0 : currentSlide + 1].shortTitle}</span>
-                <span>→</span>
-              </button>
-            </div>
           </div>
+        </div>
+
+        {/* 3 Pagination Dots (debajo del slide igual al slider inicial) */}
+        <div className="flex items-center justify-center gap-2.5 mt-5 sm:mt-7">
+          {levels.map((lvl, idx) => {
+            const isActive = currentSlide === idx;
+            return (
+              <button
+                key={lvl.id}
+                type="button"
+                onClick={() => setCurrentSlide(idx)}
+                aria-label={`Ir a ${lvl.levelNum}`}
+                className="group py-2 px-1 focus:outline-none cursor-pointer"
+              >
+                <span
+                  className={`block h-3 rounded-full transition-all duration-300 ease-out ${
+                    isActive
+                      ? 'w-10 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600'
+                      : 'w-3 bg-white/20 hover:bg-white/40'
+                  }`}
+                />
+              </button>
+            );
+          })}
         </div>
 
         {/* Global Safeguards Footnote */}
