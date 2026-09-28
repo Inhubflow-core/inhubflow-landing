@@ -176,7 +176,7 @@ export default function Footer() {
                 <Link
                   href="/partners"
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-bold text-white transition rounded-full hover:opacity-95 active:scale-98 cursor-pointer"
-                  style={{ background: 'linear-gradient(90deg, #03184f 0%, #0293ce 100%)' }}
+                  style={{ background: 'linear-gradient(90deg, #0293ce 0%, #6938ef 100%)' }}
                 >
                   <span>{t.footer.col4Cta}</span>
                   <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
