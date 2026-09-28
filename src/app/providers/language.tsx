@@ -31,7 +31,7 @@ const dictionaries = {
       startNow: 'Comenzar Ahora',
     },
     hero: {
-      subheading: 'AI-Powered Prospecting Suite',
+      subheading: 'AI-POWERED PROSPECTING SUITE',
       title1: 'Encuentra Leads calificados, identifica Señales de Intención y llena tu Agenda B2B con',
       titleHighlight: 'Asistentes SDR de IA',
       description:
@@ -313,7 +313,7 @@ const dictionaries = {
       startNow: 'Começar Agora',
     },
     hero: {
-      subheading: 'AI-Powered Prospecting Suite',
+      subheading: 'AI-POWERED PROSPECTING SUITE',
       title1: 'Encontre Leads qualificados, identifique Sinais de Intenção e lote sua Agenda B2B com',
       titleHighlight: 'Assistentes SDR de IA',
       description:
@@ -595,7 +595,7 @@ const dictionaries = {
       startNow: 'Get Started',
     },
     hero: {
-      subheading: 'AI-Powered Prospecting Suite',
+      subheading: 'AI-POWERED PROSPECTING SUITE',
       title1: 'Find Qualified Leads, Detect Intent Signals, and Fill Your B2B Calendar with',
       titleHighlight: 'Autonomous AI SDRs',
       description:
