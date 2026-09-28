@@ -66,7 +66,7 @@ export default function SignalRadarSection() {
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-5 leading-tight">
             Vende en el{' '}
-            <span style={{ color: '#6938ef' }}>
+            <span style={{ color: '#0099ff' }}>
               momento exacto
             </span>
             {' '}en que quieren comprar.

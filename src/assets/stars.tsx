@@ -39,8 +39,8 @@ export function Stars() {
           y2="21.0295"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#7A5AF8" />
-          <stop offset="1" stopColor="#B5A2FF" />
+          <stop stopColor="#0099ff" />
+          <stop offset="1" stopColor="#0022ff" />
         </linearGradient>
       </defs>
     </svg>
