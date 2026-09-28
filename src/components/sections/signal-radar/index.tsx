@@ -510,8 +510,15 @@ export default function SignalRadarSection() {
           </div>
         </div>
 
-        {/* 3 Pagination Dots (debajo del slide igual al slider inicial) */}
-        <div className="flex items-center justify-center gap-2.5 mt-5 sm:mt-7">
+        {/* Global Safeguards Footnote (justo debajo del slide y encima de los puntos) */}
+        <div className="mt-4 sm:mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-gray-400 text-center">
+          <span>✓ Filtro contra falsos positivos con IA</span>
+          <span>✓ Exportable a listas de prospección en 1 clic</span>
+          <span>✓ 100% Nativo en tu suscripción de InHubFlow</span>
+        </div>
+
+        {/* 3 Pagination Dots (debajo de los textos) */}
+        <div className="flex items-center justify-center gap-2.5 mt-4 sm:mt-5">
           {levels.map((lvl, idx) => {
             const isActive = currentSlide === idx;
             return (
@@ -532,13 +539,6 @@ export default function SignalRadarSection() {
               </button>
             );
           })}
-        </div>
-
-        {/* Global Safeguards Footnote */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-gray-400 text-center">
-          <span>✓ Filtro contra falsos positivos con IA</span>
-          <span>✓ Exportable a listas de prospección en 1 clic</span>
-          <span>✓ 100% Nativo en tu suscripción de InHubFlow</span>
         </div>
 
       </div>
