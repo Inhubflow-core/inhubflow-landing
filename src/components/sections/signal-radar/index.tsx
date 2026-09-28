@@ -272,7 +272,14 @@ export default function SignalRadarSection() {
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-5 leading-tight">
             Vende en el{' '}
-            <span style={{ color: '#0099ff' }}>
+            <span
+              className="bg-clip-text text-transparent inline-block"
+              style={{
+                backgroundImage: 'linear-gradient(90deg, #0099ff 0%, #0022ff 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
               momento exacto
             </span>
             {' '}en que quieren comprar.
