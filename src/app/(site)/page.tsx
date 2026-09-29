@@ -1,4 +1,3 @@
-import BenefitsGrid from '@/components/sections/benefits-grid';
 import TestimonialsSection from '@/components/sections/client-testimonial';
 import FaqAccordion from '@/components/sections/faq-accordion';
 import HeroSection from '@/components/sections/hero-section';
@@ -16,7 +15,6 @@ export default function Home() {
       <SignalRadarSection />
       <HowItWorksSection />
       <CoreFeatures />
-      <BenefitsGrid />
       <TestimonialsSection />
       <PricingSection />
       <FaqAccordion />

@@ -16,7 +16,6 @@ export default function MainMobileNav({ isOpen, onClose }: MobileMenuProps) {
 
   const items = useMemo(() => [
     { href: pathname === '/' ? '#features' : '/#features', label: t.nav.features },
-    { href: pathname === '/' ? '#benefits' : '/#benefits', label: t.nav.benefits },
     { href: pathname === '/' ? '#pricing' : '/#pricing', label: t.nav.pricing },
     { href: pathname === '/' ? '#faq' : '/#faq', label: t.nav.faq },
     { href: '/partners', label: t.nav.partners || 'Partners 50%' },

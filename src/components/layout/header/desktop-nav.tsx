@@ -18,7 +18,6 @@ export default function DesktopNav() {
 
   const items: NavItem[] = useMemo(() => [
     { type: 'link', href: pathname === '/' ? '#features' : '/#features', label: t.nav.features },
-    { type: 'link', href: pathname === '/' ? '#benefits' : '/#benefits', label: t.nav.benefits },
     { type: 'link', href: pathname === '/' ? '#pricing' : '/#pricing', label: t.nav.pricing },
     { type: 'link', href: pathname === '/' ? '#faq' : '/#faq', label: t.nav.faq },
     { type: 'link', href: '/partners', label: t.nav.partners || 'Partners 50%' },

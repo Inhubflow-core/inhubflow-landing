@@ -17,7 +17,7 @@ export default function PricingSection() {
   const billingPlans = getBillingPlans(locale, hasPartnerDiscount);
 
   return (
-    <section id="pricing" className="py-16 sm:py-24 lg:py-32 bg-gray-50 dark:bg-[#0c111d] dark:bg-linear-180 dark:from-white/3 dark:to-white/0">
+    <section id="pricing" className="py-16 sm:py-24 lg:py-32 bg-gray-200 dark:bg-[#0c111d] dark:bg-linear-180 dark:from-white/3 dark:to-white/0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto mb-8 sm:mb-12 text-center">
           <h2 className="mb-3 sm:mb-4 font-extrabold text-center text-gray-900 text-2xl sm:text-3xl md:text-4xl dark:text-white tracking-tight">

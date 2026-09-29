@@ -6,11 +6,6 @@ export const navItems = [
   },
   {
     type: 'link',
-    href: '#benefits',
-    label: 'Ventajas',
-  },
-  {
-    type: 'link',
     href: '#pricing',
     label: 'Precios',
   },
