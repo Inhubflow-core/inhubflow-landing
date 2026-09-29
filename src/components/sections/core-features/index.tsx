@@ -129,7 +129,7 @@ export function CoreFeatures() {
   const [activeCard, setActiveCard] = useState<number | null>(null);
 
   return (
-    <section id="features" className="py-16 sm:py-24 lg:py-28 bg-gray-100 dark:bg-[#0f1523] overflow-hidden">
+    <section id="features" className="py-16 sm:py-24 lg:py-28 bg-gray-200 dark:bg-[#0f1523] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
