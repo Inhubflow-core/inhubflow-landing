@@ -113,7 +113,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
         },
         features: [
           '1 Conta do LinkedIn Conectada (1 Slot Dedicado)',
-          'Até 20 interações comerciais / dia* (600 por mês)',
+          'Até 20 interações comerciais / dia* (400 por mês • Seg a Sex)',
           ...commonFeaturesPt,
         ],
         cta: 'Começar com 1 Conta',
@@ -129,7 +129,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
         },
         features: [
           '5 Contas do LinkedIn Conectadas (5 Slots Dedicados)',
-          'Até 100 interações comerciais / dia* (3.000 por mês)',
+          'Até 100 interações comerciais / dia* (2.000 por mês • Seg a Sex)',
           ...commonFeaturesPt,
         ],
         cta: 'Começar com 5 Contas',
@@ -145,7 +145,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
         },
         features: [
           '10 Contas do LinkedIn Conectadas (10 Slots Dedicados)',
-          'Até 200 interações comerciais / dia* (6.000 por mês)',
+          'Até 200 interações comerciais / dia* (4.000 por mês • Seg a Sex)',
           ...commonFeaturesPt,
         ],
         cta: 'Começar com 10 Contas',
@@ -178,7 +178,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
         },
         features: [
           '1 Connected LinkedIn Account (1 Dedicated Slot)',
-          'Up to 20 commercial interactions / day* (600 / month)',
+          'Up to 20 commercial interactions / day* (400 / month • Mon to Fri)',
           ...commonFeaturesEn,
         ],
         cta: 'Start with 1 Account',
@@ -194,7 +194,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
         },
         features: [
           '5 Connected LinkedIn Accounts (5 Dedicated Slots)',
-          'Up to 100 commercial interactions / day* (3,000 / month)',
+          'Up to 100 commercial interactions / day* (2,000 / month • Mon to Fri)',
           ...commonFeaturesEn,
         ],
         cta: 'Start with 5 Accounts',
@@ -210,7 +210,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
         },
         features: [
           '10 Connected LinkedIn Accounts (10 Dedicated Slots)',
-          'Up to 200 commercial interactions / day* (6,000 / month)',
+          'Up to 200 commercial interactions / day* (4,000 / month • Mon to Fri)',
           ...commonFeaturesEn,
         ],
         cta: 'Start with 10 Accounts',
@@ -243,7 +243,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
       },
       features: [
         '1 Cuenta de LinkedIn Conectada (1 Slot Dedicado)',
-        'Hasta 20 interacciones comerciales / día* (600 al mes)',
+        'Hasta 20 interacciones comerciales / día* (400 al mes • Lun a Vie)',
         ...commonFeaturesEs,
       ],
       cta: 'Comenzar con 1 Cuenta',
@@ -259,7 +259,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
       },
       features: [
         '5 Cuentas de LinkedIn Conectadas (5 Slots Dedicados)',
-        'Hasta 100 interacciones comerciales / día* (3.000 al mes)',
+        'Hasta 100 interacciones comerciales / día* (2.000 al mes • Lun a Vie)',
         ...commonFeaturesEs,
       ],
       cta: 'Comenzar con 5 Cuentas',
@@ -275,7 +275,7 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
       },
       features: [
         '10 Cuentas de LinkedIn Conectadas (10 Slots Dedicados)',
-        'Hasta 200 interacciones comerciales / día* (6.000 al mes)',
+        'Hasta 200 interacciones comerciales / día* (4.000 al mes • Lun a Vie)',
         ...commonFeaturesEs,
       ],
       cta: 'Comenzar con 10 Cuentas',

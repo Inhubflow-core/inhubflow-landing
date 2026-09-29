@@ -133,7 +133,7 @@ const dictionaries = {
       ctaB2C: 'Comenzar Plan Growth',
       ctaAllInOne: 'Obtener Plan Business',
       popularBadge: 'MÁS POPULAR',
-      limitsNote: '* Límites recomendados por cuenta para garantizar la seguridad y reputación comercial.',
+      limitsNote: '* Límites recomendados por cuenta (lunes a viernes) para garantizar la máxima seguridad y reputación comercial.',
     },
     faq: {
       title: 'Preguntas Frecuentes',
@@ -415,7 +415,7 @@ const dictionaries = {
       ctaB2C: 'Começar Plano Growth',
       ctaAllInOne: 'Obter Plano Business',
       popularBadge: 'MAIS POPULAR',
-      limitsNote: '* Limites recomendados por conta para garantir a segurança e reputação comercial.',
+      limitsNote: '* Limites recomendados por conta (segunda a sexta) para garantir a máxima segurança e reputação comercial.',
     },
     faq: {
       title: 'Perguntas Frequentes',
@@ -697,7 +697,7 @@ const dictionaries = {
       ctaB2C: 'Get Started with Growth Plan',
       ctaAllInOne: 'Get Business Plan',
       popularBadge: 'MOST POPULAR',
-      limitsNote: '* Recommended daily limits per account to ensure commercial safety and platform compliance.',
+      limitsNote: '* Recommended daily limits per account (Monday to Friday) to ensure commercial safety and platform compliance.',
     },
     faq: {
       title: 'Frequently Asked Questions',
