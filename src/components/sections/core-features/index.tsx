@@ -275,23 +275,10 @@ export function CoreFeatures() {
                 </div>
               </div>
 
-              {/* CTA at bottom */}
-              <div className="mt-5 pt-4 border-t border-gray-200 dark:border-gray-700/50 flex items-center justify-between gap-3">
-                <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-                  LinkedIn · Publicación automática activa
-                </div>
-                <a
-                  href="#pricing"
-                  className="shrink-0 px-4 py-2 rounded-full text-xs font-bold text-white transition-all hover:scale-105 hover:opacity-95 inline-flex items-center gap-1.5"
-                  style={{ background: 'linear-gradient(90deg, #0099ff 0%, #0022ff 100%)' }}
-                >
-                  Probar gratis
-                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
-                </a>
+              {/* Status indicator at bottom */}
+              <div className="mt-5 pt-4 border-t border-gray-200 dark:border-gray-700/50 flex items-center justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                <span>LinkedIn · Publicación automática activa</span>
               </div>
             </div>
           </div>
