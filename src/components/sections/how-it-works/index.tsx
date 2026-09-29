@@ -234,27 +234,12 @@ export default function HowItWorksSection() {
         {/* FLECHA CONECTORA 1 -> 2 (Curva de derecha a izquierda)                    */}
         {/* ========================================================================= */}
         <div className="py-6 sm:py-10 flex justify-center items-center pointer-events-none select-none">
-          <svg
-            className="w-48 sm:w-72 lg:w-96 h-20 sm:h-28 text-gray-400 dark:text-gray-600"
-            viewBox="0 0 360 120"
-            fill="none"
-          >
-            <path
-              d="M 310 15 C 260 75, 140 30, 80 105"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeDasharray="6 6"
-              strokeLinecap="round"
-            />
-            {/* Punta de la flecha hacia el paso 2 */}
-            <path
-              d="M 72 90 L 80 106 L 94 100"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <img
+            src="/images/arrows/arrow-to-left.png"
+            alt="Flecha conectora hacia el paso 2"
+            className="w-56 sm:w-80 lg:w-[420px] max-w-full h-auto object-contain dark:invert dark:opacity-85 pointer-events-none select-none"
+            loading="lazy"
+          />
         </div>
 
         {/* ========================================================================= */}
@@ -410,27 +395,12 @@ export default function HowItWorksSection() {
         {/* FLECHA CONECTORA 2 -> 3 (Curva de izquierda a derecha)                    */}
         {/* ========================================================================= */}
         <div className="py-6 sm:py-10 flex justify-center items-center pointer-events-none select-none">
-          <svg
-            className="w-48 sm:w-72 lg:w-96 h-20 sm:h-28 text-gray-400 dark:text-gray-600"
-            viewBox="0 0 360 120"
-            fill="none"
-          >
-            <path
-              d="M 50 15 C 100 75, 220 30, 280 105"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeDasharray="6 6"
-              strokeLinecap="round"
-            />
-            {/* Punta de la flecha hacia el paso 3 */}
-            <path
-              d="M 288 90 L 280 106 L 266 100"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <img
+            src="/images/arrows/arrow-to-right.png"
+            alt="Flecha conectora hacia el paso 3"
+            className="w-56 sm:w-80 lg:w-[420px] max-w-full h-auto object-contain dark:invert dark:opacity-85 pointer-events-none select-none"
+            loading="lazy"
+          />
         </div>
 
         {/* ========================================================================= */}
@@ -602,27 +572,12 @@ export default function HowItWorksSection() {
         {/* FLECHA CONECTORA 3 -> 4 (Curva de derecha a izquierda)                    */}
         {/* ========================================================================= */}
         <div className="py-6 sm:py-10 flex justify-center items-center pointer-events-none select-none">
-          <svg
-            className="w-48 sm:w-72 lg:w-96 h-20 sm:h-28 text-gray-400 dark:text-gray-600"
-            viewBox="0 0 360 120"
-            fill="none"
-          >
-            <path
-              d="M 310 15 C 260 75, 140 30, 80 105"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeDasharray="6 6"
-              strokeLinecap="round"
-            />
-            {/* Punta de la flecha hacia el paso 4 */}
-            <path
-              d="M 72 90 L 80 106 L 94 100"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <img
+            src="/images/arrows/arrow-to-left.png"
+            alt="Flecha conectora hacia el paso 4"
+            className="w-56 sm:w-80 lg:w-[420px] max-w-full h-auto object-contain dark:invert dark:opacity-85 pointer-events-none select-none"
+            loading="lazy"
+          />
         </div>
 
         {/* ========================================================================= */}
