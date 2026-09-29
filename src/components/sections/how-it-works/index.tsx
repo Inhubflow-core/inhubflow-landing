@@ -231,11 +231,11 @@ export default function HowItWorksSection() {
         </div>
 
         {/* ========================================================================= */}
-        {/* FLECHA CONECTORA 1 -> 2 (Curva de derecha a izquierda)                    */}
+        {/* FLECHA CONECTORA 1 -> 2 (Curva de izquierda a derecha)                    */}
         {/* ========================================================================= */}
         <div className="py-6 sm:py-10 flex justify-center items-center pointer-events-none select-none">
           <img
-            src="/images/arrows/arrow-to-left.png"
+            src="/images/arrows/arrow-to-right.png"
             alt="Flecha conectora hacia el paso 2"
             className="w-56 sm:w-80 lg:w-[420px] max-w-full h-auto object-contain dark:invert dark:opacity-85 pointer-events-none select-none"
             loading="lazy"
@@ -392,11 +392,11 @@ export default function HowItWorksSection() {
         </div>
 
         {/* ========================================================================= */}
-        {/* FLECHA CONECTORA 2 -> 3 (Curva de izquierda a derecha)                    */}
+        {/* FLECHA CONECTORA 2 -> 3 (Curva de derecha a izquierda)                    */}
         {/* ========================================================================= */}
         <div className="py-6 sm:py-10 flex justify-center items-center pointer-events-none select-none">
           <img
-            src="/images/arrows/arrow-to-right.png"
+            src="/images/arrows/arrow-to-left.png"
             alt="Flecha conectora hacia el paso 3"
             className="w-56 sm:w-80 lg:w-[420px] max-w-full h-auto object-contain dark:invert dark:opacity-85 pointer-events-none select-none"
             loading="lazy"
@@ -569,11 +569,11 @@ export default function HowItWorksSection() {
         </div>
 
         {/* ========================================================================= */}
-        {/* FLECHA CONECTORA 3 -> 4 (Curva de derecha a izquierda)                    */}
+        {/* FLECHA CONECTORA 3 -> 4 (Curva de izquierda a derecha)                    */}
         {/* ========================================================================= */}
         <div className="py-6 sm:py-10 flex justify-center items-center pointer-events-none select-none">
           <img
-            src="/images/arrows/arrow-to-left.png"
+            src="/images/arrows/arrow-to-right.png"
             alt="Flecha conectora hacia el paso 4"
             className="w-56 sm:w-80 lg:w-[420px] max-w-full h-auto object-contain dark:invert dark:opacity-85 pointer-events-none select-none"
             loading="lazy"
