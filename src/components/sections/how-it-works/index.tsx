@@ -9,56 +9,70 @@ export default function HowItWorksSection() {
   const steps = [
     {
       step: '01',
-      badge: 'Fase 1: Detección',
-      badgeColor: 'text-amber-500 bg-amber-500/10 border-amber-500/20',
-      title: 'Detecta Señales de Compra',
+      badge: 'Fase 1: Segmentación',
+      badgeColor: 'text-blue-600 dark:text-blue-400 bg-blue-500/10 border-blue-500/20',
+      stepHoverColor: 'group-hover:text-blue-600 dark:group-hover:text-blue-400',
+      cardHover: 'hover:border-blue-500/50 dark:hover:border-blue-500/50',
+      title: 'Define tu cliente ideal',
+      subtitle: 'Encuentra a los decisores adecuados',
+      subtitleColor: 'text-blue-600 dark:text-blue-400',
       description:
-        'Configura palabras clave de tu industria, vigila publicaciones de tus competidores o filtra nuevos directores nombrados hace menos de 90 días. InHubFlow identifica exactamente quién tiene presupuesto y necesidad activa.',
-      bullet1: 'Radar continuo en LinkedIn y noticias',
-      bullet2: 'Scoring de intención de compra (0 a 100%)',
-      bullet3: 'Sin spam a ciegas, solo prospectos calientes',
+        'Con Lead Finder, define el perfil de cliente ideal de tu negocio: cargo, país, ciudad, industria, tamaño de empresa y otros criterios relevantes para tu oferta. InHubFlow te ayuda a construir una lista de prospectos alineada con lo que vendes, antes de iniciar cualquier campaña.',
+      bullet1: 'Segmentación por cargo, ubicación e industria',
+      bullet2: 'Filtros para priorizar empresas y decisores relevantes',
+      bullet3: 'Una base de prospectos enfocada en tu cliente ideal',
       icon: (
-        <svg className="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10" />
-          <circle cx="12" cy="12" r="6" />
-          <circle cx="12" cy="12" r="2" />
+          <line x1="22" x2="18" y1="12" y2="12" />
+          <line x1="6" x2="2" y1="12" y2="12" />
+          <line x1="12" x2="12" y1="6" y2="2" />
+          <line x1="12" x2="12" y1="22" y2="18" />
+          <circle cx="12" cy="12" r="3" />
         </svg>
       ),
     },
     {
       step: '02',
-      badge: 'Fase 2: Conexión',
-      badgeColor: 'text-sky-500 bg-sky-500/10 border-sky-500/20',
-      title: 'Activa Secuencias Multicanal Humanizadas',
+      badge: 'Fase 2: Detección',
+      badgeColor: 'text-amber-500 bg-amber-500/10 border-amber-500/20',
+      stepHoverColor: 'group-hover:text-amber-500 dark:group-hover:text-amber-400',
+      cardHover: 'hover:border-amber-500/50 dark:hover:border-amber-500/50',
+      title: 'Configura señales de compra',
+      subtitle: 'Descubre el momento oportuno para contactar',
+      subtitleColor: 'text-amber-600 dark:text-amber-400',
       description:
-        'InHubFlow visita el perfil del decisor, lo sigue, envía la solicitud de conexión con notas personalizadas por IA y refuerza el contacto mediante cadencias de correo frío con calentamiento (warmup) continuo.',
-      bullet1: 'LinkedIn Outreach (Visita + Conexión + InMail)',
-      bullet2: 'Cold Email con rotación multicuenta y warmup',
-      bullet3: 'Ritmos y pausas humanizadas anti-bloqueo',
+        'Define las palabras clave y los eventos que indican una posible oportunidad: conversaciones sobre tu industria, publicaciones relevantes o cambios recientes en puestos de dirección. InHubFlow cruza esas señales con tu perfil de cliente ideal para ayudarte a priorizar a quién contactar primero.',
+      bullet1: 'Monitoreo de señales en LinkedIn y noticias',
+      bullet2: 'Priorización de prospectos según su nivel de interés',
+      bullet3: 'Contactos más relevantes, en lugar de campañas a ciegas',
       icon: (
-        <svg className="w-6 h-6 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        <svg className="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10" />
+          <path d="M12 6a6 6 0 1 0 6 6" />
+          <circle cx="12" cy="12" r="2" />
+          <path d="m13.4 10.6 4.6-4.6" />
         </svg>
       ),
     },
     {
       step: '03',
-      badge: 'Fase 3: Conversación',
+      badge: 'Fase 3: Conexión',
       badgeColor: 'text-purple-500 bg-purple-500/10 border-purple-500/20',
-      title: 'El SDR IA Califica en Tiempo Real',
+      stepHoverColor: 'group-hover:text-purple-600 dark:group-hover:text-purple-400',
+      cardHover: 'hover:border-purple-500/50 dark:hover:border-purple-500/50',
+      title: 'Lanza tus campañas',
+      subtitle: 'Inicia conversaciones por LinkedIn y correo',
+      subtitleColor: 'text-purple-600 dark:text-purple-400',
       description:
-        'Tu agente SDR de inteligencia artificial responde dudas, maneja objeciones y explica tus servicios en segundos utilizando tu propia base de conocimiento (PDFs, web y precios aprobados), con total naturalidad.',
-      bullet1: 'Respuestas fundamentadas sin inventar datos',
-      bullet2: 'Modo Aprobación manual o Modo 100% Autónomo',
-      bullet3: 'Handoff inmediato a humano ante casos especiales',
+        'Crea secuencias de contacto adaptadas a cada prospecto. InHubFlow puede combinar interacciones en LinkedIn con mensajes personalizados por IA y cadencias de correo, manteniendo pausas y un ritmo de envío configurable.',
+      bullet1: 'Secuencias de contacto por LinkedIn',
+      bullet2: 'Correos personalizados y seguimiento multicanal',
+      bullet3: 'Ritmos y pausas configurables para cada campaña',
       icon: (
-        <svg className="w-6 h-6 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 8V4H8" />
-          <rect width="16" height="12" x="4" y="8" rx="2" />
-          <path d="M2 14h2" />
-          <path d="M20 14h2" />
-          <path d="M15 13v2" />
-          <path d="M9 13v2" />
+        <svg className="w-6 h-6 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="m22 2-7 20-4-9-9-4Z" />
+          <path d="M22 2 11 13" />
         </svg>
       ),
     },
@@ -66,14 +80,18 @@ export default function HowItWorksSection() {
       step: '04',
       badge: 'Fase 4: Cierre',
       badgeColor: 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20',
-      title: 'Reunión Agendada Directa a tu Calendario',
+      stepHoverColor: 'group-hover:text-emerald-600 dark:group-hover:text-emerald-400',
+      cardHover: 'hover:border-emerald-500/50 dark:hover:border-emerald-500/50',
+      title: 'Califica y agenda reuniones',
+      subtitle: 'Convierte el interés en una cita comercial',
+      subtitleColor: 'text-emerald-600 dark:text-emerald-400',
       description:
-        'Una vez que el prospecto confirma su interés y disponibilidad, el SDR ofrece tus horarios disponibles y agenda la videollamada comercial directamente en tu Calendly o Google Calendar.',
-      bullet1: 'Sincronización nativa con Calendly y Google Calendar',
-      bullet2: 'Pipeline CRM con avance automático de etapas',
-      bullet3: 'Tu equipo entra a la videollamada listo para cerrar',
+        'Cuando un prospecto responde, el SDR IA continúa la conversación: resuelve dudas con la información aprobada de tu negocio, identifica si existe una oportunidad real y, cuando corresponde, propone horarios disponibles. La reunión se agenda en tu calendario y tu equipo recibe el contexto necesario para continuar la venta.',
+      bullet1: 'Respuestas basadas en tu información comercial aprobada',
+      bullet2: 'Aprobación manual o atención autónoma, según tu configuración',
+      bullet3: 'Agendamiento y actualización del pipeline comercial',
       icon: (
-        <svg className="w-6 h-6 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-6 h-6 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
           <line x1="16" x2="16" y1="2" y2="6" />
           <line x1="8" x2="8" y1="2" y2="6" />
@@ -106,12 +124,12 @@ export default function HowItWorksSection() {
           {steps.map((item) => (
             <div
               key={item.step}
-              className="p-6 rounded-3xl border border-gray-300 dark:border-gray-700 bg-gray-50/70 dark:bg-gray-900/60 hover:border-brand-500/50 dark:hover:border-brand-500/50 hover:bg-white dark:hover:bg-gray-850 transition-all group flex flex-col justify-between"
+              className={`p-6 rounded-3xl border border-gray-300 dark:border-gray-700 bg-gray-50/70 dark:bg-gray-900/60 ${item.cardHover} hover:bg-white dark:hover:bg-gray-850 transition-all group flex flex-col justify-between`}
             >
               <div>
                 {/* Step number and Icon */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-3xl font-extrabold text-gray-300 dark:text-gray-700 font-mono group-hover:text-brand-500 transition-colors">
+                  <span className={`text-3xl font-extrabold text-gray-300 dark:text-gray-700 font-mono ${item.stepHoverColor} transition-colors`}>
                     {item.step}
                   </span>
                   <span className="w-12 h-12 rounded-2xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
@@ -125,9 +143,14 @@ export default function HowItWorksSection() {
                 </span>
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2.5 leading-snug">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1 leading-snug">
                   {item.title}
                 </h3>
+
+                {/* Subtitle */}
+                <p className={`text-xs font-semibold ${item.subtitleColor} mb-2.5`}>
+                  {item.subtitle}
+                </p>
 
                 {/* Description */}
                 <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
@@ -136,17 +159,17 @@ export default function HowItWorksSection() {
               </div>
 
               {/* Bullet Points */}
-              <div className="pt-4 border-t border-gray-300 dark:border-gray-700 space-y-1.5">
-                <div className="flex items-center gap-2 text-[11px] text-gray-700 dark:text-gray-300 font-medium">
-                  <span className="text-emerald-500">✓</span>
+              <div className="pt-4 border-t border-gray-300 dark:border-gray-700 space-y-2">
+                <div className="flex items-start gap-2 text-[11px] text-gray-700 dark:text-gray-300 font-medium leading-relaxed">
+                  <span className="text-emerald-500 shrink-0 font-bold mt-0.5">✓</span>
                   <span>{item.bullet1}</span>
                 </div>
-                <div className="flex items-center gap-2 text-[11px] text-gray-700 dark:text-gray-300 font-medium">
-                  <span className="text-emerald-500">✓</span>
+                <div className="flex items-start gap-2 text-[11px] text-gray-700 dark:text-gray-300 font-medium leading-relaxed">
+                  <span className="text-emerald-500 shrink-0 font-bold mt-0.5">✓</span>
                   <span>{item.bullet2}</span>
                 </div>
-                <div className="flex items-center gap-2 text-[11px] text-gray-700 dark:text-gray-300 font-medium">
-                  <span className="text-emerald-500">✓</span>
+                <div className="flex items-start gap-2 text-[11px] text-gray-700 dark:text-gray-300 font-medium leading-relaxed">
+                  <span className="text-emerald-500 shrink-0 font-bold mt-0.5">✓</span>
                   <span>{item.bullet3}</span>
                 </div>
               </div>
