@@ -10,8 +10,26 @@ export default function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="pt-8 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 relative overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F6F4FE] to-[#ECE7FE] dark:from-[#0F172A] dark:via-[#171F2E] dark:to-[#1E293B]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section className="pt-8 sm:pt-16 lg:pt-20 pb-12 sm:pb-16 relative overflow-hidden bg-gradient-to-b from-[#FFFFFF] via-[#F0F7FF] to-[#E6F0FA] dark:from-[#070b14] dark:via-[#0c1322] dark:to-[#0f172a]">
+      {/* Background Grid Pattern with Radial Mask */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-60 dark:opacity-25"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(0, 153, 255, 0.08) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 153, 255, 0.08) 1px, transparent 1px)
+          `,
+          backgroundSize: '44px 44px',
+          maskImage: 'radial-gradient(ellipse 75% 65% at 50% 32%, black 25%, transparent 85%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 75% 65% at 50% 32%, black 25%, transparent 85%)',
+        }}
+      />
+
+      {/* Ambient Aura Glow Blobs */}
+      <div className="absolute top-[8%] left-1/2 -translate-x-1/2 w-[700px] sm:w-[950px] h-[360px] sm:h-[460px] bg-gradient-to-tr from-[#0099ff]/15 via-[#0066ff]/10 to-[#0022ff]/15 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute top-[38%] left-1/2 -translate-x-1/2 w-[600px] sm:w-[850px] h-[320px] bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-indigo-600/10 blur-[140px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div>
           <div className="max-w-[820px] mx-auto">
             <div className="text-center pb-8 sm:pb-12 lg:pb-16">
@@ -122,7 +140,7 @@ export default function HeroSection() {
       </div>
 
       {/* Floating Badges: Interactive Glassmorphism Micro-Cards */}
-      <div className="hidden xl:block pointer-events-none select-none absolute inset-0 max-w-[1360px] mx-auto">
+      <div className="hidden xl:block pointer-events-none select-none absolute inset-0 max-w-[1360px] mx-auto z-20">
         {/* Card 1: Defina su Cliente (Upper Left) */}
         <div className="absolute top-12 left-0 2xl:left-4 floating-1 pointer-events-auto flex items-center gap-3.5 px-4 py-3 rounded-2xl bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/70 dark:border-white/10 hover:scale-105 hover:border-blue-300/60 dark:hover:border-blue-700/60 transition-all duration-300 cursor-default">
           <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white">
