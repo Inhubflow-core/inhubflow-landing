@@ -90,26 +90,31 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
   const AMOUNTS = getAmounts(hasPartnerDiscount);
 
   if (locale === 'pt-BR') {
+    const commonFeaturesPt = [
+      'Lead Finder: Busca e extração de prospectos qualificados no LinkedIn',
+      'Monitores de Sinais de Intenção B2B em Tempo Real',
+      'Social Selling com IA: Geração e agendamento de posts para o LinkedIn',
+      'Sequências e Campanhas Automatizadas com Pausas Inteligentes',
+      'Assistente SDR de IA 24/7 Ilimitado (Respostas e Qualificação)',
+      'Agendamento Automático de Reuniões no Google Calendar e Calendly',
+      'Smart Inbox: Gestão centralizada de conversas em tempo real',
+      'Sincronização com CRM (HubSpot, Pipedrive) e Exportação em CSV',
+      'Proteção Anti-bloqueio: Ritmos humanizados de navegação segura',
+    ];
+
     return [
       {
         id: 'slots-1',
         name: 'Plano Starter (1 Conta)',
-        description: 'Ideal para profissionais e fundadores que buscam automatizar sua prospecção e agendar reuniões qualificadas.',
+        description: 'Acesso completo a todas as ferramentas para 1 conta comercial de LinkedIn.',
         pricing: {
           monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, originalPrice: AMOUNTS.starter.originalMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.starter.url, lemonVariantId: LEMON_CHECKOUTS.starter.variantId, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
           yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, originalPrice: AMOUNTS.starter.originalYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.starter.url, lemonVariantId: LEMON_CHECKOUTS.starter.variantId, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
         },
         features: [
           '1 Conta do LinkedIn Conectada (1 Slot Dedicado)',
-          'Lead Finder: Busca e extração de prospectos qualificados no LinkedIn',
-          'Monitores de Sinais de Intenção: 3 Monitores ativos (Concorrentes e Palavras-chave)',
-          'Social Selling com IA: Geração e agendamento de posts para atrair clientes',
-          'Campanhas Multicanal: Até 20 conexões e interações / dia* (600 por mês)',
-          'Assistente SDR de IA 24/7 Ilimitado (Respostas contextuais e quebra de objeções)',
-          'Agendamento Automático de Reuniões no Google Calendar e Calendly',
-          'Smart Inbox Unificado: Gestão centralizada de conversas em tempo real',
-          'Sincronização com CRM (HubSpot, Pipedrive) e Exportação em CSV',
-          'Algoritmo Anti-bloqueio: Ritmos humanizados e proteção total da conta',
+          'Até 20 interações comerciais / dia* (600 por mês)',
+          ...commonFeaturesPt,
         ],
         cta: 'Começar com 1 Conta',
         popular: false,
@@ -117,22 +122,15 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
       {
         id: 'slots-5',
         name: 'Plano Growth (5 Contas)',
-        description: 'Perfeito para equipes comerciais que precisam escalar seu pipeline com sinais de intenção e Social Selling.',
+        description: 'Acesso completo a todas as ferramentas para gerenciar 5 contas comerciais de LinkedIn.',
         pricing: {
           monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, originalPrice: AMOUNTS.growth.originalMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.growth.url, lemonVariantId: LEMON_CHECKOUTS.growth.variantId, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
           yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, originalPrice: AMOUNTS.growth.originalYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.growth.url, lemonVariantId: LEMON_CHECKOUTS.growth.variantId, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
         },
         features: [
-          '5 Contas do LinkedIn Conectadas (5 Slots Dedicados para a equipe)',
-          'Lead Finder Multicontas: Extração massiva de decisores B2B por perfil',
-          'Monitores de Sinais de Intenção: 15 Monitores ativos em tempo real',
-          'Social Selling com IA: Planejamento e publicação para todas as contas',
-          'Campanhas Multicanal: Até 100 conexões e interações / dia* (3.000 por mês)',
-          'Assistente SDR de IA 24/7 Ilimitado (Respostas autônomas e qualificação)',
-          'Agendamento Multiequipe no Google Calendar e Calendly',
-          'Smart Inbox Colaborativo com atribuição de leads para o time de vendas',
-          'Sincronização Bidirecional com CRM (HubSpot, Pipedrive, Webhooks)',
-          'Proteção Empresarial Avançada com Proxies Dedicados por conta',
+          '5 Contas do LinkedIn Conectadas (5 Slots Dedicados)',
+          'Até 100 interações comerciais / dia* (3.000 por mês)',
+          ...commonFeaturesPt,
         ],
         cta: 'Começar com 5 Contas',
         popular: true,
@@ -140,22 +138,15 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
       {
         id: 'slots-10',
         name: 'Plano Business (10 Contas)',
-        description: 'Capacidade máxima e alto rendimento para empresas B2B e agências com equipes de vendas em expansão.',
+        description: 'Acesso completo a todas as ferramentas para gerenciar 10 contas comerciais de LinkedIn.',
         pricing: {
           monthly: { amount: AMOUNTS.business.monthly, formattedPrice: AMOUNTS.business.formattedMonthly, originalPrice: AMOUNTS.business.originalMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.business.url, lemonVariantId: LEMON_CHECKOUTS.business.variantId, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
           yearly: { amount: AMOUNTS.business.yearly, formattedPrice: AMOUNTS.business.formattedYearly, originalPrice: AMOUNTS.business.originalYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.business.url, lemonVariantId: LEMON_CHECKOUTS.business.variantId, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
         },
         features: [
-          '10 Contas do LinkedIn Conectadas (10 Slots Dedicados de alto volume)',
-          'Lead Finder Ilimitado: Extração massiva corporativa com filtros avançados',
-          'Monitores de Sinais de Intenção Ilimitados em tempo real (Radar Completo)',
-          'Social Selling com IA Ilimitado: Calendário editorial em escala para o time',
-          'Campanhas Multicanal: Até 200 conexões e interações / dia* (6.000 por mês)',
-          'Assistente SDR de IA Corporativo treinado com os playbooks da sua empresa',
-          'Agendamento Inteligente com distribuição round-robin entre executivos',
-          'Gestão de Equipe & Permissões: Papéis granulares e métricas por vendedor',
-          'Integrações CRM Enterprise (HubSpot, Pipedrive, Salesforce via Zapier/API)',
-          'Suporte Prioritário VIP & Onboarding Estratégico Dedicado',
+          '10 Contas do LinkedIn Conectadas (10 Slots Dedicados)',
+          'Até 200 interações comerciais / dia* (6.000 por mês)',
+          ...commonFeaturesPt,
         ],
         cta: 'Começar com 10 Contas',
         popular: false,
@@ -164,26 +155,31 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
   }
 
   if (locale === 'en') {
+    const commonFeaturesEn = [
+      'Lead Finder: Real-time search & extraction of qualified B2B leads',
+      'Real-Time B2B Intent Signal Monitors',
+      'AI Social Selling: Generate & schedule viral LinkedIn content',
+      'Automated Outreach Sequences with Smart Natural Pacing',
+      'Unlimited 24/7 AI SDR Assistant (Contextual replies & qualification)',
+      'Automated Meeting Booking with Google Calendar & Calendly',
+      'Smart Inbox: Centralized real-time conversation management',
+      'CRM Sync (HubSpot, Pipedrive) & Full CSV History Export',
+      'Anti-Detection Protection: Humanized browsing safety limits',
+    ];
+
     return [
       {
         id: 'slots-1',
         name: 'Starter Plan (1 Account)',
-        description: 'Ideal for founders and sales reps looking to automate outreach and book qualified meetings.',
+        description: 'Full access to all platform features for 1 connected LinkedIn account.',
         pricing: {
           monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, originalPrice: AMOUNTS.starter.originalMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.starter.url, lemonVariantId: LEMON_CHECKOUTS.starter.variantId, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
           yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, originalPrice: AMOUNTS.starter.originalYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.starter.url, lemonVariantId: LEMON_CHECKOUTS.starter.variantId, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
         },
         features: [
           '1 Connected LinkedIn Account (1 Dedicated Slot)',
-          'Lead Finder: Real-time search & extraction of qualified B2B leads',
-          'Intent Signal Monitors: 3 Active Monitors (Competitor posts & Keywords)',
-          'AI Social Selling: Generate and schedule viral LinkedIn content to attract buyers',
-          'Multichannel Outreach: Up to 20 daily interactions & connection requests* (600/month)',
-          'Unlimited 24/7 AI SDR Assistant (Contextual replies & objection handling)',
-          'Automated Meeting Booking with Google Calendar & Calendly',
-          'Unified Smart Inbox: Centralized conversation and lead tracking',
-          'CRM Integration (HubSpot, Pipedrive) & Full CSV History Export',
-          'Anti-Detection Protection: Humanized browsing pacing & safety limits',
+          'Up to 20 commercial interactions / day* (600 / month)',
+          ...commonFeaturesEn,
         ],
         cta: 'Start with 1 Account',
         popular: false,
@@ -191,22 +187,15 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
       {
         id: 'slots-5',
         name: 'Growth Plan (5 Accounts)',
-        description: 'Perfect for sales teams scaling their pipeline with intent signals and AI Social Selling.',
+        description: 'Full access to all platform features to manage 5 connected LinkedIn accounts.',
         pricing: {
           monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, originalPrice: AMOUNTS.growth.originalMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.growth.url, lemonVariantId: LEMON_CHECKOUTS.growth.variantId, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
           yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, originalPrice: AMOUNTS.growth.originalYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.growth.url, lemonVariantId: LEMON_CHECKOUTS.growth.variantId, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
         },
         features: [
-          '5 Connected LinkedIn Accounts (5 Dedicated Slots for your team)',
-          'Multi-Account Lead Finder: Mass extraction of B2B decision makers',
-          'Intent Signal Monitors: 15 Real-time active monitors',
-          'AI Social Selling: Automated planning and publishing for all team accounts',
-          'Multichannel Outreach: Up to 100 daily interactions & connection requests* (3,000/month)',
-          'Unlimited 24/7 AI SDR Assistant (Autonomous qualification & booking)',
-          'Team-wide Meeting Booking with Google Calendar & Calendly',
-          'Collaborative Smart Inbox with lead assignment among sales reps',
-          'Two-Way CRM Synchronization (HubSpot, Pipedrive, Webhooks)',
-          'Enterprise Security Guard with Dedicated Proxies per account',
+          '5 Connected LinkedIn Accounts (5 Dedicated Slots)',
+          'Up to 100 commercial interactions / day* (3,000 / month)',
+          ...commonFeaturesEn,
         ],
         cta: 'Start with 5 Accounts',
         popular: true,
@@ -214,22 +203,15 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
       {
         id: 'slots-10',
         name: 'Business Plan (10 Accounts)',
-        description: 'Maximum capacity and high performance for B2B companies and agencies with growing sales teams.',
+        description: 'Full access to all platform features to manage 10 connected LinkedIn accounts.',
         pricing: {
           monthly: { amount: AMOUNTS.business.monthly, formattedPrice: AMOUNTS.business.formattedMonthly, originalPrice: AMOUNTS.business.originalMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.business.url, lemonVariantId: LEMON_CHECKOUTS.business.variantId, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
           yearly: { amount: AMOUNTS.business.yearly, formattedPrice: AMOUNTS.business.formattedYearly, originalPrice: AMOUNTS.business.originalYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.business.url, lemonVariantId: LEMON_CHECKOUTS.business.variantId, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
         },
         features: [
-          '10 Connected LinkedIn Accounts (10 Dedicated High-Volume Slots)',
-          'Unlimited Lead Finder: Enterprise bulk extraction with priority export',
-          'Unlimited Real-Time Intent Signal Monitors (Full Signal Radar)',
-          'Unlimited AI Social Selling: Scaled content engine for leaders and reps',
-          'Multichannel Outreach: Up to 200 daily interactions & connection requests* (6,000/month)',
-          'Corporate AI SDR Assistant fine-tuned on your company playbooks',
-          'Round-Robin Smart Meeting Booking across sales reps',
-          'Team & Role Management: Granular permissions and sales performance metrics',
-          'Enterprise CRM Integrations (HubSpot, Pipedrive, Salesforce via Zapier/API)',
-          'VIP Priority Support & Dedicated Strategic Onboarding',
+          '10 Connected LinkedIn Accounts (10 Dedicated Slots)',
+          'Up to 200 commercial interactions / day* (6,000 / month)',
+          ...commonFeaturesEn,
         ],
         cta: 'Start with 10 Accounts',
         popular: false,
@@ -237,27 +219,32 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
     ];
   }
 
-  // Default Spanish
+  // Default Spanish (Todos los planes tienen exactamente los mismos recursos)
+  const commonFeaturesEs = [
+    'Lead Finder: Búsqueda y extracción de prospectos calificados en LinkedIn',
+    'Monitores de Señales de Intención B2B en Tiempo Real',
+    'Social Selling con IA: Generación y programación de contenido para LinkedIn',
+    'Secuencias y Campañas Automatizadas con Pausas Inteligentes',
+    'Asistente SDR de IA 24/7 Ilimitado (Respuestas y Calificación)',
+    'Agendamiento Automático de Reuniones en Google Calendar y Calendly',
+    'Smart Inbox: Gestión centralizada de conversaciones en tiempo real',
+    'Sincronización con CRM (HubSpot, Pipedrive) y Exportación en CSV',
+    'Protección Anti-bloqueos: Ritmos humanizados de navegación segura',
+  ];
+
   return [
     {
       id: 'slots-1',
       name: 'Plan Starter (1 Cuenta)',
-      description: 'Ideal para profesionales y fundadores que buscan automatizar su prospección y agendar reuniones calificadas.',
+      description: 'Acceso completo a todos los recursos para administrar 1 cuenta comercial de LinkedIn.',
       pricing: {
         monthly: { amount: AMOUNTS.starter.monthly, formattedPrice: AMOUNTS.starter.formattedMonthly, originalPrice: AMOUNTS.starter.originalMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.starter.url, lemonVariantId: LEMON_CHECKOUTS.starter.variantId, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
         yearly: { amount: AMOUNTS.starter.yearly, formattedPrice: AMOUNTS.starter.formattedYearly, originalPrice: AMOUNTS.starter.originalYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.starter.url, lemonVariantId: LEMON_CHECKOUTS.starter.variantId, paddlePriceId: 'pri_01m1h9gkcyvsdsknad7nyz7pv1' },
       },
       features: [
         '1 Cuenta de LinkedIn Conectada (1 Slot Dedicado)',
-        'Lead Finder: Búsqueda y extracción de prospectos calificados en LinkedIn',
-        'Monitores de Señales de Intención: 3 Monitores activos (Competidores y Palabras Clave)',
-        'Social Selling con IA: Generación y programación de publicaciones para captar leads',
-        'Campañas Multicanal: Hasta 20 interacciones y conexiones comerciales / día* (600 al mes)',
-        'Asistente SDR de IA 24/7 Ilimitado (Respuestas contextuales y manejo de objeciones)',
-        'Agendamiento Automático de Reuniones en Google Calendar y Calendly',
-        'Smart Inbox Centralizado: Gestión de conversaciones y respuestas en un solo lugar',
-        'Sincronización con CRM (HubSpot, Pipedrive) y Exportación completa en CSV',
-        'Algoritmo Anti-bloqueos: Ritmos humanizados y navegación segura de LinkedIn',
+        'Hasta 20 interacciones comerciales / día* (600 al mes)',
+        ...commonFeaturesEs,
       ],
       cta: 'Comenzar con 1 Cuenta',
       popular: false,
@@ -265,22 +252,15 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
     {
       id: 'slots-5',
       name: 'Plan Growth (5 Cuentas)',
-      description: 'Perfecto para equipos comerciales que necesitan escalar su pipeline con señales de intención y Social Selling.',
+      description: 'Acceso completo a todos los recursos para administrar 5 cuentas comerciales de LinkedIn.',
       pricing: {
         monthly: { amount: AMOUNTS.growth.monthly, formattedPrice: AMOUNTS.growth.formattedMonthly, originalPrice: AMOUNTS.growth.originalMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.growth.url, lemonVariantId: LEMON_CHECKOUTS.growth.variantId, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
         yearly: { amount: AMOUNTS.growth.yearly, formattedPrice: AMOUNTS.growth.formattedYearly, originalPrice: AMOUNTS.growth.originalYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.growth.url, lemonVariantId: LEMON_CHECKOUTS.growth.variantId, paddlePriceId: 'pri_01m1h9my3vbqcsp9t2hgqqkkxv' },
       },
       features: [
-        '5 Cuentas de LinkedIn Conectadas (5 Slots Dedicados para tu equipo)',
-        'Lead Finder Multicuenta: Búsqueda y extracción masiva de decisores B2B',
-        'Monitores de Señales de Intención: 15 Monitores activos en tiempo real',
-        'Social Selling con IA: Planificación y publicación automática para todas las cuentas',
-        'Campañas Multicanal: Hasta 100 interacciones y conexiones comerciales / día* (3.000 al mes)',
-        'Asistente SDR de IA 24/7 Ilimitado (Respuestas autónomas y calificación)',
-        'Agendamiento Multiequipo en Google Calendar y Calendly',
-        'Smart Inbox Colaborativo con asignación de prospectos para el equipo',
-        'Sincronización Bidireccional CRM (HubSpot, Pipedrive, Webhooks)',
-        'Protección Empresarial Avanzada con Proxies Dedicados por cuenta',
+        '5 Cuentas de LinkedIn Conectadas (5 Slots Dedicados)',
+        'Hasta 100 interacciones comerciales / día* (3.000 al mes)',
+        ...commonFeaturesEs,
       ],
       cta: 'Comenzar con 5 Cuentas',
       popular: true,
@@ -288,22 +268,15 @@ export const getBillingPlans = (locale: Locale, hasPartnerDiscount: boolean = fa
     {
       id: 'slots-10',
       name: 'Plan Business (10 Cuentas)',
-      description: 'Capacidad máxima y alto rendimiento para empresas B2B y agencias con equipos de venta en expansión.',
+      description: 'Acceso completo a todos los recursos para administrar 10 cuentas comerciales de LinkedIn.',
       pricing: {
         monthly: { amount: AMOUNTS.business.monthly, formattedPrice: AMOUNTS.business.formattedMonthly, originalPrice: AMOUNTS.business.originalMonthly, lemonCheckoutUrl: LEMON_CHECKOUTS.business.url, lemonVariantId: LEMON_CHECKOUTS.business.variantId, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
         yearly: { amount: AMOUNTS.business.yearly, formattedPrice: AMOUNTS.business.formattedYearly, originalPrice: AMOUNTS.business.originalYearly, lemonCheckoutUrl: LEMON_CHECKOUTS.business.url, lemonVariantId: LEMON_CHECKOUTS.business.variantId, paddlePriceId: 'pri_01m1h9sy759c7p0kg76309we3h' },
       },
       features: [
-        '10 Cuentas de LinkedIn Conectadas (10 Slots Dedicados de alto volumen)',
-        'Lead Finder Ilimitado: Extracción masiva corporativa con filtros avanzados',
-        'Monitores de Señales de Intención Ilimitados en tiempo real (Radar Completo)',
-        'Social Selling con IA Ilimitado: Motor de contenido a escala para todo el equipo',
-        'Campañas Multicanal: Hasta 200 interacciones y conexiones comerciales / día* (6.000 al mes)',
-        'Asistente SDR de IA Corporativo entrenado con los playbooks de tu empresa',
-        'Agendamiento Inteligente con distribución round-robin entre ejecutivos',
-        'Gestión de Equipo & Permisos: Roles granulares y métricas de rendimiento',
-        'Integraciones CRM Enterprise (HubSpot, Pipedrive, Salesforce vía Zapier/API)',
-        'Soporte Prioritario VIP & Onboarding Estratégico Dedicado',
+        '10 Cuentas de LinkedIn Conectadas (10 Slots Dedicados)',
+        'Hasta 200 interacciones comerciales / día* (6.000 al mes)',
+        ...commonFeaturesEs,
       ],
       cta: 'Comenzar con 10 Cuentas',
       popular: false,
