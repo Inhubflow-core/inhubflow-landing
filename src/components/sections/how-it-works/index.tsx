@@ -9,6 +9,7 @@ export default function HowItWorksSection() {
   const steps = [
     {
       step: '01',
+      stepColor: 'text-blue-600 dark:text-blue-400',
       badge: 'Fase 1: Segmentación',
       badgeColor: 'text-blue-600 dark:text-blue-400 bg-blue-500/10 border-blue-500/20',
       stepHoverColor: 'group-hover:text-blue-600 dark:group-hover:text-blue-400',
@@ -34,6 +35,7 @@ export default function HowItWorksSection() {
     },
     {
       step: '02',
+      stepColor: 'text-blue-600 dark:text-blue-400',
       badge: 'Fase 2: Detección',
       badgeColor: 'text-amber-500 bg-amber-500/10 border-amber-500/20',
       stepHoverColor: 'group-hover:text-amber-500 dark:group-hover:text-amber-400',
@@ -57,6 +59,7 @@ export default function HowItWorksSection() {
     },
     {
       step: '03',
+      stepColor: 'text-blue-600 dark:text-blue-400',
       badge: 'Fase 3: Conexión',
       badgeColor: 'text-purple-500 bg-purple-500/10 border-purple-500/20',
       stepHoverColor: 'group-hover:text-purple-600 dark:group-hover:text-purple-400',
@@ -78,6 +81,7 @@ export default function HowItWorksSection() {
     },
     {
       step: '04',
+      stepColor: 'text-blue-600 dark:text-blue-400',
       badge: 'Fase 4: Cierre',
       badgeColor: 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20',
       stepHoverColor: 'group-hover:text-emerald-600 dark:group-hover:text-emerald-400',
@@ -129,7 +133,7 @@ export default function HowItWorksSection() {
               <div>
                 {/* Step number and Icon */}
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`text-3xl font-extrabold text-gray-300 dark:text-gray-700 font-mono ${item.stepHoverColor} transition-colors`}>
+                  <span className={`text-2xl sm:text-3xl font-black tracking-tight shrink-0 select-none ${item.stepColor} transition-colors`}>
                     {item.step}
                   </span>
                   <span className="w-12 h-12 rounded-2xl bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
