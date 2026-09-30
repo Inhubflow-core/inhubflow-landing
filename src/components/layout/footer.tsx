@@ -54,7 +54,7 @@ export default function Footer() {
             <div className="w-full">
               <Link href="/" className="inline-flex items-center mb-4 sm:mb-6">
                 <Image
-                  src="/logo-master-dark.png"
+                  src="/logo-master-dark.png?v=4"
                   alt="InHubFlow Logo"
                   width={220}
                   height={55}

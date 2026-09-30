@@ -26,7 +26,7 @@ export default function Header() {
           <div className="flex items-center shrink-0">
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo-master-light.png"
+                src="/logo-master-light.png?v=4"
                 className="block dark:hidden h-8 sm:h-10 w-auto max-w-[140px] sm:max-w-[190px] object-contain"
                 alt="InHubFlow Logo"
                 width={220}
@@ -35,7 +35,7 @@ export default function Header() {
               />
 
               <Image
-                src="/logo-master-dark.png"
+                src="/logo-master-dark.png?v=4"
                 className="hidden dark:block h-8 sm:h-10 w-auto max-w-[140px] sm:max-w-[190px] object-contain"
                 alt="InHubFlow Logo"
                 width={220}
