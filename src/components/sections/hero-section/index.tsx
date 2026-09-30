@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import HeroLogos from '../hero-logos';
-import { Subheading } from './subheading';
 import { PlatformShowcase } from './platform-showcase';
 import { useLanguage } from '@/app/providers/language';
 
@@ -33,8 +32,6 @@ export default function HeroSection() {
         <div>
           <div className="max-w-[820px] mx-auto">
             <div className="text-center pb-8 sm:pb-12 lg:pb-16">
-              <Subheading text={t.hero.subheading} />
-
               <h1 className="text-gray-900 font-extrabold mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl lg:text-[54px] dark:text-white sm:leading-[1.16] tracking-tight">
                 {t.hero.title1}{' '}
                 <span
