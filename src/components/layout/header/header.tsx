@@ -27,19 +27,19 @@ export default function Header() {
             <Link href="/" className="flex items-center">
               <Image
                 src="/logo-master-light.png?v=5"
-                className="block dark:hidden h-8 sm:h-10 w-auto max-w-[140px] sm:max-w-[190px] object-contain"
+                className="block dark:hidden h-9 sm:h-11 lg:h-12 w-auto max-w-[150px] sm:max-w-[200px] lg:max-w-[220px] object-contain"
                 alt="InHubFlow Logo"
-                width={220}
-                height={55}
+                width={240}
+                height={60}
                 priority
               />
 
               <Image
                 src="/logo-master-dark.png?v=5"
-                className="hidden dark:block h-8 sm:h-10 w-auto max-w-[140px] sm:max-w-[190px] object-contain"
+                className="hidden dark:block h-9 sm:h-11 lg:h-12 w-auto max-w-[150px] sm:max-w-[200px] lg:max-w-[220px] object-contain"
                 alt="InHubFlow Logo"
-                width={220}
-                height={55}
+                width={240}
+                height={60}
                 priority
               />
             </Link>
